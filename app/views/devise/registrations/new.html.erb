@@ -8,12 +8,12 @@
     <%= f.text_field :nickname , autofocus: true %>
   </div>
 
-  <div class="field">
+  <div class="field" style="display:none;">
     <%= f.label :account_name %><br />
-    <%= f.text_field :account_name %>
+    <%= f.text_field :account_name , value: "default" %>
   </div>
 
-  <div class="field">
+  <div class="field" style="display:none;">
     <%= f.label :explain %><br />
     <%= f.text_field :explain %>
   </div>

@@ -14,6 +14,30 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
+  def new
+    @user = User.new
+  end
+
+  def create
+    @user = User.new(sign_up_params)
+    unless @user.valid?
+      flash.now[:alert] = @user.errors.full_messages
+      render "devise/registrations/new" and return
+    end
+    @user[:rank] = 1
+    @user[:point] = 0
+    binding.pry
+    if @user.account_name != "default"
+      @user.account_name = "default"
+    end
+    binding.pry
+    @user.save
+    sign_in(:user, @user)
+    redirect_to root_path
+
+  end
+
+
   # GET /resource/edit
   # def edit
   #   super
