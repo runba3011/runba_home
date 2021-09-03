@@ -45,6 +45,7 @@ Groupsテーブル
 |-|-|-|-|
 |icon_image|string| |部屋のアイコンの画像、設定されていなければデフォルトの画像|
 |explain|string||グループの説明文|
+|name|string|null: false|グループ名|
 
 - has_many :group_user_relations , dependent: :destroy
 - has_many :users , through: :group_user_relation
