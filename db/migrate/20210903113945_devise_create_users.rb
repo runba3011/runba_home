@@ -3,7 +3,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
     create_table :users do |t|
       ## Database authenticatable
       t.string :nickname , null: false 
-      t.string :account_name , null: false
+      t.string :account_name 
       t.integer :rank
       t.integer :point
       t.string :image_name
