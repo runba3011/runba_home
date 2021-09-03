@@ -72,6 +72,19 @@ Usersテーブル
 - has_many :stickman_war_comments
 - has_many :requests
 - has_many :movie_comments
+- has_one :sns_credential
+
+SnsCredentials table
+--
+SNSアカウントを利用してログインした時に使用するもの。
+
+|column|type|options|explain|
+|-|-|-|-|
+|provider|string|null: false|使用したSNSアカウントのプロバイダー|
+|uid|string|null: false|ユーザーのID|
+|user|references|null: false|このレコードに該当するユーザー|
+
+- belongs_to :user
 
 
 GroupUserRelationsテーブル
