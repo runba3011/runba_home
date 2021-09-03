@@ -57,7 +57,7 @@ Usersテーブル
 |column|type|options|explain|
 |-|-|-|-|
 |nickname|string|null: false|名前|
-|account_name|string|null: false, unique: true|アカウントの名前（Twitterの@runba105のようなもの）|
+|account_name|string|null: false|アカウントの名前（Twitterの@runba105のようなもの）|
 |email|string|null: false|メールアドレス|
 |encrypted_password|string|null: false|パスワード|
 |rank|integer|only_integer|現在のレベル（今後実装）|
@@ -73,6 +73,8 @@ Usersテーブル
 - has_many :requests
 - has_many :movie_comments
 - has_one :sns_credential
+
+最初登録する時にはaccount_nameは入力させず、編集する時にのみバリデーションをかける
 
 SnsCredentials table
 --
