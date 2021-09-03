@@ -4,6 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
           :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
+  with_options presence: true do
+    validates :nickname
+    validates :account_name
+  end
+
   has_many :sns_credentials
 
   def self.from_omniauth(auth)
