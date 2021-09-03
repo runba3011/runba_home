@@ -28,11 +28,18 @@ Usersテーブル
 GroupUserRelationsテーブル
 --
 グループとユーザーの中間テーブル。
+## 権限について
+５：ルームの作者。メンバーの追放、追加、ルームの削除が可能。
+４：メンバーの追加、追放が可能。権限５以外のメンバーから追放されない。
+３：メンバーの追加、追放が可能。
+２：メンバーの追加が可能。
+１：なんの権限も持たない。
 
 |column|type|options|explain|
 |-|-|-|-|
 |user|references|null: false|ユーザー|
 |group|references|null: false|グループ|
+|authority|integer|only_integer: :true|メンバーを管理する権限|
 
 - belongs_to :user
 - belongs_to :group
