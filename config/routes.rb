@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root to: "top#index"
+  devise_for :users
+  root to: "users#index"
   resources :top , only: :index
   resources :users , only: [:new]
 end
