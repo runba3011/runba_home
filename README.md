@@ -84,6 +84,7 @@ SNSアカウントを利用してログインした時に使用するもの。
 |uid|string|null: false|ユーザーのID|
 |user|references|null: false|このレコードに該当するユーザー|
 
+- belongs_to :user
 
 
 GroupUserRelationsテーブル
