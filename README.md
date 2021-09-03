@@ -74,6 +74,8 @@ Usersテーブル
 - has_many :movie_comments
 - has_one :sns_credential
 
+最初登録する時にはaccount_nameは入力させず、編集する時にのみバリデーションをかける
+
 SnsCredentials table
 --
 SNSアカウントを利用してログインした時に使用するもの。
