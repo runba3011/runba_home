@@ -1,0 +1,31 @@
+<mxfile host="65bd71144e">
+    <diagram id="ZYTx2Oc5oKhjh46jqFlx" name="ページ1">
+        <mxGraphModel dx="757" dy="1133" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="88" value="棒バトチャレンジでステージ攻略まで" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
+                    <mxGeometry x="160" y="40" width="460" height="222" as="geometry"/>
+                </mxCell>
+                <mxCell id="89" value="1.棒バトチャレンジを選択（StickmanWar indexへ移動）" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="88" vertex="1">
+                    <mxGeometry y="26" width="460" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="90" value="ステージタイプ（ベーシック）などを選択" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="88" vertex="1">
+                    <mxGeometry y="56" width="460" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="91" value="ステージ番号を選択（ピックアップするような部分しか出てこない）（stick show)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="88" vertex="1">
+                    <mxGeometry y="86" width="460" height="34" as="geometry"/>
+                </mxCell>
+                <mxCell id="92" value="言及の必要のないステージはの攻略は現れない（部分テンプレートで区別）" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="88">
+                    <mxGeometry y="120" width="460" height="34" as="geometry"/>
+                </mxCell>
+                <mxCell id="93" value="細かいステージの内容（StickmanWarDetail show)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="88">
+                    <mxGeometry y="154" width="460" height="34" as="geometry"/>
+                </mxCell>
+                <mxCell id="94" value="コメント（StickmanWarCommentsコントローラー）" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="88">
+                    <mxGeometry y="188" width="460" height="34" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
