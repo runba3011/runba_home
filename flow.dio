@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="ZYTx2Oc5oKhjh46jqFlx" name="ページ1">
-        <mxGraphModel dx="950" dy="680" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="999" dy="606" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -83,7 +83,7 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="62" value="StickmanWarComments" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
-                    <mxGeometry x="1120" y="140" width="340" height="146" as="geometry"/>
+                    <mxGeometry x="1270" y="144" width="340" height="146" as="geometry"/>
                 </mxCell>
                 <mxCell id="63" value="create" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="62" vertex="1">
                     <mxGeometry y="26" width="340" height="30" as="geometry"/>
@@ -94,7 +94,7 @@
                 <mxCell id="67" value="destroy" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="62" vertex="1">
                     <mxGeometry y="86" width="340" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="127" value="edit(stickmanwardetail showをrender , コメントを表示する）" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="62">
+                <mxCell id="127" value="edit(stickmanwardetail showをrender , コメントを表示する）" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="62" vertex="1">
                     <mxGeometry y="116" width="340" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="68" value="MovieComments" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
@@ -137,7 +137,7 @@
                     <mxGeometry y="86" width="380" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="93" value="StickmanWarDetail" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
-                    <mxGeometry x="880" y="182" width="160" height="56" as="geometry"/>
+                    <mxGeometry x="980" y="182" width="160" height="56" as="geometry"/>
                 </mxCell>
                 <mxCell id="94" value="show（ステージ詳細番号）" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="93" vertex="1">
                     <mxGeometry y="26" width="160" height="30" as="geometry"/>
@@ -158,7 +158,7 @@
                     <mxGeometry y="56" width="160" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="107" value="StickmanWarCharacter" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
-                    <mxGeometry x="680" y="280" width="160" height="86" as="geometry"/>
+                    <mxGeometry x="790" y="274" width="160" height="86" as="geometry"/>
                 </mxCell>
                 <mxCell id="108" value="index(キャラクター一覧)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="107" vertex="1">
                     <mxGeometry y="26" width="160" height="30" as="geometry"/>
@@ -185,7 +185,7 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="121" value="StickmanwWarStage" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
-                    <mxGeometry x="680" y="182" width="160" height="56" as="geometry"/>
+                    <mxGeometry x="780" y="182" width="160" height="56" as="geometry"/>
                 </mxCell>
                 <mxCell id="122" value="show(ステージ番号を表示）" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="121" vertex="1">
                     <mxGeometry y="26" width="160" height="30" as="geometry"/>
@@ -196,7 +196,7 @@
                 <mxCell id="126" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="122" target="94" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="130" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="94" target="127">
+                <mxCell id="130" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="94" target="127" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
             </root>
