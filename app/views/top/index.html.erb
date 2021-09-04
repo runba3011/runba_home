@@ -6,8 +6,7 @@
 
 <section class = "main_content">
   <%# ここにパンくずリストを表示する %>
-
-  <%= render partial: "shared/top_link" , locals:{image: "stickman_war.png" , link: nil , title: "棒バトチャレンジ"} %>
+  <%= render partial: "shared/top_link" , locals:{image: "stickman_war.png" , link: stickman_war_index_path , title: "棒バトチャレンジ"} %>
   <%= render partial: "shared/top_link" , locals:{image: nil , link: nil , title: "動画投稿"} %>
   <%= render partial: "shared/top_link" , locals:{image: nil , link: nil , title: "チャットルーム"} %>
   <%= render partial: "shared/top_link" , locals:{image: nil , link: nil , title: "リクエスト"} %>
