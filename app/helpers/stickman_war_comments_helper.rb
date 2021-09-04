@@ -1,0 +1,2 @@
+module StickmanWarCommentsHelper
+end
