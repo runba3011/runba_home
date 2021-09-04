@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'stickman_war_detail/show'
-  get 'stickman_war_stage/show'
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',
     registrations: 'users/registrations'
@@ -9,4 +7,11 @@ Rails.application.routes.draw do
   resources :users , only: [:new]
 
   resources :top , only: :index
+  resources :stickman_war , only: [:index , :show] do
+    resources :stickman_war_stage , only: :show do
+      resources :stickman_war_detail , only: :show do
+        resources :stickman_war_comments , only: [:create , :update , :destroy , :edit]
+      end
+    end
+  end
 end
