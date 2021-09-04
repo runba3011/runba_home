@@ -1,0 +1,2 @@
+class StickmanWarController < ApplicationController
+end
