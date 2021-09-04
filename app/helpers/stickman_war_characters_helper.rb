@@ -1,0 +1,2 @@
+module StickmanWarCharactersHelper
+end
