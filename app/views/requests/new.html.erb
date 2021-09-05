@@ -1,0 +1,6 @@
+<%= form_with model: @request , local: true do |f| %>
+  <%= f.label "リクエスト内容" %>
+  <%= f.text_area :text %>
+  <%= f.submit "送信" %>
+
+<% end %>
