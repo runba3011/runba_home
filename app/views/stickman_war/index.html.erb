@@ -3,7 +3,7 @@
 <section class = "main_content">
   <%# パンくずリストをここに作成 %>
   <%= render partial: "shared/link" , locals: {image: nil , title: "キャラクターステータス" , link: nil} %>
-  <%= render partial: "shared/link" , locals: {image: nil , title: "ベーシックステージ" , link: nil} %>
+  <%= render partial: "shared/link" , locals: {image: nil , title: "ベーシックステージ" , link: stickman_war_path("basic")} %>
   <%= render partial: "shared/link" , locals: {image: nil , title: "チャレンジステージ" , link: nil} %>
   <%= render partial: "shared/link" , locals: {image: nil , title: "ボーナスステージ" , link: nil} %>
 </section>
