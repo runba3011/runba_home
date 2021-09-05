@@ -1,2 +1,9 @@
-<h1>StickmanWarDetail#show</h1>
-<p>Find me in app/views/stickman_war_detail/show.html.erb</p>
+<%= render partial: @show_page_path %>
+
+<%= render partial: "comment" , locals: {comments: @comments } %>
+
+<%= form_with model: @comment , url: @create_path, local: true  do |f| %>
+  <%= f.text_area :text %>
+  <%= f.submit "送信" %>
+
+<% end %>

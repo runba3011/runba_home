@@ -12,7 +12,7 @@ class User < ApplicationRecord
     validates :point
   end
   validates :account_name , uniqueness: true , on: :update
-  validates :email , 
+  
   has_many :sns_credentials
   has_many :stickman_war_comments
 
