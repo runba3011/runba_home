@@ -2,7 +2,12 @@ class StickmanWarCommentsController < ApplicationController
 
   def create
     @comment = StickmanWarComment.new(stickman_war_comment_params)
-    redirect_to stickman_war_stickman_war_detail_path(params[:stickman_war_id] , params[:stickman_war_detail_id])
+    if @comment.valid?
+      @comment.save
+      redirect_to stickman_war_stickman_war_detail_path(params[:stickman_war_id] , params[:stickman_war_detail_id])
+    else
+      render "stickman_war_detail/#{params[:stickman_war_id]}/stage#{params[:stickman_war_detail_id]}"
+    end
   end
 
   private
