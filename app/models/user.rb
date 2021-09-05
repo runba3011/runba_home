@@ -7,10 +7,12 @@ class User < ApplicationRecord
           
   with_options presence: true do
     validates :nickname
-    validates :account_name
+    validates :account_name , length: {minimum: 4 , maximum: 25}
+    validates :rank
+    validates :point
   end
   validates :account_name , uniqueness: true , on: :update
-
+  validates :email , 
   has_many :sns_credentials
   has_many :stickman_war_comments
 
