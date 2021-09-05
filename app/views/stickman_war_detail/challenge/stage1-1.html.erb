@@ -1,0 +1,9 @@
+<h3>チャレンジステージ１−１の攻略ページ、個別で頑張って作成する</h3>
+
+<%= render partial: "comment" , locals: {comments: @comments } %>
+
+<%= form_with model: @comment , url: stickman_war_stickman_war_detail_stickman_war_comments_path(params[:stickman_war_id] , params[:id]) , local: true  do |f| %>
+  <%= f.text_area :text %>
+  <%= f.submit "送信" %>
+
+<% end %>

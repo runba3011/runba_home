@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+        account_name: アカウント名
+        rank: ユーザーランク
+        point: ポイント
+        image_name: アカウント画像名
+      stickman_war_comment:
+        stage_type: ステージタイプ
+        stage_id: ステージID
+        user_id: ユーザーID
+        user: ユーザー
+        text: テキスト

@@ -7,11 +7,14 @@ class User < ApplicationRecord
           
   with_options presence: true do
     validates :nickname
-    validates :account_name
+    validates :account_name , length: {minimum: 4 , maximum: 25}
+    validates :rank
+    validates :point
   end
   validates :account_name , uniqueness: true , on: :update
-
+  
   has_many :sns_credentials
+  has_many :stickman_war_comments
 
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider , uid: auth.uid).first_or_create

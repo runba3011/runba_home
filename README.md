@@ -153,7 +153,7 @@ StickmanWarCommentsテーブル
 
 |column|type|options|explain|
 |-|-|-|-|
-|stage_id|integer|null: false|投稿されたステージのID、"3-8"というような形で表される|
+|stage_id|string|null: false|投稿されたステージのID、"3-8"というような形で表される|
 |text|string|null: false||
 |user|references|null: false|投稿したユーザー名|
 |stage_type|string|null: false|ステージタイプ名、現時点ではbasic, challenge,moneyの三種類|

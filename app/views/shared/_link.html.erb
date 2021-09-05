@@ -3,7 +3,7 @@
 
 <% if link != nil %>
   <div class = "links">
-    <%= link_to  do %>
+    <%= link_to link  do %>
       <% if image != nil %>
         <%= image_tag image , alter: "#{image}という画像はありません" %>
       <% end %>
