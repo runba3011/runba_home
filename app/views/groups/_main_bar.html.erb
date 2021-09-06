@@ -1,0 +1,7 @@
+<h3>現在見ているページ名</h3>
+<h3>届いたメッセージ一覧</h3>
+<%= form_with url: group_message_path(@room , @message) , model: @message , local :true do |f| %>
+  <%= f.text_area :text %>
+  <%= f.input_area :image %>
+  <%= f.submit "送信" %>
+<% end %>
