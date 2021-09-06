@@ -16,4 +16,7 @@ class Movie < ActiveHash::Base
 
   ]
 
+  include ActiveHash::Associations
+  has_many :movie_comments
+
 end

@@ -5,6 +5,6 @@
 <p><%= @movie.explain %></p>
 
 
-<%# <%= form_with model: @comment, url: nil , local: true do |f| %> %>
-  <%# <%= f.text_area :text %> %>
-<%# <% end %> %>
+<%= form_with model: @comment, url: nil , local: true do |f| %>
+  <%= f.text_area :text %>
+<% end %>
