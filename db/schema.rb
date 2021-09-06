@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_05_130544) do
+ActiveRecord::Schema.define(version: 2021_09_06_025654) do
+
+  create_table "movie_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "movie_id", null: false
+    t.text "text", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["movie_id"], name: "index_movie_comments_on_movie_id"
+    t.index ["user_id"], name: "index_movie_comments_on_user_id"
+  end
 
   create_table "requests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "text", null: false
@@ -57,6 +67,7 @@ ActiveRecord::Schema.define(version: 2021_09_05_130544) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "movie_comments", "users"
   add_foreign_key "requests", "users"
   add_foreign_key "sns_credentials", "users"
   add_foreign_key "stickman_war_comments", "users"
