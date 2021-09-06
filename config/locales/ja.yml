@@ -13,3 +13,8 @@ ja:
         user_id: ユーザーID
         user: ユーザー
         text: テキスト
+      movie_comment:
+        movie: 動画
+        user_id: ユーザーID
+        user: ユーザー
+        text: コメント文

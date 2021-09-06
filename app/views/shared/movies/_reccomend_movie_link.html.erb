@@ -1,0 +1,14 @@
+<%# 引数 link: リンク先 , title: 表示するタイトル , image: 表示する画像の名前、画像はapp > assets > images に入れておく %>
+<%# 現時点ではlinkとimageはnil %>
+
+<% movies.each do |movie| %>
+  <div class = "links">
+    <%= link_to movie_path(movie)  do %>
+      <% if movie.image != nil %>
+        <%= image_tag image , alter: "#{movie.image}という画像はありません" %>
+      <% end %>
+      <div><%= movie.title %>
+      </div>
+    <% end %>
+  </div>
+<% end %> 

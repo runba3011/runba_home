@@ -13,4 +13,7 @@ Rails.application.routes.draw do
     # end
   end
   resources :requests , only: [:new , :create , :show]
+  resources :movies , only: [:index , :show] do
+    resources :movie_comments , only: [:create , :update , :destroy]
+  end
 end
