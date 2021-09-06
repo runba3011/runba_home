@@ -1,0 +1,10 @@
+<%= render partial: "shared/header/movie_header" %>
+
+<%= @movie.title %><br>
+<iframe width="950" height="534" src="https://www.youtube.com/embed/<%= @movie.link %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<%= @movie.explain %>
+
+
+<%# <%= form_with model: @comment, url: nil , local: true do |f| %> %>
+  <%# <%= f.text_area :text %> %>
+<%# <% end %> %>
