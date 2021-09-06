@@ -1,5 +1,6 @@
 class RequestsController < ApplicationController
-  before_action :only_redirect_to_users_path , unless: :user_signed_in?
+  before_action :only_redirect_to_users_path , unless: :user_signed_in? , except: :show
+  before_action :creater_auth , only: :show
 
   def new
     @request = Request.new
@@ -26,5 +27,11 @@ class RequestsController < ApplicationController
 
   def only_redirect_to_users_path
     redirect_to users_path
+  end
+
+  def creater_auth
+    authenticate_or_request_with_http_basic do |username , password|
+      username == ENV["RUNBA_HOME_USER"] && password == ENV["RUNBA_HOME_PASSWORD"]
+    end
   end
 end
