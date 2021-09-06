@@ -16,4 +16,7 @@ Rails.application.routes.draw do
   resources :movies , only: [:index , :show] do
     resources :movie_comments , only: [:create , :update , :destroy]
   end
+  resources :groups do
+    resources :messages , only: [:create]
+  end
 end
