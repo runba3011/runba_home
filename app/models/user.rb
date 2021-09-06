@@ -15,6 +15,9 @@ class User < ApplicationRecord
   has_many :stickman_war_comments , dependent: :destroy
   has_many :requests , dependent: :destroy
   has_many :movie_comments
+  has_many :group_user_relations 
+  has_many :groups , through: :group_user_relations
+  has_many :messages
   
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider , uid: auth.uid).first_or_create
