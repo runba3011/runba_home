@@ -4,7 +4,16 @@
 <iframe width="950" height="534" src="https://www.youtube.com/embed/<%= @movie.link %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <p><%= @movie.explain %></p>
 
+<% @movie.movie_comments.each do |comment| %>
+  <%= comment.user.nickname %>
+  <%= comment.text %>
+<% end %>
 
-<%= form_with model: @comment, url: nil , local: true do |f| %>
-  <%= f.text_area :text %>
+<%= form_with model: @movie_comment ,  url: movie_movie_comments_path(@movie , @movie_comment), local: true  do |f| %>
+  <% unless user_signed_in? %>
+    <%= f.text_field :text , readonly: true ,  disable: true , value: "ユーザー登録かサインインしないとコメントできません" %>
+  <% else %>
+    <%= f.text_area :text , value: @textarea_inside %><br>
+    <%= f.submit "送信" %>
+  <% end %>
 <% end %>
