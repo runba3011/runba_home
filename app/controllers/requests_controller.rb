@@ -1,4 +1,6 @@
 class RequestsController < ApplicationController
+  before_action :only_redirect_to_users_path , unless: :user_signed_in?
+
   def new
     @request = Request.new
   end
@@ -20,5 +22,9 @@ class RequestsController < ApplicationController
 
   def request_params
     params.require(:request).permit(:text).merge(user_id: current_user.id)
+  end
+
+  def only_redirect_to_users_path
+    redirect_to users_path
   end
 end
