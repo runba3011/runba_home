@@ -26,11 +26,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
     @user[:rank] = 1
     @user[:point] = 0
-    binding.pry
     if @user.account_name != "default"
       @user.account_name = "default"
     end
-    binding.pry
     @user.save
     sign_in(:user, @user)
     redirect_to root_path
