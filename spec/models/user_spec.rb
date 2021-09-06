@@ -33,7 +33,7 @@ RSpec.describe User, type: :model do
       @user.valid?
       expect(@user.errors.full_messages).to include("アカウント名を入力してください")
     end
-    
+
     it "emailが空の時" do
       @user.email = nil
       @user.valid?
@@ -96,18 +96,6 @@ RSpec.describe User, type: :model do
       @user.account_name = @other_user.account_name
       @user.valid?
       expect(@user.errors.full_messages).to include("アカウント名はすでに存在します")
-    end
-
-    it "rankが空の時" do
-      @user.rank = nil
-      @user.valid?
-      expect(@user.errors.full_messages).to include("ユーザーランクを入力してください")
-    end
-
-    it "pointが空の時" do
-      @user.point = nil
-      @user.valid?
-      expect(@user.errors.full_messages).to include("ポイントを入力してください")
     end
 
     it "emailが空の時" do
