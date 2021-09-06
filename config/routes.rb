@@ -13,4 +13,5 @@ Rails.application.routes.draw do
     # end
   end
   resources :requests , only: [:new , :create , :show]
+  resources :movies , only: [:index , :show , :new]
 end
