@@ -1,11 +1,16 @@
 <%# 横並びにする、上部分に固定する %>
+<%= stylesheet_link_tag "top/index", :media => "all" %>
 <header>
-  <h3>ルンバの家</h3>
-  <%= link_to "アカウント" , users_path %>
+  <div class = header_inside>
+  <h3 class = "title">ルンバの家</h3>
+  <%= link_to "アカウント" , users_path , id: "account_link" %>
+  </div>
 </header>
 
 <section class = "main_content">
   <%# ここにパンくずリストを表示する %>
+
+
   <%= render partial: "shared/link" , locals:{image: "stickman_war.png" , link: stickman_war_index_path , title: "棒バトチャレンジ"} %>
   <%= render partial: "shared/link" , locals:{image: nil , link: movies_path , title: "動画視聴"} %>
   <%= render partial: "shared/link" , locals:{image: nil , link: groups_path , title: "チャットルーム"} %>
