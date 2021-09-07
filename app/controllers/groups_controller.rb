@@ -12,6 +12,7 @@ class GroupsController < ApplicationController
   end
 
   def new
+    @group_group_user_relation = GroupGroupUserRelation.new
     @users = User.where.not(id: current_user.id)
     @authorities = []
     4.times do |i|
@@ -20,7 +21,13 @@ class GroupsController < ApplicationController
   end
 
   def create
-    
+    @group_group_user_relation = GroupGroupUserRelation.new(group_group_user_relation_params)
+    if @group_group_user_relation.valid?
+      @group_group_user_relation.save
+      redirect_to groups_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -49,6 +56,10 @@ class GroupsController < ApplicationController
 
   def generate_message
     @message = Message.new
+  end
+
+  def group_group_user_relation_params
+    params.require(:group_group_user_relation).permit(:name , :explain , user_ids: [] , authority_ids: [])
   end
 
 end
