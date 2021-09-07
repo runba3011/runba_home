@@ -2,12 +2,13 @@
 <%= stylesheet_link_tag "top/index", :media => "all" %>
 <header>
   <div class = header_inside>
-  <h3 class = "title">ルンバの家</h3>
-  <%= link_to "アカウント" , users_path , id: "account_link" %>
+    <h3 class = "header_title">Runba's Home</h3>
+    <%= link_to "アカウント" , users_path , id: "account_link" %>
   </div>
 </header>
 
-<section class = "main_content">
+<div class = "main_content">
+  <h3 class = "section_title">Runba's Homeトップページ</h3>
   <%# ここにパンくずリストを表示する %>
 
 
@@ -17,7 +18,7 @@
   <%= render partial: "shared/link" , locals:{image: nil , link: new_request_path , title: "リクエスト"} %>
   <%= render partial: "shared/link" , locals:{image: nil , link: nil , title: "プログラミング学習記録"} %>
   <%= render partial: "shared/link" , locals:{image: nil , link: nil , title: "リクエスト"} %>
-</section>
+</div>
 
 
 
