@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   before_action :check_logined
-  before_action :generate_message , :generate_group , :set_boolean , :find_user
+  before_action :generate_message , :generate_group , :find_user
 
 
   def index
@@ -8,6 +8,7 @@ class GroupsController < ApplicationController
 
   def show
     @is_show = true
+    @group = Group.find(params[:id])
   end
 
   def new
@@ -66,7 +67,7 @@ class GroupsController < ApplicationController
   end
 
   def set_boolean 
-    @is_show = nil
+    @is_show = false
   end
 
 end
