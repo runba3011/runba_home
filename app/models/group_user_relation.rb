@@ -1,5 +1,5 @@
 class GroupUserRelation < ApplicationRecord
-  extend ActiveHash::Associations::ActiveRecordExtensitons
+  extend ActiveHash::Associations::ActiveRecordExtensions
   with_options presence: true do
     validates :user
     validates :room
