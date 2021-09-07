@@ -31,5 +31,12 @@ header{
 .main_content {
   width: 80%;
   margin: auto;
-  background-color: rgb(231, 231, 231);
+  background-color: rgb(250, 250, 250);
+}
+
+.only_border{
+  width:90%;
+  border-bottom: 1px solid rgb(155, 155, 155);
+  margin:3px auto 5px;
+  
 }
