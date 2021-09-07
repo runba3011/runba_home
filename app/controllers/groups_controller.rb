@@ -1,14 +1,13 @@
 class GroupsController < ApplicationController
   before_action :check_logined
-  before_action :generate_message , :generate_group 
+  before_action :generate_message , :generate_group , :set_boolean , :find_user
 
 
   def index
-    
   end
 
   def show
-    
+    @is_show = true
   end
 
   def new
@@ -58,8 +57,16 @@ class GroupsController < ApplicationController
     @message = Message.new
   end
 
+  def find_user
+    @user = User.find(current_user.id)
+  end
+
   def group_group_user_relation_params
     params.require(:group_group_user_relation).permit(:name , :explain , user_ids: [] , authority_ids: [])
+  end
+
+  def set_boolean 
+    @is_show = nil
   end
 
 end

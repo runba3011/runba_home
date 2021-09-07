@@ -1,3 +1,8 @@
 <h3>チャットルーム</h3>
 <h3>所属しているルーム名</h3>
-<%= link_to "トップページへ戻る" , root_path %>
+<% @user.groups.each do |group| %>
+  <%= link_to group.name , "/groups/#{group.id}" %>
+<% end %>
+
+<%= link_to "ルームを作成する" , "groups/new" %><br>
+<%= link_to "トップページへ戻る" , "/" %>

@@ -1,7 +1,15 @@
-<h3>現在見ているページ名</h3>
-<h3>届いたメッセージ一覧</h3>
-<%= form_with url: group_message_path(@room , @message) , model: @message , local :true do |f| %>
-  <%= f.text_area :text %>
-  <%= f.input_area :image %>
-  <%= f.submit "送信" %>
+<% if room = nil %>
+  <h3>現在見ているページ名</h3>
+<% end %>
+
+<% if room = nil %>
+  <h3>届いたメッセージ一覧</h3>
+<% end %>
+
+<% if is_show != nil %>
+  <%= form_with url: "/groups/#{group.id}/messages" , model: message , method: :post , local: true  do |f| %>
+    <%= f.text_area :text %>
+    <%= f.file_field :image %>
+    <%= f.submit "送信" %>
+  <% end %>
 <% end %>
