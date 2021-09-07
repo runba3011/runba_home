@@ -11,6 +11,9 @@
 
   <body>
     <%= yield %>
-    <%= render partial: "shared/footer" %>
+
+    <% if @is_group == false %>
+      <%= render partial: "shared/footer" %>
+    <% end %>
   </body>
 </html>

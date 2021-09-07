@@ -1,0 +1,28 @@
+<% if group != nil %>
+  <h3><%= group.name %></h3>
+  <% if authority >= 2  %>
+    <%= link_to "編集" %>
+  <% end %>
+
+  <% if authority == 5 %>
+    <%= link_to "グループ削除" , group_path(group) , method: :delete %>
+  <% end %>
+<% end %>
+
+
+
+<% if group != nil %>
+  <% if is_show == true %>
+    <%= render partial: "messages" , locals: {group: group} %>
+  <% else %>
+    <%= render partial: "edit_body" , locals: {group: group} %>
+  <% end %>
+<% end %>
+
+<% if is_show == true %>
+  <%= form_with url: "/groups/#{group.id}/messages" , model: message , method: :post , local: true  do |f| %>
+    <%= f.text_area :text %>
+    <%= f.file_field :image %>
+    <%= f.submit "送信" %>
+  <% end %>
+<% end %>

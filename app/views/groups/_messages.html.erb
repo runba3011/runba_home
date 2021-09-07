@@ -1,0 +1,15 @@
+<h3>届いたメッセージ一覧</h3>
+  <% group.messages.each do |message| %>
+    <div>
+      <%= message.user.nickname %>
+      <%= message.created_at %>
+      <% if message.text != nil %>
+        <%= message.text %>
+        <% if message.user == @user %>
+          <%= link_to "削除" , group_message_path(group , message) , method: :delete %>
+        <% end %>
+      <% else %>
+        <p>メッセージは削除されました</p>
+      <% end %>
+    </div>
+  <% end %>
