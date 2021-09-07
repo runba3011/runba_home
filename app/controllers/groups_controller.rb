@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   before_action :check_logined
-  before_action :generate_message , :generate_group , :find_user
+  before_action :generate_message , :generate_group , :find_user , :set_boolean
 
 
   def index
@@ -72,6 +72,7 @@ class GroupsController < ApplicationController
   def set_boolean 
     @is_show = false
     @is_edit = false
+    @is_group = true
   end
 
 end

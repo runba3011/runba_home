@@ -1,2 +1,2 @@
 <%= render partial: "groups/side_bar" , locals: {user: @user} %>
-<%= render partial: "groups/main_bar" , locals: {is_show: @is_show , group: @group , message: @message} %>
+<%= render partial: "groups/main_bar" , locals: {is_show: @is_show , group: nil , message: @message , is_edit: @is_edit , authority: @authority} %>
