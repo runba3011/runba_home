@@ -17,6 +17,6 @@ Rails.application.routes.draw do
     resources :movie_comments , only: [:create , :update , :destroy]
   end
   resources :groups do
-    resources :messages , only: [:create]
+    resources :messages , only: [:create , :edit , :destroy]
   end
 end

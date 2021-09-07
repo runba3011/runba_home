@@ -9,6 +9,8 @@ class GroupsController < ApplicationController
   def show
     @is_show = true
     @group = Group.find(params[:id])
+    @group_user_relation = GroupUserRelation.find_by(user_id: current_user.id , group_id: @group.id)
+    @authority = @group_user_relation.authority_id
   end
 
   def new
@@ -31,7 +33,8 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    
+    @group = Group.find(params[:id])
+    @is_edit = false
   end
 
   def update
@@ -68,6 +71,7 @@ class GroupsController < ApplicationController
 
   def set_boolean 
     @is_show = false
+    @is_edit = false
   end
 
 end

@@ -1,9 +1,16 @@
-<% if group == nil %>
-  <h3>現在見ているページ名</h3>
+<% if group != nil %>
+  <h3><%= group.name %></h3>
+  <% if @authority == 5 %>
+    <%= link_to "グループ削除" , group_path(group) , method: :delete %>
+  <% end %>
 <% end %>
 
-<% if group == nil %>
-  <h3>届いたメッセージ一覧</h3>
+
+
+<% if group != nil %>
+  <% if is_show == true %>
+    <%= render partial: "messages" , locals: {group: group} %>
+  <% end %>
 <% end %>
 
 <% if is_show == true %>

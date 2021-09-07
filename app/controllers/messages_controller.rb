@@ -3,12 +3,20 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     if @message.valid?
       @message.save
-      redirect_to group_path
+      redirect_to group_path(@message.group)
     else
       @group = Group.find(params[:group_id])
       @is_show = true
       render "groups/show"
     end
+  end
+
+  def destroy
+    @message = Message.find(params[:id])
+    @message.text = nil
+    @message.update(text: nil)
+    @group = Group.find(params[:group_id])
+    redirect_to group_path(@group)
   end
 
   private
