@@ -31,7 +31,7 @@ header{
 .main_content {
   width: 80%;
   margin: auto;
-  background-color: rgb(250, 250, 250);
+  background-color: rgba(255, 255, 255, 0.6);
   max-width: 1000px;
 }
 
@@ -47,4 +47,10 @@ header{
   background-color: rgb(169, 178, 255);
   color:white;
   cursor: pointer;
+}
+
+.main_content_parent{
+  width: 100vw;
+  background-image: url("background/1.jpg");
+  padding-bottom: 20px;
 }
