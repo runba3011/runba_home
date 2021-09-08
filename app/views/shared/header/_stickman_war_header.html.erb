@@ -1,4 +1,9 @@
+<%= stylesheet_link_tag "shared/common_header" , :media => "all"  %>
+<%= stylesheet_link_tag "stickman_war_common/stickman_war_header" , :media => "all" %>
+
 <header>
-  <h3>棒バトチャレンジ</h3>
-  <%= link_to 'アカウント' %>
+  <div class = header_inside>
+    <h3 class = "header_title">棒バトチャレンジ</h3>
+    <%= link_to "アカウント" , users_path , id: "account_link" %>
+  </div>
 </header>

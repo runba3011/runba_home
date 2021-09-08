@@ -1,0 +1,33 @@
+._picture_explain_parent{
+  width:90%;
+  margin:auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  background-color:rgba(255, 255, 255 , 0.5);
+}
+
+._picture_explain_image_box{
+  width:40%;
+  min-height:150px;
+  background-image: image_url("stickman_war_explain/1.png");
+  background-size: cover;
+}
+
+._picture_explain_explain{
+  width: 60%;
+  border-radius: 3px;
+  text-align: center;
+  align-items: center;
+}
+
+._picture_explain_explain_title{
+  padding: 10px 20px 0;
+  border-bottom: 1px solid black;
+  display:inline-block;
+  font-size: 18px;
+}
+
+._picture_explain_explain_detail{
+  padding: 12px 10px 0px;
+}
