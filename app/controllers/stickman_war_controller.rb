@@ -1,6 +1,16 @@
 class StickmanWarController < ApplicationController
   def show
     render "stickman_war/#{params[:id]}"
+
+    @stage_select_title1 = "棒バトチャレンジとは？"
+    @stage_select_detail1 = "ルンバ氏が作成した、「棒人間バトルチャレンジ」の略称。制作者ですら元々の名称が棒人間バトルチャレンジであるということを忘れることがある。"
+    
+    @stage_select_title2 = "作成のきっかけ"
+    @stage_select_detail2 = "タワーディフェンスゲームをやっている時に、\n「盾を持ってるだけで使ってもないくせに体力が高い奴」「強い系キャラクターなのに多少たりとも攻撃を避けない」「大型のキャラクターが当然のように大幅に吹っ飛ぶ」という指摘しなくてもいい点が気になったので、自分で作ることにした。圧倒的謎行動力。"
+
+    @stage_select_title3 = "今後の予定"
+    @stage_select_detail3 = "ゴールドが大量に手に入るようなステージや、チャレンジステージ的なところを作る予定。がんばる。"
+
   end
 
   def index
@@ -15,7 +25,5 @@ class StickmanWarController < ApplicationController
 
     # @explain_title4 = "棒バトチャレンジとは？"
     # @explain_detail4 = "ルンバ氏が作成した、「棒人間バトルチャレンジ」の略称。制作者ですら元々の名称が棒人間バトルチャレンジであるということを忘れることがある。"
-
-    
   end
 end
