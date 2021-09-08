@@ -1,11 +1,21 @@
 <%= render partial: "shared/header/stickman_war_header" %>
-<%= stylesheet_link_tag "stickman_war/index" , :media => "all" %>
 
 <div class = "main_content_parent">
   <section class = "main_content">
-    <h3 class = "section_title">棒バトチャレンジ</h3>
-    <%# パンくずリストをここに作成 %>
+    <%# パンくずリストをここに表示 %>
+
+
+    <h3 class = "section_title">リンク</h3>
     <div class = "only_border"></div>
+    <div class = "links">
+      <%= render partial: "shared/simple_link" , locals: {image: nil , title: "ベーシックステージ" , link: stickman_war_path("basic") , id: nil , individual_class: "body_link"} %>
+      <%= render partial: "shared/simple_link" , locals: {image: nil , title: "チャレンジステージ" , link: nil , id: nil , individual_class: "body_link"} %>
+      <%= render partial: "shared/simple_link" , locals: {image: nil , title: "ボーナスステージ" , link: nil , id: nil , individual_class: "body_link"} %>
+      <%= render partial: "shared/simple_link" , locals: {image: nil , title: "キャラクターステータス" , link: nil , id: nil , individual_class: "body_link"} %>
+    </div>
+
+    <div class = "only_border"></div>
+
     <div class = "explain">
       <%= render partial: "shared/picture_and_explain" , locals: {title: @explain_title1 , explain: @explain_detail1} %>
       <%= render partial: "shared/picture_and_explain" , locals: {title: @explain_title2 , explain: @explain_detail2} %>
@@ -13,12 +23,8 @@
       <%# <%= render partial: "shared/picture_and_explain" , locals: {title: @explain_title4 , explain: @explain_detail4} %>
     </div>
 
-    <h3 class = "section_title">リンク</h3>
-    <div class = "only_border"></div>
-    <%= render partial: "shared/simple_link" , locals: {image: nil , title: nil} %>
-    <%= render partial: "shared/link" , locals: {image: nil , title: "キャラクターステータス" , link: nil} %>
-    <%= render partial: "shared/link" , locals: {image: nil , title: "ベーシックステージ" , link: stickman_war_path("basic")} %>
-    <%= render partial: "shared/link" , locals: {image: nil , title: "チャレンジステージ" , link: nil} %>
-    <%= render partial: "shared/link" , locals: {image: nil , title: "ボーナスステージ" , link: nil} %>
+
   </section>
 </div>
+
+<%= stylesheet_link_tag "stickman_war/index" , :media => "all" %>

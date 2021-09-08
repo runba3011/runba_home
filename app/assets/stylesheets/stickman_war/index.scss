@@ -1,4 +1,50 @@
-.explain{
-  height: 320px;
-  overflow:scroll;
+
+.links{
+  width: 90%;
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+}
+
+.body_link{
+  border:1px solid rgb(226, 226, 226);
+  width: 45%;
+  margin:2%;
+  display:flex;
+  margin: 10px 0px 0px 0px;
+  padding: 5px;
+  background-color: rgba(255, 212, 183, 0.185);
+}
+
+.body_link ._simple_link_a{
+  display:flex;
+  text-decoration:none;
+  color:black;
+}
+
+.body_link ._simple_link_image{
+  width:50px;
+}
+
+.body_link ._simple_link_explain{
+  width:70%;
+  display: flex;
+  padding:10px 0;
+  padding-left:3px;
+}
+
+.body_link ._simple_link_title_text{
+  padding-left: 3px;
+  font-size:14px;
+  margin-bottom: 3px;
+}
+
+.body_link ._simple_link_explain_text{
+  padding:0 30px;
+}
+
+.body_link ._simple_link_link_text{
+  margin-top: 10px;
 }

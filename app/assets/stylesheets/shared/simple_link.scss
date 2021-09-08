@@ -1,38 +1,32 @@
-.simple_link_links{
+._simple_link_links{
   width: 90%;
   display:flex;
   justify-content: center;
   margin: 10px 0px 0px 0px;
 }
 
-.simple_link_a{
+._simple_link_a{
   width:100%;
   display:flex;
   text-decoration:none;
   color:white;
 }
 
-.simple_link_image{
+._simple_link_image{
   width:20%;
 }
 
-.simple_link_explain{
+._simple_link_explain{
   width:70%;
   display: flex;
-  padding:10px 0;
-  padding-left:3px;
-}
-
-.simple_link_title_text{
-  padding-left: 3px;
+  margin: auto;
   font-size:14px;
-  margin-bottom: 3px;
 }
 
-.simple_link_explain_text{
+._simple_link_explain_text{
   padding:0 30px;
 }
 
-.simple_link_link_text{
+._simple_link_link_text{
   margin-top: 10px;
 }
