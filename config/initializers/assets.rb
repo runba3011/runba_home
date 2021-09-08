@@ -13,6 +13,10 @@ Rails.application.config.assets.precompile += %w(
   shared/link
   shared/footer
   shared/simple_link
+  shared/common_header
+  shared/picture_and_explain
+  stickman_war_common/stickman_war_header
+  stickman_war/index
 )
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
