@@ -10,6 +10,47 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
+ *= require_directory .
  */
+
+ * {
+  box-sizing: border-box;
+}
+
+header{
+  width: 100vw;
+  height:50px;
+  position: fixed;
+  display: flex;
+  background-color: red;
+  top: 0px;
+  left: 0px;
+}
+
+.main_content {
+  width: 80%;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.6);
+  max-width: 1000px;
+}
+
+.only_border{
+  width:90%;
+  border-bottom: 1px solid rgb(155, 155, 155);
+  margin:3px auto 5px;
+}
+
+.common_simple_button{
+  padding:5px 8px;
+  border-radius: 3px;
+  background-color: rgb(169, 178, 255);
+  color:white;
+  cursor: pointer;
+}
+
+.main_content_parent{
+  width: 100vw;
+  background-image: url("background/1.jpg");
+  padding-bottom: 20px;
+}

@@ -1,3 +1,25 @@
+<%= stylesheet_link_tag "shared/footer" , :media => "all" %>
 <footer>
-  フッター
+  <h1 class = "_footer_title"><%= link_to "Runba's Home" , root_path , class: "_footer_title_a" %></h1>
+  <div class = "_footer_body">
+    <div class = "_footer_creation">
+      <p class = "_footer_section_title">創作物</p>
+      <%= render partial: "shared/simple_link" , locals: {image: "stickman_war.png" , title: "棒バトチャレンジ" , link: nil} %>
+      <%= render partial: "shared/simple_link" , locals: {image: nil , title: "投稿動画" , link: nil} %>
+    </div>
+    <div class = "_footer_function">
+      <p class = "_footer_function_title _footer_section_title">機能</p>
+      <%= link_to "グループチャット" , new_request_path , class: "_footer_function_detail" %>
+      <%= link_to "棒バトチャレンジ攻略ページ" , new_request_path , class: "_footer_function_detail" %>
+      <%= link_to "プログラミング学習記録" , new_request_path , class: "_footer_function_detail" %>
+    </div>
+    <div class = "_footer_support">
+      <p class = "_footer_section_title">サポート</p>
+      <%= link_to "日常用ツイッター" , "https://twitter.com/Runba105" , class: "_footer_function_detail" %>
+      <%= link_to "棒バトチャレンジ用ツイッター" , "https://twitter.com/RunbaGame" , class: "_footer_function_detail" %>
+      <%= link_to "プログラミング学習用ツイッター" , "https://twitter.com/Runba31" , class: "_footer_function_detail" %>
+      <%= link_to "リクエスト" , new_request_path , class: "_footer_function_detail" %>
+
+    </div>
+  </div>
 </footer>

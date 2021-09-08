@@ -1,0 +1,16 @@
+<%# フッターの部分で呼び出したことがある %>
+<%= stylesheet_link_tag "shared/simple_link" , :media => "all" %>
+
+  <div class = "simple_link_links">
+    <%= link_to link , class: "simple_link_a" do %>
+      <% if image != nil %>
+        <%= image_tag image , alter: "#{image}という画像はありません" , class: "simple_link_image" %>
+      <% else %>
+        <%= image_tag "picture_not_find.png" , class: "simple_link_image" %>
+      <% end %>
+
+      <div class = "simple_link_explain">
+        <p class = "simple_link_title_text"><%= title %></p>
+      </div>
+    <% end %>
+  </div>
