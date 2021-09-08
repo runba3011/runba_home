@@ -1,0 +1,23 @@
+<%# フッターの部分で呼び出したことがある %>
+<%= stylesheet_link_tag "shared/stage_link" , :media => "all" %>
+
+  <div class = "_stage_link_links">
+
+    <%= link_to link , class: "_stage_link_a" , id: id do %>
+      <% if image != nil %>
+        <% if individual_class == nil %>
+          <% individual_class = "_stage_link_default_image" %>
+        <% end %>
+
+        <div class = "_stage_link_image_box , <%= individual_class %>" ></div>
+      <% else %>
+        <%= image_tag "stickman_war_stage/default.png" , class: "_stage_link_image_bo" %>
+        <div class = "_stage_link_image_box" style='background-image:image_url("stickman_war_stage/default.png");' ></div>
+      <% end %>
+
+      <div class = "_stage_link_explain">
+        <p class = "_stage_link_stage_number"><%= stage_number %></p>
+        <p class = "_stage_link_stage_name"><%= stage_name %></p>
+      </div>
+    <% end %>
+  </div>
