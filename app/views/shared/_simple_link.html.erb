@@ -1,8 +1,10 @@
 <%# フッターの部分で呼び出したことがある %>
-<%= stylesheet_link_tag "shared/simple_link" , :media => "all" %>
+<%# <%= stylesheet_link_tag "shared/simple_link" , :media => "all" %>
+<%# application.html.erb内で↑を呼んでいるので、個別でクラス名などを与えれば上書きをすることができる %>
 
-  <div class = "_simple_link_links">
-    <%= link_to link , class: "_simple_link_a" do %>
+  <div class = "_simple_link_links <%= individual_class %>">
+
+    <%= link_to link , class: "_simple_link_a" , id: id do %>
       <% if image != nil %>
         <%= image_tag image , alter: "#{image}という画像はありません" , class: "_simple_link_image" %>
       <% else %>
@@ -10,7 +12,7 @@
       <% end %>
 
       <div class = "_simple_link_explain">
-        <p class = "_simple_link_title_text"><%= title %></p>
+        <%= title %>
       </div>
     <% end %>
   </div>
