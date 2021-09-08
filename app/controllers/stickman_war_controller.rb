@@ -1,5 +1,21 @@
 class StickmanWarController < ApplicationController
   def show
+    if params[:id] == "basic"
+      @stage_number1 = "ステージ１−８"
+      @stage_name1 = nil
+      
+      @stage_number2 = "ステージまだ作ってない"
+      @stage_name2 = nil
+      
+      @stage_number3 = "ステージまだ作ってない"
+      @stage_name3 = nil
+      
+    elsif params[:id] == "challenge"
+
+    elsif params[:id] == "bonus"
+
+    end
+
     render "stickman_war/#{params[:id]}"
   end
 
@@ -15,7 +31,5 @@ class StickmanWarController < ApplicationController
 
     # @explain_title4 = "棒バトチャレンジとは？"
     # @explain_detail4 = "ルンバ氏が作成した、「棒人間バトルチャレンジ」の略称。制作者ですら元々の名称が棒人間バトルチャレンジであるということを忘れることがある。"
-
-    
   end
 end

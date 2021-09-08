@@ -1,0 +1,52 @@
+._stage_link_links{
+  width: 90%;
+  display:flex;
+  justify-content: center;
+  margin: 10px 0px 0px 0px;
+  min-height: 150px;
+  border: 1px solid rgb(230, 230, 230);
+  padding: 5px;
+}
+
+._stage_link_a{
+  width:100%;
+  display:flex;
+  text-decoration:none;
+  color:black;
+}
+
+._stage_link_image{
+  width: 40%;
+  background-size: cover;
+}
+
+._stage_link_explain{
+  width:70%;
+  margin: auto;
+  font-size:14px;
+  text-align: center;
+}
+
+._stage_link_explain_text{
+  padding:0 30px;
+}
+
+._stage_link_link_text{
+  margin-top: 10px;
+}
+
+._stage_link_default_image{
+  background-image: image_url("stickman_war_stage/default.png");
+}
+
+._stage_link_image_box{
+  width: 40%;
+}
+
+._stage_link_stage_number{
+  font-size: 25px;
+}
+
+._stage_link_stage_name{
+  font-size: 22px;
+}

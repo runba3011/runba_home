@@ -33,6 +33,7 @@ header{
   margin: auto;
   background-color: rgba(255, 255, 255, 0.6);
   max-width: 1000px;
+  padding-bottom: 20px;
 }
 
 .only_border{
@@ -42,6 +43,7 @@ header{
 }
 
 .common_simple_button{
+  display:inline-block;
   padding:5px 8px;
   border-radius: 3px;
   background-color: rgb(169, 178, 255);
@@ -52,7 +54,6 @@ header{
 .main_content_parent{
   width: 100vw;
   background-image: url("background/1.jpg");
-  padding-bottom: 20px;
 }
 
 .section_title{
