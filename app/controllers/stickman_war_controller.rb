@@ -1,14 +1,14 @@
 class StickmanWarController < ApplicationController
   def show
     if params[:id] == "basic"
-      @stage_number1 = "１−８"
-      @stage_name1 = "なんだったっけ"
+      @stage_number1 = "ステージ１−８"
+      @stage_name1 = nil
       
-      @stage_number2 = "まだ作ってない"
-      @@stage_name2 = "たくさんあると見栄えが良くなるから残しておく  ゆるして"
+      @stage_number2 = "ステージまだ作ってない"
+      @stage_name2 = nil
       
-      @stage_number3 = "まだ作ってない"
-      @@stage_name3 = "たくさんあると見栄えが良くなるから残しておく  ゆるして"
+      @stage_number3 = "ステージまだ作ってない"
+      @stage_name3 = nil
       
     elsif params[:id] == "challenge"
 

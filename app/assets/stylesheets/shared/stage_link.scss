@@ -4,6 +4,8 @@
   justify-content: center;
   margin: 10px 0px 0px 0px;
   min-height: 150px;
+  border: 1px solid rgb(230, 230, 230);
+  padding: 5px;
 }
 
 ._stage_link_a{
@@ -41,10 +43,10 @@
   width: 40%;
 }
 
-._stage_link_stage_name{
-
+._stage_link_stage_number{
+  font-size: 25px;
 }
 
-._stage_link_stage_number{
-  
+._stage_link_stage_name{
+  font-size: 22px;
 }

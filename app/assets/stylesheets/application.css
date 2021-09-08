@@ -43,6 +43,7 @@ header{
 }
 
 .common_simple_button{
+  display:inline-block;
   padding:5px 8px;
   border-radius: 3px;
   background-color: rgb(169, 178, 255);
