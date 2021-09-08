@@ -32,11 +32,18 @@ header{
   width: 80%;
   margin: auto;
   background-color: rgb(250, 250, 250);
+  max-width: 1000px;
 }
 
 .only_border{
   width:90%;
   border-bottom: 1px solid rgb(155, 155, 155);
   margin:3px auto 5px;
-  
+}
+
+.common_simple_button{
+  padding:5px 8px;
+  border-radius: 3px;
+  background-color: rgb(169, 178, 255);
+  color:white;
 }

@@ -1,24 +1,19 @@
 <%# 引数 link: リンク先 , title: 表示するタイトル , image: 表示する画像の名前、画像はapp > assets > images に入れておく %>
 <%# 現時点ではlinkとimageはnil %>
+<%= stylesheet_link_tag "shared/link" , :media => "all" %>
 
-<% if link != nil %>
-  <div class = "links">
-    <%= link_to link  do %>
+  <div class = "_link_links">
+    <%= link_to link , class: "_link_a" do %>
       <% if image != nil %>
-        <%= image_tag image , alter: "#{image}という画像はありません" %>
+        <%= image_tag image , alter: "#{image}という画像はありません" , class: "_link_image" %>
+      <% else %>
+        <%= image_tag "picture_not_find.png" , class: "_link_image" %>
       <% end %>
-      <div><%= title %>
+
+      <div class = "_link_explain">
+        <p class = "_link_title_text"><%= title %></p>
+        <p class = "_link_explain_text"><%= explain %></p>
+        <p class = "_link_link_text common_simple_button"> >>ページへ移動する</p>
       </div>
     <% end %>
   </div>
-<% else %>
-  <div class = "links">
-    <%= link_to  do %>
-      <% if image != nil %>
-        <%= image_tag image , alter: "#{image}という画像はありません" %>
-      <% end %>
-      <div><%= title %>
-      </div>
-    <% end %>
-  </div>
-<% end %> 
