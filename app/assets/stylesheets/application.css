@@ -46,4 +46,5 @@ header{
   border-radius: 3px;
   background-color: rgb(169, 178, 255);
   color:white;
+  cursor: pointer;
 }
