@@ -2,13 +2,13 @@
 <%= render partial: "shared/header/movie_header" %>
 <div class = "main_content_parent">
   <div class = "main_content">
-    <h4 class = "section_title">動画コーナー</h4>
+    <p class = "section_title">動画コーナー</p>
     <div class = "only_border"></div>
 
-    <h4 class = "small_section_title">おすすめ動画</h4>
+    <p class = "small_section_title">おすすめ動画</p>
     <%= render partial: "shared/movies/reccomend_movie_link" , locals: {movies: @reccomend_movies} %>
 
-    <h4 class = "section_title">投稿動画一覧</h4>
+    <p class = "section_title">投稿動画一覧</p>
     <div class = "all_movie_show">
       <%= render partial: "shared/movies/movie_link" , locals: {movies: @movies} %>
     </div>
