@@ -7,6 +7,8 @@
 
 ._comment_information_box{
   border-bottom:1px solid rgb(214, 214, 214);
+  display: flex ; 
+  justify-content: space-between;
 }
 
 ._comment_user_name{
@@ -18,4 +20,8 @@
   display: inline;
   margin-left: 10px;
   color:rgb(139, 139, 139);
+}
+
+._comment_delete{
+  padding-right: 10px;
 }
