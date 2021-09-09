@@ -1,3 +1,10 @@
 .small_section_title{
   width: 90%;
 }
+
+.all_movie_show{
+  display: flex;
+  justify-content: space-around;
+  flex:auto;
+  flex-wrap: wrap;
+}

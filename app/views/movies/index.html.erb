@@ -9,8 +9,8 @@
     <%= render partial: "shared/movies/reccomend_movie_link" , locals: {movies: @reccomend_movies} %>
 
     <h4 class = "section_title">投稿動画一覧</h4>
-    
-    <%= render partial: "shared/movies/movie_link" , locals: {movies: @movies} %>
-
+    <div class = "all_movie_show">
+      <%= render partial: "shared/movies/movie_link" , locals: {movies: @movies} %>
+    </div>
   </div>
 </div>
