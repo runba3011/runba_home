@@ -26,6 +26,7 @@ Rails.application.config.assets.precompile += %w(
   stickman_war_detail/comment
 
   movies/index
+  movies/show
   movies/reccomend_movie_link
   movies/movie_link
   movies/common
