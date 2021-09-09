@@ -1,12 +1,29 @@
+<%= render partial: "shared/header/stickman_war_header"  %>
 
-<%= render partial: @show_page_path %>
+<div class = "main_content_parent">
+  <div class = "main_content">
+    <%= stylesheet_link_tag "stickman_war_common/templete" %>
+    <%= render partial: @show_page_path %>
 
-<%= render partial: "stickman_war_detail/comment" , locals: {comments: @comments } %>
 
-<% if user_signed_in? %>
-  <%= render partial: "shared/errors" , locals: {model: @comment} %>
-  <%= form_with model: @comment , url: @create_path, local: true  do |f| %>
-    <%= f.text_area :text %>
-    <%= f.submit "送信" %>
-  <% end %>
-<% end %>
+
+    <h3 class = "small_section_title">コメント</h3>
+    <div class = "text_box all_comment_box">
+      <%= render partial: "stickman_war_detail/comment" , locals: {comments: @comments } %>
+    </div>
+    <div class = "comment_box">
+    <% if user_signed_in? %>
+      <%= render partial: "shared/errors" , locals: {model: @comment} %>
+      <%= form_with model: @comment , url: @create_path, local: true  do |f| %>
+        <%= f.text_area :text , class: "comment_text_box" %>
+        <%= f.submit "送信" ,  class: "comment_submit_btn" %>
+      <% end %>
+    <% else %>
+
+    <% end %>
+    </div>
+
+  </div>
+</div>
+
+<%= stylesheet_link_tag "stickman_war_detail/show" , :media => "all" %>

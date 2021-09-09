@@ -1,3 +1,33 @@
-// Place all the styles related to the groups controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.comment_box{
+  width: 80%;
+  margin: auto;
+}
+
+.comment_text_box{
+  width: 90%;
+  height:150px;
+  margin: auto;
+  padding:5px 10px;
+}
+
+.comment_submit_btn{
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+  padding:5px 30px;
+  background-color: rgb(160, 225, 255);
+  background: linear-gradient(to bottom ,  rgb(203, 243, 255), rgb(0, 195, 255));
+  border:none;
+  border: 1px solid black;
+  border-radius: 3px;
+  
+  color:rgb(0, 0, 0);
+}
+
+.comment_submit_btn:active{
+  background: linear-gradient(to top ,  rgb(56, 209, 255), #61daff);
+}
+
+.all_comment_box{
+  margin-bottom: 30px;
+}
