@@ -12,39 +12,21 @@
       <p class = "small_section_title">ルンバ氏の一言</p>
       <p class = "explain"><%= "　#{@movie.explain}" %></p>
 
-      <%= form_with class: "comment_objects" , model: @movie_comment ,  url: movie_movie_comments_path(@movie , @movie_comment), local: true  do |f| %>
+      <%= form_with  class: "comment_objects" , model: @movie_comment ,  url: movie_movie_comments_path(@movie , @movie_comment), local: true  do |f| %>
         <% unless user_signed_in? %>
           <%= f.text_field :text , readonly: true ,  disable: true , value: "ユーザー登録かサインインしないとコメントできません" %>
         <% else %>
-          <%= f.text_area :text , value: @textarea_inside , class: "comment_text_area" %>
+          <%= f.text_area :text , id: "use_adjust" , value: @textarea_inside , class: "comment_text_area" %>
           <%= f.submit "送信" , class: "comment_submit_btn common_simple_button" %>
         <% end %>
       <% end %>
 
-      <script>
-      //textareaの要素を取得
-      const textarea = document.getElementsByClassName("comment_text_area");
-      //textareaのデフォルトの要素の高さを取得
-      let clientHeight = textarea.clientHeight;
-
-      console.log(textarea);
-
-      //textareaのinputイベント
-      textarea.addEventListener('input', ()=>{
-        //textareaの要素の高さを設定（rows属性で行を指定するなら「px」ではなく「auto」で良いかも！）
-        textarea.style.height = clientHeight + 'px';
-        //textareaの入力内容の高さを取得
-        let scrollHeight = textarea.scrollHeight;
-        //textareaの高さに入力内容の高さを設定
-        textarea.style.height = scrollHeight + 'px';
-      });
-      </script>
-
       <% @movie.movie_comments.each do |comment| %>
         <p class = "comment_user_name"><%= comment.user.nickname %></p>
         <p class = "comment_text"><%= "　#{comment.text}" %></p>
+        <% binding.pry %>
       <% end %>
-    
+
       
     </div>
   </div>
