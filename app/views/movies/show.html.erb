@@ -22,9 +22,11 @@
       <% end %>
 
       <% @movie.movie_comments.each do |comment| %>
-        <p class = "comment_user_name"><%= comment.user.nickname %></p>
-        <p class = "comment_text"><%= "　#{comment.text}" %></p>
-        <%= h(comment.text).gsub(/\n|\r\n/, "<br>").html_safe %>
+        <div class = "single_comment_set">
+          <p class = "comment_user_name"><%= comment.user.nickname %></p>
+          <p class = "comment_text"><%= h(comment.text).gsub(/\n|\r\n/, "<br>").html_safe %></p>
+        </div>
+        
       <% end %>
 
       

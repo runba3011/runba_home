@@ -25,10 +25,6 @@
   margin-bottom: 30px;
 }
 
-.comment_user_name{
-  font-size: 18px;
-}
-
 .small_section_title{
   width: 100%;
 }
@@ -45,3 +41,19 @@
   display: block;
   margin-top: 5px;
 }
+
+.single_comment_set{
+  border: 1px solid black;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.comment_text{
+  max-height: 300px;
+  overflow: scroll;
+}
+
+.comment_user_name{
+  font-size: 18px;
+}
+
