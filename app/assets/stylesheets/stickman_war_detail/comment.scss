@@ -1,0 +1,21 @@
+._comment_single_box{
+  padding: 5px 20px;
+  border: 1px solid rgba(207, 207, 207, 0.315);
+  margin: 0px 5px 10px;
+  min-height: 80px;
+}
+
+._comment_information_box{
+  border-bottom:1px solid rgb(214, 214, 214);
+}
+
+._comment_user_name{
+  font-size: 18px;
+  display: inline;
+}
+
+._comment_created_time{
+  display: inline;
+  margin-left: 10px;
+  color:rgb(139, 139, 139);
+}

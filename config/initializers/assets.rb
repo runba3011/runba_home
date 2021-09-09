@@ -21,6 +21,7 @@ Rails.application.config.assets.precompile += %w(
   stickman_war/index
   stickman_war/show
   stickman_war_detail/show
+  stickman_war_detail/comment
   reset_field_with_errors
 )
 # Precompile additional assets.

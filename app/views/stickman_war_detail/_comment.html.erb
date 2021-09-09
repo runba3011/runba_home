@@ -1,6 +1,9 @@
+<%= stylesheet_link_tag "stickman_war_detail/comment" , :media => "all" %>
 <% comments.each do |comment| %>
-  <div>
-    <%= comment.user.nickname %>
-    <%= comment.text %>
+  <div class = "_comment_single_box">
+    <div class = "_comment_information_box">
+        <h3 class = "_comment_user_name"><%= comment.user.nickname %></h3><h3 class = "_comment_created_time"><%= comment.created_at %></h3>
+    </div>    
+    <p><%= "　#{comment.text}" %></p>
   </div>
 <% end %>

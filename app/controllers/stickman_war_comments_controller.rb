@@ -9,7 +9,7 @@ class StickmanWarCommentsController < ApplicationController
       @comments = StickmanWarComment.where(stage_type: params[:stickman_war_id] , stage_id: params[:stickman_war_detail_id])
       @create_path = stickman_war_stickman_war_detail_stickman_war_comments_path(params[:stickman_war_id] , params[:stickman_war_detail_id]) 
       @show_page_path = "stickman_war_detail/#{params[:stickman_war_id]}/stage#{params[:stickman_war_detail_id]}"
-      @comments = StickmanWarComment.where(stage_type: params[:stickman_war_id] , stage_id: params[:stickman_war_detial_id])
+      # binding.pry
       render "stickman_war_detail/show"
     end
   end
