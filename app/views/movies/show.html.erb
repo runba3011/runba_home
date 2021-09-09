@@ -24,7 +24,7 @@
       <% @movie.movie_comments.each do |comment| %>
         <p class = "comment_user_name"><%= comment.user.nickname %></p>
         <p class = "comment_text"><%= "　#{comment.text}" %></p>
-        <% binding.pry %>
+        <%= h(comment.text).gsub(/\n|\r\n/, "<br>").html_safe %>
       <% end %>
 
       
