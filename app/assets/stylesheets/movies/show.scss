@@ -1,3 +1,59 @@
-// Place all the styles related to the groups controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.movie_title{
+  font-size: 30px;
+  border-bottom: 1px solid black;
+  width: 95%;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  padding-left: 5px;
+}
+
+.under_content{
+  width: 80%;
+  margin: auto;
+}
+
+.movie{
+  width: 100%;
+  // main_contentの横幅を変えたなら、↓のvwも変更する、変更しないとはみ出していたり小さすぎたりする現象が発生する
+  height: calc(80vw / 16 * 9);
+  max-height: calc(1000px / 16 * 9);
+}
+
+.explain{
+  padding : 10px 0 5px;
+  border-bottom: 1px solid rgb(202, 202, 202);
+  margin-bottom: 30px;
+}
+
+.small_section_title{
+  width: 100%;
+}
+
+.comment_text_area{
+  width: 80%;
+  margin: auto;
+  display: block;
+  min-height: 100px;
+}
+
+.comment_submit_btn{
+  margin: auto;
+  display: block;
+  margin-top: 5px;
+}
+
+.single_comment_set{
+  border: 1px solid rgb(199, 199, 199);
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.comment_text{
+  max-height: 300px;
+  overflow: scroll;
+}
+
+.comment_user_name{
+  font-size: 18px;
+}
+

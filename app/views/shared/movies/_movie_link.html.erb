@@ -1,14 +1,17 @@
 <%# 引数 link: リンク先 , title: 表示するタイトル , image: 表示する画像の名前、画像はapp > assets > images に入れておく %>
 <%# 現時点ではlinkとimageはnil %>
+<%= stylesheet_link_tag "movies/movie_link" , :media => "all" %>
 
 <% movies.each do |movie| %>
-  <div class = "links">
-    <%= link_to movie_path(movie)  do %>
+    <%= link_to movie_path(movie) , class: "_movie_a" do %>
       <% if movie.image != nil %>
-        <%= image_tag image , alter: "#{movie.image}という画像はありません" %>
+        <%= image_tag image , class: "_movie_image" %>
+      <% else %>
+        <%= image_tag "youtube/default.jpeg" , class: "_movie_image" %>
       <% end %>
-      <div><%= movie.title %>
+      <div class = "_movie_text">
+        <p class = "_movie_title"><%= movie.title %></p>
+        <p class = "_movie_link common_simple_button">動画を見る >></p>
       </div>
     <% end %>
-  </div>
 <% end %> 

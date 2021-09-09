@@ -10,18 +10,27 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 
 Rails.application.config.assets.precompile += %w( 
   top/index
+
   shared/link
   shared/footer
   shared/simple_link
   shared/common_header
   shared/picture_and_explain
   shared/stage_link
+
   stickman_war_common/stickman_war_header
   stickman_war_common/templete
   stickman_war/index
   stickman_war/show
   stickman_war_detail/show
   stickman_war_detail/comment
+
+  movies/index
+  movies/show
+  movies/reccomend_movie_link
+  movies/movie_link
+  movies/common
+
   reset_field_with_errors
 )
 # Precompile additional assets.

@@ -1,19 +1,35 @@
 <%= render partial: "shared/header/movie_header" %>
+<%= stylesheet_link_tag "movies/show" , :media => "all" %>
 
-<h3><%= @movie.title %></h3>
-<iframe width="950" height="534" src="https://www.youtube.com/embed/<%= @movie.link %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<p><%= @movie.explain %></p>
+<div class = "main_content_parent">
+  <div class = "main_content">
+  
+    <h3 class = "section_title movie_title"><%= @movie.title %></h3>
+    <iframe class = "movie" src="https://www.youtube.com/embed/<%= @movie.link %>" title="YouTube video player" frameborder="0" scrolling="no" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<% @movie.movie_comments.each do |comment| %>
-  <%= comment.user.nickname %>
-  <%= comment.text %>
-<% end %>
 
-<%= form_with model: @movie_comment ,  url: movie_movie_comments_path(@movie , @movie_comment), local: true  do |f| %>
-  <% unless user_signed_in? %>
-    <%= f.text_field :text , readonly: true ,  disable: true , value: "ユーザー登録かサインインしないとコメントできません" %>
-  <% else %>
-    <%= f.text_area :text , value: @textarea_inside %><br>
-    <%= f.submit "送信" %>
-  <% end %>
-<% end %>
+    <div class = "under_content">
+      <p class = "small_section_title">ルンバ氏の一言</p>
+      <p class = "explain"><%= "　#{@movie.explain}" %></p>
+
+      <%= form_with  class: "comment_objects" , model: @movie_comment ,  url: movie_movie_comments_path(@movie , @movie_comment), local: true  do |f| %>
+        <% unless user_signed_in? %>
+          <%= f.text_field :text , readonly: true ,  disable: true , value: "ユーザー登録かサインインしないとコメントできません" %>
+        <% else %>
+          <%= f.text_area :text , id: "use_adjust" , value: @textarea_inside , class: "comment_text_area" %>
+          <%= f.submit "送信" , class: "comment_submit_btn common_simple_button" %>
+        <% end %>
+      <% end %>
+
+      <% @movie.movie_comments.each do |comment| %>
+        <div class = "single_comment_set">
+          <p class = "comment_user_name"><%= comment.user.nickname %></p>
+          <p class = "comment_text"><%= h(comment.text).gsub(/\n|\r\n/, "<br>").html_safe %></p>
+        </div>
+        
+      <% end %>
+
+      
+    </div>
+  </div>
+</div>
