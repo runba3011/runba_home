@@ -7,14 +7,19 @@
 
     <%= render partial: "stickman_war_detail/comment" , locals: {comments: @comments } %>
 
+    <div class = "comment_box">
     <% if user_signed_in? %>
       <%= render partial: "shared/errors" , locals: {model: @comment} %>
       <%= form_with model: @comment , url: @create_path, local: true  do |f| %>
-        <%= f.text_area :text %>
-        <%= f.submit "送信" %>
+        <%= f.text_area :text , class: "comment_text_box" %>
+        <%= f.submit "送信" ,  class: "comment_submit_btn" %>
       <% end %>
+    <% else %>
+
     <% end %>
+    </div>
 
   </div>
 </div>
 
+<%= stylesheet_link_tag "stickman_war_detail/show" , :media => "all" %>

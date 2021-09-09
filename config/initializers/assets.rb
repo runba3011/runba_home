@@ -20,6 +20,8 @@ Rails.application.config.assets.precompile += %w(
   stickman_war_common/templete
   stickman_war/index
   stickman_war/show
+  stickman_war_detail/show
+  reset_field_with_errors
 )
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
