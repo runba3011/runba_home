@@ -3,7 +3,7 @@
   <div class = "_comment_single_box">
     <div class = "_comment_information_box">
       <div class = "_comment_information_box_user_time">
-        <h3 class = "_comment_user_name"><%= comment.user.nickname %></h3><h3 class = "_comment_created_time"><%= comment.created_at %></h3>
+        <p class = "_comment_user_name"><%= comment.user.nickname %></p><p class = "_comment_created_time"><%= comment.created_at %></p>
       </div>
       <div class = "_comment_information_box_actions">
         <%= link_to "削除" , stickman_war_stickman_war_detail_stickman_war_comment_path(@stickman_war_stage_type , @stickman_war_stage_number ,  comment) , method: :delete , class: "_comment_delete" %>
