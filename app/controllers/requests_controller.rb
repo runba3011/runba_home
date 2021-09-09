@@ -2,6 +2,7 @@ class RequestsController < ApplicationController
   before_action :only_redirect_to_users_path , unless: :user_signed_in? , except: :show
   before_action :check_params , only: :show
   before_action :creater_auth , only: :show
+  before_action :set_is_group_true
 
   def new
     @request = Request.new
@@ -40,5 +41,9 @@ class RequestsController < ApplicationController
     authenticate_or_request_with_http_basic do |username , password|
       username == ENV["RUNBA_HOME_USER"] && password == ENV["RUNBA_HOME_PASSWORD"]
     end
+  end
+
+  def set_is_group_true
+    @is_group = true
   end
 end

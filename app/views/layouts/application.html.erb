@@ -14,7 +14,7 @@
     <%= stylesheet_link_tag "shared/common_header" , :media => "all"  %>
     <%= yield %>
 
-    <% if @is_group == false %>
+    <% if @is_group == false && @is_request == false %>
       <%= render partial: "shared/footer" %>
     <% end %>
     
