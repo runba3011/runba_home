@@ -1,0 +1,32 @@
+
+._movie_image{
+  width: 35%;
+}
+
+._movie_a{
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  color: black;
+  cursor: default;
+}
+
+._movie_text{
+  width: 65%;
+  text-align: center;
+
+}
+
+._movie_title {
+  font-size: 14px;
+  padding-bottom: 5px;
+}
+
+._movie_link{
+  background-color: red;
+}
+
+._movie_link:active{
+  background-color: rgba(255, 0, 0, 0.411);
+}

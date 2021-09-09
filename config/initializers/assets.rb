@@ -25,8 +25,10 @@ Rails.application.config.assets.precompile += %w(
   stickman_war_detail/show
   stickman_war_detail/comment
 
-  movies/common
   movies/index
+  movies/reccomend_movie_link
+  movies/movie_link
+  movies/common
 
   reset_field_with_errors
 )
