@@ -7,6 +7,8 @@
 
     <%= render partial: "stickman_war_detail/comment" , locals: {comments: @comments } %>
 
+
+    <h3 class = "small_section_title">コメント</h3>
     <div class = "comment_box">
     <% if user_signed_in? %>
       <%= render partial: "shared/errors" , locals: {model: @comment} %>
