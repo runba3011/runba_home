@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
           
   with_options presence: true do
-    validates :nickname
+    validates :nickname , length: {maximum: 25}
     validates :account_name , length: {minimum: 4 , maximum: 25}
   end
   validates :account_name , uniqueness: true , on: :update

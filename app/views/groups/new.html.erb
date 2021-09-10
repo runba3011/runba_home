@@ -14,35 +14,37 @@
           <%= f.text_area :explain %>
         </div>
 
-        <div class = "single_box">
-          <p>メンバー：<input type="number" class = "member_amount">人</p>
-          
-        </div>
-
         <%= f.label :user , "追加するユーザー" %><br>
           <input type="hidden" name= "group_group_user_relation[user_ids][]" value= <%= current_user.id %> >
           <input type="hidden" name= "group_group_user_relation[authority_ids][]" value = "5" >
 
         <div class = "members_box single_box">
-          <select class="authority_select" name="group_group_user_relation[user_ids][]">
-            <% @users.all.each do |user| %>
-              <option value = <%= user.id %> ><%= user.nickname %></option>
-            <% end %>
-          </select>
+          <div class = "member_information_box">
           
-          <div class = "authority_box">
-            <%= f.label :authority_id , "権限：" %>
-            <select class="authority_select" name="group_group_user_relation[authority_ids][]">
-              <% @authorities.each do |authority| %>
-                <option value = <%= authority[:id] %>><%= authority[:name] %></option>
+            <select class="authority_select" name="group_group_user_relation[user_ids][]">
+              <% @users.all.each do |user| %>
+                <option value = <%= user.id %> ><%= user.nickname.slice(0,13) %></option>
               <% end %>
             </select>
-            <%# 上のselectは、↓ を参考に作った ↓のもののコメントアウトを外すことはまずない %>
-            <%# <%= f.collection_select(:authority_id , Authority.all , :id , :name , {} , {class: "authority_select"} ) %>
+          
+            <div class = "authority_box">
+              <%= f.label :authority_id , "権限：" %>
+              <select class="authority_select" name="group_group_user_relation[authority_ids][]">
+                <% @authorities.each do |authority| %>
+                  <option value = <%= authority[:id] %>><%= authority[:name] %></option>
+                <% end %>
+              </select>
+              <%# 上のselectは、↓ を参考に作った ↓のもののコメントアウトを外すことはまずない %>
+              <%# <%= f.collection_select(:authority_id , Authority.all , :id , :name , {} , {class: "authority_select"} ) %>
+            </div>
           </div>
+
+          <p class = "common_simple_button add_member_button delete_member_button">このメンバーを除外する</p>
         </div>
 
-      <%= f.submit "作成する" , class: "common_simple_button" %>
+        <p class = "add_member_button common_simple_button">メンバーを増やす</p><br>
+
+      <%= f.submit "作成する" , class: "common_simple_button create_button" , id: "add_member" %>
       <% end %>
   </div>
 </div>

@@ -37,17 +37,41 @@
 }
 
 .single_box{
-  // border: 1px solid black;
+  border: 1px solid black;
   margin-bottom: 30px;
 }
 
-.members_box{
+.member_information_box{
   display: flex;
   justify-content: center;
   margin-top: 10px;
+  padding-bottom: 5px;
 }
 
 .member_amount{
   width: 50px;
   margin: 0 5px;
+}
+
+.add_member_button{
+  background-color:rgb(0, 129, 0);
+  box-shadow: 0px 2px 0 0 rgb(1, 36, 0);
+  position:relative;
+  top: 0px;
+}
+
+.delete_member_button{
+  background-color:rgb(150, 0, 0);
+  box-shadow: 0px 2px 0 0 rgb(83, 0, 0);
+  position:relative;
+  top: 0px;
+}
+
+.add_member_button:active{
+  top:2px;
+  box-shadow: none;
+}
+
+.create_button{
+  margin-top:10px;
 }
