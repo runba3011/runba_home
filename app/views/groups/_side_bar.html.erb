@@ -1,13 +1,19 @@
 <%= stylesheet_link_tag "groups/side_bar" , :media => "all" %>
 
 <div class = "_side_bar">
+  <div class = "_side_bar_head">
+    <h3>チャットルーム</h3>
+  </div>
 
-<h3>チャットルーム</h3>
-<h3>所属しているルーム名</h3>
-<% user.groups.each do |group| %>
-  <%= link_to group.name , group_path(group) %>
-<% end %>
+  <div class = "side_bar_center">
+    <h3>所属しているルーム名</h3>
+    <% user.groups.each do |group| %>
+      <%= link_to group.name , group_path(group) %>
+    <% end %>
+  </div>
 
-<%= link_to "ルームを作成する" , new_group_path %><br>
-<%= link_to "トップページへ戻る" , "/" %>
+  <div class = "side_bar_bottom">
+    <%= link_to "ルームを作成する" , new_group_path %><br>
+    <%= link_to "トップページへ戻る" , "/" %>
+  </div>
 </div>
