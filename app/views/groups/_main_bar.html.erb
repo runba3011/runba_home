@@ -3,13 +3,13 @@
 <div class = "_main_bar">
   <div class = "top _main_bar_top">
 <% if group != nil %>
-  <p><%= group.name %></p>
+  <p class = "_main_bar_group_name"><%= group.name %></p>
   <% if authority >= 2  %>
-    <%= link_to "編集" %>
+    <%= link_to "編集" , root_path , class: "_main_bar_edit_button _main_bar_button" %>
   <% end %>
 
   <% if authority == 5 %>
-    <%= link_to "グループ削除" , group_path(group) , method: :delete %>
+    <%= link_to "グループ削除" , group_path(group) , method: :delete , class: "_main_bar_delete_button _main_bar_button" %>
   <% end %>
 <% end %>
 

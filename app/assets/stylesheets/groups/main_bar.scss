@@ -3,3 +3,30 @@
   width: calc(100vw - 300px);
   background-color: red;
 }
+
+._main_bar_top{
+  background-color: rgb(1, 16, 82);
+}
+
+._main_bar_button{
+  display: inline-block;
+  width: 80px;
+  height: 30px;
+  background-color: red;
+}
+
+._main_bar_edit_button{
+
+}
+
+._main_bar_delete_button{
+
+}
+
+._main_bar_center{
+  background-color: rgb(52, 73, 168);
+}
+
+._main_bar_bottom{
+  background-color: rgb(226, 231, 255);
+}

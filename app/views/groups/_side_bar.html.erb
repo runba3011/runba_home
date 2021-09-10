@@ -6,6 +6,7 @@
   </div>
 
   <div class = "_side_bar_center hide_scroll_bar center">
+    <%= link_to current_user.nickname , "/" , class: "_side_bar_user_name " %>
     <p>所属しているルーム名</p>
     <% user.groups.each do |group| %>
       <%= link_to group.name , group_path(group) , class: "_side_bar_group_name" %>
@@ -30,6 +31,5 @@
   <div class = "_side_bar_bottom hide_scroll_bar bottom">
     <%= link_to "ルームを作成する" , new_group_path , class: "_side_bar_create_group _side_bar_bottom_single" %>
     <%= link_to "トップページへ戻る" , "/" , class: "_side_bar_back  _side_bar_bottom_single" %>
-    <%= link_to current_user.nickname , "/" , class: "_side_bar_user_name  _side_bar_bottom_single" %>
   </div>
 </div>
