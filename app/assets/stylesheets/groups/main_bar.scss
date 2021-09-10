@@ -58,3 +58,36 @@
 ._main_bar_bottom{
   background-color: rgb(226, 231, 255);
 }
+
+._main_bar_form{
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding:1vh 10px;
+}
+
+._main_bar_form_text_area{
+  height: 90%;
+  width : 100%;
+  padding: 5px 15px;
+  overflow: scroll;
+}
+
+._main_bar_form_image_button{
+  text-align: center;
+  width: 80px;
+  margin: 0 20px;
+  background-color:blue;
+}
+
+._main_bar_form_image_button:active{
+  background-color:rgb(116, 116, 235);
+}
+
+._main_bar_form_submit{
+  background-color:rgb(255, 153, 0);
+}
+
+._main_bar_form_submit:active{
+  background-color:rgb(255, 213, 151);
+}

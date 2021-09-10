@@ -12,7 +12,7 @@
       </div>
 
       <% if message.text != nil %>
-        <%= message.text %>
+        <%= h(message.text).gsub(/\n|\r\n/, "<br>").html_safe %>
       <% else %>
         <p>メッセージは削除されました</p>
       <% end %>
