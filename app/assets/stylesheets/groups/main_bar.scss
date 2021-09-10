@@ -48,7 +48,12 @@
 
 ._main_bar_center{
   background-color: rgb(52, 73, 168);
+  padding: 15px;
+  color: white;
 }
+
+// メッセージ用のCSSは部分テンプレート用のファイルとして分離
+
 
 ._main_bar_bottom{
   background-color: rgb(226, 231, 255);

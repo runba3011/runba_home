@@ -1,0 +1,41 @@
+._messages_single_message{
+  margin-bottom: 15px;
+}
+
+._messages_message_information{
+  display: flex;
+  align-items: center;
+}
+
+._messages_user_information{
+  margin-right: 20px;
+}
+
+._messages_created_at{
+  color:rgb(163, 163, 163);
+  margin: 0px;
+}
+
+._messages_message_delete{
+  color: rgba(255, 255, 255, 0.363);
+  text-decoration: none;
+  margin-left: 10px;
+  padding: 3px 10px;
+  border-radius: 5px;
+}
+
+._messages_message_delete:hover{
+  background-color: rgb(82, 0, 0);
+  transition: 0.3s;
+}
+
+._messages_message_delete:active{
+  background-color: rgb(180, 0, 0);
+  transition: 0.1s;
+}
+
+._messages_only_border{
+  margin: 0 0 15px;
+  border-bottom:1px dotted rgba(255, 255, 255, 0.459);
+
+}
