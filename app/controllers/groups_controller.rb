@@ -15,16 +15,9 @@ class GroupsController < ApplicationController
 
   def new
     @group_group_user_relation = GroupGroupUserRelation.new
-    @nil_and_users = []
-    @nil_user = User.new
-    @users = User.where.not(id: current_user.id)
-    # binding.pry
-    @nil_and_users.push(@nil_user)
-    @nil_and_users.push(@users)
-    @authorities = []
-    4.times do |i|
-      @authorities.unshift(Authority.data.detect{|o| o[:id] == i + 1})
-    end
+    
+    @nil_and_users = set_all_users
+    @authorities = set_authorities(5)
   end
 
   def create
@@ -33,6 +26,8 @@ class GroupsController < ApplicationController
       @group_group_user_relation.save
       redirect_to groups_path
     else
+      @authorities = set_authorities(5)
+      @nil_and_users = set_all_users
       render :new
     end
   end
@@ -51,6 +46,25 @@ class GroupsController < ApplicationController
   end
 
   private 
+
+  def set_all_users
+    nil_and_users = []
+    nil_user = User.new
+    users = User.where.not(id: current_user.id)
+    nil_and_users.push(nil_user)
+    users.each do |user|
+      nil_and_users.push(user)
+    end
+    return nil_and_users
+  end
+
+  def set_authorities(authority_level)
+    authorities = []
+    (authority_level-1).times do |i|
+      authorities.unshift(Authority.data.detect{|o| o[:id] == i + 1})
+    end
+    return  authorities
+  end
 
   def check_logined
     if !user_signed_in?

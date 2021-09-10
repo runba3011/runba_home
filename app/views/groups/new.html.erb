@@ -33,12 +33,14 @@ function delete_member(element){
           <div class = "member_information_box">
           
             <select class="authority_select" name="group_group_user_relation[user_ids][]">
-    <% @nil_and_users.each do |user| %>
-      <% if user.id != nil %>
-        <option value = <%= user.id %> ><%= user.nickname %></option>
-      <% else %>
-      <% end %>
-    <% end %>
+              <% @nil_and_users.each do |user| %>
+                <% if user.id != nil %>
+                  <option value = <%= user.id %> ><%= user.nickname.slice(0,9) %></option>
+                <% else %>
+                  <option value = nil ><%= "ユーザーを選択してください" %></option>
+
+                <% end %>
+              <% end %>
             </select>
           
             <div class = "authority_box">

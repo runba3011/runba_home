@@ -16,10 +16,13 @@
     <% end %>
   </div>
 
-  <div class = "center _main_bar_center">
+  <div class = "center _main_bar_center hide_scroll_bar">
     <% if group != nil %>
     <% if is_show == true %>
       <%= render partial: "messages" , locals: {group: group} %>
+      <% if group.users.length == 1 %>
+        <p>このルームにはあなたしかいません。メモ帳としてでも使ってください。</p>
+      <% end %>
     <% else %>
       <%= render partial: "edit_body" , locals: {group: group} %>
     <% end %>
