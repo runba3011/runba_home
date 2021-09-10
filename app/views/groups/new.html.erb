@@ -1,5 +1,18 @@
 <%= stylesheet_link_tag "groups/new" , :media => "all" %>
 
+<script>
+function delete_member(element){
+  console.log("クリックはされています");
+  console.log(element.id);
+  delete_object = element.parentNode;
+  console.log("delete_object");
+  delete_object.remove();
+  // if(document.URL.match(/groups/) ){
+  //   console.log("削除ボタン");
+  // };
+}
+</script>
+
 <div class = "background">
     <div class = "center_object">
       <p class = "title">ルームを作成する</p>
@@ -40,12 +53,12 @@
 
           </div>
 
-          <p class = "common_simple_button add_member_button delete_member_button" onClick = "add_member()">このメンバーを除外する</p>
+          <p class = "common_simple_button add_member_button delete_member_button" id = "delete_button0" onClick="delete_member(this)">このメンバーを除外する</p>
         </div>
 
         <p class = "add_member_button common_simple_button" id = "add_member">メンバーを増やす</p><br>
 
-      <%= f.submit "作成する" , class: "common_simple_button create_button" , id: "add_member" %>
+        <%= f.submit "作成する" , class: "common_simple_button create_button" , id: "add_member" %>
       <% end %>
   </div>
 </div>
