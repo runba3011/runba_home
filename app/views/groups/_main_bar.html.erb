@@ -2,39 +2,36 @@
 
 <div class = "_main_bar">
   <div class = "top _main_bar_top">
-<% if group != nil %>
-  <p class = "_main_bar_group_name"><%= group.name %></p>
-  <% if authority >= 2  %>
-    <%= link_to "編集" , root_path , class: "_main_bar_edit_button _main_bar_button" %>
-  <% end %>
+    <% if group != nil %>
+      <p class = "_main_bar_group_name"><%= group.name %></p>
+      <% if authority >= 2  %>
+        <%= link_to "編集" , root_path , class: "_main_bar_edit_button _main_bar_button" %>
+      <% end %>
 
-  <% if authority == 5 %>
-    <%= link_to "グループ削除" , group_path(group) , method: :delete , class: "_main_bar_delete_button _main_bar_button" %>
-  <% end %>
-<% end %>
-
+      <% if authority == 5 %>
+        <%= link_to "グループ削除" , group_path(group) , method: :delete , class: "_main_bar_delete_button _main_bar_button" %>
+      <% end %>
+    <% end %>
   </div>
+
   <div class = "center _main_bar_center">
-
-  <% if group != nil %>
-  <% if is_show == true %>
-    <%= render partial: "messages" , locals: {group: group} %>
-  <% else %>
-    <%= render partial: "edit_body" , locals: {group: group} %>
+    <% if group != nil %>
+    <% if is_show == true %>
+      <%= render partial: "messages" , locals: {group: group} %>
+    <% else %>
+      <%= render partial: "edit_body" , locals: {group: group} %>
+    <% end %>
   <% end %>
-<% end %>
-
   </div>
+
   <div class = "bottom _main_bar_bottom">
-
-  <% if is_show == true %>
-  <%= form_with url: "/groups/#{group.id}/messages" , model: message , method: :post , local: true  do |f| %>
-    <%= f.text_area :text %>
-    <%= f.file_field :image %>
-    <%= f.submit "送信" %>
-  <% end %>
-<% end %>
-
+    <% if is_show == true %>
+      <%= form_with url: "/groups/#{group.id}/messages" , model: message , method: :post , local: true  do |f| %>
+        <%= f.text_area :text %>
+        <%= f.file_field :image %>
+        <%= f.submit "送信" %>
+      <% end %>
+    <% end %>
   </div>
 
 
