@@ -15,7 +15,12 @@ class GroupsController < ApplicationController
 
   def new
     @group_group_user_relation = GroupGroupUserRelation.new
+    @nil_and_users = []
+    @nil_user = User.new
     @users = User.where.not(id: current_user.id)
+    # binding.pry
+    @nil_and_users.push(@nil_user)
+    @nil_and_users.push(@users)
     @authorities = []
     4.times do |i|
       @authorities.unshift(Authority.data.detect{|o| o[:id] == i + 1})

@@ -1,3 +1,4 @@
+
 <%= stylesheet_link_tag "groups/new" , :media => "all" %>
 
 <script>
@@ -32,9 +33,12 @@ function delete_member(element){
           <div class = "member_information_box">
           
             <select class="authority_select" name="group_group_user_relation[user_ids][]">
-              <% @users.all.each do |user| %>
-                <option value = <%= user.id %> ><%= user.nickname.slice(0,13) %></option>
-              <% end %>
+    <% @nil_and_users.each do |user| %>
+      <% if user.id != nil %>
+        <option value = <%= user.id %> ><%= user.nickname %></option>
+      <% else %>
+      <% end %>
+    <% end %>
             </select>
           
             <div class = "authority_box">
@@ -59,4 +63,5 @@ function delete_member(element){
       <% end %>
   </div>
 </div>
+
 
