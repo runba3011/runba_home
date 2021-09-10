@@ -1,4 +1,8 @@
-<h3>ルームを作成する</h3>
+<%= stylesheet_link_tag "groups/new" , :media => "all" %>
+
+<div class = "background">
+  <div class = "center_object">
+  <h3>ルームを作成する</h3>
 <%= form_with url: groups_path , method: :post , model: @group_group_user_relation , local: true do |f| %>
   <%= f.label :name , "グループ名" %><br>
   <%= f.text_field :name  %>
@@ -33,3 +37,6 @@
   <br>
   <%= f.submit "作成する" %>
 <% end %>
+  </div>
+</div>
+

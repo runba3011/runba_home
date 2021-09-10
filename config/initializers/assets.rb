@@ -39,6 +39,7 @@ Rails.application.config.assets.precompile += %w(
   groups/main_bar
   groups/common
   groups/messages
+  groups/new
 
   reset_field_with_errors
 )

@@ -1,6 +1,6 @@
 <%= stylesheet_link_tag "groups/messages" , :media => "all" %>
   <% group.messages.each do |message| %>
-    <div class = "_messages_single_message">
+    <div class = "_messages_single_message hide_scroll_bar">
       <div class = "_messages_message_information">
         <div class = "_messages_user_information">
           <%= message.user.nickname %>
