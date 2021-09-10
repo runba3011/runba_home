@@ -6,19 +6,19 @@
       <%= form_with url: groups_path , method: :post , model: @group_group_user_relation , local: true do |f| %>
         <div class = "name single_box">
           <%= f.label :name , "グループ名" %><br>
-          <%= f.text_field :name  %>
+          <%= f.text_field :name , class: "input_text_field" %>
         </div>
 
         <div class = "explain single_box">
           <%= f.label :explain , "グループの説明" %><br>
-          <%= f.text_area :explain %>
+          <%= f.text_area :explain , class: "input_text_field" %>
         </div>
 
         <%= f.label :user , "追加するユーザー" %><br>
           <input type="hidden" name= "group_group_user_relation[user_ids][]" value= <%= current_user.id %> >
           <input type="hidden" name= "group_group_user_relation[authority_ids][]" value = "5" >
 
-        <div class = "members_box single_box">
+        <div class = "members_box single_box" id = "root_member_box">
           <div class = "member_information_box">
           
             <select class="authority_select" name="group_group_user_relation[user_ids][]">
@@ -37,12 +37,13 @@
               <%# 上のselectは、↓ を参考に作った ↓のもののコメントアウトを外すことはまずない %>
               <%# <%= f.collection_select(:authority_id , Authority.all , :id , :name , {} , {class: "authority_select"} ) %>
             </div>
+
           </div>
 
-          <p class = "common_simple_button add_member_button delete_member_button">このメンバーを除外する</p>
+          <p class = "common_simple_button add_member_button delete_member_button" onClick = "add_member()">このメンバーを除外する</p>
         </div>
 
-        <p class = "add_member_button common_simple_button">メンバーを増やす</p><br>
+        <p class = "add_member_button common_simple_button" id = "add_member">メンバーを増やす</p><br>
 
       <%= f.submit "作成する" , class: "common_simple_button create_button" , id: "add_member" %>
       <% end %>
