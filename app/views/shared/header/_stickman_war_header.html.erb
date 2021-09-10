@@ -1,9 +1,4 @@
 
 <%= stylesheet_link_tag "stickman_war_common/stickman_war_header" , :media => "all" %>
 
-<header>
-  <div class = header_inside>
-    <p class = "header_title">棒バトチャレンジ</p>
-    <%= link_to "アカウント" , users_path , id: "account_link" %>
-  </div>
-</header>
+<%= render partial: "shared/header/root_header" ,locals:{title: "棒バトチャレンジ"} %>

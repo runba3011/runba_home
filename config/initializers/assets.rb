@@ -41,6 +41,8 @@ Rails.application.config.assets.precompile += %w(
   groups/messages
   groups/new
 
+  users/common
+
   reset_field_with_errors
 )
 # Precompile additional assets.
