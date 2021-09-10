@@ -35,6 +35,12 @@ Rails.application.config.assets.precompile += %w(
   requests/request_background
   requests/create
 
+  groups/side_bar
+  groups/main_bar
+  groups/common
+  groups/messages
+  groups/new
+
   reset_field_with_errors
 )
 # Precompile additional assets.
