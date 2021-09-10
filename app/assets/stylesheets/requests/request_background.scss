@@ -1,0 +1,26 @@
+.request_main_content{
+  background-image: image_url("request/1.png");
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top:0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  overflow-y: auto;
+}
+
+.request_center_object{
+  margin: auto;
+  background-color: white;
+  width: 60%;
+  text-align: center;
+  margin-top: 30vh;
+  box-shadow: 5px 5px 4px 0px rgba(0, 0, 0, 0.185);
+  min-height:300px;
+  padding: 5px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-radius: 30px;
+}
