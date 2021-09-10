@@ -1,2 +1,10 @@
-<h3>送信が完了しました。</h3>
-<%= link_to "トップページへ戻る" , root_path %>
+<%= stylesheet_link_tag "requests/request_background" , :media => "all" %>
+<%= stylesheet_link_tag "requests/create" , :media => "all" %>
+
+<div class = "request_main_content">
+    <div class = "request_center_object">
+
+      <p class = "text">送信が完了しました。</p>
+      <%= link_to "トップページへ戻る" , root_path , class: "quit_button" %>
+  </div>
+</div>

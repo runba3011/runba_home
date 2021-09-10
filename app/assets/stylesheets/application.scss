@@ -18,6 +18,10 @@
   box-sizing: border-box;
 }
 
+h1,h2,h3,h4,h5,h6,p{
+  margin:auto;
+}
+
 header{
   width: 100vw;
   height:50px;
@@ -53,7 +57,7 @@ header{
 
 .main_content_parent{
   width: 100vw;
-  background-image: url("background/1.jpg");
+  background-image: image_url("background/1.jpg")
 }
 
 .section_title{

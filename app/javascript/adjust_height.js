@@ -1,5 +1,5 @@
 function adjust_height(){
-  if(document.URL.match(/movies/)){
+  if(document.URL.match(/movies/)|| document.URL.match(/requests/)){
     //textareaの要素を取得
     let textarea = document.getElementById("use_adjust");
     //textareaのデフォルトの要素の高さを取得

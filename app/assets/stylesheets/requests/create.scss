@@ -1,3 +1,32 @@
-// Place all the styles related to the groups controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.request_center_object{
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  padding:90px;
+  height:auto;
+}
+
+.text{
+  margin: 0px auto 20px;
+  font-size: 30px;
+}
+
+.quit_button{
+  text-decoration: none;
+  padding: 5px 20px;
+  color:white;
+  background-color: rgb(38, 96, 255);
+  border-radius: 10px;
+  display:inline-block;
+  margin: 0px auto;
+  top: 0px;
+  box-shadow: 0px 5px 0px blue;
+}
+
+
+.quit_button:active{
+  position:relative;
+  top: 5px;
+  box-shadow:none;
+  transition: 0.2s;
+}

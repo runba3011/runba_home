@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters , if: :devise_controller?
   before_action :find_user , if: :user_signed_in?
-  before_action :set_is_group
+  before_action :set_is_group , :set_is_request
 
   private 
 
@@ -15,5 +15,9 @@ class ApplicationController < ActionController::Base
 
   def set_is_group
     @is_group = false
+  end
+
+  def set_is_request
+    @is_request = false
   end
 end

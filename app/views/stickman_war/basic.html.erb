@@ -2,14 +2,14 @@
 
 <div class = "main_content_parent">
   <div class = "main_content">
-    <h3 class = "section_title">ベーシックステージ</h3>
+    <p class = "section_title">ベーシックステージ</p>
     <div class = "only_border"></div>
     <div class = "links">
-      <h3 class = "stage_title">ステージ１（名前を入れよう）</h3>
+      <p class = "stage_title">ステージ１（名前を入れよう）</p>
       <%= render partial: "shared/stage_link" , locals: {image: "stickman_war_stage/default.png" , stage_number: @stage_number1 , stage_name: @stage_name1 ,  link: stickman_war_stickman_war_detail_path("basic" , "1-8") , explain: "" , individual_class: nil , id: nil , individual_class: nil} %>
       <div class = "only_border stage_select_border"></div>
 
-      <h3 class = "stage_title">ステージ2（名前を入れよう）</h3>
+      <p class = "stage_title">ステージ2（名前を入れよう）</p>
       <%= render partial: "shared/stage_link" , locals: {image: "stickman_war_stage/default.png" , stage_number: @stage_number2 , stage_name: @stage_name2 ,  link: nil , explain: "" , individual_class: nil , id: nil , individual_class: nil} %>
       <div class = "only_border stage_select_border"></div>
 

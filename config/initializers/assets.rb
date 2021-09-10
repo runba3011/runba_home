@@ -31,6 +31,10 @@ Rails.application.config.assets.precompile += %w(
   movies/movie_link
   movies/common
 
+  requests/new
+  requests/request_background
+  requests/create
+
   reset_field_with_errors
 )
 # Precompile additional assets.

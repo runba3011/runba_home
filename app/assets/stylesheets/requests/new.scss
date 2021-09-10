@@ -1,3 +1,78 @@
-// Place all the styles related to the groups controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.request_title{
+  font-weight: bold;
+  font-size: 35px;
+  padding-top: 20px;
+  color:#ca493c;
+  padding-bottom:10px;
+}
+
+.request_form{
+  margin-top:10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit_button{
+  width:80px;
+  padding:5px auto;
+  border:1px solid black;
+  margin-top: 10px;
+}
+
+.text_box{
+  width: 80%;
+  min-height:150px;
+  padding:5px 10px;
+  border-radius: 10px;
+}
+
+.buttons{
+  width: 60%;
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.common_simple_button{
+  padding:auto;
+  margin:auto;
+  background-color: rebeccapurple;
+  line-height: 40px;
+  border-radius: 15px;
+  width: 150px;
+}
+
+.submit_button{
+  text-decoration: none;
+  background-color: rgb(134, 112, 255);
+  color:white;
+  position: relative;
+  top:0px;
+  box-shadow: 0px 5px 0px 0px rgb(0, 81, 255);
+  border:none;
+}
+
+.submit_button:active{
+  box-shadow:none;
+  position: relative;
+  top:5px;
+  transition: 0.1s;
+}
+
+.quit_button{
+  text-decoration: none;
+  background-color: rgb(218, 0, 0);
+  color:white;
+  position: relative;
+  top:0px;
+  box-shadow: 0px 5px 0px 0px rgb(117, 2, 2);
+}
+
+.quit_button:active{
+  box-shadow:none;
+  position: relative;
+  top:5px;
+  transition: 0.1s;
+}
