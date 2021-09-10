@@ -27,8 +27,9 @@
     <% end %>
   </div>
 
-  <div class = "_side_bar_bottom">
-    <%= link_to "ルームを作成する" , new_group_path %><br>
-    <%= link_to "トップページへ戻る" , "/" , class: "_side_bar_back" %>
+  <div class = "_side_bar_bottom hide_scroll_bar">
+    <%= link_to "ルームを作成する" , new_group_path , class: "_side_bar_create_group _side_bar_bottom_single" %>
+    <%= link_to "トップページへ戻る" , "/" , class: "_side_bar_back  _side_bar_bottom_single" %>
+    <%= link_to current_user.nickname , "/" , class: "_side_bar_user_name  _side_bar_bottom_single" %>
   </div>
 </div>

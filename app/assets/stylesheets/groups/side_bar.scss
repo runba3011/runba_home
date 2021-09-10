@@ -22,7 +22,7 @@
 ._side_bar_center{
   padding: 8px;
   overflow: scroll;
-  height: 75vh;
+  height: calc(100vh - 10vh - 18vh);
   background-color: rgb(159, 159, 255);
   border-bottom: 3px solid pink;
 }
@@ -40,11 +40,33 @@
 }
 
 ._side_bar_bottom{
-  height: 15vh;
-  background-color: rgb(35, 35, 136)
+  overflow: scroll;
+  height: 18vh;
+  padding: 10px;
+  background-color: rgb(35, 35, 136);
 }
 
-._side_bar_back{
+._side_bar_bottom_single{
   text-decoration: none;
-  color: white;
+  display: block;
+  color:white;
+  padding: 0.6vh;
 }
+
+// ._side_bar_create_group{
+//   text-decoration: none;
+//   color: white;
+//   padding: 10px 0;
+// }
+
+// ._side_bar_back{
+//   display: block;
+//   text-decoration: none;
+//   color: white;
+// }
+
+// ._side_bar_user_name{
+//   display: block;
+//   color: white;
+//   text-decoration: none;
+// }
