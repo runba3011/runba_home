@@ -1,3 +1,17 @@
 .parent{
   display: flex;
 }
+
+.top{
+  height: 10vh;
+  border-bottom: 3px solid pink;
+}
+
+.center{
+  height: calc(100vh - 10vh - 18vh);
+  border-bottom: 3px solid pink;
+}
+
+.bottom{
+  height: 18vh;
+}
