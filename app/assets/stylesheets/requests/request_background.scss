@@ -1,5 +1,6 @@
 .request_main_content{
-  background-image: image_url("request/background_picture.png");
+
+  background: linear-gradient(rgba(255,255,255,0) , rgba(0, 255, 242, 0.808)) , image_url("request/2.png") ;
   background-size: cover;
   height: 100vh;
   width: 100vw;
@@ -12,8 +13,9 @@
 }
 
 .request_center_object{
+  max-width: 800px;
   margin: auto;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.822);
   width: 60%;
   text-align: center;
   margin-top: 30vh;
