@@ -16,8 +16,11 @@
   <input type="hidden" name= "group_group_user_relation[authority_ids][]" value = "5" >
 
   <select class="authority_select" name="group_group_user_relation[user_ids][]">
-    <% @users.all.each do |user| %>
-      <option value = <%= user.id %> ><%= user.nickname %></option>
+    <% @nil_and_users.each do |user| %>
+      <% if user.id != nil %>
+        <option value = <%= user.id %> ><%= user.nickname %></option>
+      <% else %>
+      <% end %>
     <% end %>
   </select><br>
 
