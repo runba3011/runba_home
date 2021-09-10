@@ -2,11 +2,11 @@
 
 <div class = "_side_bar">
   <div class = "_side_bar_head">
-    <h3>チャットルーム</h3>
+    <p class = "_side_bar_group_title">チャットルーム</p>
   </div>
 
   <div class = "_side_bar_center">
-    <h3>所属しているルーム名</h3>
+    <p>所属しているルーム名</p>
     <% user.groups.each do |group| %>
       <%= link_to group.name , group_path(group) %>
     <% end %>
@@ -14,6 +14,6 @@
 
   <div class = "_side_bar_bottom">
     <%= link_to "ルームを作成する" , new_group_path %><br>
-    <%= link_to "トップページへ戻る" , "/" %>
+    <%= link_to "トップページへ戻る" , "/" , class: "_side_bar_back" %>
   </div>
 </div>
