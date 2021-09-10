@@ -1,0 +1,70 @@
+._side_bar{
+  height: 100vh;
+  width: 250px;
+  background-color:blue;
+  border-right: 1px dotted rgba(255,255,255,0.8);
+  color:white;
+}
+
+._side_bar_group_title{
+  font-size: 20px;
+  color: white;
+}
+
+._side_bar_head{
+  background-color: rgb(0, 0, 43);
+  display: flex ;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px dotted rgba(255,255,255,0.5);
+}
+
+._side_bar_center{
+  padding: 8px;
+  overflow: scroll;
+  background-color: rgb(0, 0, 95);
+  border-bottom: 1px dotted rgba(255,255,255,0.5);
+}
+
+._side_bar_user_name{
+  color:white;
+  display: block;
+  text-decoration: none;
+  padding: 10px 0px;
+}
+
+._side_bar_group_name{
+  display: block;
+  padding: 8px 10px;
+  text-decoration: none;
+}
+
+._side_bar_group_name:hover{
+  background-color: red;
+}
+
+._side_bar_bottom{
+  overflow: scroll;
+  padding: 10px;
+  background-color: rgb(0, 0, 68);
+}
+
+._side_bar_bottom_single{
+  text-decoration: none;
+  display: block;
+  color:white;
+  padding: 0.6vh;
+}
+
+// ._side_bar_create_group{
+//   text-decoration: none;
+//   color: white;
+//   padding: 10px 0;
+// }
+
+// ._side_bar_back{
+//   display: block;
+//   text-decoration: none;
+//   color: white;
+// }
+

@@ -78,3 +78,16 @@ header{
   margin-bottom: 20px;
   border-bottom: 1px solid rgb(224, 224, 224);
 }
+
+.hide_scroll_bar{
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide_scroll_bar::-webkit-scrollbar {
+  display:none;
+}
+
+.hidden{
+  display:none;
+}

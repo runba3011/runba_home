@@ -1,0 +1,17 @@
+.parent{
+  display: flex;
+}
+
+.top{
+  height: 10vh;
+  border-bottom: 1px solid pink;
+}
+
+.center{
+  height: calc(100vh - 10vh - 13vh);
+  border-bottom: 1px solid pink;
+}
+
+.bottom{
+  height: 13vh;
+}

@@ -1,15 +1,21 @@
-<h3>届いたメッセージ一覧</h3>
+<%= stylesheet_link_tag "groups/messages" , :media => "all" %>
   <% group.messages.each do |message| %>
-    <div>
-      <%= message.user.nickname %>
-      <%= message.created_at %>
-      <% if message.text != nil %>
-        <%= message.text %>
-        <% if message.user == @user %>
-          <%= link_to "削除" , group_message_path(group , message) , method: :delete %>
+    <div class = "_messages_single_message hide_scroll_bar">
+      <div class = "_messages_message_information">
+        <div class = "_messages_user_information">
+          <%= message.user.nickname %>
+        </div>
+        <p class = "_messages_created_at"><%= message.created_at %></p>
+        <% if message.user == @user && message.text != nil %>
+          <%= link_to "削除" , group_message_path(group , message) , method: :delete , class: "_messages_message_delete" %>
         <% end %>
+      </div>
+
+      <% if message.text != nil %>
+        <%= h(message.text).gsub(/\n|\r\n/, "<br>").html_safe %>
       <% else %>
         <p>メッセージは削除されました</p>
       <% end %>
     </div>
+    <div class = "_messages_only_border only_border"></div>
   <% end %>

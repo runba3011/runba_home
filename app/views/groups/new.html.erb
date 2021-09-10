@@ -1,38 +1,67 @@
-<h3>ルームを作成する</h3>
-<%= form_with url: groups_path , method: :post , model: @group_group_user_relation , local: true do |f| %>
-  <%= f.label :name , "グループ名" %><br>
-  <%= f.text_field :name  %>
 
-  <%= f.label :explain , "グループの説明" %><br>
-  <%= f.text_area :explain %>
+<%= stylesheet_link_tag "groups/new" , :media => "all" %>
 
-  <h3>メンバーの人数</h3>
-  <input type="number">
+<script>
+function delete_member(element){
+  console.log("クリックはされています");
+  console.log(element.id);
+  delete_object = element.parentNode;
+  console.log("delete_object");
+  delete_object.remove();
+}
+</script>
 
-  <p>招待するユーザー</p>
+<div class = "background">
+    <div class = "center_object">
+      <p class = "title">ルームを作成する</p>
+      <%= form_with url: groups_path , method: :post , model: @group_group_user_relation , local: true do |f| %>
+        <div class = "name single_box">
+          <%= f.label :name , "グループ名" %><br>
+          <%= f.text_field :name , class: "input_text_field" %>
+        </div>
 
-  <%= f.label :user , "追加するユーザー" %><br>
-  <input type="hidden" name= "group_group_user_relation[user_ids][]" value= <%= current_user.id %> >
-  <input type="hidden" name= "group_group_user_relation[authority_ids][]" value = "5" >
+        <div class = "explain single_box">
+          <%= f.label :explain , "グループの説明" %><br>
+          <%= f.text_area :explain , class: "input_text_field" %>
+        </div>
 
-  <select class="authority_select" name="group_group_user_relation[user_ids][]">
+        <%= f.label :user , "追加するユーザー" %><br>
+          <input type="hidden" name= "group_group_user_relation[user_ids][]" value= <%= current_user.id %> >
+          <input type="hidden" name= "group_group_user_relation[authority_ids][]" value = "5" >
+
+        <div class = "members_box single_box" id = "root_member_box">
+          <div class = "member_information_box">
+          
+            <select class="authority_select" name="group_group_user_relation[user_ids][]">
     <% @nil_and_users.each do |user| %>
       <% if user.id != nil %>
         <option value = <%= user.id %> ><%= user.nickname %></option>
       <% else %>
       <% end %>
     <% end %>
-  </select><br>
+            </select>
+          
+            <div class = "authority_box">
+              <%= f.label :authority_id , "権限：" %>
+              <select class="authority_select" name="group_group_user_relation[authority_ids][]">
+                <% @authorities.each do |authority| %>
+                  <option value = <%= authority[:id] %>><%= authority[:name] %></option>
+                <% end %>
+              </select>
+              <%# 上のselectは、↓ を参考に作った ↓のもののコメントアウトを外すことはまずない %>
+              <%# <%= f.collection_select(:authority_id , Authority.all , :id , :name , {} , {class: "authority_select"} ) %>
+            </div>
 
-  <%= f.label :authority_id , "権限レベル" %><br>
-  <select class="authority_select" name="group_group_user_relation[authority_ids][]">
-    <% @authorities.each do |authority| %>
-      <option value = <%= authority[:id] %>><%= authority[:name] %></option>
-    <% end %>
-  </select>
-  <%# 上のselectは、↓ を参考に作った したのもののコメントアウトを外すことはまずない %>
-  <%# <%= f.collection_select(:authority_id , Authority.all , :id , :name , {} , {class: "authority_select"} ) %>
+          </div>
 
-  <br>
-  <%= f.submit "作成する" %>
-<% end %>
+          <p class = "common_simple_button add_member_button delete_member_button" id = "delete_button0" onClick="delete_member(this)">このメンバーを除外する</p>
+        </div>
+
+        <p class = "add_member_button common_simple_button" id = "add_member">メンバーを増やす</p><br>
+
+        <%= f.submit "作成する" , class: "common_simple_button create_button" , id: "add_member" %>
+      <% end %>
+  </div>
+</div>
+
+
