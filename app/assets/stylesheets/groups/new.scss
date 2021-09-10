@@ -1,4 +1,4 @@
-.request_main_content{
+.background{
   background: linear-gradient(rgba(255,255,255,0) , rgba(0, 255, 242, 0.808)) , image_url("request/2.png") ;
   background-size: cover;
   height: 100vh;
@@ -11,7 +11,7 @@
   overflow-y: auto;
 }
 
-.request_center_object{
+.center_object{
   max-width: 800px;
   margin: auto;
   background-color: rgba(255, 255, 255, 0.822);
@@ -24,4 +24,10 @@
   padding-bottom: 30px;
   margin-bottom: 30px;
   border-radius: 30px;
+}
+
+.title{
+  font-size:30px;
+  color:rgb(235, 67, 0);
+  font-weight:bold;
 }

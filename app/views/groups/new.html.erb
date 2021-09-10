@@ -1,42 +1,40 @@
 <%= stylesheet_link_tag "groups/new" , :media => "all" %>
 
 <div class = "background">
-  <div class = "center_object">
-  <h3>ルームを作成する</h3>
-<%= form_with url: groups_path , method: :post , model: @group_group_user_relation , local: true do |f| %>
-  <%= f.label :name , "グループ名" %><br>
-  <%= f.text_field :name  %>
+    <div class = "center_object">
+      <h3 class = "title">ルームを作成する</h3>
+      <%= form_with url: groups_path , method: :post , model: @group_group_user_relation , local: true do |f| %>
+        <%= f.label :name , "グループ名" %><br>
+        <%= f.text_field :name  %>
 
-  <%= f.label :explain , "グループの説明" %><br>
-  <%= f.text_area :explain %>
+        <%= f.label :explain , "グループの説明" %><br>
+        <%= f.text_area :explain %>
 
-  <h3>メンバーの人数</h3>
-  <input type="number">
+        <h3>メンバーの人数</h3>
+        <input type="number">
+        <p>招待するユーザー</p>
+        <%= f.label :user , "追加するユーザー" %><br>
+        <input type="hidden" name= "group_group_user_relation[user_ids][]" value= <%= current_user.id %> >
+        <input type="hidden" name= "group_group_user_relation[authority_ids][]" value = "5" >
 
-  <p>招待するユーザー</p>
+        <select class="authority_select" name="group_group_user_relation[user_ids][]">
+          <% @users.all.each do |user| %>
+            <option value = <%= user.id %> ><%= user.nickname %></option>
+          <% end %>
+        </select><br>
 
-  <%= f.label :user , "追加するユーザー" %><br>
-  <input type="hidden" name= "group_group_user_relation[user_ids][]" value= <%= current_user.id %> >
-  <input type="hidden" name= "group_group_user_relation[authority_ids][]" value = "5" >
+        <%= f.label :authority_id , "権限レベル" %><br>
+        <select class="authority_select" name="group_group_user_relation[authority_ids][]">
+          <% @authorities.each do |authority| %>
+            <option value = <%= authority[:id] %>><%= authority[:name] %></option>
+          <% end %>
+        </select>
+        <%# 上のselectは、↓ を参考に作った ↓のもののコメントアウトを外すことはまずない %>
+        <%# <%= f.collection_select(:authority_id , Authority.all , :id , :name , {} , {class: "authority_select"} ) %>
 
-  <select class="authority_select" name="group_group_user_relation[user_ids][]">
-    <% @users.all.each do |user| %>
-      <option value = <%= user.id %> ><%= user.nickname %></option>
-    <% end %>
-  </select><br>
-
-  <%= f.label :authority_id , "権限レベル" %><br>
-  <select class="authority_select" name="group_group_user_relation[authority_ids][]">
-    <% @authorities.each do |authority| %>
-      <option value = <%= authority[:id] %>><%= authority[:name] %></option>
-    <% end %>
-  </select>
-  <%# 上のselectは、↓ を参考に作った したのもののコメントアウトを外すことはまずない %>
-  <%# <%= f.collection_select(:authority_id , Authority.all , :id , :name , {} , {class: "authority_select"} ) %>
-
-  <br>
-  <%= f.submit "作成する" %>
-<% end %>
+        <br>
+      <%= f.submit "作成する" %>
+      <% end %>
   </div>
 </div>
 
