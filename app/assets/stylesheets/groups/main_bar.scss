@@ -6,21 +6,44 @@
 
 ._main_bar_top{
   background-color: rgb(1, 16, 82);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 30px;
 }
 
 ._main_bar_button{
   display: inline-block;
-  width: 80px;
-  height: 30px;
-  background-color: red;
+  padding: 5px 15px;
+  background-color: rgb(104, 0, 0);
+  border-radius: 3px;
+  text-decoration: none;
+  color: white;
+  border: 1px solid rgb(121, 121, 121);
+}
+
+._main_bar_button:active{
+  background-color: rgb(255, 184, 184);
+}
+
+._main_bar_group_name{
+  margin: 0px;
+  color: white;
+  font-size: 20px;
+}
+
+._main_bar_group_control_buttons{
+  width: 20vw;
+  display: flex; 
+  justify-content: space-around;
 }
 
 ._main_bar_edit_button{
-
+  background-color:rgb(0, 66, 0);
 }
 
-._main_bar_delete_button{
-
+._main_bar_edit_button:active{
+  background-color:rgb(59, 143, 59);
 }
 
 ._main_bar_center{
