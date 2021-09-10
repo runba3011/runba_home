@@ -2,13 +2,6 @@
 
 <div class = "_main_bar">
   <div class = "top _main_bar_top">
-  </div>
-  <div class = "center _main_bar_center">
-  </div>
-  <div class = "bottom _main_bar_bottom">
-  </div>
-
-
 <% if group != nil %>
   <p><%= group.name %></p>
   <% if authority >= 2  %>
@@ -20,9 +13,10 @@
   <% end %>
 <% end %>
 
+  </div>
+  <div class = "center _main_bar_center">
 
-
-<% if group != nil %>
+  <% if group != nil %>
   <% if is_show == true %>
     <%= render partial: "messages" , locals: {group: group} %>
   <% else %>
@@ -30,11 +24,24 @@
   <% end %>
 <% end %>
 
-<% if is_show == true %>
+  </div>
+  <div class = "bottom _main_bar_bottom">
+
+  <% if is_show == true %>
   <%= form_with url: "/groups/#{group.id}/messages" , model: message , method: :post , local: true  do |f| %>
     <%= f.text_area :text %>
     <%= f.file_field :image %>
     <%= f.submit "送信" %>
   <% end %>
 <% end %>
+
+  </div>
+
+
+
+
+
+
+
+
 </div>
