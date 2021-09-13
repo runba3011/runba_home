@@ -12,8 +12,8 @@
     <% else %>
       <p>ログインしていません</p>
       <div class = "inner_account_parent">
-        <li class = "login inner_account"><%= link_to 'ログイン' , new_user_session_path %></li>
-        <li class = "new inner_account"><%= link_to "新規登録" , new_user_registration_path %></li>
+        <%= link_to 'ログイン' , new_user_session_path , class: "login inner_account" %>
+        <%= link_to "新規登録" , new_user_registration_path , class: "new inner_account" %>
       </div>
       <%= link_to "Facebookで登録", user_facebook_omniauth_authorize_path, method: :post , class: "foreign_account Facebook"%>
       <%= link_to "Googleで登録", user_google_oauth2_omniauth_authorize_path, method: :post , class: "foreign_account GoogleOauth2"%>
