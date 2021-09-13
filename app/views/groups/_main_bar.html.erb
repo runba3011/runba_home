@@ -37,19 +37,31 @@
       <div class = "members_show">
         <p>このグループのメンバー</p>
         <% group.users.each do |user| %>
-          
-          <% this_user = GroupUserRelation.find_by(group_id: group.id , user_id: user.id) %>
+          <div class = "single_user">
+            <% this_user = GroupUserRelation.find_by(group_id: group.id , user_id: user.id) %>
 
+            <% if current_user == user %>
+              <p class = "user_name user_text" style="background-color: #9284de;"><%= user.nickname %></p>
+            <% else %>
+              <p class = "user_name user_text"><%= user.nickname %></p>
+            <% end %>
+            <div class = "user_information">
 
-          <p class = "all_user_name"><%= user.nickname %></p>
-          <p>権限:<%= this_user.authority[:name] %></p>
-          <% if current_user == user %>
-            <%= link_to "退出する" , group_group_user_relation_path(group , user) , method: :delete %>
-          <% else %>
-            <%= link_to "権限上昇" , "/groups/#{group.id}/group_user_relations/#{user.id}/up", method: :post %>
-            <%= link_to "権限制限" , "/groups/#{group.id}/group_user_relations/#{user.id}/down" , method: :post %>
-            <%= link_to "追放" , group_group_user_relation_path(group , user) , method: :delete %>
-          <% end %>
+              <% if current_user == user %>
+                <p class="user_text">権限:<%= this_user.authority[:name] %></p>
+                <%= link_to "退出する" , group_group_user_relation_path(group , user) , method: :delete , class: "user_text user_edit_button destroy quit" %>
+              <% else %>
+                <% if this_user.authority_id < @group_user_relation.authority_id %>
+                  <p class="user_text">権限:<%= this_user.authority[:name] %></p>
+                  <%= link_to "権限上昇" , "/groups/#{group.id}/group_user_relations/#{user.id}/up", method: :post , class: "user_text user_edit_button up" %>
+                  <%= link_to "権限制限" , "/groups/#{group.id}/group_user_relations/#{user.id}/down" , method: :post , class: "user_text user_edit_button down" %>
+                  <%= link_to "追放" , group_group_user_relation_path(group , user) , method: :delete , class: "user_text user_edit_button destroy" %>
+                <% else %>
+                  <p class="user_text" style="margin-right: calc( (80px + 3px * 2) * 3);">権限:<%= this_user.authority[:name] %></p>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
         <% end %>
       </div>
 
