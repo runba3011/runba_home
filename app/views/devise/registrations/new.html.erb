@@ -1,3 +1,7 @@
+<%= stylesheet_link_tag "users/common" , :media => "all" %>
+
+<div class = "background">
+  <div class = "center_object">
 <h2>Sign up</h2>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -43,3 +47,7 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+  </div>
+</div>
+
