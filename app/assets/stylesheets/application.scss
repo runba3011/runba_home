@@ -18,6 +18,7 @@
   box-sizing: border-box;
 }
 
+
 h1,h2,h3,h4,h5,h6,p{
   margin:auto;
 }
@@ -113,4 +114,13 @@ header{
   color: white;
   padding: 5px 10px;
   margin-top: 10px;
+}
+
+.breadcrumbs{
+  font-size: 20px;
+}
+
+.bredcrumbs_parent{
+  width: 85%;
+  margin: auto;
 }

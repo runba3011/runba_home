@@ -4,6 +4,10 @@
   <div class = "main_content">
     <p class = "section_title">ベーシックステージ</p>
     <div class = "only_border"></div>
+    <div class = "bredcrumbs_parent">
+      <% breadcrumb :stickman_war_stage , "basic" %>
+      <%= breadcrumbs separator: "&rsaquo; " %>
+    </div>
     <div class = "links">
       <p class = "stage_title">ステージ１（名前を入れよう）</p>
       <%= render partial: "shared/stage_link" , locals: {image: "stickman_war_stage/default.png" , stage_number: @stage_number1 , stage_name: @stage_name1 ,  link: stickman_war_stickman_war_detail_path("basic" , "1-8") , explain: "" , individual_class: nil , id: nil , individual_class: nil} %>

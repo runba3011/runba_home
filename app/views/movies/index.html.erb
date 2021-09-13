@@ -4,6 +4,10 @@
   <div class = "main_content">
     <p class = "section_title">動画コーナー</p>
     <div class = "only_border"></div>
+    <div class = "bredcrumbs_parent">
+      <% breadcrumb :movies %>
+      <%= breadcrumbs separator: "&rsaquo; " %>
+    </div>
 
     <p class = "small_section_title">おすすめ動画</p>
     <%= render partial: "shared/movies/reccomend_movie_link" , locals: {movies: @reccomend_movies} %>
