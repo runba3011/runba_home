@@ -1,3 +1,8 @@
-// Place all the styles related to the groups controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+._main_bar_center{
+  border-bottom: none;
+  height: calc(100vh - 10vh );
+}
+
+._main_bar_bottom{
+  display:none;
+}

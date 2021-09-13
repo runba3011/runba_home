@@ -2,7 +2,7 @@
 
 <div class = "_main_bar">
   <div class = "top _main_bar_top">
-    <% if group != nil %>
+    <% if group != nil && is_edit == false %>
       <p class = "_main_bar_group_name"><%= group.name %></p>
       <div class = "_main_bar_group_control_buttons">
         <% if authority >= 2  %>
@@ -13,13 +13,10 @@
           <%= link_to "グループ削除" , group_path(group) , method: :delete , class: "_main_bar_delete_button _main_bar_button" %>
         <% end %>
       </div>
-    <% else %>
-      <p class = "_main_bar_group_name">グループ編集</p>
+    <% elsif is_edit == true %>
+      <%# グループを編集する際に表示されるもの %>
+      <p class = "_main_bar_group_name">編集：　<%= group.name %></p>
       <div class = "_main_bar_group_control_buttons">
-        <% if authority >= 2  %>
-          <%= link_to "編集" , root_path , class: "_main_bar_edit_button _main_bar_button" %>
-        <% end %>
-
         <% if authority == 5 %>
           <%= link_to "グループ削除" , group_path(group) , method: :delete , class: "_main_bar_delete_button _main_bar_button" %>
         <% end %>
@@ -34,8 +31,17 @@
       <% if group.users.length == 1 %>
         <p>このルームにはあなたしかいません。メモ帳としてでも使ってください。</p>
       <% end %>
-    <% else %>
-      <%= render partial: "edit_body" , locals: {group: group} %>
+    <% elsif is_edit == true %>
+      <%# 編集時に表示される部分  %>
+      <p>あなたの権限: <%= @group_user_relation.authority[:name] %></p>
+      <div class = "members_show">
+        <p>このグループのメンバー</p>
+        <% group.users.each do |user| %>
+          <p class = "all_user_name"><%= user.nickname %></p>
+          <%= link_to  %>
+        <% end %>
+      </div>
+
     <% end %>
   <% end %>
   </div>
