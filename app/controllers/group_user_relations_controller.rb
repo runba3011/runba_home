@@ -1,2 +1,38 @@
 class GroupUserRelationsController < ApplicationController
+  def create
+    
+  end
+
+  def update
+    @operater = GroupUserRelation.find_by(user_id: current_user.id , group_id: params[:group_id])
+    @group_user_relation = GroupUserRelation.find_by(user_id: params[:user_id] , group_id: params[:group_id])
+    # binding.pry
+    if params[:id] == "up" && @operater.authority_id > @group_user_relation.authority_id + 1
+      @group_user_relation.authority_id += 1
+      @group_user_relation.save
+    elsif params[:id] == "down" && @operater.authority_id > @group_user_relation.authority_id && @group_user_relation.authority_id > 1
+      # binding.pry
+      @group_user_relation.authority_id -= 1
+      @group_user_relation.save
+    end
+    redirect_to edit_group_path(params[:group_id])
+  end
+
+  def destroy
+    @group_user_relation = GroupUserRelation.find_by(user_id: params[:id] , group_id: params[:group_id])
+    @operater = GroupUserRelation.find_by(user_id: current_user.id , group_id: params[:group_id])
+    binding.pry
+    if @group_user_relation == @operater || @group_user_relation.authority_id < @operater.authority_id
+      # @group_user_relation.destroy
+    end
+    redirect_to edit_group_path(params[:group_id])
+  end
+
+  private 
+
+
+  def group_user_relation_params
+    params.require(:group_user_relation).permit(:user_id , :authority_id)
+  end
+
 end

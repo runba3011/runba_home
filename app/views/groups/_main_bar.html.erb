@@ -6,7 +6,7 @@
       <p class = "_main_bar_group_name"><%= group.name %></p>
       <div class = "_main_bar_group_control_buttons">
         <% if authority >= 2  %>
-          <%= link_to "編集" , root_path , class: "_main_bar_edit_button _main_bar_button" %>
+          <%= link_to "編集" , edit_group_path(group) , class: "_main_bar_edit_button _main_bar_button" %>
         <% end %>
 
         <% if authority == 5 %>
@@ -37,8 +37,19 @@
       <div class = "members_show">
         <p>このグループのメンバー</p>
         <% group.users.each do |user| %>
+          
+          <% this_user = GroupUserRelation.find_by(group_id: group.id , user_id: user.id) %>
+
+
           <p class = "all_user_name"><%= user.nickname %></p>
-          <%= link_to  %>
+          <p>権限:<%= this_user.authority[:name] %></p>
+          <% if current_user == user %>
+            <%= link_to "退出する" , group_group_user_relation_path(group , user) , method: :delete %>
+          <% else %>
+            <%= link_to "権限上昇" , "/groups/#{group.id}/group_user_relations/#{user.id}/up", method: :post %>
+            <%= link_to "権限制限" , "/groups/#{group.id}/group_user_relations/#{user.id}/down" , method: :post %>
+            <%= link_to "追放" , group_group_user_relation_path(group , user) , method: :delete %>
+          <% end %>
         <% end %>
       </div>
 
