@@ -1,0 +1,24 @@
+.field{
+  margin-bottom: 10px;
+  
+}
+
+.input_title{
+  color: black;
+}
+
+.submit{
+  background-color:rgb(255, 196, 0);
+  box-shadow: 0px 3px 0px 0px rgb(167, 122, 0);
+  position: relative;
+  top: 0px;
+  padding: 3px 30px;
+  border:none;
+  border-radius: 5px;
+}
+
+.submit:active{
+  box-shadow: none;
+  top: 3px;
+  transition: 0.1s;
+}

@@ -1,52 +1,53 @@
 <%= stylesheet_link_tag "users/common" , :media => "all" %>
+<%= stylesheet_link_tag "devise/new" , :media => "all" %>
 
 <div class = "background">
   <div class = "center_object">
-    <h2>Sign up</h2>
+    <h2 class = "title">新規ユーザー登録</h2>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="field">
-        <%= f.label :nickname %><br />
+        <%= f.label :nickname , class: "input_title" %><br />
         <%= f.text_field :nickname , autofocus: true %>
       </div>
 
       <div class="field" style="display:none;">
-        <%= f.label :account_name %><br />
+        <%= f.label :account_name , class: "input_title" %><br />
         <%= f.text_field :account_name , value: "default" %>
       </div>
 
       <div class="field" style="display:none;">
-        <%= f.label :explain %><br />
+        <%= f.label :explain , class: "input_title" %><br />
         <%= f.text_field :explain %>
       </div>
 
       <%# ------------------------------------- %>
 
       <div class="field">
-        <%= f.label :email %><br />
+        <%= f.label :email , class: "input_title" %><br />
         <%= f.email_field :email, autocomplete: "email" %>
       </div>
 
       <div class="field">
-        <%= f.label :password %>
+        <%= f.label :password , class: "input_title" %>
         <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <em class= "input_title">(<%= @minimum_password_length %> 文字以上)</em>
         <% end %><br />
         <%= f.password_field :password, autocomplete: "new-password" %>
       </div>
 
       <div class="field">
-        <%= f.label :password_confirmation %><br />
+        <%= f.label :password_confirmation , class: "input_title" %><br />
         <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
       </div>
 
       <div class="actions">
-        <%= f.submit "Sign up" %>
+        <%= f.submit "登録" , class: "submit" %>
       </div>
     <% end %>
-
-    <%= render "devise/shared/links" %>
+    
+    <%= link_to "やっぱりログインにする", new_session_path(resource_name) , class: "devise_login_path" %>
 
   </div>
 </div>
