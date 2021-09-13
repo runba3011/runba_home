@@ -1,3 +1,11 @@
+footer{
+  display: none;
+}
+
+header{
+  display:none;
+}
+
 .background{
   background: linear-gradient(rgba(255,255,255,0) , rgba(0, 255, 242, 0.425)) , image_url("room.jpg") ;
   background-size: cover;
