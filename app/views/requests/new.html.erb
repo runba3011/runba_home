@@ -2,16 +2,23 @@
 <%= stylesheet_link_tag "requests/new" , :media => "all" %>
 <div class = "request_main_content">
     <div class = "request_center_object">
-      <div class = "request_title">ルンバ氏直通意見箱</div>
-      <p class = "request_text">ここで送信したリクエストなどは直接ルンバ氏に届きます。</p>
-      <p class = "request_text">ばかとかあほとかいう内容を送られると</p>
-      <p class = "request_text">非常に悲しい気持ちになりますのでお控えください。</p>
-      <%= form_with model: @request , local: true , class: "request_form" do |f| %>
-        <%= f.text_area :text , id: "use_adjust" , class: "text_box" %>
-        <div class = "buttons">
-          <%= link_to "やっぱりやめる" , root_path , class: "common_simple_button quit_button" %>
-          <%= f.submit "送信" , class: "common_simple_button submit_button" %>
+      <% if user_signed_in? %>
+        <div class = "request_title">ルンバ氏直通意見箱</div>
+        <p class = "request_text">ここで送信したリクエストなどは直接ルンバ氏に届きます。</p>
+        <p class = "request_text">ばかとかあほとかいう内容を送られると</p>
+        <p class = "request_text">非常に悲しい気持ちになりますのでお控えください。</p>
+        <%= form_with model: @request , local: true , class: "request_form" do |f| %>
+          <%= f.text_area :text , id: "use_adjust" , class: "text_box" %>
+          <div class = "buttons">
+            <%= link_to "やっぱりやめる" , root_path , class: "common_simple_button quit_button" %>
+            <%= f.submit "送信" , class: "common_simple_button submit_button" %>
         </div>
+        <% end %>
+      <% else %>
+        <div class= "request_title">リクエストを送れません</div>
+        <p class = "request_text">まずはログインしてください。</p>
+        <%= link_to "アカウントページへ" , users_path , class: "common_simple_button quit_button redirect_button" %>
+
       <% end %>
   </div>
 </div>

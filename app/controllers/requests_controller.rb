@@ -1,5 +1,4 @@
 class RequestsController < ApplicationController
-  before_action :only_redirect_to_users_path , unless: :user_signed_in? , except: :show
   before_action :check_params , only: :show
   before_action :creater_auth , only: :show
   before_action :set_is_group_true
@@ -31,10 +30,6 @@ class RequestsController < ApplicationController
 
   def request_params
     params.require(:request).permit(:text).merge(user_id: current_user.id)
-  end
-
-  def only_redirect_to_users_path
-    redirect_to users_path
   end
 
   def creater_auth
