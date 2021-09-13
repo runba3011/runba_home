@@ -9,7 +9,10 @@
     <p class = "section_title">トップページ</p>
     <div class = "only_border"></div>
     <%# ここにパンくずリストを表示する %>
-
+    <div class = "bredcrumbs_parent">
+      <% breadcrumb :root %>
+      <%= breadcrumbs separator: "&rsaquo; " %>
+    </div>
 
     <%= render partial: "shared/link" , locals:{image: "stickman_war.png" , link: stickman_war_index_path , title: "棒バトチャレンジ" , explain: @stickman_war_explain} %>
     <%= render partial: "shared/link" , locals:{image: nil , link: movies_path , title: "動画視聴" , explain: @movie_explain} %>

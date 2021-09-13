@@ -3,8 +3,13 @@
 
 <div class = "main_content_parent">
   <div class = "main_content">
+
+    <div class = "bredcrumbs_parent movie_path">
+      <% breadcrumb :movie_show , @movie.title , @movie.id %>
+      <%= breadcrumbs separator: "&rsaquo; " %>
+    </div>
   
-    <p class = "section_title movie_title"><%= @movie.title %></p>
+    <%# <p class = "section_title movie_title"><%= @movie.title </p> %>
     <iframe class = "movie" src="https://www.youtube.com/embed/<%= @movie.link %>" title="YouTube video player" frameborder="0" scrolling="no" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
@@ -24,7 +29,7 @@
       <% @movie.movie_comments.each do |comment| %>
         <div class = "single_comment_set">
           <p class = "comment_user_name"><%= comment.user.nickname %></p>
-          <p class = "comment_text"><%= h(comment.text).gsub(/\n|\r\n/, "<br>").html_safe %></p>
+          <p class = "comment_text hide_scroll_bar"><%= h(comment.text).gsub(/\n|\r\n/, "<br>").html_safe %></p>
         </div>
         
       <% end %>

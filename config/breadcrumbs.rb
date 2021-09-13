@@ -22,12 +22,9 @@ crumb :movies do
   parent :root
 end
 
-crumb :root do
-  link "Home", root_path
-end
-
-crumb :root do
-  link "Home", root_path
+crumb :movie_show do |movie_name , movie_id|
+  link "#{movie_name}", movie_path(movie_id)
+  parent :movies
 end
 
 # crumb :projects do

@@ -3,9 +3,12 @@
 <div class = "main_content_parent">
   <section class = "main_content">
     <%# パンくずリストをここに表示 %>
-
-
     <p class = "section_title">リンク</p>
+    <div class = "bredcrumbs_parent">
+      <% breadcrumb :stickman_war %>
+      <%= breadcrumbs separator: "&rsaquo; " %>
+    </div>
+    
     <div class = "only_border"></div>
     <div class = "links">
       <%= render partial: "shared/simple_link" , locals: {image: nil , title: "ベーシックステージ" , link: stickman_war_path("basic") , id: nil , individual_class: "body_link"} %>
