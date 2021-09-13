@@ -3,12 +3,12 @@ crumb :root do
 end
 
 crumb :stickman_war do
-  link "棒バトチャレンジ", root_path
+  link "棒バトチャレンジ", stickman_war_index_path
   parent :root
 end
 
-crumb :stickman_war_stage do
-  link "ステージ選択", root_path
+crumb :stickman_war_stage do |stage|
+  link "#{stage}ステージ選択", stickman_war_path(stage)
   parent :stickman_war
 end
 
