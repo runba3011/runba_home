@@ -18,7 +18,7 @@ crumb :stickman_war_detail do
 end
 
 crumb :movies do
-  link "動画視聴", root_path
+  link "動画視聴", movies_path
   parent :root
 end
 

@@ -68,7 +68,7 @@ class GroupsController < ApplicationController
 
   def check_logined
     if !user_signed_in?
-      redirect_to users_path
+      render "shared/prease_login"
     end 
   end
 

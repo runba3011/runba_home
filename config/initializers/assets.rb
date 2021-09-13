@@ -18,6 +18,7 @@ Rails.application.config.assets.precompile += %w(
   shared/picture_and_explain
   shared/stage_link
   shared/show_account
+  shared/prease_login
 
   stickman_war_common/stickman_war_header
   stickman_war_common/templete
@@ -46,7 +47,6 @@ Rails.application.config.assets.precompile += %w(
   users/index
 
   devise/common
-
 
   reset_field_with_errors
 )
