@@ -1,12 +1,8 @@
 <%# 横並びにする、上部分に固定する %>
 <%= stylesheet_link_tag "shared/common_header" , :media => "all" %>
 <%= stylesheet_link_tag "top/index", :media => "all" %>
-<header>
-  <div class = header_inside>
-    <p class = "header_title">Runba's Home</p>
-    <%= link_to "アカウント" , users_path , id: "account_link" %>
-  </div>
-</header>
+
+<%= render partial: "shared/header/root_header" , locals: {title: "Runba's Home"} %>
 
 <div class = "main_content_parent">
   <div class = "main_content">

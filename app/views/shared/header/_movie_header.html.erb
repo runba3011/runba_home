@@ -1,9 +1,4 @@
 
 <%= stylesheet_link_tag "movies/common" , :media => "all" %>
 
-<header>
-  <div class = header_inside>
-    <p class = "header_title">動画コーナー</p>
-    <%= link_to "アカウント" , users_path , id: "account_link" %>
-  </div>
-</header>
+<%= render partial: "shared/header/root_header" ,locals:{title: "棒バトチャレンジ"} %>

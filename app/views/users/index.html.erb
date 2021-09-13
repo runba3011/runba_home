@@ -1,10 +1,23 @@
-<% if user_signed_in? %>
-  <li><%= "#{current_user.nickname}でログイン中" %></li>
-  <li><%= link_to 'ログアウト' , destroy_user_session_path , method: :delete %></li>
-<% else %>
-  <p>ログインしていません</p>
-  <li><%= link_to 'ログイン' , new_user_session_path %></li>
-  <li><%= link_to "新規登録" , new_user_registration_path %></li>
-  <li><%= link_to "Facebookで登録", user_facebook_omniauth_authorize_path, method: :post%></li>
-  <li><%= link_to "Googleで登録", user_google_oauth2_omniauth_authorize_path, method: :post%></li>
-<% end %>
+<%= stylesheet_link_tag "users/common" , :media => "all" %>
+<%= stylesheet_link_tag "top/index", :media => "all" %>
+<%= stylesheet_link_tag "users/index" , :media => "all" %>
+<%= render partial: "shared/header/root_header" , locals: {title: "Runba's Home"} %>
+
+<div class = "background">
+  <div class = "center_object">
+    <p class= "title">アカウントページ</p>
+    <% if user_signed_in? %>
+      <li class = "situation">現在、<%= "#{current_user.nickname}でログイン中" %></li>
+      <li><%= link_to 'ログアウト' , destroy_user_session_path , method: :delete , class: "common_simple_button logout_button" %></li>
+    <% else %>
+      <p>ログインしていません</p>
+      <div class = "inner_account_parent">
+        <%= link_to 'ログイン' , new_user_session_path , class: "login inner_account" %>
+        <%= link_to "新規登録" , new_user_registration_path , class: "new inner_account" %>
+      </div>
+      <%= link_to "Facebookで登録", user_facebook_omniauth_authorize_path, method: :post , class: "foreign_account Facebook"%>
+      <%= link_to "Googleで登録", user_google_oauth2_omniauth_authorize_path, method: :post , class: "foreign_account GoogleOauth2"%>
+    <% end %>
+  </div>
+</div>
+
