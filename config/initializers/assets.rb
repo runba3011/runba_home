@@ -43,6 +43,7 @@ Rails.application.config.assets.precompile += %w(
   groups/new
 
   users/common
+  users/index
 
   reset_field_with_errors
 )

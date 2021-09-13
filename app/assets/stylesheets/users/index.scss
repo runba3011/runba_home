@@ -1,3 +1,97 @@
-// Place all the styles related to the groups controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+a{
+  text-decoration: none;
+  color:white;
+}
+
+li{
+  list-style: none;
+}
+
+.title{
+  color:rgb(255, 121, 43);
+  font-weight: bold;
+  font-size: 30px;
+  padding-top: 10px;
+}
+
+
+
+.center_object{
+  padding:30px;
+  align-items: center;
+  max-width:600px;
+}
+
+.logout_button{
+  background-color:rgb(255, 129, 129);
+  box-shadow: 0px 2px 0px 0px rgb(117, 0, 0);
+  position: relative;
+  top:0px;
+  color: white;
+  text-decoration: none;
+}
+
+.situation{
+  padding:30px 0px;
+}
+
+.logout_button:active{
+  background-color:rgb(255, 129, 129);
+  top:2px;
+  box-shadow: none;
+  transition: 0.2s;
+}
+
+.inner_account_parent{
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin:25px auto;
+}
+
+.inner_account{
+  width: 45%;
+  background-color: red;
+  border-radius: 10px;
+  margin:5px 0px;
+  padding: 5px;
+  color: white;
+  text-decoration: none;
+}
+
+.login{
+  background-color: rgb(60, 60, 255);
+}
+
+.new{
+  background-color: rgb(39, 143, 39);
+}
+
+
+.foreign_account{
+  display: block;
+  position:relative;
+  top: 0px;
+  width:80%;
+  background-color: red;
+  border-radius: 10px;
+  margin:0px auto 10px;
+  padding: 5px;
+  color: white;
+  text-decoration: none;
+}
+
+.facebook{
+  background-color: #1877f2;
+  box-shadow:0 3px 0 0 #07499e;
+}
+
+.google{
+  background-color: #DD5144;
+  box-shadow:0 3px 0 0 #7c1e15;
+}
+
+.foreign_account:active{
+  top: 3px;
+  box-shadow: none;
+}
