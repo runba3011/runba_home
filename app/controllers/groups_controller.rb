@@ -34,7 +34,8 @@ class GroupsController < ApplicationController
 
   def edit
     @group = Group.find(params[:id])
-    @is_edit = false
+    @is_edit = true
+    @group_user_relation = GroupGroupUserRelation.find_by()
   end
 
   def update

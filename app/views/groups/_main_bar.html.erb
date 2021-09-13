@@ -13,6 +13,17 @@
           <%= link_to "グループ削除" , group_path(group) , method: :delete , class: "_main_bar_delete_button _main_bar_button" %>
         <% end %>
       </div>
+    <% else %>
+      <p class = "_main_bar_group_name">グループ編集</p>
+      <div class = "_main_bar_group_control_buttons">
+        <% if authority >= 2  %>
+          <%= link_to "編集" , root_path , class: "_main_bar_edit_button _main_bar_button" %>
+        <% end %>
+
+        <% if authority == 5 %>
+          <%= link_to "グループ削除" , group_path(group) , method: :delete , class: "_main_bar_delete_button _main_bar_button" %>
+        <% end %>
+      </div>
     <% end %>
   </div>
 
