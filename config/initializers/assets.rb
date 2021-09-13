@@ -17,6 +17,7 @@ Rails.application.config.assets.precompile += %w(
   shared/common_header
   shared/picture_and_explain
   shared/stage_link
+  shared/show_account
 
   stickman_war_common/stickman_war_header
   stickman_war_common/templete
