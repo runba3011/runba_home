@@ -33,7 +33,6 @@
       <% end %>
     <% elsif is_edit == true %>
       <%# 編集時に表示される部分  %>
-      <p>あなたの権限: <%= @group_user_relation.authority[:name] %></p>
       <div class = "members_show">
         <p>このグループのメンバー</p>
         <% group.users.each do |user| %>
@@ -52,8 +51,14 @@
                 <%= link_to "退出する" , group_group_user_relation_path(group , user) , method: :delete , class: "user_text user_edit_button destroy quit" %>
               <% else %>
                 <% if this_user.authority_id < @group_user_relation.authority_id %>
-                  <p class="user_text">権限:<%= this_user.authority[:name] %></p>
-                  <%= link_to "権限上昇" , "/groups/#{group.id}/group_user_relations/#{user.id}/up", method: :post , class: "user_text user_edit_button up" %>
+                  <% if @group_user_relation.authority_id > this_user.authority_id + 1 %>
+
+                    <p class="user_text">権限:<%= this_user.authority[:name] %></p>
+                    <%= link_to "権限上昇" , "/groups/#{group.id}/group_user_relations/#{user.id}/up", method: :post , class: "user_text user_edit_button up" %>
+
+                  <% else %>
+                    <p class="user_text" style="margin-right: calc( (80px + 3px * 2) * 1);">権限:<%= this_user.authority[:name] %></p>
+                  <% end %>
                   <%= link_to "権限制限" , "/groups/#{group.id}/group_user_relations/#{user.id}/down" , method: :post , class: "user_text user_edit_button down" %>
                   <%= link_to "追放" , group_group_user_relation_path(group , user) , method: :delete , class: "user_text user_edit_button destroy" %>
                 <% else %>
