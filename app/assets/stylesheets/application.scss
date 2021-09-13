@@ -91,3 +91,26 @@ header{
 .hidden{
   display:none;
 }
+
+
+
+.Facebook{
+  display: inline-block;
+  background-color: #1877f2;
+  box-shadow:0 3px 0 0 #07499e;
+  border-radius: 10px;
+}
+
+.GoogleOauth2{
+  display: inline-block;
+  background-color: #DD5144;
+  box-shadow:0 3px 0 0 #7c1e15;
+  border-radius: 10px;
+}
+
+.omniauth_sign{
+  text-decoration: none;
+  color: white;
+  padding: 5px 10px;
+  margin-top: 10px;
+}

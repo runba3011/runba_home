@@ -1,5 +1,5 @@
 <%= stylesheet_link_tag "users/common" , :media => "all" %>
-<%= stylesheet_link_tag "devise/new" , :media => "all" %>
+<%= stylesheet_link_tag "devise/common" , :media => "all" %>
 
 <div class = "background">
   <div class = "center_object">
@@ -47,7 +47,10 @@
       </div>
     <% end %>
     
-    <%= link_to "やっぱりログインにする", new_session_path(resource_name) , class: "devise_login_path" %>
+    <%= link_to "やっぱりログインにする", new_session_path(resource_name) , class: "devise_login_path" %><br>
+
+
+    <%= link_to "戻る" , users_path , class: "back_button" %>
 
   </div>
 </div>

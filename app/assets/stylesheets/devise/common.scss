@@ -1,0 +1,92 @@
+.field{
+  margin-bottom: 10px;
+  
+}
+
+.input_title{
+  color: black;
+}
+
+.submit{
+  background-color:rgb(255, 196, 0);
+  box-shadow: 0px 3px 0px 0px rgb(167, 122, 0);
+  position: relative;
+  top: 0px;
+  padding: 3px 30px;
+  border:none;
+  border-radius: 5px;
+}
+
+.submit:active{
+  box-shadow: none;
+  top: 3px;
+  transition: 0.1s;
+}
+.devise_error_messages{
+  color:rgb(122, 0, 0);
+}
+
+.devise_login_path{
+  background-color: rgb(82, 82, 255);
+  box-shadow: 0px 3px 0px 0px rgb(0, 0, 82);
+  padding: 3px 20px;
+  border-radius: 10px;
+  margin-top: 30px;
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  top: 0px;
+}
+
+.devise_login_path:active{
+  top: 3px;
+  box-shadow: none;
+  transition: 0.1s;
+}
+
+.devise_sign_up_path{
+  background-color: rgb(82, 82, 255);
+  box-shadow: 0px 3px 0px 0px rgb(0, 0, 82);
+  padding: 3px 20px;
+  border-radius: 10px;
+  margin-top: 30px;
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  top: 0px;
+}
+
+.devise_sign_up_path:active{
+  top: 3px;
+  box-shadow: none;
+  transition: 0.1s;
+}
+
+.foreign_account_box{
+  border:1px dotted black;
+  width: 80%;
+  padding: 5px 0px 8px;
+  border-radius: 10px;
+  margin: 10px auto;
+  background-color: rgba(255, 255, 255, 0.897);
+}
+
+.back_button{
+  text-decoration: none;
+  color:white;
+  margin-top: 15px;
+  border-radius: 10px;
+  width: 100px;
+  display: inline-block;
+  background-color: rgb(255, 80, 80);
+  box-shadow: 0px 3px 0px 0px rgb(94, 0, 0);
+  position: relative;
+  top: 0px;
+}
+
+.back_button:active{
+  box-shadow: none;
+  top: 3px;
+}

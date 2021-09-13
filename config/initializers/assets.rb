@@ -44,8 +44,8 @@ Rails.application.config.assets.precompile += %w(
 
   users/common
   users/index
-  
-  devise/new
+
+  devise/common
 
 
   reset_field_with_errors
