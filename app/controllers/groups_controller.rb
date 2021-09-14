@@ -42,7 +42,9 @@ class GroupsController < ApplicationController
   end
 
   def update
-    
+    @group = Group.find(params[:id])
+    @group.update(group_params)
+    redirect_to edit_group_path(@group)
   end
 
   def destroy
@@ -56,6 +58,11 @@ class GroupsController < ApplicationController
   end
 
   private 
+
+  def group_params
+    # 新規作成時はgroup_group_user_relationでsaveを行う
+    params.require(:group).permit(:name , :explain , :image)
+  end
 
   def get_group_from_params
     @group = Group.find(params[:id])
