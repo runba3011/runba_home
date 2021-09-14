@@ -2,13 +2,19 @@
 
 <div class = "_main_bar">
   <div class = "top _main_bar_top">
-    <% if group != nil %>
+    <% if group != nil && is_edit == false %>
       <p class = "_main_bar_group_name"><%= group.name %></p>
       <div class = "_main_bar_group_control_buttons">
-        <% if authority >= 2  %>
-          <%= link_to "編集" , root_path , class: "_main_bar_edit_button _main_bar_button" %>
-        <% end %>
+        <%= link_to "編集" , edit_group_path(group) , class: "_main_bar_edit_button _main_bar_button" %>
 
+        <% if authority == 5 %>
+          <%= link_to "グループ削除" , group_path(group) , method: :delete , class: "_main_bar_delete_button _main_bar_button" %>
+        <% end %>
+      </div>
+    <% elsif is_edit == true %>
+      <%# グループを編集する際に表示されるもの %>
+      <p class = "_main_bar_group_name">編集：　<%= group.name %></p>
+      <div class = "_main_bar_group_control_buttons">
         <% if authority == 5 %>
           <%= link_to "グループ削除" , group_path(group) , method: :delete , class: "_main_bar_delete_button _main_bar_button" %>
         <% end %>
@@ -23,8 +29,165 @@
       <% if group.users.length == 1 %>
         <p>このルームにはあなたしかいません。メモ帳としてでも使ってください。</p>
       <% end %>
-    <% else %>
-      <%= render partial: "edit_body" , locals: {group: group} %>
+    <% elsif is_edit == true %>
+      <%# 編集時に表示される部分,CSSはedit.scssを用いて作成している  %>
+      <div class = "members_show">
+        <p>このグループのメンバー</p>
+        <% group.users.each do |user| %>
+          <div class = "single_user">
+            <% this_user = GroupUserRelation.find_by(group_id: group.id , user_id: user.id) %>
+
+            <% if current_user == user %>
+              <p class = "user_name user_text" style="background-color: #9284de;"><%= user.nickname %></p>
+            <% else %>
+              <p class = "user_name user_text"><%= user.nickname %></p>
+            <% end %>
+            <div class = "user_information">
+
+              <%  button_width = 80
+                  button_margin_total = 3 * 2
+                  single_button_width_total = button_width + button_margin_total
+
+                  if current_user == user
+                    @authority_right_margin = single_button_width_total * 2
+                  elsif this_user.authority_id < @group_user_relation.authority_id
+                    # 自分の権限の方が高い
+                    @authority_right_margin = 0
+                    if 3 <= @group_user_relation.authority_id 
+                      # 自分の権限が３以上であり、追放をすることができる(権限の余白は余白は必要ない)
+                      @authority_right_margin = 0
+                    else
+                      # 自分の権限は表示するユーザーよりも高いが、追放をすることはできない
+                      @authority_right_margin = 0
+                      @level_down_right_margin = single_button_width_total
+                    end
+
+                    if @group_user_relation.authority_id <= this_user.authority_id + 1 
+                      @authority_right_margin = single_button_width_total
+                    end
+                  else
+                    # 自分の権限の方が低い、追放もレベルアップもできないので余白は大きい
+                    @authority_right_margin = single_button_width_total * 3
+                  end
+
+                  # 権限レベルが１の時、これ以上下がらなくなるので特別にマージンを設定する
+                  if current_user != user
+                    if this_user.authority_id == 1
+                      if @group_user_relation.authority_id < 3
+                        # 追放ができないとき
+                        @authority_right_margin = single_button_width_total * 3
+                      else
+                        # 追放ができるとき
+                        @level_up_right_margin = single_button_width_total 
+                      end
+                    else
+                      @level_up_right_margin = 0
+                    end
+                  end
+
+                  # @authority_right_margin: 権限レベルの右のマージン ビューファイルにつけ終わった
+                  # @level_up_right_margin : レベルアップ牡丹の右のマージン、表示するユーザーがレベル１の時のみ使われる
+                  # @level_down_right_margin: レベルダウンの右のマージン、退出させられない時につく つけ終わった
+              %>
+
+              <% if current_user == user %>
+                <%# 自分の欄を表示しているとき %>
+                <p class="user_text show_authority" style = "margin-right: <%= @authority_right_margin %>px;" >権限:<%= this_user.authority[:name] %></p>
+                <%= link_to "退出する" , group_group_user_relation_path(group , user) , method: :delete , class: "user_text user_edit_button destroy" %>
+              <% else %>
+              <%# 余白の量を計算する %>
+
+              <p class="user_text show_authority" style = "margin-right: <%= @authority_right_margin %>px;" >権限:<%= this_user.authority[:name] %></p>
+
+              <% if this_user.authority_id < @group_user_relation.authority_id %>
+              <%# 自分の権限の方が高いとき、レベルアップボタンなどを表示する %>
+                <% if this_user.authority_id + 1 < @group_user_relation.authority_id %>
+                  <%= link_to "権限上昇" , "/groups/#{group.id}/group_user_relations/#{user.id}/up", method: :post , class: "user_text user_edit_button up" , style: "margin-right: #{@level_up_right_margin}px" %>
+                <% end %>
+                <% if this_user.authority_id != 1 %>
+                  <%= link_to "権限制限" , "/groups/#{group.id}/group_user_relations/#{user.id}/down" , method: :post , class: "user_text user_edit_button down" , style: "margin-right: #{@level_down_right_margin}px" %>
+                <% end %>
+                <% if 3 <= @group_user_relation.authority_id %>
+                  <%# 権限が３以上の時、追放ボタンを表示する %>
+                  <%= link_to "追放" , group_group_user_relation_path(group , user) , method: :delete , class: "user_text user_edit_button destroy" %>
+                <% end %>
+              <% end %>
+
+                <%# 元々の複雑な記述 %>
+                <%# 元々の複雑な記述終了 %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+
+        <div class = "new_user">
+          <%= form_with model: @send_group_user_relation ,  url:group_group_user_relations_path(group) , method: :post , local: true, class: "new_user_invite" do |f| %>
+            <p class = "invite_title">新しいユーザーを追加する</p>
+
+            <div class = "single_select_box">
+            <p class = "invite_small_title">追加するユーザー</p>
+              <select class="authority_select" name="group_user_relation[user_id]">
+                <% @nil_and_users.each do |user| %>
+                  <% if user.id != nil %>
+                    <option value = <%= user.id %> ><%= user.nickname.slice(0,9) %></option>
+                  <% else %>
+                    <option value = nil ><%= "ユーザーを選択してください" %></option>
+                  <% end %>
+                <% end %>
+              </select>
+            </div>
+
+            <div class = "single_select_box">
+              <p class = "invite_small_title">権限</p>
+              <div class = "authority_box">
+                <%= f.label :authority_id , "権限：" %>
+                <select class="authority_select" name="group_user_relation[authority_id]">
+                  <% @authorities.each do |authority| %>
+                    <option value = <%= authority[:id] %>><%= authority[:name] %></option>
+                  <% end %>
+                </select>
+                <%# 上のselectは、↓ を参考に作った ↓のもののコメントアウトを外すことはまずない %>
+                <%# <%= f.collection_select(:authority_id , Authority.all , :id , :name , {} , {class: "authority_select"} ) %>
+              </div>
+            </div>
+            <%= f.submit "追加する" , class: "add_member_button" %>
+          <% end %>
+        </div>
+
+        <%# 説明 %>
+        <div class = "authority_explain">
+          <p class = "authority_title">権限レベルとは？</p>
+          <p>それぞれのグループで、<br>どのメンバーがどの権限を持っているかを表している。</p>
+          <div class = "authority_explain_parent">
+            <div class = "authority_explain_single_box">
+              <p class = "authority_explain_small_title level1">レベル１</p>
+              <p class = "authority_explain_detail">なんの権限も持たない。新しくユーザーを招待したり、<br>既存のメンバーを追放するすることすらできない。</p>
+            </div>
+            <div class = "authority_explain_single_box">
+              <p class = "authority_explain_small_title level2">レベル２</p>
+              <p class = "authority_explain_detail">新しくユーザーを招待することができる。</p>
+            </div>
+            <div class = "authority_explain_single_box">
+              <p class = "authority_explain_small_title level3">レベル３</p>
+              <p class = "authority_explain_detail">メンバーの追加、追放が可能。<br>レベル４以上のユーザーを追放することはできない。</p>
+            </div>
+            <div class = "authority_explain_single_box">
+              <p class = "authority_explain_small_title level4">レベル４</p>
+              <p class = "authority_explain_detail">メンバーの追加、追放が可能。<br>レベル５のユーザーを追放することはできない。</p>
+            </div>
+            <div class = "authority_explain_single_box">
+              <p class = "authority_explain_small_title level5">レベル５</p>
+              <p class = "authority_explain_detail">ルームの作成者のみが与えられる権限。<br>メンバーの追加、全てのメンバーの追放が可能。<br>ルームの削除が可能。</p>
+            </div>
+            <div class = "authority_explain_single_box">
+              <p class = "authority_title">共通事項</p>
+              <p class = "authority_explain_detail">自分の権限より低いメンバーの権限を<br>上げたり下げたりすることができる。<br>しかし、権限を自分と同じにまで上げることはできない。</p>
+            </div>
+          </div>
+        </div>
+        <%# 説明終了 %>
+      </div>
+      <%# 編集時に表示される部分終了 %>
     <% end %>
   <% end %>
   </div>
