@@ -75,7 +75,7 @@
                     if this_user.authority_id == 1
                       if @group_user_relation.authority_id < 3
                         # 追放ができないとき
-                        @authority_right_margin = single_button_width_total
+                        @authority_right_margin = single_button_width_total * 3
                       else
                         # 追放ができるとき
                         @level_up_right_margin = single_button_width_total 
