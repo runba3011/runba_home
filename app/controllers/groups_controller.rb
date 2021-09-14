@@ -46,7 +46,13 @@ class GroupsController < ApplicationController
   end
 
   def destroy
-    
+    @group_user_relation = GroupUserRelation.find_by(user_id: current_user.id , group_id: params[:id])
+    binding.pry
+    @group = Group.find(params[:id])
+    if @group_user_relation.authority_id == 5
+      @group.destroy
+    end
+    redirect_to groups_path
   end
 
   private 
