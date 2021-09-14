@@ -32,7 +32,7 @@
         <p>このルームにはあなたしかいません。メモ帳としてでも使ってください。</p>
       <% end %>
     <% elsif is_edit == true %>
-      <%# 編集時に表示される部分  %>
+      <%# 編集時に表示される部分,CSSはedit.scssを用いて作成している  %>
       <div class = "members_show">
         <p>このグループのメンバー</p>
         <% group.users.each do |user| %>
@@ -70,22 +70,25 @@
         <% end %>
 
         <div class = "new_user">
-          <%= form_with model: @send_group_user_relation ,  url:group_group_user_relations_path(group) , method: :post , local: true do |f| %>
-            <p>新しいユーザーを追加する</p>
-            <p>追加するユーザー</p>
-            <select class="authority_select" name="group_user_relation[user_id]">
-              <% @nil_and_users.each do |user| %>
-                <% if user.id != nil %>
-                  <option value = <%= user.id %> ><%= user.nickname.slice(0,9) %></option>
-                <% else %>
-                  <option value = nil ><%= "ユーザーを選択してください" %></option>
+          <%= form_with model: @send_group_user_relation ,  url:group_group_user_relations_path(group) , method: :post , local: true, class: "new_user_invite" do |f| %>
+            <p class = "invite_title">新しいユーザーを追加する</p>
 
+            <div class = "single_select_box">
+            <p class = "invite_small_title">追加するユーザー</p>
+              <select class="authority_select" name="group_user_relation[user_id]">
+                <% @nil_and_users.each do |user| %>
+                  <% if user.id != nil %>
+                    <option value = <%= user.id %> ><%= user.nickname.slice(0,9) %></option>
+                  <% else %>
+                    <option value = nil ><%= "ユーザーを選択してください" %></option>
+                  <% end %>
                 <% end %>
-              <% end %>
-            </select>
+              </select>
+            </div>
 
-            <p>権限</p>
-            <div class = "authority_box">
+            <div class = "single_select_box">
+              <p class = "invite_small_title">権限</p>
+              <div class = "authority_box">
                 <%= f.label :authority_id , "権限：" %>
                 <select class="authority_select" name="group_user_relation[authority_id]">
                   <% @authorities.each do |authority| %>
@@ -94,8 +97,9 @@
                 </select>
                 <%# 上のselectは、↓ を参考に作った ↓のもののコメントアウトを外すことはまずない %>
                 <%# <%= f.collection_select(:authority_id , Authority.all , :id , :name , {} , {class: "authority_select"} ) %>
+              </div>
             </div>
-            <%= f.submit "追加する" %>
+            <%= f.submit "追加する" , class: "add_member_button" %>
           <% end %>
         </div>
       </div>
