@@ -21,7 +21,11 @@ class GroupGroupUserRelation
     group = Group.create(name: name , explain: explain)
     roop_time = 0
     user_ids.length.times do |i|
-      GroupUserRelation.create(group_id: group.id , user_id: user_ids[i] , authority_id: authority_ids[i])
+      # 複数の同じユーザーを追加できないようにするための仕組み
+      @group_user_relation = GroupUserRelation.find_by(group_id: group.id , user_id:user_ids[i])
+      if @group_user_relation == nil
+        GroupUserRelation.create(group_id: group.id , user_id: user_ids[i] , authority_id: authority_ids[i])
+      end
     end
   end
 end
