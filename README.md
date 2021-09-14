@@ -62,7 +62,6 @@ Usersテーブル
 |encrypted_password|string|null: false|パスワード|
 |rank|integer|only_integer|現在のレベル（今後実装）|
 |point|integer|only_integer|所有ポイント（今後実装）|
-|image_name|string| |アイコンの画像、publicディレクトリに保存する|
 |explain|text|text|自己紹介|
 
 - has_many :group_user_relations
@@ -73,6 +72,7 @@ Usersテーブル
 - has_many :requests
 - has_many :movie_comments
 - has_one :sns_credential
+- has_one_attached : image
 
 最初登録する時にはaccount_nameは入力させず、編集する時にのみバリデーションをかける
 
@@ -114,10 +114,10 @@ Groupsテーブル
 
 |column|type|options|explain|
 |-|-|-|-|
-|icon_image|string| |部屋のアイコンの画像、設定されていなければデフォルトの画像|
 |explain|string||グループの説明文|
 |name|string|null: false|グループ名|
 
+- has_one_attached :image
 - has_many :group_user_relations , dependent: :destroy
 - has_many :users , through: :group_user_relation
 - has_many :messages , dependent: :destroy
@@ -134,6 +134,7 @@ Messagesテーブル
 
 - belongs_to :group
 - belongs_to :user
+- has_one_attached :image
 
 Followersテーブル
 --

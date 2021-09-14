@@ -6,7 +6,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :account_name , null: false
       t.integer :rank
       t.integer :point
-      t.string :image_name
       t.string :explain
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
