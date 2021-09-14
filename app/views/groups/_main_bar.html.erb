@@ -120,6 +120,25 @@
           </div>
         <% end %>
 
+        <div class = "authority_explain">
+          <p>権限レベルとは？</p>
+          <p>それぞれのグループで、どのメンバーがどの権限を持っているかを表している。</p>
+          <div class = "authority_explain_single_box">
+            <p class = "authority_explain_small_title">レベル１</p>
+            <p class = "authority_explain_detail">なんの権限も持たない。新しくユーザーを招待したり、既存のメンバーを追放するすることすらできない。</p>
+            <p class = "authority_explain_small_title">レベル２</p>
+            <p class = "authority_explain_detail">新しくユーザーを招待することができる。</p>
+            <p class = "authority_explain_small_title">レベル３</p>
+            <p class = "authority_explain_detail">メンバーの追加、追放が可能。レベル４以上のユーザーを追放することはできない。</p>
+            <p class = "authority_explain_small_title">レベル４</p>
+            <p class = "authority_explain_detail">メンバーの追加、追放が可能。レベル５のユーザーを追放することはできない。</p>
+            <p class = "authority_explain_small_title">レベル５</p>
+            <p class = "authority_explain_detail">ルームの作成者のみが与えられる権限。メンバーの追加、全てのメンバーの追放が可能。ルームの削除が可能。</p>
+            <p>共通事項</p>
+            <p>自分の権限より低いメンバーの権限を上げたり下げたりすることができる。しかし、権限を自分と同じにまで上げることはできない。</p>
+          </div>
+        </div>
+
         <div class = "new_user">
           <%= form_with model: @send_group_user_relation ,  url:group_group_user_relations_path(group) , method: :post , local: true, class: "new_user_invite" do |f| %>
             <p class = "invite_title">新しいユーザーを追加する</p>
