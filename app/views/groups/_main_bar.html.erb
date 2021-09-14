@@ -68,8 +68,38 @@
             </div>
           </div>
         <% end %>
-      </div>
 
+        <div class = "new_user">
+          <%= form_with model: @send_group_user_relation ,  url:group_group_user_relations_path(group) , method: :post , local: true do |f| %>
+            <p>新しいユーザーを追加する</p>
+            <p>追加するユーザー</p>
+            <select class="authority_select" name="group_user_relation[user_id]">
+              <% @nil_and_users.each do |user| %>
+                <% if user.id != nil %>
+                  <option value = <%= user.id %> ><%= user.nickname.slice(0,9) %></option>
+                <% else %>
+                  <option value = nil ><%= "ユーザーを選択してください" %></option>
+
+                <% end %>
+              <% end %>
+            </select>
+
+            <p>権限</p>
+            <div class = "authority_box">
+                <%= f.label :authority_id , "権限：" %>
+                <select class="authority_select" name="group_user_relation[authority_id]">
+                  <% @authorities.each do |authority| %>
+                    <option value = <%= authority[:id] %>><%= authority[:name] %></option>
+                  <% end %>
+                </select>
+                <%# 上のselectは、↓ を参考に作った ↓のもののコメントアウトを外すことはまずない %>
+                <%# <%= f.collection_select(:authority_id , Authority.all , :id , :name , {} , {class: "authority_select"} ) %>
+            </div>
+            <%= f.submit "追加する" %>
+          <% end %>
+        </div>
+      </div>
+      <%# 編集時に表示される部分終了 %>
     <% end %>
   <% end %>
   </div>
