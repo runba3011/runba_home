@@ -28,7 +28,7 @@ class GroupUserRelationsController < ApplicationController
   def destroy
     @group_user_relation = GroupUserRelation.find_by(user_id: params[:id] , group_id: params[:group_id])
     @operater = GroupUserRelation.find_by(user_id: current_user.id , group_id: params[:group_id])
-    if @group_user_relation == @operater || @group_user_relation.authority_id < @operater.authority_id && 3 <= @group_user_relation.authority_id
+    if @group_user_relation == @operater || @group_user_relation.authority_id < @operater.authority_id && 3 <= @operater.authority_id
       @group_user_relation.destroy
     end
     redirect_to edit_group_path(params[:group_id])
