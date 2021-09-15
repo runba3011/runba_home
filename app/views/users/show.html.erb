@@ -35,7 +35,7 @@
           <% if current_user == @user %>
             <div class = "edit_button_parent">
               <%= link_to "編集" , edit_user_path(@user) , class: "edit_button for_only_edit_button" %>
-              <%= link_to "ログアウト" , edit_user_path(@user) , class: "edit_button logout_button" %>
+              <%= link_to "ログアウト" , destroy_user_session_path , class: "edit_button logout_button" %>
             </div>
           <% else %>
             <div class = "edit_button_parent follow_button_parent">
