@@ -18,6 +18,7 @@ class User < ApplicationRecord
   has_many :group_user_relations 
   has_many :groups , through: :group_user_relations
   has_many :messages
+  has_one_attached :image
   
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider , uid: auth.uid).first_or_create
