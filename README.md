@@ -72,7 +72,8 @@ Usersテーブル
 - has_many :requests
 - has_many :movie_comments
 - has_one :sns_credential
-- has_one_attached : image
+- has_one_attached :icon_image
+- has_one_attached :background_image
 
 最初登録する時にはaccount_nameは入力させず、編集する時にのみバリデーションをかける
 

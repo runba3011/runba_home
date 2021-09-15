@@ -3,6 +3,11 @@
     <div class = "_messages_single_message hide_scroll_bar">
       <div class = "_messages_message_information">
         <div class = "_messages_user_information">
+          <% if message.user.icon_image.attached? %>
+            <%= image_tag message.user.icon_image.variant(resize: '500x500') , class: "_message_user_icons" %>
+          <% else %>
+            <%= image_tag "defaults/user_icon_image.png" , class: "_message_user_icons" %>
+          <% end %>
           <%= message.user.nickname %>
         </div>
         <p class = "_messages_created_at"><%= message.created_at %></p>
