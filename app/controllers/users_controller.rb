@@ -14,7 +14,22 @@ class UsersController < ApplicationController
 
   end
 
+  def update
+    if current_user == @user
+      if @user.update(user_params)
+      else
+        render :edit
+        return
+      end
+    end
+    redirect_to user_path(@user)
+  end
+
   private 
+
+  def user_params
+    params.require(:user).permit(:nickname , :background_image , :icon_image, :explain, :account_name)
+  end
 
   def get_user
     @user = User.find(params[:id])
