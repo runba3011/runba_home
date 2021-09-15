@@ -5,7 +5,7 @@
     <% if group != nil && is_edit == false %>
       <div class = "_main_top_icon_title">
         <% if group.image.attached? %>
-          <%= image_tag group.image , class: "_main_group_icon"  %>
+          <%= image_tag group.image.variant(resize: '500x500') , class: "_main_group_icon"  %>
         <% else %>
           <%= image_tag "defaults/group_icon.png" , class: "_main_group_icon" %>
         <% end %>

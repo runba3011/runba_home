@@ -9,7 +9,14 @@
     <%= link_to current_user.nickname , "/" , class: "_side_bar_user_name " %>
     <p>所属しているルーム名</p>
     <% user.groups.each do |group| %>
-      <%= link_to group.name , group_path(group) , class: "_side_bar_group_name" %>
+      <div class = "_side_bar_single_group">
+        <% if group.image.attached? %>
+          <%= image_tag group.image.variant(resize: '500x500') , class: "_side_bar_group_icon" %>
+        <% else %>
+          <%= image_tag "defaults/group_icon.png" , class: "_side_bar_group_icon" %>
+        <% end %>
+        <%= link_to group.name , group_path(group) , class: "_side_bar_group_name" %>
+      </div>
     <% end %>
   </div>
 
