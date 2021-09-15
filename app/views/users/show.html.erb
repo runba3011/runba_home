@@ -17,26 +17,24 @@
       <% end %>
 
       <div class = "icon_and_name_parent">
-
-      <div class = "icon_and_name">
-        <% if @user.icon_image.attached? %>
-          <%= image_tag @user.icon_image , class: "top_image" %>
-        <% else %>
-          <%= image_tag "defaults/user_icon_image.png" , class: "show_user_icon" %>
+        <div class = "icon_and_name">
+          <div class = "show_user_icon_parent">
+            <% if @user.icon_image.attached? %>
+              <%= image_tag @user.icon_image , class: "top_image" %>
+            <% else %>
+              <%= image_tag "defaults/user_icon_image.png" , class: "show_user_icon" %>
+            <% end %>
+            </div>
+          <div class = "names">
+            <p class = "nickname"><%= @user.nickname %></p>
+            <p class = "account_name"><%= @user.account_name %></p>
+          </div>
+        </div>
+        <% if current_user == @user %>
+          <div class = "edit_button_parent">
+            <%= link_to "編集" , edit_user_path(@user) , class: "edit_button" %>
+          </div>
         <% end %>
-        <div class = "names">
-          <p class = "nickname"><%= @user.nickname %></p>
-          <p class = "account_name"><%= @user.account_name %></p>
-        </div>
-      </div>
-
-
-      <% if current_user == @user %>
-        <div class = "edit_button_parent">
-          <%= link_to "編集" , edit_user_path(@user) , class: "edit_button" %>
-        </div>
-      <% end %>
-
       </div>
 
       <div class = "only_border"></div>
