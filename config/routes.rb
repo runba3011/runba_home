@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   }
   root to: "top#index"
   resources :users , only: [:new , :index , :show , :update , :edit] do
-    resources :follow , only: [:create , :destroy]
+    resources :followers , only: [:create , :destroy]
   end
 
   resources :top , only: :index

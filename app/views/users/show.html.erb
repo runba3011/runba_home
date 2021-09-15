@@ -31,22 +31,25 @@
           </div>
         </div>
 
-        <% if current_user == @user %>
-          <div class = "edit_button_parent">
-            <%= link_to "編集" , edit_user_path(@user) , class: "edit_button" %>
-          </div>
-        <% else %>
-          <div class = "edit_button_parent follow_button_parent">
-            <%= link_to "フォロー" , user_follow_index_path(@user) , class: "edit_button follow_button" %>
-          </div>
+        <% if user_signed_in? %>
+          <% if current_user == @user %>
+            <div class = "edit_button_parent">
+              <%= link_to "編集" , edit_user_path(@user) , class: "edit_button for_only_edit_button" %>
+              <%= link_to "ログアウト" , edit_user_path(@user) , class: "edit_button logout_button" %>
+            </div>
+          <% else %>
+            <div class = "edit_button_parent follow_button_parent">
+              <%= link_to "フォロー" , user_followers_path(@user) , method: :post , class: "edit_button follow_button" %>
+            </div>
+          <% end %>
         <% end %>
       </div>
 
       <div class = "only_border"></div>
       <% if @user.explain != "" %>
-        <p class = "information_explain"><%= @user.explain %></p>
+        <p class = "information_explain"><%= @user.explain.gsub(/\n|\r\n/, "<br>").html_safe %>
       <% else %>
-        <p class = "information_explain">自己紹介はまだ作成されていません！
+        <p class = "information_explain nil_explain">自己紹介はまだ作成されていません！
           <% if user_signed_in? %>
             <% if current_user != @user %>
               <br>もし興味があったらチャットなどで伝えてあげよう！

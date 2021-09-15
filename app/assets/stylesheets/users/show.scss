@@ -47,9 +47,10 @@
 }
 
 .edit_button_parent{
-  width: 80px;
+  width: 140px;
   margin:auto;
   margin-right:0px;
+  text-align: center;
 }
 
 .edit_button{
@@ -64,6 +65,9 @@
   position: relative;
 }
 
+.for_only_edit_button{
+  display:block;
+}
 
 .follow_button{
   background-color: rgb(49, 52, 190);
@@ -74,6 +78,13 @@
   width: 120px;
 }
 
+.logout_button{
+  margin-top:5px;
+  background-color:rgb(131, 28, 28);
+  display:inline-block;
+  box-shadow: 0 3px 0 0 rgb(59, 0, 0);
+}
+
 .edit_button:active{
   top:3px;
   box-shadow: none;
@@ -82,6 +93,7 @@
 
 .information_explain{
   min-height: 150px;
+  font-size: 18px;
   // display: block;
 }
 
@@ -95,4 +107,8 @@
   max-width: 80px;
   border-radius: 5px;
   margin:auto;
+}
+
+.nil_explain{
+  color:rgba(0, 0, 0, 0.411);
 }
