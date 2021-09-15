@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :get_user , only: [:show , :edit]
-  before_action :check_same_user , only: :edit
+  before_action :check_same_user , only: [:edit , :update]
   
   def index
     flash[:notice] = nil
