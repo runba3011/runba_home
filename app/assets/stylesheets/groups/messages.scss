@@ -9,9 +9,18 @@
   align-items: center;
 }
 
-._messages_user_information{
-  margin-right: 20px;
+._message_user_icons{
+  width:40px;
+  margin-right:5px;
 }
+
+._messages_user_information{ 
+  margin: auto 0px;
+  margin-right: 20px;
+  align-items: center;
+  display: flex;
+}
+
 
 ._messages_created_at{
   color:rgb(163, 163, 163);

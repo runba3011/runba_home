@@ -1,3 +1,80 @@
-// Place all the styles related to the groups controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.breadcrumbs{
+  padding-top:40px;
+  font-size:18px;
+  width: 90%;
+  margin: auto;
+}
+
+.current{
+  font-size: 30px;
+  display:block;
+}
+
+.only_border{
+  width: 100%;
+}
+
+.user_information{
+  width: 90%;
+  margin: auto;
+}
+
+.top_image{
+  width: 100%;
+}
+
+.icon_and_name_parent{
+  display: flex;
+  flex: auto;
+}
+
+.icon_and_name{
+  display: flex;
+  width: calc(100% - 80px);
+}
+
+.names{
+  margin: auto 0px;
+  padding-left: 2.5vw;
+}
+
+.nickname{
+  font-size: 30px;
+}
+
+.account_name{
+  color: rgb(143, 143, 143);
+}
+
+.edit_button_parent{
+  width: 80px;
+  margin:auto;
+  margin-right:0px;
+}
+
+.edit_button{
+  background-color: green;
+  padding:5px 20px;
+  margin: auto 0px auto 5px;
+  box-shadow: 0 3px 0 0 rgb(0, 58, 0);
+  color:white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.information_explain{
+  min-height: 150px;
+  // display: block;
+}
+
+.show_user_icon_parent{
+  display: flex;
+}
+
+.show_user_icon{
+  width: 100%;
+  min-width: 40px;
+  max-width: 80px;
+  border-radius: 5px;
+  margin:auto;
+}

@@ -3,6 +3,11 @@
     <ul>
       <% model.errors.full_messages.each do |message| %>
         <li class = "error_message">
+          <%  if message == "アカウント名はすでに存在します" 
+                if model.account_name == "default" 
+                  message = "更新時にはアカウント名をdefaultから変更してください"
+                end
+              end %>
           <%= message %>
         </li>
       <% end %>
