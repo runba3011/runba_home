@@ -15,13 +15,17 @@ class FollowersController < ApplicationController
   end
 
   def destroy
-    
+    @follow = Follower.find_by(user_id: current_user.id , following_id: params[:user_id])
+    if @follow != nil
+      @follow.destroy
+    end
+    redirect_to user_path(params[:user_id])
   end
 
   private
 
   def check_logined
-    if user_signed_in?
+    if !user_signed_in?
       redirect_to user_path(params[:user_id])
     end
   end

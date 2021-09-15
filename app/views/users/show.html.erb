@@ -39,7 +39,11 @@
             </div>
           <% else %>
             <div class = "edit_button_parent follow_button_parent">
-              <%= link_to "フォロー" , user_followers_path(@user) , method: :post , class: "edit_button follow_button" %>
+              <% if @check_follow == nil %>
+                <%= link_to "フォロー" , user_followers_path(@user) , method: :post , class: "edit_button follow_button" %>
+              <% else %>
+                <%= link_to "フォロー解除" , user_follower_path(@user , current_user.id) , method: :delete , class: "edit_button follow_button destroy_follow" %>
+              <% end %>
             </div>
           <% end %>
         <% end %>

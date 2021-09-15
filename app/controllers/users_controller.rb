@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def show
-
+    @check_follow = Follower.find_by(user_id: current_user , following_id: params[:id])
   end
 
   def edit 
