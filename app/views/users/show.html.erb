@@ -2,3 +2,13 @@
 <%# <%= stylesheet_link_tag "top/index", :media => "all" %> %>
 <%# <%= stylesheet_link_tag "users/index" , :media => "all" %> %>
 <%# <%= render partial: "shared/header/root_header" , locals: {title: "Runba's Home"} %> %>
+<p>ユーザーの情報</p>
+<p class = "information_title">ニックネーム</p>
+<p class = "information_explain"><%= @user.nickname %></p>
+<p class = "information_title">アカウント名</p>
+<p class = "information_explain"><%= @user.account_name %></p>
+<p class = "information_title">自己紹介</p>
+<p class = "information_explain"><%= @user.explain %></p>
+<% if current_user == @user %>
+  <%= link_to "編集する" , edit_user_path(@user) %>
+<% end %>

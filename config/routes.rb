@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   root to: "top#index"
-  resources :users , only: [:new , :index , :show , :update ]
+  resources :users , only: [:new , :index , :show , :update , :edit]
 
   resources :top , only: :index
   resources :stickman_war , only: [:index , :show] do
