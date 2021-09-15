@@ -9,7 +9,7 @@ end
 
 crumb :user_edit do |user|
   link "編集" , edit_user_path(user)
-  parent :user_show
+  parent :user_show , user
 end
 
 crumb :stickman_war do

@@ -1,3 +1,53 @@
-// Place all the styles related to the groups controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.names{
+  display: flex;
+  flex-direction: column;
+}
+
+.information_explain{
+  min-height: 150px;
+  width: 100%;
+}
+
+input , textarea{
+  background-color:rgb(255, 242, 200);
+  border:none;
+  border-radius: 5px;
+}
+
+textarea{
+  padding:5px 10px;
+}
+
+.nickname{
+  font-size:23px;
+  width:100%;
+  margin-bottom:5px;
+}
+
+.icon_and_name{
+  width:100%;
+  margin:auto 5px
+}
+
+.names{
+  width:100%;
+  margin-right: 10px;
+  // background-color: red;
+}
+
+.submit_button{
+  margin: auto;
+  background-color: #ffae1a;
+  box-shadow: 0 3px 0 0 #ab6f01;
+  color: white;
+  padding: 5px 10px;
+  display:block;
+  position:relative;
+  top:0px;
+}
+
+.submit_button:active{
+  box-shadow: none;
+  top:3px;
+  transition: 0.1s;
+}
