@@ -2,6 +2,16 @@ crumb :root do
   link "ホーム", root_path
 end
 
+crumb :user_show do |user|
+  link "ユーザー詳細" , user_path(user)
+  parent :root
+end
+
+crumb :user_edit do |user|
+  link "編集" , edit_user_path(user)
+  parent :user_show
+end
+
 crumb :stickman_war do
   link "棒バトチャレンジ", stickman_war_index_path
   parent :root

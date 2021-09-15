@@ -46,6 +46,7 @@ Rails.application.config.assets.precompile += %w(
 
   users/common
   users/index
+  users/show
 
   devise/common
 

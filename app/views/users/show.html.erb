@@ -1,18 +1,60 @@
 <%# <%= stylesheet_link_tag "users/common" , :media => "all" %> %>
-<%# <%= stylesheet_link_tag "top/index", :media => "all" %> %>
+<%= stylesheet_link_tag "top/index", :media => "all" %>
 <%# <%= stylesheet_link_tag "users/index" , :media => "all" %> %>
-<%# <%= render partial: "shared/header/root_header" , locals: {title: "Runba's Home"} %> %>
+<%= stylesheet_link_tag "users/show" , :media => "all" %>
+<%= render partial: "shared/header/root_header" , locals: {title: "Runba's Home"} %>
+
 <div class = "main_content_parent">
   <div class = "main_content">
-    <p>ユーザーの情報</p>
-    <p class = "information_title">ニックネーム</p>
-    <p class = "information_explain"><%= @user.nickname %></p>
-    <p class = "information_title">アカウント名</p>
-    <p class = "information_explain"><%= @user.account_name %></p>
-    <p class = "information_title">自己紹介</p>
-    <p class = "information_explain"><%= @user.explain %></p>
-    <% if current_user == @user %>
-      <%= link_to "編集する" , edit_user_path(@user) %>
-    <% end %>
+    <% breadcrumb :user_show , @user.id %>
+    <%= breadcrumbs separator: "&rsaquo; " %>
+    <div class = "user_information">
+      <div class = "only_border"></div>
+      <% if @user.background_image.attached? %>
+        <%= image_tag @user.background_image , class: "top_image" %>
+      <% else %>
+        <%= image_tag "defaults/user_background.png" , class: "top_image" %>
+      <% end %>
+
+      <div class = "icon_and_name_parent">
+
+      <div class = "icon_and_name">
+        <% if @user.icon_image.attached? %>
+          <%= image_tag @user.icon_image , class: "top_image" %>
+        <% else %>
+          <%= image_tag "defaults/user_icon_image.png" , class: "show_user_icon" %>
+        <% end %>
+        <div class = "names">
+          <p class = "nickname"><%= @user.nickname %></p>
+          <p class = "account_name"><%= @user.account_name %></p>
+        </div>
+      </div>
+
+
+      <% if current_user == @user %>
+        <div class = "edit_button_parent">
+          <%= link_to "編集" , edit_user_path(@user) , class: "edit_button" %>
+        </div>
+      <% end %>
+
+      </div>
+
+      <div class = "only_border"></div>
+      <% if @user.explain != "" %>
+        <p class = "information_explain"><%= @user.explain %></p>
+      <% else %>
+        <p class = "information_explain">自己紹介はまだ作成されていません！
+          <% if user_signed_in? %>
+            <% if current_user != @user %>
+              <br>もし興味があったらチャットなどで伝えてあげよう！
+            <% else %>
+              <br>作成して自分がどんな人かを他の人に伝えよう！
+            <% end %>
+          <% end %>
+
+
+        </p>
+      <% end %>
+    </div>
   </div>
 </div>
