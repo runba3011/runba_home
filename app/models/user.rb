@@ -7,7 +7,7 @@ class User < ApplicationRecord
           
   with_options presence: true do
     validates :nickname , length: {maximum: 25}
-    validates :account_name , length: {minimum: 4 , maximum: 25}
+    validates :account_name , length: {minimum: 4 , maximum: 25} , format: {with: /\A[a-zA-Z0-9]+\z/ , message: "英数字のみが使えます"}
   end
   validates :account_name , uniqueness: true , on: :update
   
