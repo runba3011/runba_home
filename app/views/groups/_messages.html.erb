@@ -13,6 +13,9 @@
 
       <% if message.text != nil %>
         <%= h(message.text).gsub(/\n|\r\n/, "<br>").html_safe %>
+        <% message.images.each do |image|  %>
+          <%= image_tag image , class: "_message_images" %>
+        <% end %>
       <% else %>
         <p>メッセージは削除されました</p>
       <% end %>

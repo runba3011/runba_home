@@ -3,7 +3,14 @@
 <div class = "_main_bar">
   <div class = "top _main_bar_top">
     <% if group != nil && is_edit == false %>
-      <p class = "_main_bar_group_name"><%= group.name %></p>
+      <div class = "_main_top_icon_title">
+        <% if group.image.attached? %>
+          <%= image_tag group.image.variant(resize: '500x500') , class: "_main_group_icon"  %>
+        <% else %>
+          <%= image_tag "defaults/group_icon.png" , class: "_main_group_icon" %>
+        <% end %>
+        <p class = "_main_bar_group_name"><%= group.name %></p>
+      </div>
       <div class = "_main_bar_group_control_buttons">
         <%= link_to "編集" , edit_group_path(group) , class: "_main_bar_edit_button _main_bar_button" %>
 
@@ -13,7 +20,26 @@
       </div>
     <% elsif is_edit == true %>
       <%# グループを編集する際に表示されるもの %>
-      <p class = "_main_bar_group_name">編集：　<%= group.name %></p>
+      <% if authority >= 4 %>
+        <%= form_with model: group , url:group_path(group) , local: true , class: "edit_parent" do |f|  %>
+          <% if group.image.attached? %>
+            <%= image_tag group.image , class: "_main_group_icon"  %>
+          <% else %>
+            <%= image_tag "defaults/group_icon.png" , class: "_main_group_icon" %>
+          <% end %>
+          <div class = "edit_area">
+            <%= f.text_field :name , class: "group_name_text_area" %>
+            <label class = "select_image">画像
+              <%= f.file_field :image , class: "hidden" , accept: "image/jpeg , image/png , image/gif " %>
+            </label>
+          </div>
+          <%= f.submit "グループ情報更新" , method: :put , class: "_main_bar_button _main_bar_group_update" %>
+          
+        <% end %>
+      <% else %>
+        <p class = "_main_bar_group_name">編集：　<%= group.name %></p>
+      <% end %>
+
       <div class = "_main_bar_group_control_buttons">
         <% if authority == 5 %>
           <%= link_to "グループ削除" , group_path(group) , method: :delete , class: "_main_bar_delete_button _main_bar_button" %>
@@ -195,9 +221,9 @@
   <div class = "bottom _main_bar_bottom">
     <% if is_show == true %>
       <%= form_with url: "/groups/#{group.id}/messages" , model: message , method: :post , local: true , class: "_main_bar_form"  do |f| %>
-        <%= f.text_area :text , class: "_main_bar_form_text_area" , id: "use_adjust" %>
+        <%= f.text_area :text , class: "_main_bar_form_text_area hide_scroll_bar" , id: "use_adjust" %>
         <label class = "_main_bar_form_image_button _main_bar_button">画像
-          <%= f.file_field :image , class: "hidden" %>
+          <%= f.file_field :images , name: 'message[images][]' ,  class: "hidden" , accept: "image/png , image/jpeg , image/gif" %>
         </label>
         <%= f.submit "送信" , class: "_main_bar_form_submit _main_bar_button" %>
       <% end %>

@@ -33,15 +33,33 @@
   padding: 10px 0px;
 }
 
+._side_bar_single_group{
+  // display: flex;
+  margin:auto;
+  width:500px;    
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+._side_bar_group_icon{
+  width: 50px;
+  border-radius: 5px;
+  padding:2px;
+  display: inline-block;
+}
+
 ._side_bar_group_name{
   display: block;
   padding: 8px 10px;
   text-decoration: none;
   color: white;
+  display: inline;
 }
 
-._side_bar_group_name:hover{
+._side_bar_single_group:hover{
   background-color: rgb(0, 137, 161);
+  border-radius: 5px;
 }
 
 ._side_bar_bottom{

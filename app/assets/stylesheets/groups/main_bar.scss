@@ -27,8 +27,20 @@
   background-color: rgb(255, 184, 184);
 }
 
+
+._main_top_icon_title{
+  display: flex;
+  align-items: center;
+}
+
+._main_group_icon{
+  width: 50px;
+  border-radius: 5px;
+}
+
 ._main_bar_group_name{
   margin: 0px;
+  margin-left: 10px;
   color: white;
   font-size: 20px;
 }
