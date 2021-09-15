@@ -10,7 +10,7 @@ class User < ApplicationRecord
     validates :account_name , length: {minimum: 4 , maximum: 25} , format: {with: /\A[a-zA-Z0-9]+\z/ , message: "英数字のみが使えます"}
   end
   validates :account_name , uniqueness: true , on: :update
-  
+  validates :explain , length: {maximum: 1000}
   has_many :sns_credentials , dependent: :destroy
   has_many :stickman_war_comments , dependent: :destroy
   has_many :requests , dependent: :destroy

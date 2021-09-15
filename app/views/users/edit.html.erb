@@ -2,7 +2,15 @@
 <%# <%= stylesheet_link_tag "top/index", :media => "all" %> %>
 <%# <%= stylesheet_link_tag "users/index" , :media => "all" %> %>
 <%# <%= render partial: "shared/header/root_header" , locals: {title: "Runba's Home"} %> %>
-<%= form_with model: @user , url:user_path(@user) , method: :put , local: true do %>
+<%= form_with model: @user , url:user_path(@user) , method: :put , local: true , class: "user_form" do |f| %>
+  <%= f.label :nickname , "ニックネーム" %>
   <%= f.text_field :nickname %>
-
+  <%= f.label :nickname , "ニックネーム" %>
+  <%= f.text_field :account_name %>
+  <%= f.label :nickname , "自己紹介" %>
+  <%= f.text_field :explain , placeholder: "現在空になっています" %>
+  <%= f.file_field :icon_image %>
+  <%= f.label :nickname , "背景画像" %>
+  <%= f.file_field :background_image %>
+  
 <% end %>
