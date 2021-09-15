@@ -20,7 +20,7 @@
         <div class = "icon_and_name">
           <div class = "show_user_icon_parent">
             <% if @user.icon_image.attached? %>
-              <%= image_tag @user.icon_image , class: "top_image" %>
+              <%= image_tag @user.icon_image , class: "show_user_icon" %>
             <% else %>
               <%= image_tag "defaults/user_icon_image.png" , class: "show_user_icon" %>
             <% end %>

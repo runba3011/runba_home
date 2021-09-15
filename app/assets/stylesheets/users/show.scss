@@ -67,8 +67,14 @@
   // display: block;
 }
 
+.show_user_icon_parent{
+  display: flex;
+}
+
 .show_user_icon{
   width: 100%;
   min-width: 40px;
   max-width: 80px;
+  border-radius: 5px;
+  margin:auto;
 }
