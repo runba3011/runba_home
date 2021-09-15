@@ -1,7 +1,7 @@
 <%= stylesheet_link_tag "shared/show_account" , :media => "all" %>
 
 <% if user_signed_in? %>
-  <%= link_to current_user.nickname , users_path , class: "_show_account_account_link" %>
+  <%= link_to current_user.nickname , user_path(current_user) , class: "_show_account_account_link" %>
 <% else %>
   <%= link_to "ログイン or 新規登録" , users_path , class: "_show_account_account_link" %>
 <% end %>
