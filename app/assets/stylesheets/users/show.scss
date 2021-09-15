@@ -60,6 +60,24 @@
   color:white;
   text-decoration: none;
   border-radius: 5px;
+  top:0px;
+  position: relative;
+}
+
+
+.follow_button{
+  background-color: rgb(49, 52, 190);
+  box-shadow: 0 3px 0 0 rgb(5, 38, 100);
+}
+
+.follow_button_parent{
+  width: 120px;
+}
+
+.edit_button:active{
+  top:3px;
+  box-shadow: none;
+  transition: 0.1s;
 }
 
 .information_explain{
