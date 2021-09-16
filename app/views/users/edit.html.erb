@@ -54,6 +54,7 @@
         <div class = "only_border"></div>
         <%= f.text_area :explain , placeholder: "現在空になっています" , class: "information_explain" %>
         <%= render partial: "shared/errors" , locals: {model: @user} %>
+        <p style = "text-align:center;">※背景画像は横長のものを、<br>アイコン画像は正方形に近いものを設定することをお勧めします</p>
         <%= f.submit "変更を反映する" , class: "submit_button" %>
       </div>
     <% end %>
