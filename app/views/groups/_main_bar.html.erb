@@ -229,7 +229,7 @@
       <%= form_with url: "/groups/#{group.id}/messages" , model: message , method: :post , local: true , class: "_main_bar_form"  do |f| %>
         <%= f.text_area :text , class: "_main_bar_form_text_area hide_scroll_bar" , id: "use_adjust" %>
         <label class = "_main_bar_form_image_button _main_bar_button">画像
-          <%= f.file_field :images , name: 'message[images][]' ,  class: "hidden" , accept: "image/png , image/jpeg , image/gif" %>
+          <%= f.file_field :images , name: 'message[images][]' ,  class: "hidden" , accept: "image/png , image/jpeg , image/gif" , id: "message_image" %>
         </label>
         <%= f.submit "送信" , class: "_main_bar_form_submit _main_bar_button" %>
       <% end %>
