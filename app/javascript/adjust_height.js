@@ -5,8 +5,6 @@ function adjust_height(){
     //textareaのデフォルトの要素の高さを取得
     let clientHeight = textarea.clientHeight;
   
-    console.log(textarea);
-  
     //textareaのinputイベント
     textarea.addEventListener("input", ()=>{
       //textareaの要素の高さを設定

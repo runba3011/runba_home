@@ -107,3 +107,77 @@
 ._main_bar_form_submit:active{
   background-color:rgb(255, 213, 151);
 }
+
+.image_post_confirm_background{
+  float:left;
+  position:absolute;
+  top:0px;
+  left:0px;
+  width: 100vw;
+  height:100vh;
+  background-color:rgba(0, 0, 0, 0.534);
+  color:black;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image_post_confirm_center{
+  width: 80%;
+  max-width: 600px;
+  background-color:white;
+  border-radius: 20px;
+  box-shadow: 1px 1px 5px 5px rgba(255, 255, 255, 0.486);
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.confirm_text{
+  text-align: center;
+  color:rgb(255, 102, 0);
+  font-size: 25px;;
+  font-weight: bold;
+}
+
+.confirm_buttons{
+  
+}
+
+.confirm_button{
+  border:none;
+  position:relative;
+  top:0px;
+}
+
+.confirm_submit_button{
+  background-color: orange;
+  box-shadow: 0px 3px 0 0 rgb(104, 67, 0);
+}
+
+.confirm_delete_button{
+  background-color: rgb(26, 41, 179);
+  box-shadow: 0px 3px 0 0 rgb(12, 0, 54);
+}
+
+.confirm_button:active{
+  top:3px;
+  box-shadow: none;
+  transition:0.1s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
