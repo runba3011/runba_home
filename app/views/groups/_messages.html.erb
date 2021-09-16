@@ -18,8 +18,8 @@
 
       <% if message.text != nil %>
         <p class ="_message_text"><%= h(message.text).gsub(/\n|\r\n/, "<br>").html_safe %></p>
-        <% message.images.each do |image|  %>
-          <%= image_tag image , class: "_message_images" %>
+        <% if message.image.attached? %>
+          <%= image_tag message.image , class: "_message_images" %>
         <% end %>
       <% else %>
         <p>メッセージは削除されました</p>

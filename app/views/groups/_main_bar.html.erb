@@ -19,7 +19,7 @@
         <% end %>
       </div>
     <% elsif is_edit == true %>
-      <%# グループを編集する際に表示されるもの %>
+      <%# グループを編集する際に表示されるもの（ヘッダー） %>
       <% if authority >= 4 %>
         <%= form_with model: group , url:group_path(group) , local: true , class: "edit_parent" do |f|  %>
           <% if group.image.attached? %>
@@ -45,6 +45,7 @@
           <%= link_to "グループ削除" , group_path(group) , method: :delete , class: "_main_bar_delete_button _main_bar_button" %>
         <% end %>
       </div>
+      <%# ヘッダーの、編集する際に表示されるもの終了 %>
     <% end %>
   </div>
 
@@ -130,26 +131,22 @@
                 <p class="user_text show_authority" style = "margin-right: <%= @authority_right_margin %>px;" >権限:<%= this_user.authority[:name] %></p>
                 <%= link_to "退出する" , group_group_user_relation_path(group , user) , method: :delete , class: "user_text user_edit_button destroy" %>
               <% else %>
-              <%# 余白の量を計算する %>
 
-              <p class="user_text show_authority" style = "margin-right: <%= @authority_right_margin %>px;" >権限:<%= this_user.authority[:name] %></p>
+                <p class="user_text show_authority" style = "margin-right: <%= @authority_right_margin %>px;" >権限:<%= this_user.authority[:name] %></p>
 
-              <% if this_user.authority_id < @group_user_relation.authority_id %>
-              <%# 自分の権限の方が高いとき、レベルアップボタンなどを表示する %>
-                <% if this_user.authority_id + 1 < @group_user_relation.authority_id %>
-                  <%= link_to "権限上昇" , "/groups/#{group.id}/group_user_relations/#{user.id}/up", method: :post , class: "user_text user_edit_button up" , style: "margin-right: #{@level_up_right_margin}px" %>
+                <% if this_user.authority_id < @group_user_relation.authority_id %>
+                <%# 自分の権限の方が高いとき、レベルアップボタンなどを表示する %>
+                  <% if this_user.authority_id + 1 < @group_user_relation.authority_id %>
+                    <%= link_to "権限上昇" , "/groups/#{group.id}/group_user_relations/#{user.id}/up", method: :post , class: "user_text user_edit_button up" , style: "margin-right: #{@level_up_right_margin}px" %>
+                  <% end %>
+                  <% if this_user.authority_id != 1 %>
+                    <%= link_to "権限制限" , "/groups/#{group.id}/group_user_relations/#{user.id}/down" , method: :post , class: "user_text user_edit_button down" , style: "margin-right: #{@level_down_right_margin}px" %>
+                  <% end %>
+                  <% if 3 <= @group_user_relation.authority_id %>
+                    <%# 権限が３以上の時、追放ボタンを表示する %>
+                    <%= link_to "追放" , group_group_user_relation_path(group , user) , method: :delete , class: "user_text user_edit_button destroy" %>
+                  <% end %>
                 <% end %>
-                <% if this_user.authority_id != 1 %>
-                  <%= link_to "権限制限" , "/groups/#{group.id}/group_user_relations/#{user.id}/down" , method: :post , class: "user_text user_edit_button down" , style: "margin-right: #{@level_down_right_margin}px" %>
-                <% end %>
-                <% if 3 <= @group_user_relation.authority_id %>
-                  <%# 権限が３以上の時、追放ボタンを表示する %>
-                  <%= link_to "追放" , group_group_user_relation_path(group , user) , method: :delete , class: "user_text user_edit_button destroy" %>
-                <% end %>
-              <% end %>
-
-                <%# 元々の複雑な記述 %>
-                <%# 元々の複雑な記述終了 %>
               <% end %>
             </div>
           </div>
@@ -232,18 +229,23 @@
       <%= form_with url: "/groups/#{group.id}/messages" , model: message , method: :post , local: true , class: "_main_bar_form"  do |f| %>
         <%= f.text_area :text , class: "_main_bar_form_text_area hide_scroll_bar" , id: "use_adjust" %>
         <label class = "_main_bar_form_image_button _main_bar_button">画像
-          <%= f.file_field :images , name: 'message[images][]' ,  class: "hidden" , accept: "image/png , image/jpeg , image/gif" %>
+          <%= f.file_field :image , name: 'message[image]' ,  class: "hidden" , accept: "image/png , image/jpeg , image/gif" , id: "message_image" %>
         </label>
         <%= f.submit "送信" , class: "_main_bar_form_submit _main_bar_button" %>
+        <div class = "">
+
+          <div class = "image_post_confirm_background hidden" id = "confirm_parent">
+            <div class = "image_post_confirm_center">
+              <p class= "confirm_text" id = "confirm_text">この画像を投稿しますか？</p>
+              <%= image_tag "defaults/user_background.png" , class: "confirm_image" , id: "confirm_image" %>
+              <div class = "confirm_buttons">
+                <input type = "button" value="取り消す" class= "common_simple_button confirm_button confirm_delete_button" id = "confirm_delete">
+                <%= f.submit "送信" , class: "common_simple_button confirm_button confirm_submit_button" , id: "confirm_submit" %>
+              </div>
+            </div>
+          </div>
+        </div>
       <% end %>
     <% end %>
   </div>
-
-
-
-
-
-
-
-
 </div>
