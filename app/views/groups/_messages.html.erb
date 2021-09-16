@@ -2,14 +2,14 @@
   <% group.messages.each do |message| %>
     <div class = "_messages_single_message hide_scroll_bar">
       <div class = "_messages_message_information">
-        <div class = "_messages_user_information">
+        <%= link_to user_path(message.user) , class: "_messages_user_information" do %>
           <% if message.user.icon_image.attached? %>
             <%= image_tag message.user.icon_image.variant(resize: '500x500') , class: "_message_user_icons" %>
           <% else %>
             <%= image_tag "defaults/user_icon_image.png" , class: "_message_user_icons" %>
           <% end %>
           <%= message.user.nickname %>
-        </div>
+        <% end %>
         <p class = "_messages_created_at"><%= message.created_at %></p>
         <% if message.user == @user && message.text != nil %>
           <%= link_to "削除" , group_message_path(group , message) , method: :delete , class: "_messages_message_delete" %>
@@ -17,7 +17,7 @@
       </div>
 
       <% if message.text != nil %>
-        <%= h(message.text).gsub(/\n|\r\n/, "<br>").html_safe %>
+        <p class ="_message_text"><%= h(message.text).gsub(/\n|\r\n/, "<br>").html_safe %></p>
         <% message.images.each do |image|  %>
           <%= image_tag image , class: "_message_images" %>
         <% end %>
