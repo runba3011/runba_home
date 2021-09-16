@@ -18,7 +18,9 @@ function change_icon(){
       iconImageBox.insertAdjacentElement('afterbegin' , iconImageElement);
       // これで画像を生成し終えたはず
 
-
+      const iconEasy = document.getElementById("icon_easy");
+      iconEasy.remove();
+      // これで「ここを押すと変更できる」という表示の削除がされた
 
     });
   };
