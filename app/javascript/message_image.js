@@ -11,20 +11,24 @@ function add_image(){
         const imageURL = window.URL.createObjectURL(image);
         // これで作成した画像のURLの取得が完了
 
-        const textarea = document.getElementById("use_adjust");
+        const confirmText = document.getElementById("confirm_text");
         // 生成した画像を挿入する部分の取得
 
         const insertImage = document.createElement('img');
         insertImage.setAttribute('src' , imageURL);
-        insertImage.setAttribute('class' , '_message_images');
-        insertImage.setAttribute('id' , `previewImage${previewCreatedAmount}`)
+        insertImage.setAttribute('class' , 'confirm_image')
+        insertImage.setAttribute('id' , 'confirm_image')
         // これで生成する画像の用意が完了、クラスなどは変更する可能性あり
 
         const confirmWindowParent = document.getElementById("confirm_parent");
         confirmWindowParent.classList.remove('hidden');
-        // 
+        // これで確認ウィンドウの表示が完了
 
-        textarea.insertAdjacentElement('beforeend' , insertImage);
+        beforeImage = document.getElementById("confirm_image");
+        beforeImage.remove();
+
+        confirmText.insertAdjacentElement('beforeend' , insertImage);
+        // 「この画像を投稿しますか？」の後ろに投稿するつもりの画像を表示する
 
 
       });
