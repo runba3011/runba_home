@@ -21,7 +21,7 @@
               <%= image_tag "defaults/user_background.png" , class: "top_image" , id: "top_image" %>
             <% end %>
             <%= f.file_field :background_image , class: "hidden" , id: "background_image_field" %>
-            <div class = "_edit_background_image_show_edit">
+            <div class = "_edit_background_image_show_edit" id="background_easy">
               <%= image_tag "user_image_edit.png" , class: "_edit_easy_image" %>
             </div>
           </div>
@@ -38,8 +38,8 @@
                   <%= image_tag "defaults/user_icon_image.png" , class: "show_user_icon" %>
                 <% end %>
                 <%= f.file_field :icon_image , class: "hidden" %>
-                <div class = "_edit_background_image_show_edit _edit_background_image_show_edit_small">
-                  <%= image_tag "user_image_edit.png" , class: "_edit_easy_small_image" %>
+                <div class = "_edit_background_image_show_edit _edit_background_image_show_edit_small" >
+                  <%= image_tag "user_image_edit.png" , class: "_edit_easy_small_image"  %>
                 </div>
               </div>
             </label>

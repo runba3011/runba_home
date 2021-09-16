@@ -20,8 +20,10 @@ function change_background(){
       // 選択した画像を表示する処理の完成
 
       // ここからは編集部分だとわかりやすくする部分の作成
-
-
+      const backgroundEasy = document.getElementById("background_easy");
+      if(backgroundEasy != null){
+        backgroundEasy.remove();
+      };
     });
   };
 };
