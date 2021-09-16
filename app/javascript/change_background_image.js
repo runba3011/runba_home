@@ -1,6 +1,5 @@
 function change_background(){
   if(document.URL.match(/user/) && document.URL.match(/edit/)){
-    console.log("画像変更のスクリプト");
     const backgroundForm = document.getElementById("background_image_field");
     backgroundForm.addEventListener('change' , (e)=>{
       // 挿入先の検索、取得できていることは確認済み
