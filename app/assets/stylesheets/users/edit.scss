@@ -3,6 +3,10 @@
   margin-bottom:10px;
 }
 
+.show_user_icon_box{
+  display:flex;
+}
+
 .top_image{
   display:table-column;
 }
@@ -30,7 +34,7 @@
 }
 
 ._edit_background_image_show_edit_small{
-  background-color:rgba(255, 255, 255, 0);
+  background-color: rgba(0, 0, 0, 0.582);
   border-radius: 5px;
 }
 
