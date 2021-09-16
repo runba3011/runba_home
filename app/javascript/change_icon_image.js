@@ -21,7 +21,9 @@ function change_icon(){
 
 
       const iconEasy = document.getElementById("icon_easy");
-      iconEasy.remove();
+      if(iconEasy != null){
+        iconEasy.remove();
+      }
       // これで「ここを押すと変更できる」という表示の削除がされた
 
     });
