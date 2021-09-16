@@ -233,13 +233,14 @@
         </label>
         <%= f.submit "送信" , class: "_main_bar_form_submit _main_bar_button" %>
         <div class = "">
-          <div class = "image_post_confirm_background">
+
+          <div class = "image_post_confirm_background" id = "confirm_parent">
             <div class = "image_post_confirm_center">
               <p class= "confirm_text">この画像を投稿しますか？</p>
-              <%= image_tag "defaults/user_background.png" %>
+              <%= image_tag "defaults/user_background.png" , class: "confirm_image" %>
               <div class = "confirm_buttons">
-                <%= f.submit "送信" , class: "common_simple_button confirm_button confirm_submit_button" %>
-                <input type = "button" value="取り消す" class= "common_simple_button confirm_button confirm_delete_button">
+                <input type = "button" value="取り消す" class= "common_simple_button confirm_button confirm_delete_button" id = "confirm_delete">
+                <%= f.submit "送信" , class: "common_simple_button confirm_button confirm_submit_button" , id: "confirm_submit" %>
               </div>
             </div>
           </div>
