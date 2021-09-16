@@ -62,12 +62,21 @@
         <% group.users.each do |user| %>
           <div class = "single_user">
             <% this_user = GroupUserRelation.find_by(group_id: group.id , user_id: user.id) %>
-
-            <% if current_user == user %>
-              <p class = "user_name user_text" style="background-color: #9284de;"><%= user.nickname %></p>
-            <% else %>
-              <p class = "user_name user_text"><%= user.nickname %></p>
+            <%= link_to user_path(user) , class: "_edit_icon_and_name" do %>
+              <div class = "user_icon_parent">
+                <% if user.icon_image.attached? %>
+                  <%= image_tag user.icon_image.variant(resize: '500x500') , class: "_edit_user_icon_image" %>
+                <% else %>
+                  <%= image_tag "defaults/user_icon_image.png" , class: "_edit_user_icon_image" %>
+                <% end %>
+              </div>
+              <% if current_user == user %>
+                <p class = "user_name user_text" style="background-color: #9284de;"><%= user.nickname %></p>
+              <% else %>
+                <p class = "user_name user_text"><%= user.nickname %></p>
+              <% end %>
             <% end %>
+
             <div class = "user_information">
 
               <%  button_width = 80

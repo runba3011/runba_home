@@ -76,9 +76,36 @@ a{
   display:flex;
 }
 
-.user_name{
-  width: 40%;
+._edit_icon_and_name{
+  display:flex;
+  width:100%;
+  transition:0.5s;
   border-radius: 5px;
+}
+
+._edit_icon_and_name:hover{
+  background-color: rgba(255, 255, 0, 0.336);
+  transition:0.1s;
+}
+
+.user_icon_parent{
+  width:10%;
+  max-width: 50px;
+}
+
+._edit_user_icon_image{
+  padding-top:5%;
+  padding-bottom:5%;
+  height:90%;
+}
+
+.user_name{
+  width: 90%;
+  border-radius: 5px;
+}
+
+.show_authority{
+  width:100px;
 }
 
 .user_edit_button{
