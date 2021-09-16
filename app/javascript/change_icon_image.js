@@ -9,14 +9,16 @@ function change_icon(){
 
       const beforeImage = document.getElementById('show_user_icon');
       beforeImage.remove();
-      // これで既存の画像が削除されたはず
+      // これで既存の画像が削除された
+
 
       const iconImageElement = document.createElement('img');
       iconImageElement.setAttribute('src' , imageURL);
       iconImageElement.setAttribute('class' , 'show_user_icon');
       iconImageElement.setAttribute('id', 'show_user_icon');
       iconImageBox.insertAdjacentElement('afterbegin' , iconImageElement);
-      // これで画像を生成し終えたはず
+      // これで画像を生成し終えた
+
 
       const iconEasy = document.getElementById("icon_easy");
       iconEasy.remove();
