@@ -3,7 +3,6 @@ class Message < ApplicationRecord
     validates :user
     validates :group
   end
-  validates :text , length: {maximum: 1000}
   validates :text , presence: true , on: :create
 
   has_many_attached :images
