@@ -47,9 +47,10 @@
 }
 
 .edit_button_parent{
-  width: 80px;
+  width: 140px;
   margin:auto;
   margin-right:0px;
+  text-align: center;
 }
 
 .edit_button{
@@ -60,10 +61,44 @@
   color:white;
   text-decoration: none;
   border-radius: 5px;
+  top:0px;
+  position: relative;
+}
+
+.for_only_edit_button{
+  display:block;
+}
+
+.follow_button{
+  background-color: rgb(49, 52, 190);
+  box-shadow: 0 3px 0 0 rgb(5, 38, 100);
+}
+
+.follow_button_parent{
+  width: 180px;
+}
+
+.destroy_follow{
+  background-color:rgb(161, 22, 22);
+  box-shadow: 0 3px 0 0 rgb(77, 0, 0);
+}
+
+.logout_button{
+  margin-top:5px;
+  background-color:rgb(131, 28, 28);
+  display:inline-block;
+  box-shadow: 0 3px 0 0 rgb(59, 0, 0);
+}
+
+.edit_button:active{
+  top:3px;
+  box-shadow: none;
+  transition: 0.1s;
 }
 
 .information_explain{
   min-height: 150px;
+  font-size: 18px;
   // display: block;
 }
 
@@ -77,4 +112,8 @@
   max-width: 80px;
   border-radius: 5px;
   margin:auto;
+}
+
+.nil_explain{
+  color:rgba(0, 0, 0, 0.411);
 }

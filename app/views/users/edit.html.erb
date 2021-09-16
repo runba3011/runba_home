@@ -40,11 +40,7 @@
         </div>
 
         <div class = "only_border"></div>
-        <% if @user.explain != "" %>
-          <p class = "information_explain"><%= @user.explain %></p>
-        <% else %>
-          <%= f.text_area :explain , placeholder: "現在空になっています" , class: "information_explain" %>
-        <% end %>
+        <%= f.text_area :explain , placeholder: "現在空になっています" , class: "information_explain" %>
         <%= render partial: "shared/errors" , locals: {model: @user} %>
         <%= f.submit "変更を反映する" , class: "submit_button" %>
       </div>
