@@ -12,24 +12,36 @@
     <%= form_with model: @user , url:user_path(@user) , method: :put , local: true , class: "user_form" do |f| %>
       <div class = "user_information">
         <div class = "only_border"></div>
-        <label>
-          <% if @user.background_image.attached? %>
-            <%= image_tag @user.background_image , class: "top_image" %>
-          <% else %>
-            <%= image_tag "defaults/user_background.png" , class: "top_image" %>
-          <% end %>
-          <%= f.file_field :background_image , class: "hidden" %>
+        <label id = "_edit_background_parent">
+
+          <div class = "_edit_background_image_show_parent" id = "background_image_parent">
+            <% if @user.background_image.attached? %>
+              <%= image_tag @user.background_image , class: "top_image" , id: "top_image" %>
+            <% else %>
+              <%= image_tag "defaults/user_background.png" , class: "top_image" , id: "top_image" %>
+            <% end %>
+            <%= f.file_field :background_image , class: "hidden" , id: "background_image_field" %>
+            <div class = "_edit_background_image_show_edit" id="background_easy">
+              <%= image_tag "user_image_edit.png" , class: "_edit_easy_image" %>
+            </div>
+          </div>
+
         </label>
 
         <div class = "icon_and_name_parent">
           <div class = "icon_and_name">
             <label class = "show_user_icon_parent">
-              <% if @user.icon_image.attached? %>
-                <%= image_tag @user.icon_image , class: "show_user_icon" %>
-              <% else %>
-                <%= image_tag "defaults/user_icon_image.png" , class: "show_user_icon" %>
-              <% end %>
-              <%= f.file_field :icon_image , class: "hidden" %>
+              <div class = "show_user_icon_box" , style="position:relative;" , id= "icon_image_box">
+                <% if @user.icon_image.attached? %>
+                  <%= image_tag @user.icon_image , class: "show_user_icon" , id: "show_user_icon" %>
+                <% else %>
+                  <%= image_tag "defaults/user_icon_image.png" , class: "show_user_icon" , id: "show_user_icon" %>
+                <% end %>
+                <%= f.file_field :icon_image , class: "hidden" , id: "icon_image_form" %>
+                <div class = "_edit_background_image_show_edit _edit_background_image_show_edit_small" id ="icon_easy" >
+                  <%= image_tag "user_image_edit.png" , class: "_edit_easy_small_image"  %>
+                </div>
+              </div>
             </label>
 
             <div class = "names">
@@ -42,6 +54,7 @@
         <div class = "only_border"></div>
         <%= f.text_area :explain , placeholder: "現在空になっています" , class: "information_explain" %>
         <%= render partial: "shared/errors" , locals: {model: @user} %>
+        <p style = "text-align:center;">※背景画像は横長のものを、<br>アイコン画像は正方形に近いものを設定することをお勧めします</p>
         <%= f.submit "変更を反映する" , class: "submit_button" %>
       </div>
     <% end %>

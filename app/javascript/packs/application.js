@@ -10,6 +10,8 @@ require("channels")
 require("../adjust_height")
 require("../add_member")
 require("../delete_member")
+require("../change_icon_image")
+require("../change_background_image")
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)

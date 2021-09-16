@@ -91,16 +91,20 @@ a{
 .user_icon_parent{
   width:10%;
   max-width: 50px;
+  display: flex;
 }
 
 ._edit_user_icon_image{
   padding-top:5%;
   padding-bottom:5%;
-  height:90%;
+  width:100%;
+  margin:auto;
+  margin-right: 5px;
 }
 
 .user_name{
   width: 90%;
+  margin-left:5px;
   border-radius: 5px;
 }
 

@@ -1,3 +1,55 @@
+._edit_background_image_show_parent{
+  position:relative;
+  margin-bottom:10px;
+}
+
+.show_user_icon_box{
+  display:flex;
+}
+
+.top_image{
+  display:table-column;
+}
+
+._edit_background_image_show_edit{
+  width: 100%;
+  background-color:rgba(0, 0, 0, 0.226);
+  position:absolute;
+  z-index: 0;
+  height:100%;
+  top:0px ;
+  display:table-column;
+  display:flex;
+  transition:0.3s;
+}
+
+._edit_background_image_show_edit:hover{
+  background-color:rgba(0, 0, 0, 0.671);
+  transition:0.3s;
+}
+
+._edit_easy_image{
+  width:100px;
+  height:100px;
+  margin:auto;
+}
+
+._edit_background_image_show_edit_small{
+  background-color: rgba(0, 0, 0, 0.582);
+  border-radius: 5px;
+}
+
+._edit_easy_small_image{
+  width: 25px;
+  height:25px;
+  margin:auto;
+}
+
+// ._edit_background_text{
+//   color:white;
+//   font-size: 20px;
+// }
+
 .names{
   display: flex;
   flex-direction: column;
@@ -37,6 +89,7 @@ textarea{
 
 .submit_button{
   margin: auto;
+  margin-top:10px;
   background-color: #ffae1a;
   box-shadow: 0 3px 0 0 #ab6f01;
   color: white;
