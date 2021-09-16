@@ -17,7 +17,6 @@ class StickmanWarCommentsController < ApplicationController
   end
 
   def destroy
-    binding.pry
     @comment = StickmanWarComment.find(params[:id])
     if @comment.user == current_user
       @comment.destroy

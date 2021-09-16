@@ -3,12 +3,26 @@
   <div class = "_comment_single_box">
     <div class = "_comment_information_box">
       <div class = "_comment_information_box_user_time">
-        <p class = "_comment_user_name"><%= comment.user.nickname %></p><p class = "_comment_created_time"><%= comment.created_at %></p>
+        
+        <%= link_to user_path(comment.user) , class: "_comment_user_links" do %>
+          <div class = "_comment_user_icon_parent">
+            <% if comment.user.icon_image.attached? %>
+              <%= image_tag comment.user.icon_image.variant(resize: '500x500') , class: "comment_user_icon" %>
+            <% else %>
+              <%= image_tag "defaults/user_icon_image.png" , class: "comment_user_icon" %>
+            <% end %>
+          </div>
+          <div class = "_comment_name_and_time">
+            <p class = "_comment_user_name"><%= comment.user.nickname %></p>
+            <p class = "_comment_created_time"><%= comment.created_at %></p>
+          </div>
+        <% end %>
       </div>
       <div class = "_comment_information_box_actions">
         <%= link_to "削除" , stickman_war_stickman_war_detail_stickman_war_comment_path(@stickman_war_stage_type , @stickman_war_stage_number ,  comment) , method: :delete , class: "_comment_delete" %>
       </div>
-    </div>    
-    <p><%= "　#{comment.text}" %></p>
+    </div>
+    <%# 全角のスペースは段落の形にするために意図して記入している %>
+    <p class = "_comment_text hide_scroll_bar">　<%= comment.text.gsub(/\n|\r\n/, "<br>").html_safe %></p>
   </div>
 <% end %>
