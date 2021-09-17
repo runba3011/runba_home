@@ -156,5 +156,10 @@ consumer.subscriptions.create("MessageChannel", {
 
     const MessageTextarea = document.getElementById("use_adjust");
     MessageTextarea.value = "";
+
+    const submitButton = document.getElementById("message_submit_button");
+    const confirmSubmitButton = document.getElementById("confirm_submit");
+    submitButton.removeAttribute("disabled");
+    confirmSubmitButton.removeAttribute("disabled");
   }
 });

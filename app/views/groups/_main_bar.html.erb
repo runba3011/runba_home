@@ -231,7 +231,7 @@
         <label class = "_main_bar_form_image_button _main_bar_button">画像
           <%= f.file_field :image , name: 'message[image]' ,  class: "hidden" , accept: "image/png , image/jpeg , image/gif" , id: "message_image" %>
         </label>
-        <%= f.submit "送信" , class: "_main_bar_form_submit _main_bar_button" %>
+        <%= f.submit "送信" , class: "_main_bar_form_submit _main_bar_button" , id: "message_submit_button" %>
         <div class = "">
 
           <div class = "image_post_confirm_background hidden" id = "confirm_parent">
