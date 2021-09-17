@@ -26,11 +26,28 @@
   border-bottom: 1px dotted rgba(255,255,255,0.5);
 }
 
-._side_bar_user_name{
+._side_bar_current_user_link{
+  display:flex;
+  text-decoration: none;
+  color: white;
+}
+
+._side_bar_image_parent {
+  width: 50px;
+  display:flex;
+}
+
+._side_bar_current_user_icon {
+  width: 100%;
+  margin:auto;
+}
+
+._side_bar_current_user_name{
   color:white;
   display: block;
   text-decoration: none;
   padding: 10px 0px;
+  margin-left: 5px;
 }
 
 ._side_bar_single_group{
