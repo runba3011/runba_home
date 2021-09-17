@@ -87,6 +87,7 @@
   border-radius: 10px;
   top: 0px;
   left: 0px;
+  pointer-events: none;
 }
 
 .image_black:hover{
@@ -95,6 +96,7 @@
 }
 
 .image_show_background{
+  z-index: 1;
   position:absolute;
   top:0px;
   left:0px;

@@ -121,7 +121,8 @@ consumer.subscriptions.create("MessageChannel", {
         <img class = "_message_images" onClick= "showBigImage(this) , adjustWidthAndHeight(this)" id = ${data.content.id} src = "${createdImageURL}">
       <div class = "image_black"></div>
       
-      <div class = "image_show_background hidden" id = "image_show_<%= data.content.id %>">
+      </div>
+      <div class = "image_show_background hidden" id = "image_show_${data.content.id}">
         <div class = "image_show_center_object">
           <img src = "${backButtonImageURL}" class="image_show_back_button" id="${data.content.id}" onClick ="hideImageShow(this)" >
           <img src = "${createdImageURL}" class="image_show_image" id = "image_show_image_${data.content.id}" >
@@ -139,7 +140,6 @@ consumer.subscriptions.create("MessageChannel", {
     // 最後の閉じタグとonly_border
     const HTML5 = 
     `
-      </div>
       <div class = "_messages_only_border only_border"></div>
     `;
 

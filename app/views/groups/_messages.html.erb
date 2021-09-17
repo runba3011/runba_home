@@ -3,6 +3,7 @@
   function hideImageShow(obj){
     search_id = `image_show_${obj.id}`;
     show_object = document.getElementById(search_id);
+    console.log(search_id);
     console.log(show_object);
     show_object.classList.add('hidden');
   };
@@ -10,6 +11,7 @@
   function showBigImage(obj){
     search_id = `image_show_${obj.id}`;
     show_object = document.getElementById(search_id);
+    console.log(search_id);
     console.log(show_object);
     show_object.classList.remove('hidden');
   }
@@ -27,13 +29,13 @@
     showImage.removeAttribute('width');
     showImage.removeAttribute('height');
 
-    if(maxWidth > maxHeight){
-      console.log("widthの方が大きいのでheightに合わせる");
-      showImage.setAttribute('style' , `height: ${maxHeight}px; width: auto;`);
+    if(obj.offsetWidth > obj.offsetHeight){
+      console.log("widthの方が大きいのでwidthを限界まで広げる");
+      showImage.setAttribute('style' , `width: ${maxWidth}px;height:auto;`);
     }
     else{
-      console.log("heightの方が大きいのでwidthに合わせる");
-      showImage.setAttribute('style' , `width: ${maxWidth}px;height:auto;`);
+      console.log("heightの方が大きいのでheightを限界まで広げる");
+      showImage.setAttribute('style' , `height: ${maxHeight}px; width: auto;`);
     }
   }
 </script>
