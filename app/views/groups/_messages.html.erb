@@ -23,15 +23,18 @@
     maxWidth = screenWidth * 0.95;
     maxHeight = screenHeight - 50;
 
+    showImage = document.getElementById(`image_show_image_${obj.id}`)
+    showImage.removeAttribute('width');
+    showImage.removeAttribute('height');
+
     if(maxWidth > maxHeight){
-      console.log("widthの方が大きい");
+      console.log("widthの方が大きいのでheightに合わせる");
+      showImage.setAttribute('style' , `height: ${maxHeight}px; width: auto;`);
     }
     else{
-      console.log("heightの方が大きい");
+      console.log("heightの方が大きいのでwidthに合わせる");
+      showImage.setAttribute('style' , `width: ${maxWidth}px;height:auto;`);
     }
-
-    showImage = document.getElementById(`image_show_image_${obj.id}`)
-    // console.log(showImage);
   }
 </script>
 

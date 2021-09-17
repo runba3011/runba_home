@@ -82,6 +82,11 @@
   height:100vh;
   overflow-y: auto;
   background-color:rgba(0, 0, 0, 0.507);
+  display: flex;
+}
+
+.hidden{
+  display:none;
 }
 
 .image_show_center_object{
