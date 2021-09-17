@@ -11,7 +11,8 @@ consumer.subscriptions.create("MessageChannel", {
 
   received(data) {
     const defaultImageURL = null;
-    const userIconURL = null;
+    console.log(data.icon_image);
+    // const userIconURL = window.URL.createObjectURL(data.icon_image);
     const createdImageURL = null;
     // HTML2で画像の取得がある、これは後で作成する
 
@@ -73,19 +74,18 @@ consumer.subscriptions.create("MessageChannel", {
       <div class = "_messages_message_information">
         <a href = "/users/${data.content.id}" class = "_messages_user_information">
 
-        <p class = "_messages_created_at"><%= data.content.created_at %></p>
-        <% if data.content.user == @user && data.content.text != nil %>
-          <%= link_to "削除" , group_message_path(group , message) , method: :delete , class: "_messages_message_delete" %>
-        <% end %>
-      </div>
     `
 
-    // アイコン画像と、名前のリンクを閉じる</a>がついている
+    // アイコン画像と、名前のリンクを閉じる</a>、投稿日時、削除ボタン
     const HTML2 = 
     `
       <img src = ${userIconURL} class="_message_user_icons">
       ${data.user.nickname}
       </a>
+      <p class = "_messages_created_at">${data.content.created_at}</p>
+
+        <a href = " /groups/${data.group.id}/messages/${data.content.id}" class = "_messages_message_delete" data-method= "delete">削除</a>
+
       </div>
     `;
 
@@ -113,10 +113,11 @@ consumer.subscriptions.create("MessageChannel", {
       `;
     }
 
-    // 最後の閉じタグ
+    // 最後の閉じタグとonly_border
     const HTML5 = 
     `
       </div>
+      <div class = "_messages_only_border only_border"></div>
     `;
 
     const AllHTML = HTML1 + HTML2 + HTML3 + HTML4 + HTML5;

@@ -4,7 +4,13 @@ class MessagesController < ApplicationController
     if @message.valid?
       @message.save
       # binding.pry
-      ActionCable.server.broadcast 'message_channel' , content: @message , user: current_user
+      @group = Group.find(params[:group_id])
+      if current_user.icon_image.attached?
+        @icon_image = current_user.icon_image
+      else
+        @icon_image = nil
+      end
+      ActionCable.server.broadcast 'message_channel' , content: @message , user: current_user , group: @group , icon_image: @icon_image
     else
       redirect_to group_path(@message.group)
     end
