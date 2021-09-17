@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
     if @message.valid?
       @message.save
       # binding.pry
-      ActionCable.server.broadcast 'message_channel' , content: @message
+      ActionCable.server.broadcast 'message_channel' , content: @message , user: current_user
     else
       redirect_to group_path(@message.group)
     end

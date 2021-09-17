@@ -10,7 +10,11 @@ consumer.subscriptions.create("MessageChannel", {
   },
 
   received(data) {
-    console.log("送信した");
+    const defaultImageURL = null;
+    const userIconURL = null;
+    const createdImageURL = null;
+    // HTML2で画像の取得がある、これは後で作成する
+
     const html = 
     `
     // HTML1---------------------------------------------------------------------
@@ -62,42 +66,28 @@ consumer.subscriptions.create("MessageChannel", {
     `;
 
     // 画像のすぐ上部分まで、a要素がまだ完成していない、アイコン画像の部分の最後に</a>をつける必要がある
-    debugger;
     const HTML1 = 
     `
     
     <div class = "_messages_single_message hide_scroll_bar">
       <div class = "_messages_message_information">
-        <a href = "/users/${data.content.user.id}" class = "_messages_user_information">
+        <a href = "/users/${data.content.id}" class = "_messages_user_information">
 
         <p class = "_messages_created_at"><%= data.content.created_at %></p>
         <% if data.content.user == @user && data.content.text != nil %>
           <%= link_to "削除" , group_message_path(group , message) , method: :delete , class: "_messages_message_delete" %>
         <% end %>
       </div>
-    `;
-
-    // アイコン画像（デフォルト）と、名前のリンクを閉じる</a>がついている
-    const HTML2_1 = 
     `
-      <img src = ${defaultImageURL} class="_message_user_icons">
-      ${data.content.user.nickname}
+
+    // アイコン画像と、名前のリンクを閉じる</a>がついている
+    const HTML2 = 
+    `
+      <img src = ${userIconURL} class="_message_user_icons">
+      ${data.user.nickname}
       </a>
       </div>
     `;
-
-    // アイコン画像（設定されたもの）と、名前のリンクを閉じる</a>がついている、
-    // アイコン画像が設定されていない限りHTML2_2はnullのままである
-    let HTML2_2 = null;
-    if(data.content.user.icon_image != null){
-      HTML2_2 = 
-      `
-        <img src = ${data.content.user.icon_image} class="_message_user_icons">
-        ${data.content.user.nickname}
-        </a>
-        </div>
-      `;
-    }
 
     // メッセージテキストの部分
     const HTML3 = 
@@ -111,7 +101,7 @@ consumer.subscriptions.create("MessageChannel", {
       HTML4 = 
       `
       <div class = "_message_images_box">
-        <img class = "_message_images" onClick= "showBigImage(this) , adjustWidthAndHeight(this)" id = ${data.content.id} src = "${data.content.image}">
+        <img class = "_message_images" onClick= "showBigImage(this) , adjustWidthAndHeight(this)" id = ${data.content.id} src = "${createdImageURL}">
       <div class = "image_black"></div>
       
       <div class = "image_show_background hidden" id = "image_show_<%= data.content.id %>">
@@ -129,14 +119,7 @@ consumer.subscriptions.create("MessageChannel", {
       </div>
     `;
 
-    let AllHTML = HTML1;
-    if(HTML2_2 == null){
-      AllHTML += HTML2_1;
-    }
-    else{
-      AllHTML += HTML2_2;
-    }
-    AllHTML += HTML3 + HTML4 + HTML5;
+    const AllHTML = HTML1 + HTML2 + HTML3 + HTML4 + HTML5;
 
     // 挿入先の親を見つけ、その子要素として送られたものを入れる処理
     const messagesParent = document.getElementById("messages_parent");
