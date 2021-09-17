@@ -1,4 +1,43 @@
 <%= stylesheet_link_tag "groups/messages" , :media => "all" %>
+<script>
+  function hideImageShow(obj){
+    search_id = `image_show_${obj.id}`;
+    show_object = document.getElementById(search_id);
+    console.log(show_object);
+    show_object.classList.add('hidden');
+  };
+
+  function showBigImage(obj){
+    search_id = `image_show_${obj.id}`;
+    show_object = document.getElementById(search_id);
+    console.log(show_object);
+    show_object.classList.remove('hidden');
+  }
+
+  function adjustWidthAndHeight(obj){
+    // 戻るボタンの高さは50px
+    // 画像プレビューエリアのwidthは親✖️0.95
+    screenWidth = window.innerWidth;
+    screenHeight = window.innerHeight;
+
+    maxWidth = screenWidth * 0.95;
+    maxHeight = screenHeight - 50;
+
+    showImage = document.getElementById(`image_show_image_${obj.id}`)
+    showImage.removeAttribute('width');
+    showImage.removeAttribute('height');
+
+    if(maxWidth > maxHeight){
+      console.log("widthの方が大きいのでheightに合わせる");
+      showImage.setAttribute('style' , `height: ${maxHeight}px; width: auto;`);
+    }
+    else{
+      console.log("heightの方が大きいのでwidthに合わせる");
+      showImage.setAttribute('style' , `width: ${maxWidth}px;height:auto;`);
+    }
+  }
+</script>
+
   <% group.messages.each do |message| %>
     <div class = "_messages_single_message hide_scroll_bar">
       <div class = "_messages_message_information">
@@ -19,7 +58,18 @@
       <% if message.text != nil %>
         <p class ="_message_text"><%= h(message.text).gsub(/\n|\r\n/, "<br>").html_safe %></p>
         <% if message.image.attached? %>
-          <%= image_tag message.image , class: "_message_images" %>
+          <div class = "_message_images_box">
+          <%= image_tag message.image , class: "_message_images" , onClick: "showBigImage(this) , adjustWidthAndHeight(this)" , id: message.id %>
+          <div class = "image_black"></div>
+          </div>
+
+          <div class = "image_show_background hidden" id = "image_show_<%= message.id %>">
+            <div class = "image_show_center_object">
+              <%= image_tag "back_button.png" , class: "image_show_back_button" , id: "#{message.id}" , onClick: "hideImageShow(this)" %>
+              <%= image_tag message.image , class: "image_show_image" , id: "image_show_image_#{message.id}" %>
+            </div>
+          </div>
+
         <% end %>
       <% else %>
         <p>メッセージは削除されました</p>
