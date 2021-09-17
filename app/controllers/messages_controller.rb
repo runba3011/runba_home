@@ -3,8 +3,11 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     if @message.valid?
       @message.save
+      # binding.pry
+      ActionCable.server.broadcast 'message_channel' , content: @message
+    else
+      redirect_to group_path(@message.group)
     end
-    redirect_to group_path(@message.group)
   end
 
   def destroy

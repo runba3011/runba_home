@@ -49,7 +49,7 @@
     <% end %>
   </div>
 
-  <div class = "center _main_bar_center hide_scroll_bar">
+  <div class = "center _main_bar_center hide_scroll_bar" id = "messages_parent">
     <% if group != nil %>
     <% if is_show == true %>
       <%= render partial: "messages" , locals: {group: group} %>
