@@ -3,6 +3,9 @@ function hide(){
     confirmWindowParent.classList.add('hidden')
     const messageImage = document.getElementById("message_image");
     messageImage.value = null;
+
+    const confirm_image_show = document.getElementById("confirm_image");
+    confirm_image_show.removeAttribute("src");
 }
 
 function judge(){

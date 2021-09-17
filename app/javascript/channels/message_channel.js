@@ -157,9 +157,19 @@ consumer.subscriptions.create("MessageChannel", {
     const MessageTextarea = document.getElementById("use_adjust");
     MessageTextarea.value = "";
 
+    // submitに勝手につけられるdisabledを削除する
     const submitButton = document.getElementById("message_submit_button");
     const confirmSubmitButton = document.getElementById("confirm_submit");
     submitButton.removeAttribute("disabled");
     confirmSubmitButton.removeAttribute("disabled");
+
+    // 画像投稿を行なった場合、画像用ウィンドウ（？）を削除、画像選択を解除
+    const confirmWindowParent = document.getElementById("confirm_parent");
+    confirmWindowParent.classList.add('hidden')
+    const messageImage = document.getElementById("message_image");
+    messageImage.value = null;
+
+    const confirm_image_show = document.getElementById("confirm_image");
+    confirm_image_show.removeAttribute("src");
   }
 });
