@@ -1,5 +1,17 @@
 import consumer from "./consumer"
 
+
+function getCreatedImageURL(){
+  const createdImage = document.getElementById("confirm_image");
+  let createdImageURL = null;
+  if (createdImage.src != null && createdImage.src != "null" && createdImage.src != ""){
+    console.log(createdImage);
+    const createdImageURL = createdImage.src;
+    console.log("投稿された画像のURLは"+createdImageURL);
+    return createdImageURL;
+  }
+}
+
 consumer.subscriptions.create("MessageChannel", {
   connected() {
     // Called when the subscription is ready for use on the server
@@ -11,10 +23,10 @@ consumer.subscriptions.create("MessageChannel", {
 
   received(data) {
     const defaultImageURL = null;
-    console.log(data.icon_image);
-    // const userIconURL = window.URL.createObjectURL(data.icon_image);
-    const createdImageURL = null;
-    // HTML2で画像の取得がある、これは後で作成する
+    const userIcon = document.getElementById("_side_bar_current_user_icon");
+    const userIconURL = userIcon.src;
+    console.log("ユーザーアイコンのURLは"+userIconURL);
+    const backButton = document.getElementById("for_get_back_button");
 
     const html = 
     `
@@ -96,8 +108,13 @@ consumer.subscriptions.create("MessageChannel", {
     `;
 
     // 画像の部分、添付されていないなら使用する必要がない
+    const backButtonImageURL = backButton.src;
+    const createdImageURL = getCreatedImageURL();
+    console.log("生成された画像のURLは"+createdImageURL);
+
     let HTML4 = null;
-    if(data.content.image != null){
+    if(createdImageURL != null && createdImageURL != "null"){
+      console.log("画像が投稿された");
       HTML4 = 
       `
       <div class = "_message_images_box">
@@ -107,9 +124,15 @@ consumer.subscriptions.create("MessageChannel", {
       <div class = "image_show_background hidden" id = "image_show_<%= data.content.id %>">
         <div class = "image_show_center_object">
           <img src = "${backButtonImageURL}" class="image_show_back_button" id="${data.content.id}" onClick ="hideImageShow(this)" >
-          <img src = "${messagei.image}" class="image_show_image" id = "image_show_image_${data.content.id}" >
+          <img src = "${createdImageURL}" class="image_show_image" id = "image_show_image_${data.content.id}" >
         </div>
       </div>
+      `;
+    }
+    else{
+      console.log("画像は投稿されていません");
+      HTML4 = 
+      `
       `;
     }
 

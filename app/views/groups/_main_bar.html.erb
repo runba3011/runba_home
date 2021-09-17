@@ -237,7 +237,7 @@
           <div class = "image_post_confirm_background hidden" id = "confirm_parent">
             <div class = "image_post_confirm_center">
               <p class= "confirm_text" id = "confirm_text">この画像を投稿しますか？</p>
-              <%= image_tag "defaults/user_background.png" , class: "confirm_image" , id: "confirm_image" %>
+              <img class = "confirm_image" , id = "confirm_image">
               <div class = "confirm_buttons">
                 <input type = "button" value="取り消す" class= "common_simple_button confirm_button confirm_delete_button" id = "confirm_delete">
                 <%= f.submit "送信" , class: "common_simple_button confirm_button confirm_submit_button" , id: "confirm_submit" %>
