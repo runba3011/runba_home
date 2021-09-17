@@ -35,7 +35,7 @@
 }
 
 .comment_text_area{
-  width: 80%;
+  width: 95%;
   margin: auto;
   display: block;
   min-height: 100px;
@@ -45,6 +45,19 @@
   margin: auto;
   display: block;
   margin-top: 5px;
+  border:none;
+  width: 80px;
+  background-color: #2a2ac3;
+  box-shadow: 0 3px 0 0 #000052;
+  position: relative;
+  top: 0px;
+  transition:0.3s;
+}
+
+.comment_submit_btn:active{
+  box-shadow: none;
+  top:3px;
+  transition:0.2s;
 }
 
 .single_comment_set{
@@ -58,7 +71,30 @@
   overflow: scroll;
 }
 
+.comment_user_information{
+  display:inline-flex;
+  color:black;
+  text-decoration: none;
+  transition:0.3s;
+  padding-left:5px;
+}
+
+.comment_user_information:hover{
+  background-color:rgba(255, 255, 0, 0.411);
+  border-radius: 10px;
+  transition:0.1s;
+}
+
+.comment_user_icon{
+  width: 100%;
+  margin: auto;
+  border-radius: 5px;
+  display:inline-block;
+}
+
 .comment_user_name{
+  margin-left:3px;
   font-size: 18px;
+  margin: auto 10px auto 5px;
 }
 

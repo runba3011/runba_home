@@ -3,7 +3,7 @@ class MovieCommentsController < ApplicationController
     @movie_comment = MovieComment.new(movie_comment_params)
     if @movie_comment.valid?
       @movie_comment.save
-      redirect_to movie_path(params[:movie_id])
+      ActionCable.server.broadcast 'movie_comment_channel' , comment: @movie_comment , user: current_user
     else
       @comments = MovieComment.where(id: params[:movie_id])
       @movie = Movie.find(params[:movie_id])
