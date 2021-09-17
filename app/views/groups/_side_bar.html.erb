@@ -9,7 +9,11 @@
     <div class = "_side_bar_user_information">
       <%= link_to user_path(current_user) , class: "_side_bar_current_user_link" do %>
         <div class =  "_side_bar_image_parent">
-          <%= image_tag current_user.icon_image , class: "_side_bar_current_user_icon" %>
+          <% if current_user.icon_image.attached? %>
+            <%= image_tag current_user.icon_image , class: "_side_bar_current_user_icon" %>
+          <% else %>
+            <%= image_tag "defaults/user_icon_image.png" , class: "_side_bar_current_user_icon" %>
+          <% end %>
         </div>
         <p class = "_side_bar_current_user_name"><%= current_user.nickname %></p>
       <% end %>
