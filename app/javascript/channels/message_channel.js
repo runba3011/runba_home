@@ -137,7 +137,7 @@ consumer.subscriptions.create("MessageChannel", {
       `;
     }
 
-    // 最後の閉じタグとonly_border
+    // only_border
     const HTML5 = 
     `
       <div class = "_messages_only_border only_border"></div>

@@ -17,25 +17,42 @@
   }
 
   function adjustWidthAndHeight(obj){
+    showImage = document.getElementById(`image_show_image_${obj.id}`)
+    showImage.removeAttribute('width');
+    showImage.removeAttribute('height');
+
     // 戻るボタンの高さは50px
+    // 戻るボタンの上の余白は10px
     // 画像プレビューエリアのwidthは親✖️0.95
     screenWidth = window.innerWidth;
     screenHeight = window.innerHeight;
 
     maxWidth = screenWidth * 0.95;
-    maxHeight = screenHeight - 50;
+    maxHeight = screenHeight - (50 + 10);
 
-    showImage = document.getElementById(`image_show_image_${obj.id}`)
-    showImage.removeAttribute('width');
-    showImage.removeAttribute('height');
+    const ImageWidth = obj.offsetWidth;
+    const ImageHeight = obj.offsetHeight;
 
-    if(obj.offsetWidth > obj.offsetHeight){
-      console.log("widthの方が大きいのでwidthを限界まで広げる");
+    // デフォルトではwidthいっぱいに広げる、heightが飛び出るならheightいっぱいに広げる、逆にwidthから飛び出るようになるなら縦横同じにする
+    let nowImageWidth = maxWidth;
+    let nowImageHeight = maxWidth * (ImageHeight / ImageWidth);
+
+    if(nowImageHeight < maxHeight){
+      console.log("高さに余裕があるので横幅いっぱいに広げる");
       showImage.setAttribute('style' , `width: ${maxWidth}px;height:auto;`);
     }
     else{
-      console.log("heightの方が大きいのでheightを限界まで広げる");
-      showImage.setAttribute('style' , `height: ${maxHeight}px; width: auto;`);
+      console.log("高さに余裕がありません")
+      nowImageHeight = maxHeight;
+      nowImageWidth = maxHeight * (ImageWidth / ImageHeight);
+      if(nowImageWidth < maxWidth){
+        console.log("横幅に余裕があるので縦幅いっぱいに広げる")
+        showImage.setAttribute('style' , `height: ${maxHeight}px; width: auto;`);
+      }
+      else{
+        console.log("画像が正方形なので縦横いっぱいに広げる")
+        showImage.setAttribute('style' , `height: ${maxHeight}px; width: auto;`);
+      }
     }
   }
 </script>
