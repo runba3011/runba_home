@@ -1,7 +1,11 @@
 function autoScroll(){
-  const messagesParent = document.getElementById("messages_parent");
-  const bottom = messagesParent.getBoundingClientRect().bottom;
-  messagesParent.scrollTo(0,bottom);
+  if(document.URL.match(/groups/)){
+    const messagesParent = document.getElementById("messages_parent");
+    if(messagesParent != null){
+      const bottom = messagesParent.getBoundingClientRect().bottom;
+      messagesParent.scrollTo(0,bottom);
+    }
+  }
 
 }
 

@@ -11,7 +11,9 @@ function hide(){
 function judge(){
   if(document.URL.match(/groups/)){
     const deleteButton = document.getElementById("confirm_delete");
-    deleteButton.addEventListener('click' , hide);
+    if(deleteButton != null){
+      deleteButton.addEventListener('click' , hide);
+    }
   };
 };
 
