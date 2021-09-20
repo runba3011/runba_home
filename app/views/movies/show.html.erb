@@ -29,10 +29,10 @@
       <div id = "all_coment_parent">
         <% @movie.movie_comments.each do |comment| %>
           <div class = "single_comment_set" id = "single_comment_set_<%= comment.id %>">
+            <div style= "display:flex; justify-content:space-between">
+            
+            
             <%= link_to user_path(comment.user) , class:"comment_user_information" do %>
-            <% if comment.user == current_user %>
-              <%= link_to "削除" , movie_movie_comment_path(@movie , comment) , method: :delete %>
-            <% end %>
               <div class = "comment_user_icon_parent" style="display:flex; width: 50px; height:50px;">
                 <% if comment.user.icon_image.attached? %>
                   <%= image_tag comment.user.icon_image , class: "comment_user_icon" %>
@@ -42,6 +42,11 @@
               </div>
               <p class = "comment_user_name"><%= comment.user.nickname %></p>
             <% end %>
+              <% if comment.user == current_user %>
+                <%= link_to "削除" , movie_movie_comment_path(@movie , comment) , method: :delete , style: "margin:auto; margin-right:5px;" %>
+              <% end %>
+
+            </div>
             <p class = "comment_text hide_scroll_bar"><%= h(comment.text).gsub(/\n|\r\n/, "<br>").html_safe %></p>
           </div>
         <% end %>
