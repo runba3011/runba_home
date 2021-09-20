@@ -55,6 +55,7 @@
       <%= render partial: "messages" , locals: {group: group} %>
       <% if group.users.length == 1 %>
         <p>このルームにはあなたしかいません。メモ帳としてでも使ってください。</p>
+        <div class ="_messages_only_border only_border" style = "padding-bottom:20px;"></div>
       <% end %>
     <% elsif is_edit == true %>
       <%# 編集時に表示される部分,CSSはedit.scssを用いて作成している  %>
