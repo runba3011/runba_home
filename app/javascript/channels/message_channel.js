@@ -169,6 +169,9 @@ consumer.subscriptions.create("MessageChannel", {
       }
       console.log(destroyObject);
       destroyObject.innerHTML = "メッセージは削除されました";
+
+      const destroyButton = document.getElementById(`destroy_button_${data.destroy_message_id}`);
+      destroyButton.remove();
     };
   }
 });
