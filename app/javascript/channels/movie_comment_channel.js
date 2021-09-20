@@ -55,11 +55,15 @@ consumer.subscriptions.create("MovieCommentChannel", {
   
       const submitButton = document.getElementById("submit_button");
       submitButton.removeAttribute("disabled");
+      document.getElementById("delete_explain").classList.remove("hidden")
     }
     else{
       const destroyObject = document.getElementById(`single_comment_set_${data.destroy_comment_number}`);
       console.log(destroyObject);
       destroyObject.remove();
+      
+      document.getElementById("delete_explain").classList.add("hidden")
+
     }
   }
 });
