@@ -72,7 +72,7 @@ consumer.subscriptions.create("MessageChannel", {
     
     <div class = "_messages_single_message hide_scroll_bar">
       <div class = "_messages_message_information">
-        <a href = "/users/${data.content.id}" class = "_messages_user_information">
+        <a href = "/users/${data.user.id}" class = "_messages_user_information">
 
     `
 
