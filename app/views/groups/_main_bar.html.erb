@@ -139,14 +139,10 @@
                 <% if this_user.authority_id < @group_user_relation.authority_id %>
                 <%# 自分の権限の方が高いとき、レベルアップボタンなどを表示する %>
                   <% if this_user.authority_id + 1 < @group_user_relation.authority_id %>
-                    <%= link_to "権限上昇" , "/groups/#{group.id}/group_user_relations/#{user.id}/up", method: :post , class: "user_text user_edit_button up" , style: "margin-right: #{@level_up_right_margin}px" , id: "authority_up_#{this_user.id}" %>
-                  <% else %>
-                    <%= link_to "権限上昇" , "/groups/#{group.id}/group_user_relations/#{user.id}/up", method: :post , class: "user_text user_edit_button up hidden" , style: "margin-right: #{@level_up_right_margin}px" , id: "authority_up_#{this_user.id}" %>
+                    <%= link_to "権限上昇" , "/groups/#{group.id}/group_user_relations/#{user.id}/up", method: :post , class: "user_text user_edit_button up" , style: "margin-right: #{@level_up_right_margin}px" %>
                   <% end %>
                   <% if this_user.authority_id != 1 %>
-                    <%= link_to "権限制限" , "/groups/#{group.id}/group_user_relations/#{user.id}/down" , method: :post , class: "user_text user_edit_button down" , style: "margin-right: #{@level_down_right_margin}px" , id: "authority_down_#{this_user.id}" %>
-                  <% else %>
-                    <%= link_to "権限制限" , "/groups/#{group.id}/group_user_relations/#{user.id}/down" , method: :post , class: "user_text user_edit_button down hidden" , style: "margin-right: #{@level_down_right_margin}px" , id: "authority_down_#{this_user.id}" %>
+                    <%= link_to "権限制限" , "/groups/#{group.id}/group_user_relations/#{user.id}/down" , method: :post , class: "user_text user_edit_button down" , style: "margin-right: #{@level_down_right_margin}px" %>
                   <% end %>
                   <% if 3 <= @group_user_relation.authority_id %>
                     <%# 権限が３以上の時、追放ボタンを表示する %>

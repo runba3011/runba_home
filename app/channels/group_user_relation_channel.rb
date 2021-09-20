@@ -1,6 +1,6 @@
 class GroupUserRelationChannel < ApplicationCable::Channel
   def subscribed
-    stream_from "group_ser_relation_channel"
+    stream_from "group_user_relation_channel"
   end
 
   def unsubscribed
