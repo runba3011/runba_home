@@ -6,8 +6,10 @@ class MessagesController < ApplicationController
       # binding.pry
       @group = Group.find(params[:group_id])
 
-      if @message.image != nil
+      if @message.image.attached?
         @message_image_url = url_for(@message.image)
+      else
+        @message_image_url = nil
       end 
 
       if current_user.icon_image.attached?
