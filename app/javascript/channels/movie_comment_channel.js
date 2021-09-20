@@ -30,7 +30,7 @@ consumer.subscriptions.create("MovieCommentChannel", {
     </div>
     `;
 
-    const imageURL = document.getElementById("header_user_icon").src;
+    const imageURL = data.user_icon;
     const addHTML =  
     `
     <div class = "single_comment_set">
