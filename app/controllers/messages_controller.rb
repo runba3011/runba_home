@@ -18,7 +18,7 @@ class MessagesController < ApplicationController
       else
         @icon_image = URI("/assets/defaults/user_icon_image.png")
       end
-      ActionCable.server.broadcast 'message_channel' , content: @message , user: current_user , group: @group , icon_image_url: @icon_image , message_image_url: @message_image_url
+      ActionCable.server.broadcast 'message_channel' , content: @message , user: current_user , group: @group , icon_image_url: @icon_image , message_image_url: @message_image_url , is_destroy: false
     else
       redirect_to group_path(@message.group)
     end
@@ -29,7 +29,8 @@ class MessagesController < ApplicationController
     @message.text = nil
     @message.update(text: nil)
     @group = Group.find(params[:group_id])
-    redirect_to group_path(@group)
+    ActionCable.server.broadcast 'message_channel' , is_destroy: true , destroy_message_id: params[:id]
+    # redirect_to group_path(@group)
   end
 
   private

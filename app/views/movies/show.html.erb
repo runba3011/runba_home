@@ -16,11 +16,11 @@
     <div class = "under_content">
       <p class = "small_section_title">ルンバ氏の一言</p>
       <p class = "explain"><%= "　#{@movie.explain}" %></p>
-
       <%= form_with  class: "comment_objects" , model: @movie_comment ,  url: movie_movie_comments_path(@movie , @movie_comment), local: true  do |f| %>
         <% unless user_signed_in? %>
           <%= f.text_field :text , readonly: true ,  disable: true , value: "ユーザー登録かサインインしないとコメントできません" %>
         <% else %>
+          <p style = "color:gray;" class = "hidden" id="delete_explain">新しいコメントを削除するには再読み込みをしてください</p>
           <%= f.text_area :text , id: "use_adjust" , value: @textarea_inside , class: "comment_text_area" %>
           <%= f.submit "送信" , class: "comment_submit_btn common_simple_button" , id: "submit_button" %>
         <% end %>
@@ -28,7 +28,10 @@
 
       <div id = "all_coment_parent">
         <% @movie.movie_comments.each do |comment| %>
-          <div class = "single_comment_set">
+          <div class = "single_comment_set" id = "single_comment_set_<%= comment.id %>">
+            <div style= "display:flex; justify-content:space-between">
+            
+            
             <%= link_to user_path(comment.user) , class:"comment_user_information" do %>
               <div class = "comment_user_icon_parent" style="display:flex; width: 50px; height:50px;">
                 <% if comment.user.icon_image.attached? %>
@@ -39,6 +42,11 @@
               </div>
               <p class = "comment_user_name"><%= comment.user.nickname %></p>
             <% end %>
+              <% if comment.user == current_user %>
+                <%= link_to "削除" , movie_movie_comment_path(@movie , comment) , method: :delete , style: "margin:auto; margin-right:5px;" %>
+              <% end %>
+
+            </div>
             <p class = "comment_text hide_scroll_bar"><%= h(comment.text).gsub(/\n|\r\n/, "<br>").html_safe %></p>
           </div>
         <% end %>

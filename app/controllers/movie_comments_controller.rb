@@ -8,7 +8,7 @@ class MovieCommentsController < ApplicationController
       else
         @user_icon = URI("/assets/defaults/user_icon_image.png")
       end
-      ActionCable.server.broadcast 'movie_comment_channel' , comment: @movie_comment , user: current_user , user_icon: @user_icon
+      ActionCable.server.broadcast 'movie_comment_channel' , comment: @movie_comment , user: current_user , user_icon: @user_icon , is_destroy: false
     else
       @comments = MovieComment.where(id: params[:movie_id])
       @movie = Movie.find(params[:movie_id])
@@ -21,7 +21,11 @@ class MovieCommentsController < ApplicationController
   end
 
   def destroy
-    
+    @comment = MovieComment.find(params[:id])
+    if current_user == @comment.user
+      @comment.destroy
+      ActionCable.server.broadcast 'movie_comment_channel' , is_destroy: true , destroy_comment_number: params[:id]
+    end
   end
 
   def movie_comment_params
