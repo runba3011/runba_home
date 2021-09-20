@@ -58,6 +58,7 @@
         <div class ="_messages_only_border only_border" style = "padding-bottom:20px;"></div>
       <% end %>
     <% elsif is_edit == true %>
+      <p style = "position:absolute;top:0px;left:0px;" id="position_point"></p>
       <%# 編集時に表示される部分,CSSはedit.scssを用いて作成している  %>
       <div class = "members_show">
         <p>このグループのメンバー</p>
@@ -154,7 +155,7 @@
           </div>
         <% end %>
 
-        <div class = "new_user">
+        <div class = "new_user" id = "new_user_box">
           <%= form_with model: @send_group_user_relation ,  url:group_group_user_relations_path(group) , method: :post , local: true, class: "new_user_invite" do |f| %>
             <p class = "invite_title">新しいユーザーを追加する</p>
 
