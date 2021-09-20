@@ -22,9 +22,9 @@ consumer.subscriptions.create("MessageChannel", {
   },
 
   received(data) {
+    console.log(data.icon_image)
     const defaultImageURL = null;
-    const userIcon = document.getElementById("_side_bar_current_user_icon");
-    const userIconURL = userIcon.src;
+    const userIconURL = data.icon_image_url;
     console.log("ユーザーアイコンのURLは"+userIconURL);
     const backButton = document.getElementById("for_get_back_button");
 

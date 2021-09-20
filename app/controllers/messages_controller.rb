@@ -7,10 +7,11 @@ class MessagesController < ApplicationController
       @group = Group.find(params[:group_id])
       if current_user.icon_image.attached?
         @icon_image = current_user.icon_image
+        @icon_image = url_for(@icon_image)
       else
-        @icon_image = nil
+        @icon_image = URI("/assets/defaults/user_icon_image.png")
       end
-      ActionCable.server.broadcast 'message_channel' , content: @message , user: current_user , group: @group , icon_image: @icon_image
+      ActionCable.server.broadcast 'message_channel' , content: @message , user: current_user , group: @group , icon_image_url: @icon_image
     else
       redirect_to group_path(@message.group)
     end
