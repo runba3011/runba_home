@@ -21,7 +21,7 @@
       <div class = "_comment_information_box_actions">
         <% if user_signed_in? %>
           <% if comment.user == current_user %>
-            <%= link_to "削除" , stickman_war_stickman_war_detail_stickman_war_comment_path(@stickman_war_stage_type , @stickman_war_stage_number ,  comment) , method: :delete , class: "_comment_delete" %>
+            <%= link_to "削除" , stickman_war_stickman_war_detail_stickman_war_comment_path(@stickman_war_stage_type , @stickman_war_stage_number ,  comment) , method: :delete , class: "_comment_delete" , remote: true %>
           <% end %>
         <% end %>
       </div>
