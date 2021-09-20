@@ -8,15 +8,15 @@
 
 
     <p class = "small_section_title">コメント</p>
-    <div class = "text_box all_comment_box">
+    <div class = "text_box all_comment_box" id = "comments_parent">
       <%= render partial: "stickman_war_detail/comment" , locals: {comments: @comments } %>
     </div>
     <div class = "comment_box">
     <% if user_signed_in? %>
       <%= render partial: "shared/errors" , locals: {model: @comment} %>
       <%= form_with model: @comment , url: @create_path, local: true  do |f| %>
-        <%= f.text_area :text , class: "comment_text_box" %>
-        <%= f.submit "送信" ,  class: "comment_submit_btn" %>
+        <%= f.text_area :text , class: "comment_text_box" , id: "comment_text_box" %>
+        <%= f.submit "送信" ,  class: "comment_submit_btn" , id: "comment_submit_button" %>
       <% end %>
     <% else %>
 

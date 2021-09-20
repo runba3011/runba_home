@@ -19,7 +19,11 @@
         <% end %>
       </div>
       <div class = "_comment_information_box_actions">
-        <%= link_to "削除" , stickman_war_stickman_war_detail_stickman_war_comment_path(@stickman_war_stage_type , @stickman_war_stage_number ,  comment) , method: :delete , class: "_comment_delete" %>
+        <% if user_signed_in? %>
+          <% if comment.user == current_user %>
+            <%= link_to "削除" , stickman_war_stickman_war_detail_stickman_war_comment_path(@stickman_war_stage_type , @stickman_war_stage_number ,  comment) , method: :delete , class: "_comment_delete" %>
+          <% end %>
+        <% end %>
       </div>
     </div>
     <%# 全角のスペースは段落の形にするために意図して記入している %>
