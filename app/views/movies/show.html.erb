@@ -28,7 +28,7 @@
 
       <div id = "all_coment_parent">
         <% @movie.movie_comments.each do |comment| %>
-          <div class = "single_comment_set" id = "single_comment_set_<% comment.id %>">
+          <div class = "single_comment_set" id = "single_comment_set_<%= comment.id %>">
             <%= link_to user_path(comment.user) , class:"comment_user_information" do %>
             <% if comment.user == current_user %>
               <%= link_to "削除" , movie_movie_comment_path(@movie , comment) , method: :delete %>
