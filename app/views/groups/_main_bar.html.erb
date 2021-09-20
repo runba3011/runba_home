@@ -81,7 +81,8 @@
 
             <div class = "user_information">
 
-              <%  button_width = 80
+              <%  #ここを変更するときにはchannelの方も編集する
+                  button_width = 80
                   button_margin_total = 3 * 2
                   single_button_width_total = button_width + button_margin_total
 
@@ -133,19 +134,23 @@
                 <%= link_to "退出する" , group_group_user_relation_path(group , user) , method: :delete , class: "user_text user_edit_button destroy" %>
               <% else %>
 
-                <p class="user_text show_authority" style = "margin-right: <%= @authority_right_margin %>px;" >権限:<%= this_user.authority[:name] %></p>
+                <p class="user_text show_authority" style = "margin-right: <%= @authority_right_margin %>px;" , id = "authority_show_<%= this_user.id %>" >権限:<%= this_user.authority[:name] %></p>
 
                 <% if this_user.authority_id < @group_user_relation.authority_id %>
                 <%# 自分の権限の方が高いとき、レベルアップボタンなどを表示する %>
                   <% if this_user.authority_id + 1 < @group_user_relation.authority_id %>
-                    <%= link_to "権限上昇" , "/groups/#{group.id}/group_user_relations/#{user.id}/up", method: :post , class: "user_text user_edit_button up" , style: "margin-right: #{@level_up_right_margin}px" %>
+                    <%= link_to "権限上昇" , "/groups/#{group.id}/group_user_relations/#{user.id}/up", method: :post , class: "user_text user_edit_button up" , style: "margin-right: #{@level_up_right_margin}px" , id: "authority_up_#{this_user.id}" %>
+                  <% else %>
+                    <%= link_to "権限上昇" , "/groups/#{group.id}/group_user_relations/#{user.id}/up", method: :post , class: "user_text user_edit_button up hidden" , style: "margin-right: #{@level_up_right_margin}px" , id: "authority_up_#{this_user.id}" %>
                   <% end %>
                   <% if this_user.authority_id != 1 %>
-                    <%= link_to "権限制限" , "/groups/#{group.id}/group_user_relations/#{user.id}/down" , method: :post , class: "user_text user_edit_button down" , style: "margin-right: #{@level_down_right_margin}px" %>
+                    <%= link_to "権限制限" , "/groups/#{group.id}/group_user_relations/#{user.id}/down" , method: :post , class: "user_text user_edit_button down" , style: "margin-right: #{@level_down_right_margin}px" , id: "authority_down_#{this_user.id}" %>
+                  <% else %>
+                    <%= link_to "権限制限" , "/groups/#{group.id}/group_user_relations/#{user.id}/down" , method: :post , class: "user_text user_edit_button down hidden" , style: "margin-right: #{@level_down_right_margin}px" , id: "authority_down_#{this_user.id}" %>
                   <% end %>
                   <% if 3 <= @group_user_relation.authority_id %>
                     <%# 権限が３以上の時、追放ボタンを表示する %>
-                    <%= link_to "追放" , group_group_user_relation_path(group , user) , method: :delete , class: "user_text user_edit_button destroy" %>
+                    <%= link_to "追放" , group_group_user_relation_path(group , user) , method: :delete , class: "user_text user_edit_button destroy" , remote: true %>
                   <% end %>
                 <% end %>
               <% end %>

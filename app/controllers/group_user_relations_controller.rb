@@ -22,6 +22,7 @@ class GroupUserRelationsController < ApplicationController
       @group_user_relation.authority_id -= 1
       @group_user_relation.save
     end
+    ActionCable.server.broadcast 'group_user_relation_channel' , operater_authority: @operater.authority_id , group_user_relation: @group_user_relation
     redirect_to edit_group_path(params[:group_id])
   end
 
