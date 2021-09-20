@@ -1,6 +1,6 @@
 <%= stylesheet_link_tag "stickman_war_detail/comment" , :media => "all" %>
 <% comments.each do |comment| %>
-  <div class = "_comment_single_box">
+  <div class = "_comment_single_box" id = "single_comment_<%=comment.id%>">
     <div class = "_comment_information_box">
       <div class = "_comment_information_box_user_time">
         
