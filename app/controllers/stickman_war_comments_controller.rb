@@ -33,7 +33,7 @@ class StickmanWarCommentsController < ApplicationController
 
     @stickman_war_stage_type = params[:stickman_war_id]
     @stickman_war_stage_number = params[:stickman_war_detail_id]
-    redirect_to stickman_war_stickman_war_detail_path(params[:stickman_war_id] , params[:stickman_war_detail_id])
+    # redirect_to stickman_war_stickman_war_detail_path(params[:stickman_war_id] , params[:stickman_war_detail_id])
   end
 
   private
