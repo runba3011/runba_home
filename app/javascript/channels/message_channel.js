@@ -1,17 +1,6 @@
 import consumer from "./consumer"
 
 
-function getCreatedImageURL(){
-  const createdImage = document.getElementById("confirm_image");
-  let createdImageURL = null;
-  if (createdImage.src != null && createdImage.src != "null" && createdImage.src != ""){
-    console.log(createdImage);
-    const createdImageURL = createdImage.src;
-    console.log("投稿された画像のURLは"+createdImageURL);
-    return createdImageURL;
-  }
-}
-
 consumer.subscriptions.create("MessageChannel", {
   connected() {
     // Called when the subscription is ready for use on the server
@@ -25,7 +14,6 @@ consumer.subscriptions.create("MessageChannel", {
     console.log(data.icon_image)
     const defaultImageURL = null;
     const userIconURL = data.icon_image_url;
-    console.log("ユーザーアイコンのURLは"+userIconURL);
     const backButton = document.getElementById("for_get_back_button");
 
     const html = 
@@ -109,7 +97,7 @@ consumer.subscriptions.create("MessageChannel", {
 
     // 画像の部分、添付されていないなら使用する必要がない
     const backButtonImageURL = backButton.src;
-    const createdImageURL = getCreatedImageURL();
+    const createdImageURL = data.message_image_url;
     console.log("生成された画像のURLは"+createdImageURL);
 
     let HTML4 = null;
