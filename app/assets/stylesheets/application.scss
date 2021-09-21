@@ -50,6 +50,14 @@ header{
   padding-bottom: 20px;
 }
 
+@media (max-width: 800px){
+  .main_content{
+    width: 95%;
+  }
+}
+
+
+
 .only_border{
   width:90%;
   border-bottom: 1px solid rgb(155, 155, 155);
