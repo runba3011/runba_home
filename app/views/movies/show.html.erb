@@ -47,7 +47,7 @@
               <% end %>
 
             </div>
-            <p class = "comment_text hide_scroll_bar"><%= h(comment.text).gsub(/\n|\r\n/, "<br>").html_safe %></p>
+            <p class = "comment_text hide_scroll_bar"><%= h(comment.text).gsub(/\r\n|\n|\r/, "<br>").html_safe %></p>
           </div>
         <% end %>
       </div>
