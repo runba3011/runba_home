@@ -8,6 +8,7 @@ class MovieCommentsController < ApplicationController
       else
         @user_icon = URI("/assets/defaults/user_icon_image.png")
       end
+      @movie_comment.text = @movie_comment.text.gsub(/(\r\n|\r|\n)/, "<br>")
       ActionCable.server.broadcast 'movie_comment_channel' , comment: @movie_comment , user: current_user , user_icon: @user_icon , is_destroy: false
     else
       @comments = MovieComment.where(id: params[:movie_id])

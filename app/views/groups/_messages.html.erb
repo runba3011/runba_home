@@ -76,7 +76,7 @@
 
       <% if message.text != nil %>
         <div id = "message_content_<%= message.id %>">
-          <p class ="_message_text"><%= h(message.text).gsub(/\n|\r\n/, "<br>").html_safe %></p>
+          <p class ="_message_text"><%= h(message.text).gsub(/\r\n|\n|\r/, "<br>").html_safe %></p>
           <% if message.image.attached? %>
             <div class = "_message_images_box">
             <%= image_tag message.image , class: "_message_images" , onClick: "showBigImage(this) , adjustWidthAndHeight(this)" , id: message.id %>

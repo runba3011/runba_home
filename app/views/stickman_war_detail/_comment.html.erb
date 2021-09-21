@@ -27,6 +27,6 @@
       </div>
     </div>
     <%# 全角のスペースは段落の形にするために意図して記入している %>
-    <p class = "_comment_text hide_scroll_bar">　<%= comment.text.gsub(/\n|\r\n/, "<br>").html_safe %></p>
+    <p class = "_comment_text hide_scroll_bar">　<%= h(comment.text).gsub(/\r\n|\n|\r/, "<br>").html_safe %></p>
   </div>
 <% end %>
