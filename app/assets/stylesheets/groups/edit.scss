@@ -265,3 +265,28 @@ a{
   box-shadow: none;
   transition: 0.1s;
 }
+
+@media (max-width: 1000px){
+  ._main_bar_top{
+    height:15vh;
+  }
+
+  ._side_bar{
+    display:none;
+  }
+
+  ._main_bar{
+    width: 100%;
+  }
+
+  .change_button{
+    background-color: red;
+    margin:2px auto;
+  }
+
+  .update_and_destroy_button{
+    display: flex;
+    flex-direction: column;
+    width:200px;;
+  }
+}

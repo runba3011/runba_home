@@ -33,7 +33,7 @@
               <%= f.file_field :image , class: "hidden" , accept: "image/jpeg , image/png , image/gif " %>
             </label>
           </div>
-          <%= f.submit "グループ情報更新" , method: :put , class: "_main_bar_button _main_bar_group_update" %>
+          <%= f.submit "更新" , method: :put , class: "_main_bar_button _main_bar_group_update change_button" %>
           
         <% end %>
       <% else %>
