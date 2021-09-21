@@ -29,11 +29,17 @@
           <% end %>
           <div class = "edit_area">
             <%= f.text_field :name , class: "group_name_text_area" %>
-            <label class = "select_image">画像
-              <%= f.file_field :image , class: "hidden" , accept: "image/jpeg , image/png , image/gif " %>
-            </label>
+              <label class = "select_image more_than_1000px more_than_1000px_select_image">画像
+                <%= f.file_field :image , class: "hidden" , accept: "image/jpeg , image/png , image/gif " %>
+              </label>
+            <div class = "image_and_update_button less_than_1000px">
+              <label class = "select_image">画像
+                <%= f.file_field :image , class: "hidden" , accept: "image/jpeg , image/png , image/gif " %>
+              </label>
+              <%= f.submit "更新" , method: :put , class: "_main_bar_button _main_bar_group_update change_button less_than_1000px" %>
+            </div>
           </div>
-          <%= f.submit "更新" , method: :put , class: "_main_bar_button _main_bar_group_update change_button" %>
+          <%= f.submit "更新" , method: :put , class: "_main_bar_button _main_bar_group_update change_button more_than_1000px" %>
           
         <% end %>
       <% else %>

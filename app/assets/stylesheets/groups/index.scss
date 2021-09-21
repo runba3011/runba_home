@@ -1,18 +1,18 @@
-@media (min-width: 801px){
-  .more_than_800px{
+// widthが1000以上の時の表示
+  .more_than_1000px{
     display:inherit;
   }
 
-  .less_than_800px{
+  .less_than_1000px{
     display:none;
   }
 
-  .more_than_800px_user_link{
+  .more_than_1000px_user_link{
     display:flex;
   }
-}
+// widthが1000以上の時の表示終了
 
-@media(max-width: 800px){
+@media(max-width: 1000px){
   ._side_bar{
     width: 100%;
   }
@@ -20,11 +20,11 @@
     display: none;
   }
 
-  .less_than_800px{
+  .less_than_1000px{
     display:inherit;
   }
 
-  .more_than_800px{
+  .more_than_1000px{
     display:none;
   }
 

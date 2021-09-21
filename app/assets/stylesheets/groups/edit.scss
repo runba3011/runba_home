@@ -266,6 +266,21 @@ a{
   transition: 0.1s;
 }
 
+// 1000px以上の時の表示----------------------------------
+  .more_than_1000px{
+    display: inherit;
+  }
+
+  .less_than_1000px{
+    display: none;
+  }
+
+  .select_image{
+    display:inline-block;
+  }
+
+// 1000px以上の時の表示終了------------------------------
+
 @media (max-width: 1000px){
   ._main_bar_top{
     height:15vh;
@@ -280,7 +295,6 @@ a{
   }
 
   .change_button{
-    background-color: red;
     margin:2px auto;
   }
 
@@ -288,5 +302,49 @@ a{
     display: flex;
     flex-direction: column;
     width:200px;;
+  }
+
+  .more_than_1000px{
+    display: none;
+  }
+
+  .less_than_1000px{
+    display: inherit;
+  }
+
+  .change_button{
+    margin:0px;
+  }
+
+  .image_and_update_button {
+    display: flex;
+    justify-content: space-around;
+    margin-top:3px;
+  }
+
+  .group_name_text_area{
+    width:100%;
+  }
+
+  .select_image{
+    display: inline-block;
+    padding: 8px 10px;
+  }
+
+  .more_than_1000px_select_image{
+    display:none;
+  }
+
+  ._main_bar_top{
+    height: 90px;
+    padding:0px 30px 0px 5px;
+  }
+
+  ._main_bar_center{
+    height:calc(100vh - 90px);
+  }
+
+  ._main_group_icon{
+    max-height: 80px;
   }
 }
