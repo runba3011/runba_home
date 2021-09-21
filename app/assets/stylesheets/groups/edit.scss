@@ -51,6 +51,10 @@
   display:none;
 }
 
+._edit_authority_buttons{
+  display:flex;
+}
+
 ._main_bar_group_update{
   background-color:rgb(0, 43, 0);
 }
@@ -350,21 +354,26 @@ a{
 }
 
 @media(max-width:700px){
-  // 700pxより幅が狭い時、権限についての説明を縦１列に表示、権限操作ボタンのところで改行
+  // 700pxより幅が狭い時、権限についての説明を縦１列に表示、権限操作ボタンのところで改行、権限操作ボタンの幅変更
   .authority_explain_single_box{
     width:100%;
   }
 
   .single_user{
     flex-direction: column;
-    height:80px;
+    height:auto;
   }
 
   .user_information{
-    margin-bottom:10px
+    margin-bottom:10px;
+    justify-content: space-between;
   }
 
   ._edit_icon_and_name{
     margin-top:10px;
+  }
+
+  .invite_title{
+    font-size:5vw;
   }
 }
