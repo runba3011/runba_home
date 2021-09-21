@@ -13,10 +13,12 @@
       </div>
       <div class = "_main_bar_group_control_buttons">
         <%= link_to "編集" , edit_group_path(group) , class: "_main_bar_edit_button _main_bar_button" %>
+        <%= link_to "戻る" , groups_path , class: "_main_bar_edit_button _main_bar_button" , style: "background-color: #009eda;" %>
 
-        <% if authority == 5 %>
-          <%= link_to "グループ削除" , group_path(group) , method: :delete , class: "_main_bar_delete_button _main_bar_button" %>
-        <% end %>
+        <%# メッセージ表示画面で元々表示されていた削除ボタン、必要ないが念のため残しておく %>
+        <%# <% if authority == 5 %>
+          <%#= link_to "グループ削除" , group_path(group) , method: :delete , class: "_main_bar_delete_button _main_bar_button" %>
+        <%# <% end %> 
       </div>
     <% elsif is_edit == true %>
       <%# グループを編集する際に表示されるもの（ヘッダー） %>
@@ -29,11 +31,18 @@
           <% end %>
           <div class = "edit_area">
             <%= f.text_field :name , class: "group_name_text_area" %>
-            <label class = "select_image">画像
-              <%= f.file_field :image , class: "hidden" , accept: "image/jpeg , image/png , image/gif " %>
-            </label>
+              <label class = "select_image more_than_1000px more_than_1000px_select_image">画像
+                <%= f.file_field :image , class: "hidden" , accept: "image/jpeg , image/png , image/gif " %>
+              </label>
+            <div class = "image_and_update_button less_than_1000px">
+              <label class = "select_image">画像
+                <%= f.file_field :image , class: "hidden" , accept: "image/jpeg , image/png , image/gif " %>
+              </label>
+              <%= f.submit "更新" , method: :put , class: "_main_bar_button _main_bar_group_update change_button less_than_1000px" %>
+              <%= link_to "戻る" , groups_path , class: "_main_bar_edit_button _main_bar_button change_button" , style: "background-color: #009eda;" %>
+            </div>
           </div>
-          <%= f.submit "グループ情報更新" , method: :put , class: "_main_bar_button _main_bar_group_update" %>
+          <%= f.submit "更新" , method: :put , class: "_main_bar_button _main_bar_group_update change_button more_than_1000px" %>
           
         <% end %>
       <% else %>
@@ -81,7 +90,7 @@
 
             <div class = "user_information">
 
-              <%  #ここを変更するときにはchannelの方も編集する
+              <%  
                   button_width = 80
                   button_margin_total = 3 * 2
                   single_button_width_total = button_width + button_margin_total
@@ -138,16 +147,18 @@
 
                 <% if this_user.authority_id < @group_user_relation.authority_id %>
                 <%# 自分の権限の方が高いとき、レベルアップボタンなどを表示する %>
-                  <% if this_user.authority_id + 1 < @group_user_relation.authority_id %>
-                    <%= link_to "権限上昇" , "/groups/#{group.id}/group_user_relations/#{user.id}/up", method: :post , class: "user_text user_edit_button up" , style: "margin-right: #{@level_up_right_margin}px" %>
-                  <% end %>
-                  <% if this_user.authority_id != 1 %>
-                    <%= link_to "権限制限" , "/groups/#{group.id}/group_user_relations/#{user.id}/down" , method: :post , class: "user_text user_edit_button down" , style: "margin-right: #{@level_down_right_margin}px" %>
-                  <% end %>
-                  <% if 3 <= @group_user_relation.authority_id %>
-                    <%# 権限が３以上の時、追放ボタンを表示する %>
-                    <%= link_to "追放" , group_group_user_relation_path(group , user) , method: :delete , class: "user_text user_edit_button destroy" , remote: true %>
-                  <% end %>
+                  <div class = "_edit_authority_buttons">
+                    <% if this_user.authority_id + 1 < @group_user_relation.authority_id %>
+                      <%= link_to "権限上昇" , "/groups/#{group.id}/group_user_relations/#{user.id}/up", method: :post , class: "user_text user_edit_button up" , style: "margin-right: #{@level_up_right_margin}px" %>
+                    <% end %>
+                    <% if this_user.authority_id != 1 %>
+                      <%= link_to "権限制限" , "/groups/#{group.id}/group_user_relations/#{user.id}/down" , method: :post , class: "user_text user_edit_button down" , style: "margin-right: #{@level_down_right_margin}px" %>
+                    <% end %>
+                    <% if 3 <= @group_user_relation.authority_id %>
+                      <%# 権限が３以上の時、追放ボタンを表示する %>
+                      <%= link_to "追放" , group_group_user_relation_path(group , user) , method: :delete , class: "user_text user_edit_button destroy" , remote: true %>
+                    <% end %>
+                  </div>
                 <% end %>
               <% end %>
             </div>
@@ -195,27 +206,27 @@
           <div class = "authority_explain_parent">
             <div class = "authority_explain_single_box">
               <p class = "authority_explain_small_title level1">レベル１</p>
-              <p class = "authority_explain_detail">なんの権限も持たない。新しくユーザーを招待したり、<br>既存のメンバーを追放するすることすらできない。</p>
+              <p class = "authority_explain_detail">なんの権限も持たない。<br>新しくユーザーを招待したり、<br>既存のメンバーを追放するする<br>ことはできない。</p>
             </div>
             <div class = "authority_explain_single_box">
               <p class = "authority_explain_small_title level2">レベル２</p>
-              <p class = "authority_explain_detail">新しくユーザーを招待することができる。</p>
+              <p class = "authority_explain_detail">新しくユーザーを<br>招待することができる。</p>
             </div>
             <div class = "authority_explain_single_box">
               <p class = "authority_explain_small_title level3">レベル３</p>
-              <p class = "authority_explain_detail">メンバーの追加、追放が可能。<br>レベル４以上のユーザーを追放することはできない。</p>
+              <p class = "authority_explain_detail">メンバーの追加、追放が可能。<br>レベル４以上のユーザーを<br>追放することはできない。</p>
             </div>
             <div class = "authority_explain_single_box">
               <p class = "authority_explain_small_title level4">レベル４</p>
-              <p class = "authority_explain_detail">メンバーの追加、追放が可能。<br>レベル５のユーザーを追放することはできない。</p>
+              <p class = "authority_explain_detail">メンバーの追加、追放が可能。<br>レベル５のユーザーを<br>追放することはできない。</p>
             </div>
             <div class = "authority_explain_single_box">
               <p class = "authority_explain_small_title level5">レベル５</p>
-              <p class = "authority_explain_detail">ルームの作成者のみが与えられる権限。<br>メンバーの追加、全てのメンバーの追放が可能。<br>ルームの削除が可能。</p>
+              <p class = "authority_explain_detail">ルームの作成者のみが与えられる権限。<br>メンバーの追加、<br>全てのメンバーの追放が可能。<br>ルームの削除が可能。</p>
             </div>
             <div class = "authority_explain_single_box">
               <p class = "authority_title">共通事項</p>
-              <p class = "authority_explain_detail">自分の権限より低いメンバーの権限を<br>上げたり下げたりすることができる。<br>しかし、権限を自分と同じにまで上げることはできない。</p>
+              <p class = "authority_explain_detail">自分の権限より低い<br>メンバーの権限を上げたり<br>下げたりすることができる。<br>しかし、権限を自分と同じにまで<br>上げることはできない。</p>
             </div>
           </div>
         </div>
@@ -230,10 +241,12 @@
     <% if is_show == true %>
       <%= form_with url: "/groups/#{group.id}/messages" , model: message , method: :post , local: true , class: "_main_bar_form"  do |f| %>
         <%= f.text_area :text , class: "_main_bar_form_text_area hide_scroll_bar" , id: "use_adjust" %>
-        <label class = "_main_bar_form_image_button _main_bar_button">画像
-          <%= f.file_field :image , name: 'message[image]' ,  class: "hidden" , accept: "image/png , image/jpeg , image/gif" , id: "message_image" %>
-        </label>
-        <%= f.submit "送信" , class: "_main_bar_form_submit _main_bar_button" , id: "message_submit_button" %>
+        <div class = "message_button_parent">
+          <label class = "_main_bar_form_image_button _main_bar_button _main_bar_message_button">画像
+            <%= f.file_field :image , name: 'message[image]' ,  class: "hidden" , accept: "image/png , image/jpeg , image/gif" , id: "message_image" %>
+          </label>
+        <%= f.submit "送信" , class: "_main_bar_form_submit _main_bar_button _main_bar_message_button" , id: "message_submit_button" %>
+        </div>
         <div class = "">
 
           <div class = "image_post_confirm_background hidden" id = "confirm_parent">

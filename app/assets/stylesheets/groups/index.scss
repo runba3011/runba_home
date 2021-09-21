@@ -1,3 +1,46 @@
-// Place all the styles related to the groups controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// widthが1000以上の時の表示
+  .more_than_1000px{
+    display:inherit;
+  }
+
+  .less_than_1000px{
+    display:none;
+  }
+
+  .more_than_1000px_user_link{
+    display:flex;
+  }
+// widthが1000以上の時の表示終了
+
+@media(max-width: 1000px){
+  ._side_bar{
+    width: 100%;
+  }
+  ._main_bar{
+    display: none;
+  }
+
+  .less_than_1000px{
+    display:inherit;
+  }
+
+  .more_than_1000px{
+    display:none;
+  }
+
+  ._side_bar_head{
+    display:flex;
+    justify-content: space-between;
+    padding: 0px 10px;
+  }
+
+  ._side_bar_group_title{
+    margin:0px;
+  }
+
+  ._side_bar_bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+}

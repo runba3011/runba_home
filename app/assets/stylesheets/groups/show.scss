@@ -1,3 +1,22 @@
-// Place all the styles related to the groups controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@media (max-width: 1000px){
+  ._side_bar{
+    display:none;
+  }
+  
+  ._main_bar{
+    width: 100vw;
+  }
+
+  ._message_images {
+    height: 150px;
+  }
+  
+  .message_button_parent{
+    flex-direction: column;
+  }
+
+  ._main_bar_message_button{
+    width: 70px;
+    margin:2px auto 2px 3px;
+  }
+}
