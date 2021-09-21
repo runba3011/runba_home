@@ -18,11 +18,11 @@
 }
 
 ._reccomend_movie_title {
-  display: inline;
+  display: inline-block;
   font-size: 20px;
-  border-bottom: 1px solid rgb(156, 156, 156);
   padding-bottom: 5px;
-  margin: auto 5px
+  margin: 5px 5px auto;
+  text-decoration: underline;
 }
 
 ._reccomend_movie_small_explain{
@@ -45,7 +45,7 @@
   }
 
   ._reccomend_movie_image{
-    width: 70%;
+    width: 80%;
   }
 
 
@@ -54,6 +54,6 @@
   }
 
   ._reccomend_movie_text {
-    width: 70%;
+    width: 80%;
   }
 }
