@@ -6,12 +6,6 @@ header{
   padding: 0px 30px
 }
 
-@media(max-width:800px){
-  header{
-    padding:0px 5px;
-  }
-}
-
 .header_inside{
   width: 90%;
   display: flex;
@@ -20,14 +14,6 @@ header{
   padding: 0px 30px;
   max-width: 1200px;
 }
-
-@media (max-width: 800px) {
-  .header_inside{
-    width:100%;
-    padding:0px 20px;
-  }
-}
-
 
 .header_title{
   font-size: 30px;
@@ -41,4 +27,15 @@ header{
   padding:25px 0;
   text-decoration: none;
   color:white;
+}
+
+@media(max-width:800px){
+  header{
+    padding:0px 5px;
+  }
+
+  .header_inside{
+    width:100%;
+    padding:0px 20px;
+  }
 }
