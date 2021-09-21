@@ -106,5 +106,13 @@
     height: calc(95vw / 16 * 9);
     max-height: calc(1000px / 16 * 9);
   }
-  
+}
+
+@media(max-width: 500px){
+  .comment_user_name{
+    font-size:15px;
+  }
+  .comment_text{
+    font-size:15px;
+  }
 }
