@@ -40,3 +40,9 @@
 ._movie_link:active{
   background-color: rgba(255, 0, 0, 0.411);
 }
+
+@media (max-width: 800px){
+  ._movie_a{
+    width: 45%;
+  }
+}
