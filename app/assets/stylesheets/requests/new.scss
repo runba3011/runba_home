@@ -29,7 +29,7 @@
 }
 
 .buttons{
-  width: 60%;
+  width: 80%;
   padding-top: 30px;
   display: flex;
   justify-content: space-between;
@@ -80,4 +80,20 @@
 .redirect_button{
   width: 60%;
   margin: 30px auto;
+}
+
+@media(max-width:800px){
+  .request_center_object{
+    width:90%;
+  }
+
+  .common_simple_button {
+    line-height: 30px;
+    border-radius: 10px;
+    width: 130px;
+  }
+
+  .buttons{
+    justify-content: space-around;
+  }
 }
