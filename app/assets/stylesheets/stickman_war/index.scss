@@ -48,3 +48,9 @@
 .body_link ._simple_link_link_text{
   margin-top: 10px;
 }
+
+@media(max-width: 600px){
+  .body_link{
+    width:100%;
+  }
+}

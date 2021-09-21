@@ -8,14 +8,14 @@
 }
 
 ._picture_explain_image_box{
-  width:40%;
+  width:300px;
   min-height:150px;
   background-image: image_url("stickman_war_explain/1.png");
   background-size: cover;
 }
 
 ._picture_explain_explain{
-  width: 60%;
+  width: calc(100% - 300px);
   border-radius: 3px;
   text-align: center;
   align-items: center;
@@ -30,4 +30,93 @@
 
 ._picture_explain_explain_detail{
   padding: 12px 10px 0px;
+}
+
+.middle_return , .small_return{
+  display: none;
+}
+
+@media(max-width: 1000px){
+  .main_content{
+    width:90%;
+  }
+}
+
+// @media (max-width:900px){
+//   .middle_return{
+//     display:inherit;
+//   }
+
+//   ._picture_explain_image_box{
+//     width:260px
+//   }
+  
+//   ._picture_explain_explain{
+//     width: calc(100% - 200px);
+//   }
+// }
+
+@media (max-width: 900px){
+  // 横幅いっぱいに広がる形になる
+
+  .middle_return{
+    display:none;
+  }
+
+  ._picture_explain_parent{
+    position:relative;
+  }
+
+  ._picture_explain_image_box{
+    width:100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.274) , rgba(0, 0, 0, 0.555) ) , image_url("stickman_war_explain/1.png");
+    background-size: cover;
+  }
+
+  ._picture_explain_explain{
+    position:absolute;
+    color:white;
+  }
+
+  ._picture_explain_explain_title{
+    border-bottom-color: white;
+  }
+
+  ._picture_explain_explain{
+    width: 100%;
+  }
+
+  .middle{
+    height:200px;
+  }
+
+  .long{
+    height:250px;
+  }
+
+  .short{
+    height:150px;
+  }
+}
+
+@media (max-width: 600px){
+  .middle_return{
+    display:inherit;
+  }
+
+  .small_return{
+    display:inherit;
+  }
+
+  .middle{
+    height:220px;
+  }
+
+  .long{
+    height:350px;
+  }
+
+  .short{
+    height:200px;
+  }
 }

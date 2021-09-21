@@ -1,9 +1,15 @@
 <%= stylesheet_link_tag "shared/picture_and_explain" , :media => "all" %>
 
-<div class = "_picture_explain_parent">
+<div class = "_picture_explain_parent <%= length %>">
   <div class = "_picture_explain_image_box"></div>
   <div class = "_picture_explain_explain" style="">
     <p class = "_picture_explain_explain_title"><%= title %></p>
+    <%  explain = h(explain).gsub(/always_return/, "<br>").html_safe
+        middle_return_br = "<br class = 'middle_return'>"
+        small_return_br = "<br class = 'small_return'>"
+        explain = h(explain).gsub(/middle_return/, middle_return_br).html_safe
+        explain = h(explain).gsub(/small_return/, small_return_br).html_safe
+    %>
     <p class = "_picture_explain_explain_detail"><%= explain %></p>
   </div>
 </div>
