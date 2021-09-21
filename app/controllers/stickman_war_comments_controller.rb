@@ -9,6 +9,7 @@ class StickmanWarCommentsController < ApplicationController
       else
         @user_icon_url = URI("/assets/defaults/user_icon_image.png")
       end
+      @comment.text = @comment.text.gsub(/(\r\n|\r|\n)/, "<br>")
       ActionCable.server.broadcast 'stickman_war_comment_channel' , comment: @comment, user_icon_url: @user_icon_url , user: current_user , is_destroy: false
       # binding.pry
       return
