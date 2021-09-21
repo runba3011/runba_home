@@ -18,6 +18,7 @@ class MessagesController < ApplicationController
       else
         @icon_image = URI("/assets/defaults/user_icon_image.png")
       end
+      @message.text = @message.text.gsub(/(\r\n|\r|\n)/, "<br>")
       ActionCable.server.broadcast 'message_channel' , content: @message , user: current_user , group: @group , icon_image_url: @icon_image , message_image_url: @message_image_url , is_destroy: false
     else
       redirect_to group_path(@message.group)

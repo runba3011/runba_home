@@ -85,12 +85,12 @@ consumer.subscriptions.create("MessageChannel", {
         </a>
         <p class = "_messages_created_at">${data.content.created_at}</p>
   
-          <a href = " /groups/${data.group.id}/messages/${data.content.id}" class = "_messages_message_delete" data-method= "delete">削除</a>
   
         </div>
       `;
   
       // メッセージテキストの部分
+      console.log(data.content.text);
       const HTML3 = 
       `
         <p class ="_message_text">${data.content.text}</p>
