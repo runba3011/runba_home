@@ -317,13 +317,15 @@ a{
   }
 
   .change_button{
-    margin:0px;
+    margin:0px 5px;
   }
 
   .image_and_update_button {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     margin-top:3px;
+    margin-left: 5px;
+
   }
 
   .group_name_text_area{
