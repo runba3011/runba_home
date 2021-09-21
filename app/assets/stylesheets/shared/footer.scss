@@ -41,6 +41,12 @@ footer{
   width:80%;
 }
 
+@media (max-width: 800px){
+  ._footer_title , ._footer_body{
+    width:95%;
+  }
+}
+
 ._footer_creation{
   width: 32%;
 }
