@@ -13,10 +13,12 @@
       </div>
       <div class = "_main_bar_group_control_buttons">
         <%= link_to "編集" , edit_group_path(group) , class: "_main_bar_edit_button _main_bar_button" %>
+        <%= link_to "戻る" , groups_path , class: "_main_bar_edit_button _main_bar_button" , style: "background-color: #009eda;" %>
 
-        <% if authority == 5 %>
-          <%= link_to "グループ削除" , group_path(group) , method: :delete , class: "_main_bar_delete_button _main_bar_button" %>
-        <% end %>
+        <%# メッセージ表示画面で元々表示されていた削除ボタン、必要ないが念のため残しておく %>
+        <%# <% if authority == 5 %>
+          <%#= link_to "グループ削除" , group_path(group) , method: :delete , class: "_main_bar_delete_button _main_bar_button" %>
+        <%# <% end %> 
       </div>
     <% elsif is_edit == true %>
       <%# グループを編集する際に表示されるもの（ヘッダー） %>
@@ -37,6 +39,7 @@
                 <%= f.file_field :image , class: "hidden" , accept: "image/jpeg , image/png , image/gif " %>
               </label>
               <%= f.submit "更新" , method: :put , class: "_main_bar_button _main_bar_group_update change_button less_than_1000px" %>
+              <%= link_to "戻る" , groups_path , class: "_main_bar_edit_button _main_bar_button change_button" , style: "background-color: #009eda;" %>
             </div>
           </div>
           <%= f.submit "更新" , method: :put , class: "_main_bar_button _main_bar_group_update change_button more_than_1000px" %>
