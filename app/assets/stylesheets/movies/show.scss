@@ -98,3 +98,13 @@
   margin: auto 10px auto 5px;
 }
 
+
+@media(max-width: 800px){
+  .movie{
+    width: 100%;
+    // main_contentの横幅を変えたなら、↓のvwも変更する、変更しないとはみ出していたり小さすぎたりする現象が発生する
+    height: calc(95vw / 16 * 9);
+    max-height: calc(1000px / 16 * 9);
+  }
+  
+}
