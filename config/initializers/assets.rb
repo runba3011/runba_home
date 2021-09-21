@@ -43,6 +43,7 @@ Rails.application.config.assets.precompile += %w(
   groups/messages
   groups/new
   groups/edit
+  groups/index
 
   users/common
   users/index
