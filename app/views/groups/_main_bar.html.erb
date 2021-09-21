@@ -230,10 +230,12 @@
     <% if is_show == true %>
       <%= form_with url: "/groups/#{group.id}/messages" , model: message , method: :post , local: true , class: "_main_bar_form"  do |f| %>
         <%= f.text_area :text , class: "_main_bar_form_text_area hide_scroll_bar" , id: "use_adjust" %>
-        <label class = "_main_bar_form_image_button _main_bar_button">画像
-          <%= f.file_field :image , name: 'message[image]' ,  class: "hidden" , accept: "image/png , image/jpeg , image/gif" , id: "message_image" %>
-        </label>
-        <%= f.submit "送信" , class: "_main_bar_form_submit _main_bar_button" , id: "message_submit_button" %>
+        <div class = "message_button_parent">
+          <label class = "_main_bar_form_image_button _main_bar_button _main_bar_message_button">画像
+            <%= f.file_field :image , name: 'message[image]' ,  class: "hidden" , accept: "image/png , image/jpeg , image/gif" , id: "message_image" %>
+          </label>
+        <%= f.submit "送信" , class: "_main_bar_form_submit _main_bar_button _main_bar_message_button" , id: "message_submit_button" %>
+        </div>
         <div class = "">
 
           <div class = "image_post_confirm_background hidden" id = "confirm_parent">

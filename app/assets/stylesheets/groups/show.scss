@@ -10,4 +10,13 @@
   ._message_images {
     height: 150px;
   }
+  
+  .message_button_parent{
+    flex-direction: column;
+  }
+
+  ._main_bar_message_button{
+    width: 70px;
+    margin:2px auto 2px 3px;
+  }
 }
