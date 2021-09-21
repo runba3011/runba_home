@@ -348,3 +348,23 @@ a{
     max-height: 80px;
   }
 }
+
+@media(max-width:700px){
+  // 700pxより幅が狭い時、権限についての説明を縦１列に表示、権限操作ボタンのところで改行
+  .authority_explain_single_box{
+    width:100%;
+  }
+
+  .single_user{
+    flex-direction: column;
+    height:80px;
+  }
+
+  .user_information{
+    margin-bottom:10px
+  }
+
+  ._edit_icon_and_name{
+    margin-top:10px;
+  }
+}
