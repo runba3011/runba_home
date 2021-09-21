@@ -3,11 +3,24 @@
 <div class = "_side_bar">
   <div class = "_side_bar_head top">
     <p class = "_side_bar_group_title">チャットルーム</p>
+
+    <%# 横幅が1000pxより小さかったらヘッダー部分に自分の情報を表示する %>
+    <%= link_to user_path(current_user) , class: "less_than_1000px _side_bar_top_user" do %>
+      <div class =  "_side_bar_image_parent">
+        <% if current_user.icon_image.attached? %>
+          <%= image_tag current_user.icon_image , class: "_side_bar_current_user_icon" , id: "_side_bar_current_user_icon" %>
+        <% else %>
+          <%= image_tag "defaults/user_icon_image.png" , class: "_side_bar_current_user_icon" , id: "_side_bar_current_user_icon" %>
+        <% end %>
+      </div>
+      <p class = "_side_bar_current_user_name"><%= current_user.nickname %></p>
+    <% end %>
   </div>
 
   <div class = "_side_bar_center hide_scroll_bar center">
     <div class = "_side_bar_user_information">
-      <%= link_to user_path(current_user) , class: "_side_bar_current_user_link" do %>
+      <%# widthが1000pxより小さかったらグループ一覧の部分に名前を表示する %>
+      <%= link_to user_path(current_user) , class: "_side_bar_current_user_link more_than_1000px more_than_1000px_user_link" do %>
         <div class =  "_side_bar_image_parent">
           <% if current_user.icon_image.attached? %>
             <%= image_tag current_user.icon_image , class: "_side_bar_current_user_icon" , id: "_side_bar_current_user_icon" %>

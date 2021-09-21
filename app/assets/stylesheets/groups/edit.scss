@@ -51,6 +51,10 @@
   display:none;
 }
 
+._edit_authority_buttons{
+  display:flex;
+}
+
 ._main_bar_group_update{
   background-color:rgb(0, 43, 0);
 }
@@ -90,7 +94,7 @@ a{
 
 .user_icon_parent{
   width:10%;
-  max-width: 50px;
+  max-width: 40px;
   display: flex;
 }
 
@@ -264,4 +268,111 @@ a{
   top: 3px;
   box-shadow: none;
   transition: 0.1s;
+}
+
+// 1000px以上の時の表示----------------------------------
+  .more_than_1000px{
+    display: inherit;
+  }
+
+  .less_than_1000px{
+    display: none;
+  }
+
+  .select_image{
+    display:inline-block;
+  }
+
+// 1000px以上の時の表示終了------------------------------
+
+@media (max-width: 1000px){
+  ._main_bar_top{
+    height:15vh;
+  }
+
+  ._side_bar{
+    display:none;
+  }
+
+  ._main_bar{
+    width: 100%;
+  }
+
+
+  .update_and_destroy_button{
+    display: flex;
+    flex-direction: column;
+    width:200px;;
+  }
+
+  .more_than_1000px{
+    display: none;
+  }
+
+  .less_than_1000px{
+    display: inherit;
+  }
+
+  .change_button{
+    margin-left:10px;
+  }
+
+  .image_and_update_button {
+    display: flex;
+    justify-content: flex-start;
+    margin-top:3px;
+    margin-left: 5px;
+
+  }
+
+  .group_name_text_area{
+    width:100%;
+  }
+
+  .select_image{
+    display: inline-block;
+    padding: 8px 10px;
+  }
+
+  .more_than_1000px_select_image{
+    display:none;
+  }
+
+  ._main_bar_top{
+    height: 90px;
+    padding:0px 30px 0px 5px;
+  }
+
+  ._main_bar_center{
+    height:calc(100vh - 90px);
+  }
+
+  ._main_group_icon{
+    max-height: 80px;
+  }
+}
+
+@media(max-width:700px){
+  // 700pxより幅が狭い時、権限についての説明を縦１列に表示、権限操作ボタンのところで改行、権限操作ボタンの幅変更
+  .authority_explain_single_box{
+    width:100%;
+  }
+
+  .single_user{
+    flex-direction: column;
+    height:auto;
+  }
+
+  .user_information{
+    margin-bottom:10px;
+    justify-content: space-between;
+  }
+
+  ._edit_icon_and_name{
+    margin-top:10px;
+  }
+
+  .invite_title{
+    font-size:5vw;
+  }
 }
