@@ -108,11 +108,19 @@
   }
 }
 
-@media(max-width: 500px){
+@media(max-width: 650px){
   .comment_user_name{
     font-size:15px;
   }
   .comment_text{
     font-size:15px;
+  }
+
+  .breadcrumbs{
+    font-size:15px;
+  }
+
+  .current{
+    font-size:20px;
   }
 }
