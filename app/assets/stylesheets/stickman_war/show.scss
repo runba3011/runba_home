@@ -11,3 +11,27 @@
 .stage_select_border{
   margin: 30px auto;
 }
+
+@media (max-width:800px){
+  .section_title{
+    font-size:30px;
+  }
+  
+  .current{
+    display:block;
+  }
+
+  .stage_title{
+    font-size:25px;
+  }
+
+  .only_border{
+    border:none;
+  }
+}
+
+@media(max-width:400px){
+  .stage_title{
+    font-size: 18px;
+  }
+}
