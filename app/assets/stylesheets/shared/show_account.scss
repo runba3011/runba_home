@@ -17,3 +17,17 @@
   margin-right:5px;
 }
 
+._show_account_only_account{
+  display: none;
+}
+
+@media (max-width: 600px){
+  ._show_account_only_account{
+    display: inherit;
+    font-size:3vw;
+  }
+
+  ._show_account_nickname{
+    display:none;
+  }
+}

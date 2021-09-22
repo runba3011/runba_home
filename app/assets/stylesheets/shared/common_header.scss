@@ -39,3 +39,9 @@ header{
     padding:0px 20px;
   }
 }
+
+@media(max-width:600px){
+  .header_title{
+    font-size:5vw;
+  }
+}

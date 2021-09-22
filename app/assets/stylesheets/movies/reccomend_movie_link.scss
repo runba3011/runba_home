@@ -46,14 +46,24 @@
 
   ._reccomend_movie_image{
     width: 80%;
+    max-width:400px;
   }
 
 
   ._reccomend_movie_small_explain {
     padding: 10px 0px;
+    margin-bottom:20px;
   }
 
   ._reccomend_movie_text {
     width: 80%;
+  }
+}
+
+@media(max-width: 800px){
+  ._reccomend_movie_small_explain{
+    max-height:100px;
+    overflow: scroll;
+    padding:10px;
   }
 }
