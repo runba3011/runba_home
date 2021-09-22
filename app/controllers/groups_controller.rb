@@ -1,3 +1,4 @@
+require 'date'
 class GroupsController < ApplicationController
   before_action :check_logined
   before_action :generate_message , :generate_group , :find_user , :set_boolean
@@ -11,6 +12,37 @@ class GroupsController < ApplicationController
     @is_show = true
     @group_user_relation = GroupUserRelation.find_by(user_id: current_user.id , group_id: @group.id)
     @authority = @group_user_relation.authority_id
+    @group.messages.each do |message|
+      difference = Time.zone.now - message.created_at #これで何秒前に投稿されたのかがわかった
+      minutes = difference / 60 
+      hours = minutes / 60
+      days = hours / 24  #これで何日前に投稿されたものかがわかった
+      weeks = days / 7
+      months = days / 30
+      years = days / 365
+      if minutes < 1
+        message.time_type = "seconds"
+        message.show_time = difference.floor
+      elsif hours < 1
+        message.time_type = "minutes"
+        message.show_time = minutes.floor
+      elsif days < 1
+        message.time_type = "hours"
+        message.show_time = hours.floor
+      elsif weeks < 1
+        message.time_type = "days"
+        message.show_time = days.floor
+      elsif months < 1
+        message.time_type = "weeks"
+        message.show_time = weeks.floor
+      elsif years < 1 && months <= 2
+        message.time_type = "months"
+        message.show_time = months.floor
+      else
+        mesage.time_type = "detail_date"
+        message.show_time = message.created_at
+      end
+    end
   end
 
   def new
