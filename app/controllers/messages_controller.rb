@@ -28,7 +28,7 @@ class MessagesController < ApplicationController
 
   def destroy
     @message = Message.find(params[:id])
-    if @message.user.id == current_user
+    if @message.user.id == current_user.id
       @message.text = nil
       @message.update(text: nil)
       @group = Group.find(params[:group_id])

@@ -11,6 +11,19 @@ consumer.subscriptions.create("MessageChannel", {
   },
 
   received(data) {
+    // 送信処理が行われるたびに creater_ユーザーID のボタンのhiddenを無くすようにする
+    function deleteButtonSet(){
+      const currentUserId = document.getElementById("current_user_id").innerHTML;
+      const myDeleteButtons = document.getElementsByClassName(`creater_${currentUserId}`)
+      const buttons = Array.from(myDeleteButtons)
+      buttons.forEach(button =>{
+        if(button.classList.contains("hidden")){
+          button.classList.remove("hidden");
+          console.log("hiddenを削除しました")
+        }
+      });
+    }
+
     function replaceInformation(text){
       // 置換対象は
       // メッセージのIDを挿入する
@@ -36,6 +49,7 @@ consumer.subscriptions.create("MessageChannel", {
       const confirmSubmitButton = document.getElementById("confirm_submit");
       submitButton.removeAttribute("disabled");
       confirmSubmitButton.removeAttribute("disabled");
+      console.log("不適切な通信が行われました");
     }
     else{
       if(!data.is_destroy){
@@ -67,7 +81,7 @@ consumer.subscriptions.create("MessageChannel", {
                 </div>
               </a>
             </div>
-            <a data-method = "delete" href = "/groups/${data.group.id}/messages/${data.content.id}" class="_messages_message_delete hidden" data-remote: true id = "destroy_button_${data.content.id}">削除</a>
+            <a data-method = "delete" href = "/groups/${data.group.id}/messages/${data.content.id}" class="_messages_message_delete hidden creater_${data.user.id}" data-remote= "true" id = "destroy_button_${data.content.id}">削除</a>
           </div>
           
   
@@ -170,6 +184,8 @@ consumer.subscriptions.create("MessageChannel", {
         destroyButton.remove();
       }
     }
+
+    deleteButtonSet();
     ;
   }
 });
