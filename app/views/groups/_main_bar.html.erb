@@ -1,5 +1,4 @@
 <%= stylesheet_link_tag "groups/main_bar" , :media => "all" %>
-
 <div class = "_main_bar">
   <div class = "top _main_bar_top">
     <% if group != nil && is_edit == false %>
@@ -12,6 +11,8 @@
         <p class = "_main_bar_group_name"><%= group.name %></p>
       </div>
       <div class = "_main_bar_group_control_buttons">
+
+        <%# <i class="fas fa-angle-down fa-3x" style= "color:white;"></i> %>
         <%= link_to "編集" , edit_group_path(group) , class: "_main_bar_edit_button _main_bar_button" %>
         <%= link_to "戻る" , groups_path , class: "_main_bar_edit_button _main_bar_button" , style: "background-color: #009eda;" %>
 
