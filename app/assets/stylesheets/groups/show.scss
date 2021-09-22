@@ -1,3 +1,11 @@
+.show_more_than_500px{
+  display:inline-block;
+}
+
+.show_less_than_500px{
+  display:none;
+}
+
 @media (max-width: 1000px){
   ._side_bar{
     display:none;
@@ -24,5 +32,16 @@
 @media(max-width: 500px){
   ._main_bar_top{
     padding:0px 5px;
+  }
+
+  .show_more_than_500px{
+    display:none;
+  }
+
+  .show_less_than_500px{
+    display:inherit;
+  }
+  ._main_bar_group_control_buttons{
+    min-width: 0px;
   }
 }
