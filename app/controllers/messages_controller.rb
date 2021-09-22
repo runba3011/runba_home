@@ -20,18 +20,22 @@ class MessagesController < ApplicationController
       end
       @message.text = @message.text.gsub(/(\r\n|\r|\n)/, "<br>")
       calc_time
-      ActionCable.server.broadcast 'message_channel' , content: @message , user: current_user , group: @group , icon_image_url: @icon_image , message_image_url: @message_image_url , is_destroy: false
+      ActionCable.server.broadcast 'message_channel' , content: @message , user: current_user , group: @group , icon_image_url: @icon_image , message_image_url: @message_image_url , is_destroy: false , nil: false
     else
-      redirect_to group_path(@message.group)
+      ActionCable.server.broadcast 'message_channel' , nil: true
     end
   end
 
   def destroy
     @message = Message.find(params[:id])
-    @message.text = nil
-    @message.update(text: nil)
-    @group = Group.find(params[:group_id])
-    ActionCable.server.broadcast 'message_channel' , is_destroy: true , destroy_message_id: params[:id]
+    if @message.user.id == current_user
+      @message.text = nil
+      @message.update(text: nil)
+      @group = Group.find(params[:group_id])
+      ActionCable.server.broadcast 'message_channel' , is_destroy: true , destroy_message_id: params[:id] , nil: false
+    else
+      ActionCable.server.broadcast 'message_channel' , nil: true
+    end
     # redirect_to group_path(@group)
   end
 
