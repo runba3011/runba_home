@@ -62,14 +62,14 @@
       <div class = "_messages_message_information">
         <%# 幅が600px以上だったら表示されるもの %>
         <div class = "show_more_600px">
-          <%= link_to user_path(message.user) , class: "_messages_user_information" do %>
+          <a href="/users/<%= message.user.id %>" class = "_messages_user_information">
             <% if message.user.icon_image.attached? %>
               <%= image_tag message.user.icon_image.variant(resize: '500x500') , class: "_message_user_icons" %>
             <% else %>
               <%= image_tag "defaults/user_icon_image.png" , class: "_message_user_icons" %>
             <% end %>
             <p><%= message.user.nickname %></p>
-          <p class = "_messages_created_at">
+            <p class = "_messages_created_at">
               <% if message.time_type == "seconds" %>
                 <%= "#{message.show_time}秒前" %>
               <% elsif message.time_type == "minutes" %>
@@ -87,12 +87,12 @@
               <% end %>
             </p>
             <p class = "hidden"><%= l message.created_at %></p><%# JavaScriptで取得するために非表示のまま残してある %>
-          <% end %>
+          </a>
         </div>
 
         <%# 幅が600px以下だったら表示されるもの %>
         <div class = "show_less_600px">
-          <%= link_to user_path(message.user) , class: "_messages_user_information" do %>
+          <a href="/users/<%= message.user.id %>" class = "_messages_user_information">
             <% if message.user.icon_image.attached? %>
               <%= image_tag message.user.icon_image.variant(resize: '500x500') , class: "_message_user_icons" %>
             <% else %>
@@ -121,7 +121,7 @@
               </p>
               <p class = "hidden"><%= l message.created_at %></p><%# JavaScriptで取得するために非表示のまま残してある %>
             </div>
-          <% end %>
+          </a>
         </div>
 
         <% if message.user == @user && message.text != nil %>
