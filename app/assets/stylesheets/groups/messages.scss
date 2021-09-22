@@ -143,7 +143,7 @@
   margin: auto;
 }
 
-.show_less_600px_nickname_created_at{
+.show_less_600px{
   display:none;
 }
 
@@ -154,12 +154,12 @@
 }
 
 @media(max-width: 600px){
-  .show_less_600px_nickname_created_at{
+  .show_less_600px{
     display:flex;
     flex-direction: column;
   }
 
-  .show_more_600px_nickname_created_at{
+  .show_more_600px{
     display:none;
   }
 
