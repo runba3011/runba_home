@@ -44,3 +44,21 @@
     justify-content: space-around;
   }
 }
+
+@media (max-width: 400px){
+  .more_than_400px{
+    display:none;
+  }
+
+  .less_than_400px{
+    display:flex;
+  }
+
+  ._side_bar_bottom {
+    flex-direction: column;
+  }
+
+  ._side_bar_head {
+    justify-content: center;
+}
+}
