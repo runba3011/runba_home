@@ -98,7 +98,6 @@
             <% else %>
               <%= image_tag "defaults/user_icon_image.png" , class: "_message_user_icons" %>
             <% end %>
-            <p class = "hidden"><%= l message.created_at %></p><%# JavaScriptで取得するために非表示のまま残してある %>
 
             <div>
               <%= message.user.nickname %>
