@@ -66,9 +66,15 @@
           <% else %>
             <%= image_tag "defaults/user_icon_image.png" , class: "_message_user_icons" %>
           <% end %>
-          <%= message.user.nickname %>
+          <p class = "show_more_600px_nickname_created_at"><%= message.user.nickname %></p>
+        <p class = "_messages_created_at show_more_600px_nickname_created_at"><%= message.created_at %></p>
         <% end %>
-        <p class = "_messages_created_at"><%= message.created_at %></p>
+
+        <div class = "show_less_600px_nickname_created_at">
+          <%= message.user.nickname %>
+          <p class = "_messages_created_at"><%= message.created_at %></p>
+        </div>
+
         <% if message.user == @user && message.text != nil %>
           <%= link_to "削除" , group_message_path(group , message) , method: :delete , class: "_messages_message_delete" , remote: true , id: "destroy_button_#{message.id}" %>
         <% end %>
