@@ -20,3 +20,9 @@
     margin:2px auto 2px 3px;
   }
 }
+
+@media(max-width: 500px){
+  ._main_bar_top{
+    padding:0px 5px;
+  }
+}
