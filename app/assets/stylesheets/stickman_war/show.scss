@@ -23,10 +23,16 @@
 
   .stage_title{
     font-size:25px;
+    padding-top:15px;
   }
 
-  .only_border{
-    border:none;
+  .stage_select_border{
+    border-bottom-style: dotted;
+    width:100%;
+  }
+
+  .breadcrumbs{
+    font-size:18px;
   }
 }
 
