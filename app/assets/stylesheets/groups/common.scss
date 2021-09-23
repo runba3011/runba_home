@@ -3,15 +3,15 @@
 }
 
 .top{
-  height: 10vh;
+  height: 83px;
   border-bottom: 1px solid pink;
 }
 
 .center{
-  height: calc(100vh - 10vh - 13vh);
+  height: calc(100vh - 83px - 106px);
   border-bottom: 1px solid pink;
 }
 
 .bottom{
-  height: 13vh;
+  height: 106px;
 }

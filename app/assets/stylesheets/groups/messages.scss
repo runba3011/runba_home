@@ -34,6 +34,7 @@
 ._messages_created_at{
   color:rgb(163, 163, 163);
   margin: 0px;
+  margin-left:5px;
 }
 
 ._messages_message_delete{
@@ -140,4 +141,44 @@
   height: 100%;
   height: 90vh;
   margin: auto;
+}
+
+.show_less_600px{
+  display:none;
+}
+
+@media (max-width: 1000px){
+  ._message_images {
+    height: 150px;
+  }
+}
+
+@media(max-width: 600px){
+  .show_less_600px{
+    display:flex;
+    flex-direction: column;
+  }
+
+  .show_more_600px{
+    display:none;
+  }
+
+  ._messages_user_information{
+    margin-right:3px;
+  }
+
+  ._main_group_icon{
+    min-width:50px;
+  }
+
+  ._message_images{
+    height:auto;
+    width:80%;
+  }
+}
+
+@media(max-width: 400px){
+  .show_less_600px_nickname_created_at{
+    font-size:4vw;
+  }
 }

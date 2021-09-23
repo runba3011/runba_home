@@ -1,8 +1,15 @@
 <%= stylesheet_link_tag "groups/main_bar" , :media => "all" %>
-
 <div class = "_main_bar">
   <div class = "top _main_bar_top">
     <% if group != nil && is_edit == false %>
+
+        <div class = "hidden" id = "controlled_button">
+        <%= link_to "編集" , edit_group_path(group) , class: "_500px_link_buttons" %>
+        <%= link_to "グループ一覧に戻る" , groups_path , class: "_500px_link_buttons" %>
+        <p class = "_500px_link_buttons close_button">閉じる</p>
+
+        </div>
+
       <div class = "_main_top_icon_title">
         <% if group.image.attached? %>
           <%= image_tag group.image.variant(resize: '500x500') , class: "_main_group_icon"  %>
@@ -11,9 +18,13 @@
         <% end %>
         <p class = "_main_bar_group_name"><%= group.name %></p>
       </div>
-      <div class = "_main_bar_group_control_buttons">
-        <%= link_to "編集" , edit_group_path(group) , class: "_main_bar_edit_button _main_bar_button" %>
-        <%= link_to "戻る" , groups_path , class: "_main_bar_edit_button _main_bar_button" , style: "background-color: #009eda;" %>
+      <div class = "_main_bar_group_control_buttons" id = "open_button">
+
+        <i class="fas fa-angle-down fa-3x show_less_than_500px" style= "color:white;margin:auto;"></i>
+        
+        <%= link_to "編集" , edit_group_path(group) , class: "_main_bar_edit_button _main_bar_button show_more_than_500px" %>
+        <%= link_to "戻る" , groups_path , class: "_main_bar_edit_button _main_bar_button show_more_than_500px" , style: "background-color: #009eda;" %>
+
 
         <%# メッセージ表示画面で元々表示されていた削除ボタン、必要ないが念のため残しておく %>
         <%# <% if authority == 5 %>
@@ -31,29 +42,43 @@
           <% end %>
           <div class = "edit_area">
             <%= f.text_field :name , class: "group_name_text_area" %>
-              <label class = "select_image more_than_1000px more_than_1000px_select_image">画像
+              <label class = "select_image more_than_1000px more_than_1000px_select_image edit_more_than_500px">画像
                 <%= f.file_field :image , class: "hidden" , accept: "image/jpeg , image/png , image/gif " %>
               </label>
             <div class = "image_and_update_button less_than_1000px">
-              <label class = "select_image">画像
+              <label class = "select_image edit_more_than_500px">画像
                 <%= f.file_field :image , class: "hidden" , accept: "image/jpeg , image/png , image/gif " %>
               </label>
-              <%= f.submit "更新" , method: :put , class: "_main_bar_button _main_bar_group_update change_button less_than_1000px" %>
-              <%= link_to "戻る" , groups_path , class: "_main_bar_edit_button _main_bar_button change_button" , style: "background-color: #009eda;" %>
+              <%= f.submit "更新" , method: :put , class: "_main_bar_button _main_bar_group_update change_button less_than_1000px edit_more_than_500px" %>
+              <%= link_to "戻る" , groups_path , class: "_main_bar_edit_button _main_bar_button change_button edit_more_than_500px" , style: "background-color: #009eda;" %>
             </div>
           </div>
           <%= f.submit "更新" , method: :put , class: "_main_bar_button _main_bar_group_update change_button more_than_1000px" %>
           
+          <div class = "edit_less_than_500px_buttons_parent hidden" id = "all_button_show">
+            <label class = "show_action">画像
+              <%= f.file_field :image , class: "hidden" , accept: "image/jpeg , image/png , image/gif " %>
+            </label>
+            <%= f.submit "更新" , method: :put , class: "show_action" %>
+            <%= link_to "グループ一覧へ戻る" , groups_path , class: "show_action" %>
+            <%= link_to "グループ削除" , group_path(group) , method: :delete , class: "show_action" %>
+            <p class = "show_action close_button">閉じる</p>
+          </div>
         <% end %>
       <% else %>
-        <p class = "_main_bar_group_name">編集：　<%= group.name %></p>
+        <div class = "low_authority">
+          <p class = "_main_bar_group_name">編集：　<%= group.name %></p>
+          <%= link_to "戻る" , groups_path , class: "_main_bar_edit_button _main_bar_button change_button low_authority_back_button" , style: "background-color: #009eda;" %>
+        </div>
       <% end %>
 
-      <div class = "_main_bar_group_control_buttons">
+      <div class = "_main_bar_group_control_buttons" <% if authority != 5 %><%= "style = min-width:0px;" %><% end %> id = "edit_button_show_button_parent">
         <% if authority == 5 %>
-          <%= link_to "グループ削除" , group_path(group) , method: :delete , class: "_main_bar_delete_button _main_bar_button" %>
+          <%= link_to "グループ削除" , group_path(group) , method: :delete , class: "_main_bar_delete_button _main_bar_button edit_more_than_500px" %>
+          <i class="fas fa-angle-down fa-2x edit_less_than_500px" id = "edit_button_show_button" style="color:white;margin: auto"></i>
         <% end %>
       </div>
+
       <%# ヘッダーの、編集する際に表示されるもの終了 %>
     <% end %>
   </div>

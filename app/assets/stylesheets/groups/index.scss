@@ -42,5 +42,37 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    height:50px;
+  }
+
+  .center{
+  height: calc(100vh - 83px - 50px);
+  }
+  
+}
+
+@media (max-width: 400px){
+  .more_than_400px{
+    display:none;
+  }
+
+  .less_than_400px{
+    display:flex;
+  }
+
+  ._side_bar_bottom {
+    flex-direction: column;
+  }
+
+  ._side_bar_head {
+    justify-content: center;
+  }
+
+  ._side_bar_bottom{
+    height:106px;
+  }
+
+  .center{
+    height: calc(100vh - 83px - 106px);
   }
 }

@@ -57,20 +57,76 @@
   }
 </script>
 
+<p id = "current_user_id" class = "hidden"><%= current_user.id %></p>
+
   <% group.messages.each do |message| %>
     <div class = "_messages_single_message hide_scroll_bar" id = "single_message_box_<%= message.id %>">
       <div class = "_messages_message_information">
-        <%= link_to user_path(message.user) , class: "_messages_user_information" do %>
-          <% if message.user.icon_image.attached? %>
-            <%= image_tag message.user.icon_image.variant(resize: '500x500') , class: "_message_user_icons" %>
-          <% else %>
-            <%= image_tag "defaults/user_icon_image.png" , class: "_message_user_icons" %>
-          <% end %>
-          <%= message.user.nickname %>
-        <% end %>
-        <p class = "_messages_created_at"><%= message.created_at %></p>
+        <%# 幅が600px以上だったら表示されるもの %>
+        <div class = "show_more_600px">
+          <a href="/users/<%= message.user.id %>" class = "_messages_user_information">
+            <% if message.user.icon_image.attached? %>
+              <%= image_tag message.user.icon_image.variant(resize: '500x500') , class: "_message_user_icons" %>
+            <% else %>
+              <%= image_tag "defaults/user_icon_image.png" , class: "_message_user_icons" %>
+            <% end %>
+            <p><%= message.user.nickname %></p>
+            <p class = "_messages_created_at">
+              <% if message.time_type == "seconds" %>
+                <%= "#{message.show_time}秒前" %>
+              <% elsif message.time_type == "minutes" %>
+                <%= "#{message.show_time}分前" %>
+              <% elsif message.time_type == "hours" %>
+                <%= "#{message.show_time}時間前" %>
+              <% elsif message.time_type == "days" %>
+                <%= "#{message.show_time}日前" %>
+              <% elsif message.time_type == "weeks" %>
+                <%= "#{message.show_time}週間前" %>
+              <% elsif message.time_type == "months" %>
+                <%= "#{message.show_time}ヶ月前" %>
+              <% elsif message.time_type == "detail_date" %>
+                <%= l message.show_time %>
+              <% end %>
+            </p>
+            <p class = "hidden"><%= l message.created_at %></p><%# JavaScriptで取得するために非表示のまま残してある %>
+          </a>
+        </div>
+
+        <%# 幅が600px以下だったら表示されるもの %>
+        <div class = "show_less_600px">
+          <a href="/users/<%= message.user.id %>" class = "_messages_user_information">
+            <% if message.user.icon_image.attached? %>
+              <%= image_tag message.user.icon_image.variant(resize: '500x500') , class: "_message_user_icons" %>
+            <% else %>
+              <%= image_tag "defaults/user_icon_image.png" , class: "_message_user_icons" %>
+            <% end %>
+
+            <div>
+              <%= message.user.nickname %>
+              <p class = "_messages_created_at">
+                <% if message.time_type == "seconds" %>
+                  <%= "#{message.show_time}秒前" %>
+                <% elsif message.time_type == "minutes" %>
+                  <%= "#{message.show_time}分前" %>
+                <% elsif message.time_type == "hours" %>
+                  <%= "#{message.show_time}時間前" %>
+                <% elsif message.time_type == "days" %>
+                  <%= "#{message.show_time}日前" %>
+                <% elsif message.time_type == "weeks" %>
+                  <%= "#{message.show_time}週間前" %>
+                <% elsif message.time_type == "months" %>
+                  <%= "#{message.show_time}ヶ月前" %>
+                <% elsif message.time_type == "detail_date" %>
+                  <%= l message.show_time %>
+                <% end %>
+              </p>
+              <p class = "hidden"><%= l message.created_at %></p><%# JavaScriptで取得するために非表示のまま残してある %>
+            </div>
+          </a>
+        </div>
+
         <% if message.user == @user && message.text != nil %>
-          <%= link_to "削除" , group_message_path(group , message) , method: :delete , class: "_messages_message_delete" , remote: true , id: "destroy_button_#{message.id}" %>
+          <%= link_to "削除" , group_message_path(group , message) , method: :delete , class: "_messages_message_delete creater_#{message.user.id}" , remote: true , id: "destroy_button_#{message.id}" %>
         <% end %>
       </div>
 

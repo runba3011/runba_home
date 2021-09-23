@@ -113,6 +113,8 @@ GEM
     faraday-patron (1.0.0)
     faraday-rack (1.0.0)
     ffi (1.15.3)
+    font-awesome-sass (5.15.1)
+      sassc (>= 1.11)
     globalid (0.5.2)
       activesupport (>= 5.0)
     gretel (4.3.0)
@@ -261,6 +263,8 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    sassc (2.4.0)
+      ffi (~> 1.9)
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
@@ -316,6 +320,7 @@ DEPENDENCIES
   devise
   factory_bot_rails
   faker
+  font-awesome-sass
   gretel
   image_processing (~> 1.2)
   jbuilder (~> 2.7)

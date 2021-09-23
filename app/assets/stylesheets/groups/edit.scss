@@ -283,9 +283,40 @@ a{
     display:inline-block;
   }
 
+  .low_authority_back_button{
+    display:none;
+  }
+
+  .edit_less_than_500px{
+    display:none;
+  }
+
+  .edit_less_than_500px_buttons_parent{
+    display:none;
+  }
+
 // 1000px以上の時の表示終了------------------------------
 
 @media (max-width: 1000px){
+  .low_authority{
+    display:flex;
+    justify-content: space-between;
+    width:90%;
+  }
+
+  .low_authority_edit{
+    display:flex;
+    justify-content: space-between;
+    width:90%;
+    margin:auto;
+  }
+
+  .low_authority_back_button{
+    margin:auto;
+    margin-right:0px;
+    display:inherit;
+  }
+
   ._main_bar_top{
     height:15vh;
   }
@@ -315,6 +346,7 @@ a{
 
   .change_button{
     margin-left:10px;
+    margin-right:0px;
   }
 
   .image_and_update_button {
@@ -375,4 +407,88 @@ a{
   .invite_title{
     font-size:5vw;
   }
+
+  .group_name_text_area {
+    font-size: 15px;
+  }
+}
+
+@media(max-width:500px){
+  .user_information{
+    font-size:12px;
+  }
+
+  .group_name_text_area{
+    width:90%;
+  }
+
+  .edit_more_than_500px{
+    display:none;
+  }
+
+  .edit_less_than_500px{
+    display:inherit;
+  }
+
+  ._main_bar_top{
+    padding-right:0px;
+  }
+
+  ._main_bar_group_control_buttons{
+    min-width:50px;
+  }
+
+  ._main_group_icon{
+    max-width:50px;
+    min-width:40px;
+  }
+
+  ._main_bar_group_control_buttons{
+    height:100%;
+    cursor:pointer;
+    transition:0.2s;
+  }
+
+  ._main_bar_group_control_buttons:hover{
+    background-color:rgba(255, 255, 255, 0.445);
+    transition:0.2s;
+    border-radius: 5px;;
+  }
+
+  .show_action{
+    width:100%;
+    height:50px;
+    border:none;
+    background-color: rgba(255, 255, 255, 0);
+    display:block;
+    margin:auto;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition:1s;
+  }
+
+  .edit_less_than_500px_buttons_parent{
+    z-index: 500;
+    display:flex;
+    flex-direction: column;
+    width:100vw;
+    position:absolute;
+    top:0px;
+    left:0px;
+    background-color: rgba(0, 0, 0, 0.685);
+  }
+
+  .show_action:hover{
+    background-color: rgba(0, 0, 0, 0.575);
+    transition:0.01s;
+    border:1px dotted rgba(255, 255, 255, 0.356);
+    border-right:none;
+    border-left:none;
+  }
+}
+
+.hidden{
+  display:none;
 }
