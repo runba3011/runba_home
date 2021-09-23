@@ -37,3 +37,17 @@
     font-size:30px;
   }
 }
+
+@media(max-width:400px){
+  .section_title{
+    font-size:20px;
+  }
+
+  .explain_title{
+    font-size:18px;
+  }
+
+  .text_box{
+    font-size:15px;
+  }
+}
