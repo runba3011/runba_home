@@ -38,6 +38,7 @@ function start(){
     }
   }
 
+  // グループ編集画面
   if(document.URL.match(/groups/) && document.URL.match(/edit/)){
     const button = document.getElementById("edit_button_show_button_parent");
     const angleDown = document.getElementById("edit_button_show_button");
@@ -54,6 +55,24 @@ function start(){
     });
 
     useCloseButton("0" , "all_button_show")
+  }
+  // グループ詳細（トーク）画面
+  else if(document.URL.match(/groups/)){
+    // 開く動作
+    const clickObject = document.getElementsByClassName("_main_bar_group_control_buttons");
+    clickObject[0].addEventListener("click" , ()=>{
+      const angleDown = document.getElementsByClassName("fa-angle-down");
+      if(getComputedStyle(angleDown[0] , null).getPropertyValue('display') != "none"){
+        console.log("みせる処理");
+        useOpenButton("open_button", "controlled_button" , true);
+      }
+      else{
+        console.log("横幅が小さくないので見せない");
+      }
+    });
+
+    // 閉じる動作
+    useCloseButton(0, "controlled_button");
   };
 };
 

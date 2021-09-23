@@ -2,6 +2,14 @@
 <div class = "_main_bar">
   <div class = "top _main_bar_top">
     <% if group != nil && is_edit == false %>
+
+        <div class = "hidden" id = "controlled_button">
+        <%= link_to "編集" , edit_group_path(group) , class: "_500px_link_buttons" %>
+        <%= link_to "グループ一覧に戻る" , groups_path , class: "_500px_link_buttons" %>
+        <p class = "_500px_link_buttons close_button">閉じる</p>
+
+        </div>
+
       <div class = "_main_top_icon_title">
         <% if group.image.attached? %>
           <%= image_tag group.image.variant(resize: '500x500') , class: "_main_group_icon"  %>
@@ -10,12 +18,13 @@
         <% end %>
         <p class = "_main_bar_group_name"><%= group.name %></p>
       </div>
-      <div class = "_main_bar_group_control_buttons">
+      <div class = "_main_bar_group_control_buttons" id = "open_button">
 
-        <i class="fas fa-angle-down fa-3x show_less_than_500px" style= "color:white;"></i>
+        <i class="fas fa-angle-down fa-3x show_less_than_500px" style= "color:white;margin:auto;"></i>
         
         <%= link_to "編集" , edit_group_path(group) , class: "_main_bar_edit_button _main_bar_button show_more_than_500px" %>
         <%= link_to "戻る" , groups_path , class: "_main_bar_edit_button _main_bar_button show_more_than_500px" , style: "background-color: #009eda;" %>
+
 
         <%# メッセージ表示画面で元々表示されていた削除ボタン、必要ないが念のため残しておく %>
         <%# <% if authority == 5 %>
