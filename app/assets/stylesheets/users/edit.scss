@@ -113,3 +113,30 @@ textarea{
 .error_alert {
   margin: 5px auto;
 }
+
+@media(max-width: 800px){
+  .nickname{
+    font-size:18px;
+  }
+
+  .account_name{
+    font-size:15px;
+  }
+
+  .information_explain{
+    font-size:14px;
+  }
+
+  ._edit_easy_image{
+    width:auto;
+    height:50%;
+  }
+}
+
+@media(max-width:400px){
+  ._edit_easy_image{
+    width:auto;
+    height:80%;
+  }
+}
+
