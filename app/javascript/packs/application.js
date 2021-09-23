@@ -16,6 +16,7 @@ require("../message_image")
 require("../message_confirm_judge")
 require("../authority_scroll")
 require("../messages_scroll_bottom")
+require("../push_and_show")
 import '@fortawesome/fontawesome-free/js/all';
 
 

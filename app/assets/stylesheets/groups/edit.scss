@@ -291,6 +291,10 @@ a{
     display:none;
   }
 
+  .edit_less_than_500px_buttons_parent{
+    display:none;
+  }
+
 // 1000px以上の時の表示終了------------------------------
 
 @media (max-width: 1000px){
@@ -446,4 +450,41 @@ a{
     transition:0.2s;
     border-radius: 5px;;
   }
+
+  .show_action{
+    width:100%;
+    height:50px;
+    border:none;
+    background-color: rgba(255, 255, 255, 0);
+    display:block;
+    margin:auto;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition:1s;
+  }
+
+  .edit_less_than_500px_buttons_parent{
+    z-index: 500;
+    display:flex;
+    flex-direction: column;
+    width:100vw;
+    position:absolute;
+    top:0px;
+    left:0px;
+    background-color: rgba(0, 0, 0, 0.685);
+  }
+
+  .show_action:hover{
+    background-color: rgba(0, 0, 0, 0.575);
+    transition:0.01s;
+    border:1px dotted rgba(255, 255, 255, 0.356);
+    border-right:none;
+    border-left:none;
+  }
+}
+
+.hidden{
+  display:none;
 }

@@ -46,6 +46,15 @@
           </div>
           <%= f.submit "更新" , method: :put , class: "_main_bar_button _main_bar_group_update change_button more_than_1000px" %>
           
+          <div class = "edit_less_than_500px_buttons_parent hidden" id = "all_button_show">
+            <label class = "show_action">画像
+              <%= f.file_field :image , class: "hidden" , accept: "image/jpeg , image/png , image/gif " %>
+            </label>
+            <%= f.submit "更新" , method: :put , class: "show_action" %>
+            <%= link_to "グループ一覧へ戻る" , groups_path , class: "show_action" %>
+            <%= link_to "グループ削除" , group_path(group) , method: :delete , class: "show_action" %>
+            <p class = "show_action close_button">閉じる</p>
+          </div>
         <% end %>
       <% else %>
         <div class = "low_authority">
@@ -54,12 +63,13 @@
         </div>
       <% end %>
 
-      <div class = "_main_bar_group_control_buttons" <% if authority != 5 %><%= "style = min-width:0px;" %><% end %>>
+      <div class = "_main_bar_group_control_buttons" <% if authority != 5 %><%= "style = min-width:0px;" %><% end %> id = "edit_button_show_button_parent">
         <% if authority == 5 %>
           <%= link_to "グループ削除" , group_path(group) , method: :delete , class: "_main_bar_delete_button _main_bar_button edit_more_than_500px" %>
-          <i class="fas fa-angle-down fa-2x edit_less_than_500px" style="color:white;margin:auto;"></i>
+          <i class="fas fa-angle-down fa-2x edit_less_than_500px" id = "edit_button_show_button" style="color:white;margin: auto"></i>
         <% end %>
       </div>
+
       <%# ヘッダーの、編集する際に表示されるもの終了 %>
     <% end %>
   </div>
