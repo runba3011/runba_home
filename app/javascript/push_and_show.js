@@ -79,7 +79,7 @@ function start(){
   // ユーザー詳細画面
   else if(document.URL.match(/users/)){
     const clickObject = document.getElementsByClassName("angle-down_parent");
-    if(clickObject != null){
+    if(clickObject.length != 0){
       // 開く処理
       clickObject[0].addEventListener("click" , ()=>{
         const angleDown = document.getElementsByClassName("fa-angle-down");
