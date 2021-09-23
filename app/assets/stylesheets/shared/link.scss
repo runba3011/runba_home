@@ -45,6 +45,18 @@
   margin-top: 10px;
 }
 
+
+
+// 800pxより大きい時
+  ._link_more_than_800px{
+    display:inherit;
+  }
+
+  ._link_less_than_800px{
+    display:none;
+  }
+
+
 // 800pxより小さいとき
 @media (max-width:800px){
   ._link_more_than_800px{
@@ -78,15 +90,5 @@
 
   ._link_explain{
     width:90%;
-  }
-}
-
-@media (min-width:800px){
-  ._link_more_than_800px{
-    display:inherit;
-  }
-
-  ._link_less_than_800px{
-    display:none;
   }
 }
