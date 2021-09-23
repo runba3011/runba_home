@@ -82,6 +82,10 @@
   margin: 30px auto;
 }
 
+.br_400px{
+  display: none;
+}
+
 @media(max-width:800px){
   .request_center_object{
     width:90%;
@@ -95,5 +99,32 @@
 
   .buttons{
     justify-content: space-around;
+  }
+}
+
+@media(max-width:400px){
+  .br_400px{
+    display:inherit;
+  }
+
+  .request_title{
+    font-size: 7vw;
+  }
+
+  .request_text{
+    font-size:5vw;
+  }
+
+  .text_box{
+    font-size:5.5vw;
+  }
+
+  .buttons{
+    flex-direction: column;
+  }
+  
+  .common_simple_button{
+    width: 80%;
+    margin-bottom: 30px;
   }
 }

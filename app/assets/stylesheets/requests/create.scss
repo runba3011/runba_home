@@ -30,3 +30,23 @@
   box-shadow:none;
   transition: 0.2s;
 }
+
+@media (max-width:600px){
+  .text{
+    font-size:5.5vw;
+  }
+
+  .request_center_object{
+    padding:10px;
+  }
+}
+
+@media(max-width:400px){
+  .request_center_object{
+    padding:4px;
+  }
+
+  .text{
+    font-size:8vw;
+  }
+}
