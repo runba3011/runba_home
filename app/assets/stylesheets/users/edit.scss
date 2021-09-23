@@ -37,6 +37,7 @@
 ._edit_background_image_show_edit_small{
   background-color: rgba(0, 0, 0, 0.582);
   border-radius: 5px;
+  min-height:50px;
 }
 
 ._edit_easy_small_image{
@@ -113,3 +114,30 @@ textarea{
 .error_alert {
   margin: 5px auto;
 }
+
+@media(max-width: 800px){
+  .nickname{
+    font-size:18px;
+  }
+
+  .account_name{
+    font-size:15px;
+  }
+
+  .information_explain{
+    font-size:14px;
+  }
+
+  ._edit_easy_image{
+    width:auto;
+    height:50%;
+  }
+}
+
+@media(max-width:400px){
+  ._edit_easy_image{
+    width:auto;
+    height:80%;
+  }
+}
+
