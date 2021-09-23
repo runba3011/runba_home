@@ -1,5 +1,4 @@
 .request_main_content{
-
   background: linear-gradient(rgba(255,255,255,0) , rgba(0, 255, 242, 0.808)) , image_url("request/2.png") ;
   background-size: cover;
   height: 100vh;
@@ -10,6 +9,7 @@
   right: 0px;
   left: 0px;
   overflow-y: auto;
+  background-position: center;
 }
 
 .request_center_object{
@@ -33,4 +33,10 @@
 
 .authority_box{
   display: flex;
+}
+
+@media (max-width: 800px){
+  .request_center_object{
+    width:90%;
+  }
 }
