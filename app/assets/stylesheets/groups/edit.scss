@@ -407,9 +407,17 @@ a{
   .invite_title{
     font-size:5vw;
   }
+
+  .group_name_text_area {
+    font-size: 15px;
+  }
 }
 
 @media(max-width:500px){
+  .user_information{
+    font-size:12px;
+  }
+
   .group_name_text_area{
     width:90%;
   }
@@ -428,10 +436,6 @@ a{
 
   ._main_bar_group_control_buttons{
     min-width:50px;
-  }
-
-  .group_name_text_area {
-    font-size: 15px;
   }
 
   ._main_group_icon{
