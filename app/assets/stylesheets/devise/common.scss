@@ -90,3 +90,15 @@
   box-shadow: none;
   top: 3px;
 }
+
+@media(max-width:800px){
+  .center_object{
+    width:90%;
+  }
+
+  .background{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
