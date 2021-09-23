@@ -73,6 +73,11 @@
 
   ._link_title_text{
     margin:auto;
+    font-size:20px;
+  }
+
+  ._link_image{
+    width:25%;
   }
 
   ._link_image_and_title {
@@ -86,9 +91,17 @@
   ._link_explain_text{
     padding:0px;
     text-align: center;
+    font-size:15px;
   }
 
   ._link_explain{
     width:90%;
+    padding:5px 0px;
+  }
+}
+
+@media(max-width:400px){
+  ._link_image{
+    width:60%;
   }
 }

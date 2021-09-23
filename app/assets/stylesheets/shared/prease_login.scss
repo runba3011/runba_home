@@ -48,3 +48,27 @@ header , footer{
   box-shadow: none;
   transition: 0.2s;
 }
+
+.br_500px{
+  display:none;
+}
+
+@media (max-width:900px){
+  .center_object{
+    width:80%;
+  }
+}
+
+@media(max-width:500px){
+  .br_500px{
+    display: inherit;
+  }
+
+  .center_object{
+    width:90%;
+  }
+
+  .title{
+    font-size:7vw;
+  }
+}

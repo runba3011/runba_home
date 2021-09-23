@@ -1,6 +1,9 @@
 <header>
   <div class = header_inside>
-    <%= link_to title , root_path , class: "header_title" %>
+    <%  if title == "Runba's Home" 
+          style = "font-family: 'Hammersmith One', sans-serif;"
+        end %>
+    <%= link_to title , root_path , class: "header_title" , style: style %>
     <%= render partial: "shared/header/show_account" , locals: {user: current_user} %>
   </div>
 </header>

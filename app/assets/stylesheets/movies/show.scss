@@ -92,12 +92,23 @@
   display:inline-block;
 }
 
-.comment_user_name{
+.comment_nickname_and_created_at{
   margin-left:3px;
   font-size: 18px;
   margin: auto 10px auto 5px;
 }
 
+.comment_created_at{
+  font-size: 16px;
+  color:rgba(95, 95, 95, 0.979)
+}
+
+.cant_user_textarea {
+  width: 100%;
+  font-size: 2.5vw;
+  height: 40px;
+  text-align: center;
+}
 
 @media(max-width: 800px){
   .movie{
@@ -106,12 +117,22 @@
     height: calc(95vw / 16 * 9);
     max-height: calc(1000px / 16 * 9);
   }
+
+  .under_content{
+    width:95%;
+  }
 }
 
 @media(max-width: 650px){
-  .comment_user_name{
+  .comment_nickname_and_created_at{
     font-size:15px;
   }
+
+.comment_created_at{
+  font-size: 14px;
+  color:rgba(209, 209, 209, 0.979)
+  }
+
   .comment_text{
     font-size:15px;
   }
