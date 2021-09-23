@@ -117,3 +117,36 @@
 .nil_explain{
   color:rgba(0, 0, 0, 0.411);
 }
+
+@media(max-width:850px){
+  .nickname{
+    font-size:4vw;
+  };
+
+  .information_explain{
+    font-size:3.5vw;
+  }
+}
+
+@media(max-width:650px){
+  .icon_and_name{
+    width:100%;
+  }
+
+  .show_more_than_650px{
+    display:none;
+  }
+
+  .show_less_than_650px{
+    display:inherit;
+  }
+
+  .angle-down_parent{
+    width:30px;
+  }
+
+  .fa-angle-down{
+    margin: auto;
+    font-size: 30px;
+  }
+}
