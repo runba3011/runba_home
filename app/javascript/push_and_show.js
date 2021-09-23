@@ -60,19 +60,40 @@ function start(){
   else if(document.URL.match(/groups/)){
     // 開く動作
     const clickObject = document.getElementsByClassName("_main_bar_group_control_buttons");
-    clickObject[0].addEventListener("click" , ()=>{
-      const angleDown = document.getElementsByClassName("fa-angle-down");
-      if(getComputedStyle(angleDown[0] , null).getPropertyValue('display') != "none"){
-        console.log("みせる処理");
-        useOpenButton("open_button", "controlled_button" , true);
-      }
-      else{
-        console.log("横幅が小さくないので見せない");
-      }
-    });
+    if(clickObject != null){
+      clickObject[0].addEventListener("click" , ()=>{
+        const angleDown = document.getElementsByClassName("fa-angle-down");
+        if(getComputedStyle(angleDown[0] , null).getPropertyValue('display') != "none"){
+          console.log("みせる処理");
+          useOpenButton("open_button", "controlled_button" , true);
+        }
+        else{
+          console.log("横幅が小さくないので見せない");
+        }
+      });
+  
+      // 閉じる動作
+      useCloseButton(0, "controlled_button");
+    }
+  }
+  // ユーザー詳細画面
+  else if(document.URL.match(/users/)){
+    const clickObject = document.getElementsByClassName("angle-down_parent");
+    if(clickObject != null){
+      // 開く処理
+      clickObject[0].addEventListener("click" , ()=>{
+        const angleDown = document.getElementsByClassName("fa-angle-down");
+        if(getComputedStyle(angleDown[0], null).getPropertyValue("display") != "none"){
+          useOpenButton("angle-down_parent" , "show_controlled_button_parent" , true)
+          console.log("開きます");
+        }
+        else{
+          console.log("横幅がそこまで大きくないので開きません");
+        }
+      });
 
-    // 閉じる動作
-    useCloseButton(0, "controlled_button");
+      useCloseButton(0 , "show_controlled_button_parent")
+    }
   };
 };
 
