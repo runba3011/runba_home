@@ -14,7 +14,7 @@
     <div class = "comment_box">
     <% if user_signed_in? %>
       <%= render partial: "shared/errors" , locals: {model: @comment} %>
-      <p style = "color: #d8d8d8;">新規コメントを削除するにはページを読み込み直してください</p>
+      <p style = "color: #d8d8d8;">新規コメントを削除するには<br class = "br_400px">ページを読み込み直してください</p>
       <%= form_with model: @comment , url: @create_path, local: true  do |f| %>
         <%= f.text_area :text , class: "comment_text_box" , id: "comment_text_box" %>
         <%= f.submit "送信" ,  class: "comment_submit_btn" , id: "comment_submit_button" %>

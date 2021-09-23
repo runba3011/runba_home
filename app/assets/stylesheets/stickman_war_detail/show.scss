@@ -32,6 +32,10 @@
   margin-bottom: 30px;
 }
 
+.br_550px{
+  display:none;
+}
+
 @media(max-width: 800px){
   .section_title{
     font-size:30px;
@@ -50,4 +54,9 @@
   .text_box{
     font-size:15px;
   }
+
+  .br_550px{
+    display:inherit;
+  }
 }
+
