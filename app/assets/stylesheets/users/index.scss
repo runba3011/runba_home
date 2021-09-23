@@ -81,3 +81,24 @@ li{
   top: 3px;
   box-shadow: none;
 }
+
+@media(max-width:800px){
+  .center_object{
+    width:90%;
+  }
+
+  .inner_account_parent{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .inner_account{
+    width:100%;
+  }
+
+  .accounts_parent{
+    display:flex;
+    flex-direction: column-reverse;
+  }
+}

@@ -11,12 +11,18 @@
       <li><%= link_to 'ログアウト' , destroy_user_session_path , method: :delete , class: "common_simple_button logout_button" %></li>
     <% else %>
       <p>ログインしていません</p>
-      <div class = "inner_account_parent">
-        <%= link_to 'ログイン' , new_user_session_path , class: "login inner_account" %>
-        <%= link_to "新規登録" , new_user_registration_path , class: "new inner_account" %>
+      <div class = "accounts_parent">
+        <div class = "inner_account_parent">
+          <%= link_to 'ログイン' , new_user_session_path , class: "login inner_account" %>
+          <%= link_to "新規登録" , new_user_registration_path , class: "new inner_account" %>
+        </div>
+        <%= link_to user_facebook_omniauth_authorize_path, method: :post , class: "foreign_account Facebook" do%>
+          <i class="fab fa-facebook-square"></i>　Facebook
+        <% end %> 
+        <%= link_to user_google_oauth2_omniauth_authorize_path, method: :post , class: "foreign_account GoogleOauth2" do%>
+          <i class="fab fa-google-plus-g"></i>　Google
+        <% end %>
       </div>
-      <%= link_to "Facebookで登録", user_facebook_omniauth_authorize_path, method: :post , class: "foreign_account Facebook"%>
-      <%= link_to "Googleで登録", user_google_oauth2_omniauth_authorize_path, method: :post , class: "foreign_account GoogleOauth2"%>
     <% end %>
   </div>
 </div>
