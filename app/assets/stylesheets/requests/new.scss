@@ -88,7 +88,15 @@
 
 @media(max-width:800px){
   .request_center_object{
-    width:90%;
+    width: 90%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 18% 0px;
+  }
+
+  .request_title{
+    font-size:30px;
   }
 
   .common_simple_button {
@@ -100,9 +108,21 @@
   .buttons{
     justify-content: space-around;
   }
+
+  .quit_button{
+    width:80%;
+  }
 }
 
 @media(max-width:400px){
+  .request_center_object {
+    width: 90%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 20% 0px;
+  }
+
   .br_400px{
     display:inherit;
   }
@@ -126,5 +146,9 @@
   .common_simple_button{
     width: 80%;
     margin-bottom: 30px;
+  }
+
+  .quit_button{
+    width:95%;
   }
 }
