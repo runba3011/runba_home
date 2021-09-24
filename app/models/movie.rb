@@ -1,11 +1,11 @@
 class Movie < ActiveHash::Base
   # 後ろの１１桁の文字列のみlinkの部分に入れる
   self.data = [
-    {id: 1 , reccomend: true , title: "【きりたんの初登場】クッキーとは何か？" , link: "8lPLWWVXNa0" , image: nil , explain: "ひじょうにながいせつめいをかこうではないか" , small_explain: "自分の動画を見ることが少ないルンバ氏が、何度も見たくなるレベルにおすすめ。実のところを申しますと解説系の動画って後からまたみてみると「なにこいつ偉そうに言ってるんだろう」って思って複雑な気持ちになるんですよね。"} , 
-    {id: 2 , reccomend: true , title: "認知症とは何か？【VOICEROID解説】" , link: "KBclKqeILkU" , image: nil , explain: "説明を書こう！" , small_explain: nil} , 
-    {id: 3 , reccomend: true , title: "淫夢が長生きな理由に迫るぜ【VOICEROID解説】" , link: "_jbegc0cySo" , image: nil , explain: "説明を書こう！" , small_explain: nil} , 
-    {id: 4 , reccomend: true , title: "プロテインが体にいい理由５選【VOICEROID解説】" , link: "pQBJWCH4xdE" , image: nil , explain: "説明を書こう！" , small_explain: nil} , 
-    {id: 5 , reccomend: true , title: "大企業のエイプリルフール【VOICEROID解説】" , link: "O9g1fA8ElCk" , image: nil , explain: "説明を書こう！" , small_explain: nil} , 
+    {id: 1 , reccomend: false , title: "【きりたんの初登場】クッキーとは何か？" , link: "8lPLWWVXNa0" , image: nil , explain: "ひじょうにながいせつめいをかこうではないか" , small_explain: "自分の動画を見ることが少ないルンバ氏が、何度も見たくなるレベルにおすすめ。実のところを申しますと解説系の動画って後からまたみてみると「なにこいつ偉そうに言ってるんだろう」って思って複雑な気持ちになるんですよね。"} , 
+    {id: 2 , reccomend: false , title: "認知症とは何か？【VOICEROID解説】" , link: "KBclKqeILkU" , image: nil , explain: "説明を書こう！" , small_explain: nil} , 
+    {id: 3 , reccomend: false , title: "淫夢が長生きな理由に迫るぜ【VOICEROID解説】" , link: "_jbegc0cySo" , image: nil , explain: "説明を書こう！" , small_explain: nil} , 
+    {id: 4 , reccomend: false , title: "プロテインが体にいい理由５選【VOICEROID解説】" , link: "pQBJWCH4xdE" , image: nil , explain: "説明を書こう！" , small_explain: nil} , 
+    {id: 5 , reccomend: false , title: "大企業のエイプリルフール【VOICEROID解説】" , link: "O9g1fA8ElCk" , image: nil , explain: "説明を書こう！" , small_explain: nil} , 
     {id: 6 , reccomend: false , title: "淫夢の被害者たちがこちら【VOICEROID解説】" , link: "7OHR-_dTurM" , image: nil , explain: "説明を書こう！" , small_explain: nil} , 
     {id: 7 , reccomend: false , title: "収入が5倍！？高度経済成長の秘密【VOICEROID解説】" , link: "kdpHAKwXamE" , image: nil , explain: "説明を書こう！" , small_explain: nil} , 
     {id: 8 , reccomend: false , title: "【悪用厳禁】簡単に嘘を見分ける方法がこちら【VOICEROID解説】" , link: "F4Ovqb96Ono" , image: nil , explain: "説明を書こう！" , small_explain: nil} , 
