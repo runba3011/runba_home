@@ -6,7 +6,7 @@
   <div class = "links">
     <%= link_to movie_path(movie) , class: "_reccomend_movie_a" do %>
       <% if movie.image != nil %>
-        <%= image_tag movie.image , class: "_reccomend_movie_image" %>
+        <%= image_tag "youtube/#{movie.image}.png" , class: "_reccomend_movie_image" %>
       <% else %>
         <%= image_tag "youtube/default.jpeg" , class: "_reccomend_movie_image" %>
       <% end %>
