@@ -14,6 +14,8 @@ Rails.application.routes.draw do
       resources :stickman_war_comments , only: [:create , :update , :destroy]
     end
   end
+  resources :stickman_war_characters , only: [:index , :show]
+
   resources :requests , only: [:new , :create , :show]
   resources :movies , only: [:index , :show] do
     resources :movie_comments , only: [:create , :update , :destroy]
