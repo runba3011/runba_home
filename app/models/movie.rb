@@ -207,7 +207,7 @@ class Movie < ActiveHash::Base
     {id: 203 ,  reccomend: false , title: "国産だからって信用できるというのはおかしくないですか？【VOICEROID解説】" , link: "dHxmbh5NwWo" , image: nil , explain: "説明を書こう！" , small_explain: nil} ,
     {id: 204 ,  reccomend: false , title: "理不尽な叱りへの対策５選【VOICEROID解説】" , link: "yxD0ws6SKeA" , image: nil , explain: "説明を書こう！" , small_explain: nil} ,
     {id: 205 ,  reccomend: false , title: "YouTuberの奇行がやばい…！【VOICEROID解説】" , link: "UXtbWP7k7_c" , image: nil , explain: "説明を書こう！" , small_explain: nil} ,
-    {id: 206 ,  reccomend: false , title: "【MHRize】タマミツネからカツアゲをするきりたん【voiceroid実況】" , link: "gAejqvmz3L" , image: nil , explain: "説明を書こう！" , small_explain: nil} ,
+    {id: 206 ,  reccomend: false , title: "【MHRize】タマミツネからカツアゲをするきりたん【voiceroid実況】" , link: "gAejqvmz3LI" , image: nil , explain: "説明を書こう！" , small_explain: nil} ,
     {id: 207 ,  reccomend: false , title: "失敗ってどうやったら償えるんですか？【VOICEROID考察】" , link: "zy44qPf7t-Y" , image: nil , explain: "説明を書こう！" , small_explain: nil} ,
     {id: 208 ,  reccomend: false , title: "明日からできる詐欺論法６選【VOICEROID解説】" , link: "Wtb_ydVtvp8" , image: nil , explain: "説明を書こう！" , small_explain: nil} ,
     {id: 209 ,  reccomend: false , title: "実は自己中が最強な理由４選【VOICEROID解説】" , link: "GZKsJY5XoqI" , image: nil , explain: "説明を書こう！" , small_explain: nil} ,

@@ -5,7 +5,7 @@
 <% movies.each do |movie| %>
     <%= link_to movie_path(movie.id) , class: "_movie_a" do %>
       <% if movie.link != nil %>
-        <%= image_tag "http://i.ytimg.com/vi/#{movie.link}/maxresdefault.jpg" , class: "_movie_image" %>
+        <%= image_tag "https://i.ytimg.com/vi/#{movie.link}/hqdefault.jpg" , class: "_movie_image" %>
       <% else %>
         <%= image_tag "youtube/default.jpeg" , class: "_movie_image" %>
       <% end %>
