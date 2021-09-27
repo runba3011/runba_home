@@ -5,8 +5,10 @@
 <% movies.each do |movie| %>
   <div class = "links">
     <%= link_to movie_path(movie) , class: "_reccomend_movie_a" do %>
-      <% if movie.link != nil %>
-        <%= image_tag "https://i.ytimg.com/vi/#{movie.link}/hqdefault.jpg" , class: "_reccomend_movie_image" %>
+      <% if movie.link != nil && movie.image == nil %>
+        <%= image_tag "https://img.youtube.com/vi/#{movie.link}/maxresdefault.jpg" , class: "_reccomend_movie_image" %>
+      <% elsif movie.image != nil %>
+        <%= image_tag movie.image , class: "_reccomend_movie_image" %>
       <% else %>
         <%= image_tag "youtube/default.jpeg" , class: "_reccomend_movie_image" %>
       <% end %>
