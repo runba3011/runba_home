@@ -3,9 +3,9 @@
 <%= stylesheet_link_tag "movies/movie_link" , :media => "all" %>
 
 <% movies.each do |movie| %>
-    <%= link_to movie_path(movie) , class: "_movie_a" do %>
-      <% if movie.image != nil %>
-        <%= image_tag image , class: "_movie_image" %>
+    <%= link_to movie_path(movie.id) , class: "_movie_a" do %>
+      <% if movie.link != nil %>
+        <%= image_tag "https://i.ytimg.com/vi/#{movie.link}/hqdefault.jpg" , class: "_movie_image" %>
       <% else %>
         <%= image_tag "youtube/default.jpeg" , class: "_movie_image" %>
       <% end %>
