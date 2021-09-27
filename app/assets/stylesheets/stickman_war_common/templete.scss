@@ -1,10 +1,11 @@
 .explain_title{
   font-size: 25px;
   width: 90%;
-  margin:30px auto 5px;
+  margin:60px auto 5px;
+  padding-left:10px;
   padding-bottom: 5px;
   margin-bottom: 20px;
-  border-bottom: 1px solid rgb(224, 224, 224);
+  border-bottom: 1px dotted rgb(224, 224, 224);
 }
 
 .section_border{
@@ -16,4 +17,20 @@
 .text_box{
   width: 90%;
   margin: auto;
+}
+
+.explain_point {
+  border-bottom: 1px dotted rgba(128, 128, 128, 0.555);
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.small_margin{
+  margin-top:20px;
+}
+
+.explain_section_title{
+  text-align: center;
+  border-bottom:1px solid gray;
+  font-size:5vw;
 }

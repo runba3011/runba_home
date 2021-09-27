@@ -1,5 +1,6 @@
 <%= render partial: "shared/header/stickman_war_header" %>
 
+
 <div class = "main_content_parent">
   <div class = "main_content">
     <p class = "section_title">ベーシックステージ</p>
@@ -9,15 +10,15 @@
       <%= breadcrumbs separator: "&rsaquo; " %>
     </div>
     <div class = "links">
-      <p class = "stage_title">ステージ１（名前を入れよう）</p>
-      <%= render partial: "shared/stage_link" , locals: {image: "stickman_war_stage/default.png" , stage_number: @stage_number1 , stage_name: @stage_name1 ,  link: stickman_war_stickman_war_detail_path("basic" , "1-8") , explain: "" , individual_class: nil , id: nil , individual_class: nil} %>
+      <p class = "stage_title">コジク道</p>
+      <%= render partial: "stage_link" , locals: {image: "stickman_war_stage/default.png" , stage_number: "1-8" , stage_name: "コナミ倉庫" ,  link: stickman_war_stickman_war_detail_path("basic" , "1-8") , explain: "" , individual_class: nil , id: nil , individual_class: nil} %>
       <div class = "only_border stage_select_border"></div>
 
       <p class = "stage_title">ステージ2（名前を入れよう）</p>
-      <%= render partial: "shared/stage_link" , locals: {image: "stickman_war_stage/default.png" , stage_number: @stage_number2 , stage_name: @stage_name2 ,  link: nil , explain: "" , individual_class: nil , id: nil , individual_class: nil} %>
+      <%= render partial: "stage_link" , locals: {image: "stickman_war_stage/default.png" , stage_number: "にゃぁ" , stage_name: "にゃぁ" ,  link: nil , explain: "" , individual_class: nil , id: nil , individual_class: nil} %>
       <div class = "only_border stage_select_border"></div>
 
-      <%= render partial: "shared/stage_link" , locals: {image: "stickman_war_stage/default.png" , stage_number: @stage_number3 , stage_name: @stage_name3 ,  link: nil , explain: "" , individual_class: nil , id: nil , individual_class: nil} %>
+      <%= render partial: "stage_link" , locals: {image: "stickman_war_stage/default.png" , stage_number: "にゃぁ" , stage_name: "にゃぁ" ,  link: nil , explain: "" , individual_class: nil , id: nil , individual_class: nil} %>
       <%# この時点でbasic 3- まで作成できる %>
     </div>
   </div>
