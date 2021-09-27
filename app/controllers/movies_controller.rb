@@ -19,6 +19,8 @@ class MoviesController < ApplicationController
   end
   
   def search
+    index
     @search_movies = Movie.search(params[:keyword])
+    render :index
   end
 end
