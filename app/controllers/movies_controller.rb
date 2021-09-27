@@ -1,6 +1,7 @@
 class MoviesController < ApplicationController
   def index
     # おすすめ動画は、おすすめ部分と動画一覧の両方で見えるようにする
+    @search_movies = nil;
     @reccomend_movies = Movie.where(reccomend: true)
     @movies = Movie.all
     @reccomend_movies.order("id DESC")
@@ -15,5 +16,9 @@ class MoviesController < ApplicationController
     end
     @movie_comment = MovieComment.new
     # binding.pry
+  end
+  
+  def search
+    @search_movies = Movie.search(params[:keyword])
   end
 end

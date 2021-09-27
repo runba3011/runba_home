@@ -237,4 +237,13 @@ class Movie < ActiveHash::Base
   include ActiveHash::Associations
   has_many :movie_comments
 
+  def self.search(search)
+    if search != ""
+      # binding.pry
+      Movie.where(title: "%#{search}%")
+    else
+      Movie.all
+    end
+  end
+
 end
