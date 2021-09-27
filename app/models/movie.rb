@@ -1,7 +1,6 @@
 class Movie < ActiveHash::Base
   # 後ろの１１桁の文字列のみlinkの部分に入れる
   self.data = [
-    {id: 0} ,
     {id: 1 , reccomend: true , title: "【きりたんの初登場】クッキーとは何か？" , link: "8lPLWWVXNa0" , image: nil , explain: "ひじょうにながいせつめいをかこうではないか" , small_explain: "自分の動画を見ることが少ないルンバ氏が、何度も見たくなるレベルにおすすめ。実のところを申しますと解説系の動画って後からまたみてみると「なにこいつ偉そうに言ってるんだろう」って思って複雑な気持ちになるんですよね。"} , 
     {id: 2 , reccomend: false , title: "認知症とは何か？【VOICEROID解説】" , link: "yBQmZ-NZMos" , image: nil , explain: "説明を書こう！" , small_explain: nil} , 
     {id: 3 , reccomend: false , title: "淫夢が長生きな理由に迫るぜ【VOICEROID解説】" , link: "_jbegc0cySo" , image: nil , explain: "説明を書こう！" , small_explain: nil} , 
@@ -236,5 +235,14 @@ class Movie < ActiveHash::Base
 
   include ActiveHash::Associations
   has_many :movie_comments
+
+  def self.search(search)
+    if search != ""
+      return_movie = Movie.like(title: "%#{search}%")
+      return_movie.sort_by{|movie| movie.id}.reverse
+    else
+      return_movie = nil
+    end
+  end
 
 end

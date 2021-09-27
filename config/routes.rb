@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   resources :requests , only: [:new , :create , :show]
   resources :movies , only: [:index , :show] do
     resources :movie_comments , only: [:create , :update , :destroy]
+    collection do
+      get 'search'
+    end
   end
   resources :groups do
     resources :messages , only: [:create , :update , :destroy , :edit]

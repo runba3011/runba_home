@@ -8,6 +8,17 @@
       <% breadcrumb :movies %>
       <%= breadcrumbs separator: "&rsaquo; " %>
     </div>
+    <%= form_with(url: search_movies_path, local: true, method: :get, class: "movie_search_form") do |f| %>
+      <%= f.text_field :keyword , placeholder: "検索する" , class: "movie_search_input" %>
+      <%= f.submit "検索" , class: "movie_search_submit" %>
+    <% end %>
+
+    <% if @search_movies != nil %>
+      <p class = "small_section_title">検索結果</p>
+      <div class = "all_movie_show">
+        <%= render partial: "shared/movies/movie_link" , locals: {movies: @search_movies} %>
+      </div>
+    <% end %>
 
     <p class = "small_section_title">おすすめ動画</p>
     <%= render partial: "shared/movies/reccomend_movie_link" , locals: {movies: @reccomend_movies} %>
