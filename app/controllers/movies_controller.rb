@@ -4,8 +4,8 @@ class MoviesController < ApplicationController
     @search_movies = nil;
     @reccomend_movies = Movie.where(reccomend: true)
     @movies = Movie.all
-    # @reccomend_movies.order("id DESC")
-    # @movies.order("id DESC")
+    @reccomend_movies =  @reccomend_movies.sort_by{|movie|movie.id}.reverse
+    @movies =  @movies.sort_by{|movie|movie.id}.reverse
   end
 
   def show
