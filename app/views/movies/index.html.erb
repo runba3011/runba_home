@@ -22,6 +22,7 @@
     <%= render partial: "shared/movies/reccomend_movie_link" , locals: {movies: @reccomend_movies} %>
 
     <p class = "section_title">投稿動画一覧</p>
+      <%= render partial: "shared/movies/movie_link" , locals: {movies: @movies} %>
     <div class = "all_movie_show">
     </div>
   </div>
