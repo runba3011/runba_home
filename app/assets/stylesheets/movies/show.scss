@@ -4,12 +4,27 @@
 
 .current{
   display:block;
-  font-size: 30px;
+  font-size: 25px;
   border-bottom: 1px solid black;
   width: 100%;
   margin-bottom: 10px;
   // margin-left: 10px;
   padding-left: 5px;
+  height:35px;
+  overflow: scroll;
+}
+
+.current{
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.current::-webkit-scrollbar {
+  display:none;
+}
+
+.small_section_title{
+  font-size:20px;
 }
 
 .under_content{
@@ -110,6 +125,18 @@
   text-align: center;
 }
 
+@media(max-width:1000px){
+  .current{
+    font-size:2.5vw;
+    max-height: calc(2.5vw + 10px);
+  }
+
+  .small_section_title{
+    font-size:2.3vw;
+  }
+}
+
+
 @media(max-width: 800px){
   .movie{
     width: 100%;
@@ -142,6 +169,11 @@
   }
 
   .current{
-    font-size:20px;
+    font-size:3vw;
+    max-height: calc(3vw + 10px);
+  }
+
+  .small_section_title{
+    font-size:2.5vw;
   }
 }
