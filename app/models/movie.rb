@@ -240,7 +240,9 @@ class Movie < ActiveHash::Base
   def self.search(search)
     if search != ""
       # binding.pry
-      return_movie = Movie.where(title: "%#{search}%")
+      return_movie = Movie.like(title: "%#{search}%")
+      return_movie.sort_by{|movie| movie.id}.reverse
+      # binding.pry
     else
       return_movie = nil
     end
