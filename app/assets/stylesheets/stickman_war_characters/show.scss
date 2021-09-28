@@ -62,6 +62,8 @@ td{
 .page_move_button{
   width:25vw;
   height:10vw;
+  min-width:189px;
+  min-height:76px;
   background-color:rgb(190, 255, 190);
   border-radius: 10px;
   display:flex;
@@ -77,6 +79,8 @@ td{
 .cant_move_parent{
   width:25vw;
   height:10vw;
+  min-width:189px;
+  min-height:76px;
   background-color:rgb(190, 255, 190);
   border-radius: 10px;
   display:flex;
@@ -131,4 +135,10 @@ td{
   font-weight: bold;
   margin:0px;
   text-align: center;
+}
+
+@media(max-width:800px){
+  .common_status_table , .character_detail_avility_show_table{
+    width:95%;
+  }
 }

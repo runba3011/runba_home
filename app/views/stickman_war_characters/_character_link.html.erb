@@ -10,9 +10,11 @@
       else
         image_class = "character_icon_shield"
       end
+
+      responsive_image_class = "responsive_#{image_class}"
   %>
 
-  <div class = "_character_link_links">
+  <div class = "_character_link_links <%= responsive_image_class %> responsive_background">
     <%= link_to "/stickman_war_characters/#{grade}/#{character.id}" , class: "_character_link_a"  do %>
       <% if character.picture_name != nil %>
         <div class = "_character_link_image_box" >

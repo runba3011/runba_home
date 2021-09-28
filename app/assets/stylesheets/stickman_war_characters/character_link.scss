@@ -8,6 +8,12 @@
   min-height: 150px;
   border: 1px solid rgb(230, 230, 230);
   padding: 5px;
+  max-width:245px;
+
+}
+
+._character_link_links:hover{
+  background-color:rgba(255, 255, 0, 0.212);
 }
 
 ._character_link_a{
@@ -45,10 +51,12 @@
   margin: auto;
   font-size:14px;
   text-align: center;
-  
+  border:1px solid rgba(0, 0, 0, 0.116);
+  margin-left:2px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  border-radius:10px;
   background-color: rgba(255,255,255,0.95);
   /* opacity: 0.1; */
   background-blend-mode: lighten;
@@ -73,21 +81,46 @@
 }
 
 ._character_link_character_name{
-  font-size: 25px;
+  font-size: 20px;
   margin-bottom:0px;
 }
 
 ._character_link_character_work{
-  font-size: 22px;
+  font-size: 18px;
   margin-top:0px;
 }
 
 @media (max-width: 800px){
+  ._character_link_links{
+    background-image:none;
+  }
+
+  .responsive_character_icon_sword{
+    background-image: image-url("stickman_war_character/common/square_sword.png");
+  }
+
+  .responsive_character_icon_allow{
+    background-image: image-url("stickman_war_character/common/square_arrow.png");
+  }
+
+  .responsive_character_icon_shield{
+    background-image: image-url("stickman_war_character/common/square_shield.png");
+  }
+
+  .responsive_background{
+    background-size:18%;
+    background-position: center;
+    background-position-y: 20%;
+    background-repeat: space;
+    background-color: rgba(255,255,255,0.95);
+  }
+
   ._character_link_explain{
     width:80%;
     margin: auto;
     font-size:14px;
     text-align: center;
+    background:none;
   }
 
   ._character_link_a{
@@ -95,8 +128,6 @@
   }
 
   ._character_link_image_box {
-    width: 380px;
-    height: 200px;
     margin: auto;
   }
 
@@ -106,6 +137,11 @@
 }
 
 @media(max-width:500px){
+  .responsive_background{
+    background-size:30%;
+  }
+
+
   ._character_link_explain{
     width:80%;
     margin: auto;
@@ -121,5 +157,18 @@
     width: 100%;
     height: 150px;
     margin: auto;
+    flex:0;
+  }
+
+  ._character_link_image{
+    margin:0 auto;
+  }
+
+  ._character_link_character_name{
+    margin-top:10px;
+  }
+
+  ._character_link_character_work{
+    margin-bottom:10px;
   }
 }
