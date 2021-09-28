@@ -1,0 +1,2 @@
+class SkillRoomController < ApplicationController
+end
