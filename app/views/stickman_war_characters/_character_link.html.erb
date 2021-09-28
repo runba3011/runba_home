@@ -13,7 +13,7 @@
   %>
 
   <div class = "_character_link_links">
-    <%= link_to stickman_war_characters_path(grade , character.id) , class: "_character_link_a"  do %>
+    <%= link_to "/stickman_war_characters/#{grade}/#{character.id}" , class: "_character_link_a"  do %>
       <% if character.picture_name != nil %>
         <div class = "_character_link_image_box" >
 
