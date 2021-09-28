@@ -1,3 +1,8 @@
+a{
+  color:black;
+  text-decoration: none;
+}
+
 .section_title{
   border-bottom:1px solid rgba(0, 0, 0, 0.308);
   width:90%;
@@ -50,5 +55,84 @@ td{
   margin:auto 0px;
   border-left:1px solid black;
   width:35%;
+  text-align: center;
+}
+
+.page_move_buttons{
+  display:flex;
+  justify-content: space-between;
+}
+
+.page_move_button{
+  width:25vw;
+  height:10vw;
+  background-color:rgb(190, 255, 190);
+  border-radius: 10px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-size:8vw;
+  background-position:center;
+  background-repeat: no-repeat;
+  transition:1s;
+}
+
+.cant_move_parent{
+  width:25vw;
+  height:10vw;
+  background-color:rgb(190, 255, 190);
+  border-radius: 10px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-size:8vw;
+  background-position:center;
+  background-repeat: no-repeat;
+  transition:1s;
+}
+
+.page_move_button:hover{
+  transition:0.5s;
+  background-color:rgb(91, 190, 91);
+}
+
+.page_before_button{
+  background-image: image_url("common/left_arrow.png")
+}
+
+.page_before_button:hover{
+  background-position-x: 20%;
+}
+
+.page_next_button{
+  background-image: image_url("common/right_arrow.png")
+}
+
+.page_next_button:hover{
+  background-position-x: 80%;
+}
+
+.page_move_explain{
+  margin:0px;
+}
+
+.page_move_before_explain{
+  color:blue;
+  font-size:20px;
+  font-weight: bold;
+}
+
+.page_move_next_explain{
+  color:rgb(184, 73, 0);
+  font-size:20px;
+  font-weight: bold;
+}
+
+.move_character_name{
+  font-size:18px;
+  font-weight: bold;
+  margin:0px;
   text-align: center;
 }

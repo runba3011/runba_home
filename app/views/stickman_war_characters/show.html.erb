@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag "stickman_war_characters/character_detail" %>
+
 <div class = "main_content_parent">
   <div class = "main_content">
     <%= render partial: "shared/header/stickman_war_header" %>
@@ -45,25 +47,30 @@
       <%= @character.picture_name %>の特殊行動はまだ設定されていません
     <% end %>
     <div class = "section_title">詳細説明</div>
+    
     <%= render partial: "stickman_war_characters/#{params[:class_id]}/#{@character.picture_name}" %>
 
     <div class = "page_move_buttons">
       <% if @before_character != nil %>
-        <%= link_to "/stickman_war_characters/#{params[:class_id]}/#{@before_character.id}" do %>
-          <p class = "page_move_button page_next_button">前のキャラクター</p>
-          <%= @before_character.character_name %>
+        <%= link_to "/stickman_war_characters/#{params[:class_id]}/#{@before_character.id}" , class: "page_move_button page_before_button" do %>
+          <p class = "page_move_explain page_move_before_explain">前のキャラクター</p>
+          <p class = "move_character_name"><%= @before_character.character_name %></p>
         <% end %>
       <% else %>
-        最初のキャラクターです
+        <div class="cant_move_parent">
+          <p class = "move_character_name"><%= @character.character_name %>は一番前の<br>キャラクターです！</p>
+        </div>
       <% end %>
 
       <% if @next_character != nil %>
-        <%= link_to "/stickman_war_characters/#{params[:class_id]}/#{@next_character.id}" do %>
-          <p class = "page_move_button page_next_button">次のキャラクター</p>
-          <%= @next_character.character_name %>
+        <%= link_to "/stickman_war_characters/#{params[:class_id]}/#{@next_character.id}" , class: "page_move_button page_next_button" do %>
+          <p class = "page_move_explain page_move_next_explain">次のキャラクター</p>
+          <p class = "move_character_name"><%= @next_character.character_name %></p>
         <% end %>
       <% else %>
-        最後のキャラクターです
+        <div class="cant_move_parent">
+          <p class = "move_character_name"><%= @character.character_name %>は最後の<br>キャラクターです！</p>
+        </div>
       <% end %>
     </div>
   </div>
