@@ -1,3 +1,46 @@
-// Place all the styles related to the groups controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+td{
+  padding:5px;
+}
+
+.small_section_title{
+  padding-left:10px;
+}
+
+.common_status_table{
+  width:80%;
+  margin:auto;
+}
+
+.common_character_image_parent{
+  width:30%;
+}
+
+.common_character_image{
+  width:100%;
+}
+
+.common_table_head_text{
+  font-size:16px;
+  line-height: 30px;
+  color:black;
+  width:70%;
+  padding:5px;
+}
+
+.common_table_information{
+  width:35%;
+  border-right:1px solid black;
+  text-align: center;
+  margin:auto 0px;
+}
+
+.common_table_information_single_set{
+  display:flex;
+}
+
+.common_table_information_notice{
+  margin:auto 0px;
+  border-left:1px solid black;
+  width:35%;
+  text-align: center;
+}

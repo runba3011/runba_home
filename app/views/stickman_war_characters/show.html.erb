@@ -1,0 +1,43 @@
+<div class = "main_content_parent">
+  <div class = "main_content">
+    <%= render partial: "shared/header/stickman_war_header" %>
+    <p class = "section_title">キャラクター情報</p>
+    <table class = "common_status_table" border="1">
+      <tr>
+        <td rowspan="2" class = "common_character_image_parent">
+          <%= image_tag "stickman_war_character/#{params[:class_id]}/#{@character.picture_name}.png" , class: "common_character_image" %>
+        </td>
+        <td colspan="2" class="common_table_head_text" style="text-align:center;"><%= @character.character_name %></td>
+      </tr>
+
+      <tr class = "common_table_head_text">
+        <td colspan="2" style="text-align:center;"><%= @character.main_work %></td>
+      </tr>
+
+      <tr class = "common_table_head_text">
+        <td colspan="2">
+          <div class = "common_table_information_single_set"><p class = "common_table_information">体力</p><p class = "common_table_information_amount"><%= @character.life %></p><p class = "common_table_information_notice">レベル10のとき</p></div>
+        </td>
+      </tr>
+
+      <tr class = "common_table_head_text">
+        <td colspan="2">
+          <div class = "common_table_information_single_set"><p class = "common_table_information">攻撃力</p><p class = "common_table_information_amount"><%= @character.power %></p><p class = "common_table_information_notice">レベル10のとき</p></div>
+        </td>
+      </tr>
+      <tr class = "common_table_head_text">
+        <td colspan="2">
+          <div class = "common_table_information_single_set"><p class = "common_table_information">移動速度</p><p class = "common_table_information_amount"><%= @character.move_speed %></p><p class = "common_table_information_notice">一定速度</p></div>
+        </td>
+      </tr>
+      <tr class = "common_table_head_text">
+        <td colspan="2">
+          <div class = "common_table_information_single_set"><p class = "common_table_information">攻撃タイプ</p><p class = "common_table_information_amount"><%= @character.attack_type %>攻撃</p></div>
+        </td>
+      </tr>
+
+    </table>
+  </div>
+</div>
+
+<%= stylesheet_link_tag "stickman_war_characters/show" , :media => "all" %>
