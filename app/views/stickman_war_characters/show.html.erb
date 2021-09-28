@@ -38,7 +38,11 @@
 
     </table>
     <table></table>
-    <%= render partial: "stickman_war_characters/#{params[:class_id]}/#{@character.picture_name}" %>
+    <% if @character.picture_name == "Punch" %>
+      <%= render partial: "stickman_war_characters/avility_list" , locals: {guard: "不可" , avoid: "不可" , long_attack: "不可" , death_attack: "不可"} %>
+    <% else %>
+      <%= @character.picture_name %>の能力値はまだ設定されていません
+    <% end %>
   </div>
 </div>
 
