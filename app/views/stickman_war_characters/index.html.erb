@@ -1,5 +1,14 @@
-<%= render partial: "shared/header/stickman_war_header" %>
-<p class = "section_title">キャラクターステータス</p>
-<p class = "small_section_title">一般人</p>
-<p class = "small_section_title">英雄</p>
-<p class = "small_section_title">機械</p>
+<div class = "main_content_parent">
+  <div class = "main_content">
+    <%= render partial: "shared/header/stickman_war_header" %>
+    <p class = "section_title">キャラクターステータス</p>
+    <p class = "small_section_title">一般人</p>
+    <div class = "basic_character_parent characters_box">
+      <%= render partial: "character_link" , locals: {characters: StickmanWarCharacterBasic.all , grade: "basic"} %>
+    </div>
+    <p class = "small_section_title">英雄</p>
+    <p class = "small_section_title">機械</p>
+  </div>
+</div>
+
+<%= stylesheet_link_tag "stickman_war_characters/index" , :media => "all" %>
