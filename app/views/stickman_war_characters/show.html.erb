@@ -1,0 +1,80 @@
+
+
+<div class = "main_content_parent">
+  <div class = "main_content">
+    <%= render partial: "shared/header/stickman_war_header" %>
+    <p class = "section_title">キャラクター情報</p>
+    <table class = "common_status_table" border="1">
+      <tr>
+        <td rowspan="2" class = "common_character_image_parent">
+          <%= image_tag "stickman_war_character/#{params[:class_id]}/#{@character.picture_name}.png" , class: "common_character_image" %>
+        </td>
+        <td colspan="2" class="common_table_head_text" style="text-align:center;"><%= @character.character_name %></td>
+      </tr>
+
+      <tr class = "common_table_head_text">
+        <td colspan="2" style="text-align:center;"><%= @character.main_work %></td>
+      </tr>
+
+      <tr class = "common_table_head_text">
+        <td colspan="2">
+          <div class = "common_table_information_single_set"><p class = "common_table_information">体力</p><p class = "common_table_information_amount"><%= @character.life %></p><p class = "common_table_information_notice">レベル10のとき</p></div>
+        </td>
+      </tr>
+
+      <tr class = "common_table_head_text">
+        <td colspan="2">
+          <div class = "common_table_information_single_set"><p class = "common_table_information">攻撃力</p><p class = "common_table_information_amount"><%= @character.power %></p><p class = "common_table_information_notice">レベル10のとき</p></div>
+        </td>
+      </tr>
+      <tr class = "common_table_head_text">
+        <td colspan="2">
+          <div class = "common_table_information_single_set"><p class = "common_table_information">移動速度</p><p class = "common_table_information_amount"><%= @character.move_speed %></p><p class = "common_table_information_notice">一定速度</p></div>
+        </td>
+      </tr>
+      <tr class = "common_table_head_text">
+        <td colspan="2">
+          <div class = "common_table_information_single_set"><p class = "common_table_information">攻撃タイプ</p><p class = "common_table_information_amount"><%= @character.attack_type %>攻撃</p></div>
+        </td>
+      </tr>
+
+    </table>
+    <table></table>
+    <div class = "section_title">特殊行動</div>
+    <% if @character.picture_name == "Punch" %>
+      <%= render partial: "stickman_war_characters/avility_list" , locals: {guard: "不可" , avoid: "不可" , long_attack: "不可" , death_attack: "不可"} %>
+    <% else %>
+      <%= @character.picture_name %>の特殊行動はまだ設定されていません
+    <% end %>
+    <div class = "section_title">詳細説明</div>
+    
+    <%= render partial: "stickman_war_characters/#{params[:class_id]}/#{@character.picture_name}" %>
+
+    <div class = "page_move_buttons">
+      <% if @before_character != nil %>
+        <%= link_to "/stickman_war_characters/#{params[:class_id]}/#{@before_character.id}" , class: "page_move_button page_before_button" do %>
+          <p class = "page_move_explain page_move_before_explain">前のキャラクター</p>
+          <p class = "move_character_name"><%= @before_character.character_name %></p>
+        <% end %>
+      <% else %>
+        <div class="cant_move_parent">
+          <p class = "move_character_name"><%= @character.character_name %>は一番前の<br>キャラクターです！</p>
+        </div>
+      <% end %>
+
+      <% if @next_character != nil %>
+        <%= link_to "/stickman_war_characters/#{params[:class_id]}/#{@next_character.id}" , class: "page_move_button page_next_button" do %>
+          <p class = "page_move_explain page_move_next_explain">次のキャラクター</p>
+          <p class = "move_character_name"><%= @next_character.character_name %></p>
+        <% end %>
+      <% else %>
+        <div class="cant_move_parent">
+          <p class = "move_character_name"><%= @character.character_name %>は最後の<br>キャラクターです！</p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= stylesheet_link_tag "stickman_war_characters/show" , :media => "all" %>
+<%= stylesheet_link_tag "stickman_war_characters/character_detail_explain" , :media => "all" %>
