@@ -1,0 +1,16 @@
+<%# 引数 link: リンク先 , title: 表示するタイトル , image: 表示する画像の名前、画像はapp > assets > images に入れておく %>
+<%# 現時点ではlinkとimageはnil %>
+<%= stylesheet_link_tag "languages/language_link" , :media => "all" %>
+
+<% languages.each do |language| %>
+    <%= link_to language_path(language.id) , class: "_language_a" do %>
+      <% if language.image != nil %>
+        <%= image_tag "https://i.ytimg.com/vi/#{language.link}/hqdefault.jpg" , class: "_language_image" %>
+      <% else %>
+        <%= image_tag "youtube/default.jpeg" , class: "_language_image" %>
+      <% end %>
+      <div class = "_language_text">
+        <p class = "_language_title hide_scroll_bar"><%= language.title %></p>
+      </div>
+    <% end %>
+<% end %> 

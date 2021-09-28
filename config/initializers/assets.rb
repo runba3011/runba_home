@@ -20,6 +20,9 @@ Rails.application.config.assets.precompile += %w(
   shared/show_account
   shared/prease_login
 
+  skill_room/index
+  skill_room/show
+
   stickman_war_common/stickman_war_header
   stickman_war_common/templete
   stickman_war/index

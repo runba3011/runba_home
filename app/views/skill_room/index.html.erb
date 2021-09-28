@@ -1,6 +1,10 @@
 <%= render partial: "shared/header/root_header" , locals: {title: "スキルルーム"} %>
 <div class = "main_content_parent">
   <div class = "main_content">
-    <p class = "small_section_title"></p>
+    <p class = "section_title">一覧ページ</p>
+    <p class = "small_section_title">それぞれの言語について</p>
+    <%= render partial: "language_link" , locals: {languages: SkillAllLanguage.all } %>
+    <p class = "small_section_title">自由ページ（見た目を整えていません）</p>
+    <p class = "small_section_title">JQueryについて</p>
   </div>
 </div>
