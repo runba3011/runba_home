@@ -48,10 +48,22 @@
     <%= render partial: "stickman_war_characters/#{params[:class_id]}/#{@character.picture_name}" %>
 
     <div class = "page_move_buttons">
-      <% if @character.id != 1 %>
-        <%= link_to "/stickman_war_characters/#{params[:class_id]}/#{@character.id - 1}" do %>
-          
+      <% if @before_character != nil %>
+        <%= link_to "/stickman_war_characters/#{params[:class_id]}/#{@before_character.id}" do %>
+          <p class = "page_move_button page_next_button">前のキャラクター</p>
+          <%= @before_character.character_name %>
         <% end %>
+      <% else %>
+        最初のキャラクターです
+      <% end %>
+
+      <% if @next_character != nil %>
+        <%= link_to "/stickman_war_characters/#{params[:class_id]}/#{@next_character.id}" do %>
+          <p class = "page_move_button page_next_button">次のキャラクター</p>
+          <%= @next_character.character_name %>
+        <% end %>
+      <% else %>
+        最後のキャラクターです
       <% end %>
     </div>
   </div>
