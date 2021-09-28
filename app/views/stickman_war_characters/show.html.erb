@@ -47,6 +47,13 @@
     <div class = "section_title">詳細説明</div>
     <%= render partial: "stickman_war_characters/#{params[:class_id]}/#{@character.picture_name}" %>
 
+    <div class = "page_move_buttons">
+      <% if @character.id != 1 %>
+        <%= link_to "/stickman_war_characters/#{params[:class_id]}/#{@character.id - 1}" do %>
+          
+        <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
 
