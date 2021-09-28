@@ -25,12 +25,38 @@
   margin:auto;
 }
 
+
+.character_icon_sword{
+  background-image: image-url("stickman_war_character/common/sword.png");
+}
+
+.character_icon_allow{
+  background-image: image-url("stickman_war_character/common/allow.png");
+}
+
+.character_icon_shield{
+  background-image: image-url("stickman_war_character/common/shield.png");
+}
+
 ._character_link_explain{
-  width:calc(100% - 300px);
+  width:50%;
   margin: auto;
   font-size:14px;
   text-align: center;
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(255,255,255,0.8);
+  /* opacity: 0.1; */
+  background-blend-mode: lighten;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+
 
 ._character_link_explain_text{
   padding:0 30px;
@@ -46,10 +72,12 @@
 
 ._character_link_character_name{
   font-size: 25px;
+  margin-bottom:0px;
 }
 
 ._character_link_character_work{
   font-size: 22px;
+  margin-top:0px;
 }
 
 @media (max-width: 800px){

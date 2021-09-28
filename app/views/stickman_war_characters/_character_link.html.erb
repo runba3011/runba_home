@@ -2,18 +2,28 @@
 <%= stylesheet_link_tag "stickman_war_characters/character_link" , :media => "all" %>
 
 <% characters.each do |character| %>
-  <div class = "_character_link_links">
 
-    <%= link_to stickman_war_characters_path(grade , character.id) , class: "_character_link_a" do %>
+  <%  if character.main_work == "前線火力" || character.main_work == "奇襲" 
+        image_class = "character_icon_sword"
+      elsif character.main_work == "後方火力" 
+        image_class = "character_icon_allow"
+      else
+        image_class = "character_icon_shield"
+      end
+  %>
+
+  <div class = "_character_link_links">
+    <%= link_to stickman_war_characters_path(grade , character.id) , class: "_character_link_a"  do %>
       <% if character.picture_name != nil %>
         <div class = "_character_link_image_box" >
+
           <%= image_tag "stickman_war_character/#{grade}/#{character.picture_name}.png" , class: "_character_link_image" %>
         </div>
       <% else %>
         <div class = "_character_link_image_box" style='background-image:image_url("stickman_war_character/default.png");' ></div>
       <% end %>
 
-      <div class = "_character_link_explain">
+      <div class = "_character_link_explain  <%= image_class %>">
         <p class = "_character_link_character_name"><%= character.character_name %></p>
         <p class = "_character_link_character_work"><%= character.main_work %></p>
       </div>

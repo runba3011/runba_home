@@ -1,6 +1,6 @@
 class StickmanWarCharacterBasic < ActiveHash::Base
   self.data = [
-    {id: 1 , character_name: "素手" , picture_name: "Punch"       , life: 40 , power: 5 , attack_cool_time: 3 ,    knockback_times: 4 , cost: 30 , hp_rate: 1.5 ,  attack_rate:2 ,    move_speed: 70 , attack_type: "単体" , main_work: "前衛火力"},
+    {id: 1 , character_name: "素手" , picture_name: "Punch"       , life: 40 , power: 5 , attack_cool_time: 3 ,    knockback_times: 4 , cost: 30 , hp_rate: 1.5 ,  attack_rate:2 ,    move_speed: 70 , attack_type: "単体" , main_work: "前線火力"},
     {id: 2 , character_name: "小盾" , picture_name: "SmallShield" , life: 150 , power: 7, attack_cool_time: 10 ,   knockback_times: 3 , cost: 80 , hp_rate: 3 ,    attack_rate:1.5 ,  move_speed: 50 , attack_type: "単体", main_work: "前線維持"},
     {id: 3 , character_name: "小弓" , picture_name: "SmallArcher" , life: 60 , power: 15 , attack_cool_time: 3,    knockback_times: 6 , cost: 120 , hp_rate: 1.2 , attack_rate:3 ,    move_speed: 40 , attack_type: "単体", main_work: "後方火力"},
     {id: 4 , character_name: "短木" , picture_name: "Wood"        , life: 80 , power: 13 , attack_cool_time: 2.5,  knockback_times: 4 , cost: 150 , hp_rate: 2 ,   attack_rate:2.5 ,  move_speed: 50 , attack_type: "単体", main_work: "前線火力"},
