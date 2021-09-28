@@ -30,6 +30,7 @@ Rails.application.config.assets.precompile += %w(
   stickman_war_characters/character_link
   stickman_war_characters/index
   stickman_war_characters/show
+  stickman_war_characters/character_detail_common
 
   movies/index
   movies/show
