@@ -1,0 +1,18 @@
+<%# 引数 link: リンク先 , title: 表示するタイトル , image: 表示する画像の名前、画像はapp > assets > images に入れておく %>
+<%# 現時点ではlinkとimageはnil %>
+<%= stylesheet_link_tag "skill_room/language_link" , :media => "all" %>
+
+<% languages.each do |language| %>
+  <div class = "language_links">
+    <%= link_to language.link , class: "_language_a" do %>
+      <% if language.image != nil %>
+        <%= image_tag language.image , class: "_language_image" %>
+      <% else %>
+        <%= image_tag "youtube/default.jpeg" , class: "_language_image" %>
+      <% end %>
+      <div class = "_language_text">
+        <p class = "_language_title"><%= language.title %></p>
+      </div>
+    <% end %>
+  </div>
+<% end %> 

@@ -29,5 +29,8 @@ Rails.application.routes.draw do
     resources :group_user_relations , only: [:create , :destroy]
   end
 
+  resources :skill_room , only: [:index]
+  get "/skill_room/:type_id/:id" , to: "skill_room#show"
+
   post '/groups/:group_id/group_user_relations/:user_id/:id' , to: "group_user_relations#update"
 end
