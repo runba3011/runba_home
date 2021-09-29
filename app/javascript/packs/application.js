@@ -17,11 +17,6 @@ require("../message_confirm_judge")
 require("../authority_scroll")
 require("../messages_scroll_bottom")
 require("../push_and_show")
-
-//= require rails-ujs 
-//= require jquery 
-//= require jquery_ujs 
-
 import '@fortawesome/fontawesome-free/js/all';
 
 require("../jquery_practice/1")
