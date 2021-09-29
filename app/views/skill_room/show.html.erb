@@ -1,0 +1,15 @@
+<%= render partial: "shared/header/root_header" , locals: {title: "スキルルーム"} %>
+<%= stylesheet_link_tag "skill_room/common" , :media => "all" %>
+<div class = "main_content_parent">
+  <div class = "main_content">
+    <% if @html_css_explain %>
+      <%= render partial: "skill_room/explain/html_css" %>
+    <% elsif @javascript_explain %>
+      <%= render partial: "skill_room/explain/javascript" %>
+    <% elsif @ruby_on_rails_explain %>
+      <%= render partial: "skill_room/explain/ruby_on_rails" %>
+    <% elsif @unity_explain %>
+      <%= render partial: "skill_room/explain/unity" %>
+    <% end %>
+  </div>
+</div>
