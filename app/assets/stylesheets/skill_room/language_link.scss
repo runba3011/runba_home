@@ -1,5 +1,14 @@
 .language_links{
   margin:auto;
+  width:50%;
+  padding:20px;
+  border-radius: 10px;
+  transition:1s;
+}
+
+.language_links:hover{
+  transition:0.1s;
+  background-color: rgb(255, 255, 212);
 }
 
 ._language_image{

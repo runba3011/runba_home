@@ -5,9 +5,7 @@
 <% languages.each do |language| %>
   <div class = "language_links">
     <%= link_to language.link , class: "_language_a" do %>
-      <% if language.link != nil && language.image == nil %>
-        <%= image_tag "https://img.youtube.com/vi/#{language.link}/maxresdefault.jpg" , class: "_language_image" %>
-      <% elsif language.image != nil %>
+      <% if language.image != nil %>
         <%= image_tag language.image , class: "_language_image" %>
       <% else %>
         <%= image_tag "youtube/default.jpeg" , class: "_language_image" %>
