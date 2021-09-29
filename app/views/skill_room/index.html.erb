@@ -1,3 +1,4 @@
+<%= stylesheet_link_tag "skill_room/common" , :media => "all" %>
 <%= stylesheet_link_tag "skill_room/index" , :media => "all" %>
 <%= render partial: "shared/header/root_header" , locals: {title: "スキルルーム"} %>
 <div class = "main_content_parent">
@@ -7,7 +8,12 @@
     <div class = "language_explain_parent">
       <%= render partial: "language_link" , locals: {languages: SkillAllLanguage.all } %>
     </div>
-    <p class = "small_section_title">自由ページ（見た目を整えていません）</p>
-    <p class = "small_section_title">JQueryについて</p>
+    <p class = "small_section_title">JQueryの練習（見た目を整えていません）</p>
+    <% SkillJquery.all.each do |jquery| %>
+      <%= link_to "/skill_room/jquery_practice/#{jquery.id}" do%>
+        <p><%= jquery.id %>.<%= jquery.title %></p>
+        <p><%= jquery.explain %></p>
+      <% end %>
+    <% end %>
   </div>
 </div>

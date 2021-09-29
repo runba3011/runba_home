@@ -21,6 +21,7 @@ Rails.application.config.assets.precompile += %w(
   shared/prease_login
 
   skill_room/index
+  skill_room/common
   skill_room/show
   skill_room/language_link
 
