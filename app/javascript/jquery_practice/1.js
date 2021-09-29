@@ -22,6 +22,12 @@ function test1(){
         $(`${html}`).appendTo("#family");
       }
       addHTML("<li>新しい要素だよ！</li>");
+
+      function substitutionTest(afterSubstitution){
+        const rootObject = $("#jquery_root_object");
+        rootObject.text(afterSubstitution);
+      }
+      substitutionTest("一度別の変数に代入してから、中身を変えることに成功！");
     })
   }
 }
