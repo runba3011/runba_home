@@ -1,5 +1,3 @@
-// import { $ } from "@rails/ujs";
-
 function test1(){
   if(document.URL.match(/skill_room/) && document.URL.match(/jquery_practice/)){
     console.log(`スクリプトを使用します`);
@@ -17,8 +15,13 @@ function test1(){
       }
       $(setText("成功！"));
       $(setText("関数からの呼び出しに成功！"));
+
+      function addHTML(html){
+        $(`${html}`).appendTo("#family");
+      }
+      $(addHTML("<li>新しい要素だよ！</li>"));
     })
   }
 }
 
-window.addEventListener(`load` , test1)
+jQuery(test1);
