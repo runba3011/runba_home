@@ -18,9 +18,13 @@ require("../authority_scroll")
 require("../messages_scroll_bottom")
 require("../push_and_show")
 
+//= require rails-ujs 
+//= require jquery 
+//= require jquery_ujs 
+
 import '@fortawesome/fontawesome-free/js/all';
-//= require jquery
-//= require jquery_ujs
+
+require("../jquery_practice/1")
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
