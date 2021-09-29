@@ -1,83 +1,75 @@
-._language_a{
-  display: inline-block;
-  width: 30%;
-  text-decoration: none;
-  margin:0 5px 10px;
-  // margin-bottom: 10px;
-  text-align: center;
-  color: black;
-  cursor: default;
-  background-color: rgb(231, 231, 231);
-  border-radius: 10px;
-  max-width:170px;
+.language_links{
+  margin:auto;
 }
 
 ._language_image{
-  width: 100%;
+  width: 35%;
+  max-width:150px;
+}
+
+._language_a{
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  color: black;
+  cursor: default;
 }
 
 ._language_text{
-  width: 100%;
+  width: 65%;
   text-align: center;
 
 }
 
 ._language_title {
-  font-size: 14px;
-  margin-bottom: 5px;
-  display: block;
-  text-align: center;
-  min-height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  overflow: scroll;
-  min-height: 60px;
-  max-height: 60px;
-  align-items: flex-start;
-  
+  display: inline-block;
+  font-size: 20px;
+  padding-bottom: 5px;
+  margin: 5px 5px auto;
+  border-bottom: 1px solid black;
+  padding-bottom: 0px;
+}
+
+._language_small_explain{
+  color: black;
+  padding: 10px 15px;
 }
 
 ._language_link{
   background-color: red;
-  display: inline-block;
-  margin-bottom: 10px;
 }
 
 ._language_link:active{
   background-color: rgba(255, 0, 0, 0.411);
 }
 
-@media (max-width: 800px){
+@media(max-width: 800px){
   ._language_a{
-    width: 30%;
-    min-width:120px;
-  }
-}
-
-@media(max-width: 400px){
-  ._language_a{
-    width:100%;
-    max-width:100000px;
-    min-width:0;
-    display:flex;
+    flex-direction: column;
+    margin-bottom:30px;
   }
 
   ._language_image{
-    width: calc(95vw * 0.4) ;
-    height:calc(95vw * 0.4 / 16 * 9);
+    width: 80%;
+    max-width:400px;
   }
 
-  ._language_link{
-    display:none;
+
+  ._language_small_explain {
+    padding: 10px 0px;
+    margin-bottom:20px;
   }
 
-  ._language_title{
-    align-items: center;
-    min-height:0px;
-    max-height: 1000000px;
-    height:100%;
+  ._language_text {
+    width: 80%;
   }
-  
+}
+
+@media(max-width: 800px){
+  ._language_small_explain{
+    max-height:100px;
+    overflow: scroll;
+    padding:10px;
+  }
 }
