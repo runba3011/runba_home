@@ -17,6 +17,13 @@ jQuery(function($){
   }
   findLast();
 
+  function useOnlyChild(){
+    $(".jquery_practice_class3:only-child").css("color" , "blue");
+    $("#jquery_practice_id_1 ~ span").text("要素２のみが青文字になる");
+  }
+
+  useOnlyChild();
+
   function useNthChild(){
     const objects = $(".jquery_practice_class2");
     objects.css("width" , "25%").css("text-align" , "center").css("display" , "inline-block").css("margin" , "5px auto");
