@@ -22,3 +22,29 @@
   justify-content: space-between;
   margin-bottom:10px;
 }
+
+.common_simple_button{
+  margin:auto;
+  background-color: rgb(176, 255, 176);
+  color:black;
+  padding:30px 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  width: 30%;
+  border-radius: 10px;
+  background-image: image_url("common/left_arrow.png");
+  background-position: center;
+  background-size: 40%;
+  background-repeat: no-repeat;
+  transition:0.5s;
+  text-decoration: none;
+  border:1px solid black;
+}
+
+.common_simple_button:hover{
+  border:1px solid transparent;
+  background-color:green;
+  background-position-x: 40%;
+  transition: 0.3s;
+}
