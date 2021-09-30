@@ -19,7 +19,62 @@
   </ul>
 </div>
 
-<p class = "small_section_title">jQueryセレクターんの代入</p>
+<p class = "small_section_title">jQueryセレクターの代入</p>
 <div class = "jquery_practice_detail">
   <p id="jquery_root_object">代入する元のオブジェクト</p>
 </div>
+
+<p class = "small_section_title">メソッドチェーンの使用</p>
+<div class = "jquery_practice_detail">
+  <p id="jquery_method_chain">一つ一つ協会を変えるにはCSSだとめんどくさかったのに<br>jQueryを使用すれば一行で完結する！</p>
+</div>
+
+<p class = "small_section_title">属性セレクタの使用</p>
+<div class = "jquery_practice_detail">
+  <a href = "/" target = "_self" >トップページをこのタブで開くやつ</a><br>
+  <a href = "/" target="_blank" >トップページを新しいタブで開くやつ</a>
+  <p id = "inform_able_1"></p>
+</div>
+
+<p class = "small_section_title">階層構造のセレクタの使用</p>
+<div class = "jquery_practice_detail">
+  <div class = "jquery_div_parent1">
+    <p>class名がjquery_div_parent1のものに直接入っているもの</p>
+    <div>
+      <p>class名がjquery_div_parent1のものに入ってはいるが、別のものが親になっているもの</p>
+    </div>
+    ここでは上の２つの両方が紫色になる
+  </div>
+  <div class = "jquery_div_parent2 small_margin_top">
+    <p>class名がjquery_div_parent2のものに直接入っているもの</p>
+    <div>
+      class名がjquery_div_parent2のものに入ってはいるが、別のものが親になっているもの
+    </div>
+    ここでは２つのうち上の方のみが緑色になる
+  </div>
+</div>
+
+<p class = "small_section_title">隣接兄弟セレクターの使用</p>
+<div class = "jquery_practice_detail">
+  <div class = "jquery_practice_parent3">
+    <p class = "jquery_practice_sibling1">兄オブジェクト</p>
+    <p>子要素１</p>
+    <p>子要素２</p>
+    <p>子要素３</p>
+  </div>
+  <div class = "jquery_practice_parent3">
+    <p class = "jquery_practice_sibling1">兄オブジェクト</p>
+    <p>子要素４</p>
+    <p>子要素５</p>
+    <p>子要素６</p>
+  </div>
+  <div class = "jquery_practice_parent3">
+    <p class = "jquery_practice_sibling1">兄オブジェクト</p>
+    <p>子要素７</p>
+    <p>子要素８</p>
+    <p>子要素９</p>
+  </div>
+  <span class = "sibling_span"></span>
+  
+</div>
+
