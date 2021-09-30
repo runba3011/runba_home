@@ -1,8 +1,8 @@
 import { $ } from "@rails/ujs";
 
 function test1(){
-  if(document.URL.match(/skill_room/) && document.URL.match(/jquery_practice/)){
-    console.log(`スクリプトを使用します`);
+  if(document.URL.match(/skill_room/) && document.URL.match(/jquery_practice/) && document.URL.match(/1/)){
+    console.log(`jQuery練習用スクリプト１が稼働しています`);
     jQuery(function($){
       // jqueryの導入ができていることのテスト
       function setText(text){
