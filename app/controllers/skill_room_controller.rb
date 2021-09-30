@@ -14,6 +14,7 @@ class SkillRoomController < ApplicationController
       @unity_explain = true;
     # ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ここまでは言語の説明のリンク
     elsif params[:type_id] == "jquery_practice"
+      @jquery_practice = true;
     elsif params[:type_id] == "javascript_explain"
 
     end
