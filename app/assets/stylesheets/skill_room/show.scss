@@ -15,3 +15,10 @@
 .small_margin_top{
   margin-top:15px;
 }
+
+.display_flex{
+  display: flex;
+  border:1px dotted gray;
+  justify-content: space-between;
+  margin-bottom:10px;
+}
