@@ -102,9 +102,16 @@ jQuery(function($){
       })
 
       $("#move_to_scroll_button").on("click" , function(){
-        $(window).scrollTop(2221);
+        $(window).scrollTop($("#scroll_test_button").offset().top - 200);
       })
     }
     scrollTest();
+
+    function offsetPositionTest(){
+      $object = $(".offset_position_test");
+      $(".offset_position_explain:eq(0)").text("↑のoffset（HTMLからの位置）は"+Math.round($object.offset().top)+","+Math.round($object.offset().left)+"です");
+      $(".offset_position_explain:eq(1)").text("↑のposition（親要素からの位置）は"+Math.round($object.position().top)+","+Math.round($object.position().left)+"です");
+    }
+    offsetPositionTest();
   }
 })
