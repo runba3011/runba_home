@@ -1,3 +1,110 @@
+<input type="button" value = "これを押すとスクロールボタンまで移動します" id = "move_to_scroll_button">
 
+<p class = "small_section_title small_margin_top">特定の文字列や要素を含むものを取得</p>
+<div class = "jquery_practice_detail">
+  <div class = "display_flex" style = "flex-wrap:wrap;" id = "contain_has_test_parent">
+    <p class = "contain_has_test">東北きりたん</p>
+    <p class = "contain_has_test"><span>結月ゆかり</span></p>
+    <p class = "contain_has_test">東北ずん子</p>
+    <p class = "contain_has_test"><span>弦巻まき</span></p>
+    <p class = "contain_has_test"><span>京町せいか</span></p>
+    <p class = "contain_has_test">琴葉あかね</p>
+    <p class = "contain_has_test"><span>琴葉あおい</span></p>
+    <p class = "contain_has_test">東北いたこ</p>
+  </div>
+  <span class = "contain_has_parent_explain1"></span>
+  <span class = "contain_has_parent_explain2"></span>
+</div>
 
+<p class = "small_section_title">逆に特定の文字列や要素を含まないとき</p>
+<div class = "jquery_practice_detail">
+  <div class = "display_flex" style = "flex-wrap:wrap;" id = "empty_parent_test_parent">
+    <p class = "empty_parent_test">要素１</p>
+    <p class = "empty_parent_test"></p>
+    <p class = "empty_parent_test">要素２</p>
+    <p class = "empty_parent_test"></p>
+    <p class = "empty_parent_test">要素３</p>
+    <p class = "empty_parent_test"></p>
+  </div>
+  <span class = "empty_parent_test_explain"></span>
+  <span class = "empty_parent_test_explain"></span>
+</div>
 
+<p class = "small_section_title">attr()メソッド</p>
+<div class = "jquery_practice_detail">
+  <a href="/skill_room" id="root_link_text">このリンクの遷移先（処理が行われる前は表示されていない）</a>
+  <p class = "show_url"></p>
+  <p class = "small_margin_top css_test">このテキストの背景を.cssを使用せずに変更しよう</p><br>
+  <a class = "small_margin_top no_link_a">デフォルトではこのテキストにはリンク先が設定されていない</a>
+  <p class = "small_margin_top styled_p" style = "color:red;">デフォルトではこのテキストは赤い</p>
+</div>
+
+<p class = "small_section_title">attr()に関数を与えてみるテスト</p>
+<div class = "jquery_practice_detail display_flex" id = "attr_function_test_parent">
+  <p class = "attr_function_test" title="要素"></p>
+  <p class = "attr_function_test" title="要素"></p>
+  <p class = "attr_function_test" title="要素"></p>
+  <p class = "attr_function_test" title="要素"></p>
+  <p class = "attr_function_test" title="要素"></p>
+  <p class = "attr_function_test" title="要素"></p>
+  <p class = "attr_function_test" title="要素"></p>
+  <p class = "attr_function_test" title="要素"></p>
+</div>
+<span id = "attr_function_test"></span>
+
+<p class = "small_section_title">jQueryのclassに関するメソッドのテスト</p>
+<div class = "jquery_practice_detail" id = "attr_function_test_parent" style="flex-wrap:wrap;">
+    <p class="class_method_test no_background_red1">元々は背景色がない</p>
+    <p class="class_method_test background_red has_background_red1">元々は背景色が赤</p>
+  <div style = "background-color: gray;flex-wrap:wrap;" class="display_flex small_margin_top" >
+    <p class="class_method_test_toggle class_method_test">元々なし(toggle)</p>
+    <p class="class_method_test_toggle class_method_test background_red">元々赤(toggle)</p>
+    <p class="class_method_test_toggle class_method_test">元々なし(toggle)</p>
+    <p class="class_method_test_toggle class_method_test background_red">元々赤(toggle)</p>
+    <p class="class_method_test_toggle class_method_test">元々なし(toggle)</p>
+    <p class="class_method_test_toggle class_method_test background_red">元々赤(toggle)</p>
+    <p class="class_method_test_toggle class_method_test">元々なし(toggle)</p>
+    <p class="class_method_test_toggle class_method_test background_red">元々赤(toggle)</p>
+    <p class="class_method_test_toggle class_method_test">元々なし(toggle)</p>
+    <p class="class_method_test_toggle class_method_test background_red">元々赤(toggle)</p>
+  </div>
+  <input type="button" value="点滅部分のテキストを削除する" id = "delete_text_button"> 
+  <input type="button" value="色を変える" id = "color_change_button">
+  <p class ="class_method_has1 test_class small_margin_top"></p>
+  <p class ="class_method_has2"></p>
+</div>
+
+<p class = "small_section_title">cssに関するメソッドのテスト</p>
+<div class = "jquery_practice_detail">
+  <p class = "css_method_test">テキスト</p>
+  <p class= "font_size_show">↑これのフォントサイズを求めます</p>
+</div>
+
+<p class = "small_section_title">cssに関するメソッドのテスト</p>
+<div class = "jquery_practice_detail">
+  <div style = "height:150px;width:100%;background-color:gray;display:flex;justify-content:center;align-items:center;">
+    <p class = "width_height_test" style="padding:5px 10px;background-color:yellow;border-radius:5px;border:3px solid black;">このテキストは中央になっていてmarginが複雑</p>
+  </div>
+  <p class = "complicated_width_height1">1</p>
+  <p class = "complicated_width_height2">2</p>
+  <p class = "complicated_width_height3">3</p>
+  <p class = "complicated_width_height4">4</p>
+  <p class = "complicated_width_height5">5</p>
+  <p class = "complicated_width_height6">6</p>
+  <p class = "complicated_width_height7">7</p>
+  <p class = "complicated_width_height8">8</p>
+</div>
+
+<p class = "small_section_title">スクロール操作のテスト</p>
+<div class = "jquery_practice_detail">
+  <input type="button" value ="これをクリックすると一番上まで移動するぞ！迷惑だね！" id="scroll_test_button">
+</div>
+
+<p class = "small_section_title">offsetとpositionのテスト</p>
+<div class = "jquery_practice_detail">
+  <div style = "height:150px;width:100%;background-color:gray;display:flex;justify-content:center;align-items:center;">
+    <p class = "offset_position_test" style="padding:5px 10px;background-color:yellow;border-radius:5px;border:3px solid black;">このテキストを対象にする</p>
+  </div>
+  <p class = "offset_position_explain"></p>
+  <p class = "offset_position_explain"></p>
+</div>

@@ -6,14 +6,11 @@
 .small_section_title{
   padding-left:10px;
   width:100%;
+  margin-top:80px;
 }
 
 .jquery_practice_detail{
   padding-left:20px;
-}
-
-.small_margin_top{
-  margin-top:15px;
 }
 
 .display_flex{
@@ -21,4 +18,53 @@
   border:1px dotted gray;
   justify-content: space-between;
   margin-bottom:10px;
+}
+
+.common_simple_button{
+  margin:auto;
+  background-color: rgb(176, 255, 176);
+  color:black;
+  padding:30px 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  width: 30%;
+  border-radius: 10px;
+  background-image: image_url("common/left_arrow.png");
+  background-position: center;
+  background-size: 40%;
+  background-repeat: no-repeat;
+  transition:0.5s;
+  text-decoration: none;
+  border:1px solid black;
+  min-width:150px;
+  font-size:25px;
+  font-weight: bold;
+  margin-top:50px;
+}
+
+.common_simple_button:hover{
+  border:1px solid transparent;
+  background-color:green;
+  background-position-x: 40%;
+  transition: 0.3s;
+}
+
+.common_simple_button:active{
+  background-color: rgb(16, 255, 16);
+  transition:0.1s;
+}
+
+
+
+.small_margin_top{
+  margin-top:15px;
+}
+
+.big_margin_top{
+  margin-top:50px;
+}
+
+.background_red{
+  background-color:rgb(255, 202, 202);
 }

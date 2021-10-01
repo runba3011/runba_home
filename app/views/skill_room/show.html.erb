@@ -12,10 +12,11 @@
     <% elsif @unity_explain %>
       <%= render partial: "skill_room/explain/unity" %>
     <% elsif @jquery_practice %>
-      <p class = "section_title">JQuery練習<%= params[:id] %></p>
+      <p class = "section_title" id="jquery_practice_<%= params[:id] %>">JQuery練習<%= params[:id] %></p>
       <div class = "practice_center_object">
         <%= render partial: "skill_room/jquery_practice/#{params[:id]}" %>
       </div>
     <% end %>
+    <%= link_to "戻る" , skill_room_index_path , class: "common_simple_button" %>
   </div>
 </div>
