@@ -126,6 +126,205 @@ jQuery(function($){
         cloneTest();
         setEmptyRemoveTestWidth();
       })
+
+      $traversingObjects = $(".traversing_test");
+
+      function traversingWidthSet(){
+        $traversingObjects.css("width" , "25%").css("text-align" , "center");
+      }
+      traversingWidthSet();
+
+      function firstTest(){
+        $traversingObjects.first().css("font-weight" , "bold");
+      }
+
+      $("#use_first_button").on("click" , function(){
+        firstTest();
+        traversingWidthSet();
+      })
+
+      function lastTest(){
+        $traversingObjects.last().css("color" , "red");
+      }
+
+      $("#use_last_button").on("click" , function(){
+        lastTest();
+        traversingWidthSet();
+      })
+
+      function eqTest(){
+        let number = $("#traversing_test_eq_number").val();
+        number = Number($("#traversing_test_eq_number").val())-1;
+        $traversingObjects.eq(number).css("color" , "blue");
+      }
+
+      $("#use_eq_button").on("click" , function(){
+        eqTest();
+        traversingWidthSet();
+      })
+
+      function filterTest(){
+        $traversingObjects.filter(".filter_test").text("filterクラス付き");
+      }
+
+      $("#use_filter_button").on("click" , function(){
+        filterTest();
+        traversingWidthSet();
+      })
+
+      function resetFilter(){
+        $traversingObjects.text(function(index){
+          return `要素${index + 1}`
+        })
+      }
+
+      $("#use_reset_filter_button").on("click" , function(){
+        resetFilter();
+      })
+
+      function resetNormalTraversing(){
+        $(".traversing_test").removeAttr("style");
+      }
+
+      $("#use_reset_normal_traversing_button").on("click" , function(){
+        resetNormalTraversing();
+        traversingWidthSet();
+      })
+
+      function setButtonWidth(){
+        $(".buttons_parent").find("input").css({
+          "width":"31.3333%",
+          "height":"30px",
+          "margin":"2px"
+        })
+
+      }
+      setButtonWidth();
+
+      let $own = $(".own");
+      const root = $(".family_test_parent").html();
+      function familySelectReset(){
+        $(".family_test_parent").html(root);
+        $own = $(".own");
+      }
+
+      $("#family_select_reset").on("click" , function(){
+        familySelectReset();
+      })
+
+      function parentTest(){
+        // debugger;
+        $own.parent().prepend("選択された→");
+      }
+
+      $("#parent_test").on("click" , function(){
+        parentTest();
+      })
+
+      function allParentsTest(){
+        $own.parents(".parent").prepend("親全選択で選択された→");
+      }
+
+      $("#parent_all_test").on("click" , function(){
+        allParentsTest();
+      })
+
+      function closestTest(){
+        $own.closest(".like_sister").prepend("男の娘が好きな親→")
+      }
+
+      $("#like_sister_parent_test").on("click" , function(){
+        closestTest();
+      })
+
+      function childTest(){
+        $own.children().prepend("選択された→")
+      }
+
+      $("#child_test").on("click" , function(){
+        childTest();
+      })
+
+      function secondChildTest(){
+        $own.children().children().prepend("選択された→");
+      }
+
+      $("#second_child_test").on("click" , function(){
+        secondChildTest();
+      })
+
+      function prevTest(){
+        $own.prev().prepend("選択された→");
+      }
+
+      $("#prev_test").on("click" , function(){
+        prevTest();
+      })
+
+      function prevAllTest(){
+        $own.prevAll().prepend("兄全選択で選択された→");
+      }
+
+      $("#prev_all_test").on("click" , function(){
+        prevAllTest();
+      })
+
+      function upSisterTest(){
+        $own.prevAll(".sister").prepend("今は姉になっています→");
+      }
+
+      $("#up_sister_all_test").on("click" , function(){
+        upSisterTest();
+      })
+
+      function nextTest(){
+        $own.next().prepend("選択された→");
+      }
+
+      $("#next_test").on("click" , function(){
+        nextTest();
+      })
+
+      function nextAllTest(){
+        $own.nextAll().prepend("弟全選択で選択された→");
+      }
+
+      $("#next_all_test").on("click" , function(){
+        nextAllTest();
+      })
+
+      function downSisterTest(){
+        $own.nextAll(".sister").prepend("今は妹になっています→");
+      }
+
+      $("#down_sister_all_test").on("click" , function(){
+        downSisterTest();
+      })
+
+      function siblingsTest(){
+        $own.siblings().prepend("兄弟全選択で選択された→");
+      }
+
+      $("#sibling_all_test").on("click" , function(){
+        siblingsTest();
+      })
+
+      $selecting = $(".end_add_back_root").prev();
+      function endTest(){
+        $selecting.end().prepend("これが選択された→");
+      }
+
+      $("#end_test_button").on("click" , function(){
+        endTest();
+      })
+
+      function addBackTest(){
+        $selecting.addBack().prepend("これが選択された→");
+      }
+
+      $("#add_back_test_button").on("click" , function(){
+        addBackTest();
+      })
     }
   }
 })

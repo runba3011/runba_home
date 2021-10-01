@@ -57,3 +57,74 @@
   <input type="button" value = "cloneを使用（removeを解除）" id = "use_clone_button">
 </div>
 
+
+<p class = "small_section_title">横断のテスト</p>
+<div class = "jquery_practice_detail small_margin_top">
+  <div class ="traversing_test_parent display_flex" style = "flex-wrap:wrap;">
+    <p class="traversing_test">要素1</p>
+    <p class="traversing_test filter_test">要素2</p>
+    <p class="traversing_test">要素3</p>
+    <p class="traversing_test">要素4</p>
+  </div>
+  <input type="button" value = "firstを使用" id = "use_first_button">
+  <input type="button" value = "lastを使用" id = "use_last_button">
+  <input type="number" id = "traversing_test_eq_number">↓で選択する番号を入れる
+  <input type="button" value = "eqを使用" id = "use_eq_button">
+  <input type="button" value = "filterを使用" id = "use_filter_button">
+  <input type="button" value = "filterを解除" id = "use_reset_filter_button">
+  <input type="button" value = "全てを解除" id = "use_reset_normal_traversing_button">
+</div>
+
+<p class = "small_section_title">親子兄弟要素選択のテスト</p>
+<div class = "jquery_practice_detail small_margin_top family_test_parent_parent">
+  <div class ="family_test_parent display_flex" style = "flex-wrap:wrap;">
+    <div class = "parent">親の親の親
+      <div class="like_sister parent">親の親(男の娘が好き)
+        <div class = "parent">親
+          <p class = "sister">兄1（今は姉）</p>
+          <p>兄2</p>
+          <p class="sister">兄3（今は姉）</p>
+          <p>兄4</p>
+          <div class = "own">自分
+            <div>
+              子供
+              <div>
+                孫
+              </div>
+            </div>
+          </div>
+          <p>弟1</p>
+          <p>弟2</p>
+          <p class = "sister">弟3（今は妹）</p>
+          <p>弟4</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class = "display_flex buttons_parent" style = "flex-wrap:wrap">
+    <input type="button" id = "parent_test" value = "親を選択">
+    <input type="button" id = "parent_all_test" value = "親を全て選択">
+    <input type="button" id = "like_sister_parent_test" value = "男の娘が好きな親を選択">
+    <input type="button" id = "child_test" value = "子を選択">
+    <input type="button" id = "second_child_test" value = "孫を選択">
+    <input type="button" id = "prev_test" value = "直近の兄を選択">
+    <input type="button" id = "prev_all_test" value = "全ての兄を選択">
+    <input type="button" id = "up_sister_all_test" value = "今は姉である兄を選択">
+    <input type="button" id = "next_test" value = "直近の弟を選択">
+    <input type="button" id = "next_all_test" value = "全ての弟を選択">
+    <input type="button" id = "down_sister_all_test" value = "今は妹である弟を選択">
+    <input type="button" id = "sibling_all_test" value = "全ての兄弟を選択">
+    <input type="button" id = family_select_reset value="リセットする">
+  </div>
+</div>
+
+<p class = "small_section_title">end , addBackのテスト</p>
+<div class = "jquery_practice_detail">
+  <div class = "append_test_parent">
+    <p class="end_add_back_test">スクリプトでデフォルトでこれを選択している</p>
+    <p class="end_add_back_test end_add_back_root">元オブジェクト</p>
+  </div>
+
+  <input type="button" value = ".end()を実行" id = "end_test_button">
+  <input type="button" value = ".addBack()を実行" id = "add_back_test_button">
+</div>
