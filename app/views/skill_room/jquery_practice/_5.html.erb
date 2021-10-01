@@ -1,10 +1,59 @@
 <p class = "small_section_title">新しく要素を追加するテスト</p>
 <div class = "jquery_practice_detail">
-  <div class = "append_test_parent display_flex">
+  <div class = "append_test_parent display_flex" style="flex-wrap:wrap;">
     <p class="append_test">要素1</p>
     <p class="append_test">要素2</p>
     <p class="append_test">要素3</p>
+    <p class="append_test">要素4</p>
   </div>
 
   <input type="button" value = "スクリプトを実行" id = "append_test_button">
 </div>
+
+<p class = "small_section_title">特定の要素を包み込むテスト</p>
+<div class = "jquery_practice_detail">
+  <p class="wrap_test">要素1</p>
+  <p class="wrap_test">要素2</p>
+  <p class="wrap_test">要素3</p>
+  <p>別のオブジェクト</p>
+  <p class="wrap_test">要素4</p>
+
+  <input type="button" value = "wrapを使用" id = "use_wrap_button">
+  <input type="button" value = "wrapAllを使用" id = "use_wrap_all_button">
+  <input type="button" value = "unwrapを使用（使い過ぎるとまずいことになります）" id = "use_unwrap_button">
+</div>
+
+<div class = "jquery_practice_detail small_margin_top">
+  <p class="wrap_inner_test">要素1</p>
+  <p class="wrap_inner_test">要素2</p>
+  <p class="wrap_inner_test">要素3</p>
+  <p class="wrap_inner_test">要素4</p>
+
+  <input type="button" value = "wrapInnerを使用" id = "use_wrap_inner_button">
+</div>
+
+<div class = "jquery_practice_detail small_margin_top">
+  <p class="replace_with_test">要素1</p>
+  <p class="replace_with_test">要素2</p>
+  <p class="replace_with_test">要素3</p>
+  <p class="replace_with_test">要素4</p>
+
+  <input type="button" value = "replaceWithを使用" id = "use_replace_with_button">
+  <input type="button" value = "replaceAllをを使用" id = "use_replace_all_button">
+</div>
+
+<p class = "small_section_title">要素を削除、空にするテスト</p>
+<div class = "jquery_practice_detail small_margin_top">
+  <div class ="empty_remove_test_parent display_flex" style = "flex-wrap:wrap;">
+    <p class="empty_remove_test">要素1</p>
+    <p class="empty_remove_test">要素2</p>
+    <p class="empty_remove_test">要素3</p>
+    <p class="empty_remove_test">要素4</p>
+  </div>
+
+  <input type="button" value = "emptyを使用(remove使用後は何も起きない)" id = "use_empty_button">
+  <input type="button" value = "emptyを解除(remove使用後は何も起きない)" id = "use_reset_empty_button">
+  <input type="button" value = "removeを使用" id = "use_remove_button">
+  <input type="button" value = "cloneを使用（removeを解除）" id = "use_clone_button">
+</div>
+
