@@ -7,6 +7,6 @@ class RequestEmailMailer < ApplicationMailer
   #
   def send_mail(content)
     @content = content
-    mail to: "runba3011@gmai.com" , subject: "Ruba's Homeからのリクエスト"
+    mail to: "runba3011@gmail.com" , subject: "Ruba's Homeからのリクエスト"
   end
 end
