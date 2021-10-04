@@ -107,3 +107,35 @@
   transition:0.1s;
   top:3px;
 }
+
+.animate_test_2_parent_parent{
+  padding:10px 20px;
+}
+
+.animate_parent{
+  padding:10px 5px;
+}
+
+.animate_test_2_parent{
+  background-color:rgba(255, 255, 0, 0.247);
+  border:1px solid rgb(172, 172, 172);
+  padding:10px;
+  margin-bottom:10px;
+  border-radius: 5px;;
+}
+
+.animate_test_2_title{
+  font-size:20px;
+}
+
+.animate_test_2_explain{
+  font-size:18px;
+}
+
+.show_animate_button{
+  width:auto;
+  padding:5px 20px;
+  display:inline-block;
+  margin:auto;
+  margin-bottom:30px;
+}
