@@ -12,7 +12,7 @@
     <div class="jquery_practice_parent">
       <% SkillJquery.all.each do |jquery| %>
         <%= link_to "/skill_room/jquery_practice/#{jquery.id}" do%>
-          <div class ="jquery_practice_single animate__animated animate__bounce">
+          <div class ="jquery_practice_single">
             <p class = "jquery_practice_title"><%= jquery.id %>.<%= jquery.title %></p>
             <p class= "jquery_practice_explain"><%= h(jquery.explain).gsub(/\r\n|\n|\r/, "<br>").html_safe %></p>
           </div>

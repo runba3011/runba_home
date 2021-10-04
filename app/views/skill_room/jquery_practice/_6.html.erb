@@ -25,3 +25,49 @@
   </div>
     <p class = "mini_magic_button magic_repeat_button">スクリプト始動</p>
 </div>
+
+<p class = "small_section_title">Animateのテスト</p>
+<div class = "jquery_practice_detail display_flex" style = "flex-wrap:wrap;justify-content:space-between;">
+
+  <div class="mini_magic_parent animate_parent" >
+    <%= image_tag "stickman_war.png" , style: "width:120px;" , class: "magic_image" , id: "animate_image1" %>
+    <p class = "mini_magic_button animate_button1">bounce</p>
+  </div>
+
+  <div class="mini_magic_parent animate_parent" >
+    <%= image_tag "stickman_war.png" , style: "width:120px;" , class: "magic_image" , id: "animate_image2" %>
+    <p class = "mini_magic_button animate_button2">wobble</p>
+  </div>
+
+  <div class="mini_magic_parent animate_parent" >
+    <%= image_tag "stickman_war.png" , style: "width:120px;" , class: "magic_image" , id: "animate_image3" %>
+    <p class = "mini_magic_button animate_button3">flash</p>
+  </div>
+
+  <div class="mini_magic_parent animate_parent" >
+    <%= image_tag "stickman_war.png" , style: "width:120px;" , class: "magic_image" , id: "animate_image4" %>
+    <p class = "mini_magic_button animate_button4">headShake</p>
+  </div>
+
+  <div class="mini_magic_parent animate_parent" >
+    <%= image_tag "stickman_war.png" , style: "width:120px;" , class: "magic_image" , id: "animate_image5" %>
+    <p class = "mini_magic_button animate_button5">pulse</p>
+  </div>
+
+  <div class="mini_magic_parent animate_parent" >
+    <%= image_tag "stickman_war.png" , style: "width:120px;" , class: "magic_image" , id: "animate_image6" %>
+    <p class = "mini_magic_button animate_button6">fadeIn</p>
+  </div>
+</div>
+
+<p class = "small_section_title small_margin_top">Animateでさらに遊んでみる</p>
+<div class = "jquery_practice_detail display_flex animate_test_2_parent_parent" style = "flex-direction:column;">
+  <% 5.times do |times| %>
+    <% i = times + 1%>
+    <div class = "animate_test_2_parent" id = "animate_test_2_parent_<%= i %>">
+      <p class = "animate_test_2_title">タイトル<%= i %></p>
+      <p class = "animate_test_2_explain">説明書き的なやつ</p>
+    </div>
+  <% end %>
+  <p class = "mini_magic_button show_animate_button">もう一度見る</p>
+</div>
