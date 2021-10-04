@@ -11,8 +11,6 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.precompile += %w( 
   top/index
 
-  magic.min
-
   shared/link
   shared/footer
   shared/simple_link
