@@ -7,7 +7,7 @@
 //= require jquery_ujs
 require("@rails/ujs").start()
 // require("turbolinks").start()
-require("../src/jquery.inview.min")
+
 require("@rails/activestorage").start()
 require("channels")
 require("../adjust_height")

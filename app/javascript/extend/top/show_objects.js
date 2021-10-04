@@ -17,8 +17,10 @@ jQuery(function($){
     $object3 = $(`#_link_3`);
     $object4 = $(`#_link_4`);
     $object5 = $(`#_link_5`);
-    singlePuffIn(1)
+    $object1.on('inview' , function(){
+      console.log("見える")
+      singlePuffIn($object1)
+    })
 
-    
   }
 })
