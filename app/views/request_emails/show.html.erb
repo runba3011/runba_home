@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @request_email.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @request_email.email %>
+</p>
+
+<%= link_to 'Edit', edit_request_email_path(@request_email) %> |
+<%= link_to 'Back', request_emails_path %>

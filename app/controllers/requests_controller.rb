@@ -11,6 +11,8 @@ class RequestsController < ApplicationController
     @request = Request.new(request_params)
     if @request.valid?
       @request.save
+      @user = current_user
+      RequestEmailMailer.send_mail(@request.text, @user).deliver_now
     else
       render :new
     end

@@ -1,0 +1,9 @@
+<p>おめでとう！リクエストが届きました！</p>
+<p>送信者：<%= @user.nickname %></p>
+<p>メールアドレス：<%= @user.email %></p>
+<p>リクエスト内容</p>
+<p><%= @content %></p>
+<p>-＊-＊-＊-＊-＊-＊-＊-＊-＊-＊-＊この人がこれまでに送信したリクエスト：<%= @user.requests.length %>件　-＊-＊-＊-＊-＊-＊-＊-＊-＊-＊-＊</p>
+<% @user.requests.each do |request| %>
+  <p><%= request.text %></p>
+<% end %>
