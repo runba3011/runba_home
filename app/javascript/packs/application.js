@@ -27,6 +27,7 @@ require("../jquery_practice/3")
 require("../jquery_practice/4")
 require("../jquery_practice/5")
 require("../jquery_practice/6")
+require("../extend/top/show_objects")
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
