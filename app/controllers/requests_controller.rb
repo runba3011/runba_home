@@ -11,6 +11,7 @@ class RequestsController < ApplicationController
     @request = Request.new(request_params)
     if @request.valid?
       @request.save
+      RequestEmailMailer.send_maili()
     else
       render :new
     end
