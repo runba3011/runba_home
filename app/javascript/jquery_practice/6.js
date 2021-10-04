@@ -26,6 +26,25 @@ jQuery(function($){
         UseMagic("magic_test_4" , "boingInUp" , "0")
       })
       // UseMagic(".")
+
+      // 繰り返しのテスト
+      function repeatMagicTest(id , time){
+        const $object = $(`#${id}`);
+        let firstAddClass = false;
+        setInterval(function(){
+          if(!firstAddClass){
+            $object.addClass("magictime puffOut");
+            firstAddClass = true;
+          }
+          else{
+            $object.toggleClass("puffIn puffOut");
+          }
+        }, time);
+      }
+      
+      $(".magic_repeat_button").on("click" , function(){
+        repeatMagicTest("magic_repeat_test_1" , 800);
+      })
     }
   }
 })
