@@ -9,3 +9,29 @@ a{
   width: 90%;
   margin: auto;
 }
+
+.jquery_practice_parent{
+  width:90%;
+  margin:0 auto;
+}
+
+.jquery_practice_single{
+  padding:10px;
+  background-color:rgba(255, 247, 132, 0.192);
+  margin-top:20px;
+  border-radius: 5px;
+  border:1px solid rgb(202, 202, 202);
+}
+
+.jquery_practice_single:hover{
+  background-color:rgb(255, 247, 132);
+}
+
+.jquery_practice_title{
+  font-size:20px;
+}
+
+.jquery_practice_explain{
+  padding-left:10px;
+  line-height: 25px;
+}
