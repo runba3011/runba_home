@@ -138,6 +138,7 @@ GEM
     loofah (2.12.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
+    magic-rails (1.0.1)
     mail (2.7.1)
       mini_mime (>= 0.1.1)
     marcel (1.0.1)
@@ -328,6 +329,7 @@ DEPENDENCIES
   image_processing (~> 1.2)
   jbuilder (~> 2.7)
   listen (>= 3.0.5, < 3.2)
+  magic-rails
   mini_magick
   mysql2 (>= 0.4.4)
   omniauth (~> 1.9.1)
