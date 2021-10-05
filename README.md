@@ -11,11 +11,12 @@ Runba's Home
 
 URL
 --
-作成中。
+https://runba-home.herokuapp.com/
 
 テスト用アカウント
 --
-作成中。
+email:example@gmail.com
+password:password
 
 利用方法
 --
@@ -39,6 +40,61 @@ URL
 
 実装した機能の画像、説明
 --
+
+__サイトとしての機能__
+ゲームの情報を選択していき、ステージの攻略ページを開く機能
+https://gyazo.com/cdcbada91ff8a46b7905d7b468792f3b
+
+攻略ページにコメントを投稿する機能（ページの遷移は無し）
+https://gyazo.com/f775aeab469a2be20d199a2454b8b6c5
+
+攻略ページにつけたコメントを削除する機能（ページの遷移は無し）
+https://gyazo.com/2e5487f29f9b955194ddff41aaf23c75
+
+キャラクターステータスを確認する機能（素手　のみ現在作成済みです）
+https://gyazo.com/2aabd4befec9401d2b216f02c1758fa8
+
+開いているページから、前後のキャラクターページへ移動する機能
+https://gyazo.com/4cb46e466cfbfd1a83e53c68e4781b89
+
+
+動画を視聴する機能
+https://gyazo.com/deddee54f3c2d33e8ba54c58b24f9258
+
+動画にコメントを追加する機能（非同期通信）
+https://gyazo.com/4bd2a8a5c35e1da3e1aa93295942a94d
+
+動画につけたコメントを削除する機能（非同期通信）
+https://gyazo.com/1c898bea90b5fceb96b15f338777b524
+
+__拡張部分__
+ユーザーアイコンなどを変更する際、設定した画像が表示されるようにする機能
+https://gyazo.com/d263e7e369c77c17ed844a19034f20f6
+
+
+__基礎部分__
+
+__ユーザー関係__
+ユーザー登録をする機能
+https://gyazo.com/ef512f118a7953ba1b3403ca32f81fb9
+
+ログアウトをする機能
+https://gyazo.com/e145385787548dd96df11fd6a841469e
+
+ログインする機能
+https://gyazo.com/55063cc3e919fa836b26e469095927e1
+
+Googleアカウントを使用してログインする機能
+https://gyazo.com/ddfb9d6db69d9b924c4afca0fd732b84
+
+ユーザー編集機能
+変更前
+https://gyazo.com/23cd28c4dda65680576ca96153697b6b
+
+変更後
+https://gyazo.com/86261dec871ed2802917205b35323965
+
+
 
 実装予定の機能
 --
