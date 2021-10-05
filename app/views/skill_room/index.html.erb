@@ -4,9 +4,8 @@
 <div class = "main_content_parent">
   <div class = "main_content">
     <p class = "section_title">一覧ページ</p>
-    <p class = "small_section_title">技術の無駄遣い</p>
     <div class = "language_explain_parent">
-      <%= render partial: "skill_paly_room_link" , locals: {languages: SkillAllLanguage.all } %>
+      <%= render partial: "skill_play_room_link" , locals: {title:"技術の無駄遣い" , link: "/skill_room/:type_id/:id(.:format)", explain:"説明書きを後から加える" , image: nil     } %>
     </div>
 
     <p class = "small_section_title">それぞれの言語や創作物について</p>

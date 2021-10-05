@@ -24,6 +24,7 @@ Rails.application.config.assets.precompile += %w(
   skill_room/common
   skill_room/show
   skill_room/language_link
+  skill_room/skill_play_room_link
 
   stickman_war_common/stickman_war_header
   stickman_war_common/templete
