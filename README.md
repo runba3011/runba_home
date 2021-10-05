@@ -39,8 +39,9 @@ password:password
 - 投稿した動画をみれるようにし、可能であればyoutubeに表示されているコメントをこちらのサイトに表示したり、こちらのサイトで投稿したコメントをYouTubeの方でも投稿されるようにしたい。
 
 
-実装した機能
---
+# 実装した機能
+
+## 攻略ページ
 ゲームの情報を選択していき、ステージの攻略ページを開く機能
 https://gyazo.com/cdcbada91ff8a46b7905d7b468792f3b
 
@@ -56,7 +57,7 @@ https://gyazo.com/2aabd4befec9401d2b216f02c1758fa8
 開いているページから、前後のキャラクターページへ移動する機能
 https://gyazo.com/4cb46e466cfbfd1a83e53c68e4781b89
 
-
+## 動画視聴ページ
 動画を視聴する機能
 https://gyazo.com/deddee54f3c2d33e8ba54c58b24f9258
 
@@ -66,6 +67,7 @@ https://gyazo.com/4bd2a8a5c35e1da3e1aa93295942a94d
 動画につけたコメントを削除する機能（非同期通信）
 https://gyazo.com/1c898bea90b5fceb96b15f338777b524
 
+## チャットルームページ
 チャットルーム作成機能
 https://gyazo.com/8030e2a62a48f96a250f7447843a82a9
 
@@ -84,12 +86,14 @@ https://gyazo.com/d3731a43de8109965a7f3d9044acb437
 所属しているメンバーの権限を変更する機能
 https://gyazo.com/3e7a62d367df11c99fabb802989667ad
 
+## スキルルームページ
 言語などの解説ページ（解説内容は未作成です）
 https://gyazo.com/9bf47d026adfadd29b2f12e069591304
 
 jQuery練習ページ
 https://gyazo.com/f95324743556641b5d4cd8f0063ca924
 
+## ユーザー機能
 ユーザー登録をする機能
 https://gyazo.com/ef512f118a7953ba1b3403ca32f81fb9
 
