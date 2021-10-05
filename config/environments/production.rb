@@ -62,6 +62,19 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+  config.action_mailer.perform_caching = false
+
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+      port: 587,
+      address: 'smtp.gmail.com',
+      domain: 'smtp.gmail.com',
+      user_name: "runba3011@gmail.com",
+      password: ENV["RUNBA_HOME_EMAIL_PASSWORD"],
+      enable_starttls_auto: true
+  }
+
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
