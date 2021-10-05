@@ -18,8 +18,8 @@ jQuery(function($){
       }
     }
     const $objects = $(`.extend_show_object`);
-    // オブジェクトの取得に成功していることを確認するために一時的にピンクにしている、このスクリプトの作成が終わったら削除する
-    $objects.css("background-color" , "pink")
+
+    // 余裕がある時に、下にスクロールしたら下の方のオブジェクトが見えるように変更する
     intersectAction($objects, function(element, isIntersecting){
       if(isIntersecting){
         console.log("見える")
@@ -40,6 +40,7 @@ jQuery(function($){
             actionTimes += 1;
             console.log(`${actionTimes}番目のオブジェクトを操作します`)
             singleAction($objects.eq(actionTimes-1));
+            $objects.eq(actionTimes - 1).css("opacity" , "1");
           }
         }
         else{
