@@ -94,6 +94,13 @@ https://gyazo.com/9bf47d026adfadd29b2f12e069591304
 jQuery練習ページ  
 https://gyazo.com/f95324743556641b5d4cd8f0063ca924
 
+## リクエストページ
+リクエストの投稿機能  
+https://gyazo.com/cf3bf742e5f25dbe4f8a968e0abf4cf4
+
+リクエストによって実際に自分に届いたメール  
+https://gyazo.com/62fc659fd8401098d9b5f13c95275bd7
+
 ## ユーザー機能
 ユーザー登録をする機能  
 https://gyazo.com/ef512f118a7953ba1b3403ca32f81fb9
