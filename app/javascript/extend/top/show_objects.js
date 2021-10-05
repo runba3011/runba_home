@@ -3,30 +3,53 @@ function intersectAction(elements,callback,observerOptions){"use strict";const f
 jQuery(function($){
   if($(`#_link_5`) != null){
     let count = 0;
+    let timer = 0;
     console.log("トップページ用スクリプトを使用します")
-    function singlePuffIn(object){
+    function singleAction(object){
       const $object = object
-
-      if(count % 2 == 0){
+      count += 1;
+      // レスポンシブデザインの都合上、一つの機能へのリンクが二つあるため2で予め割っておく
+      console.log(count);
+      if(Math.floor(count / 2) % 2 == 0){
         $object.addClass("magictime spaceInRight");
       }
       else{
         $object.addClass("magictime spaceInLeft");
       }
     }
-    $object1 = $(`#_link_1`);
-    $object2 = $(`#_link_2`);
-    $object3 = $(`#_link_3`);
-    $object4 = $(`#_link_4`);
-    $object5 = $(`#_link_5`);
-    // オブジェクトの取得に成功していることを確認するために一時的にピンクにしている
-    $object1.css("background-color" , "pink")
-    console.log("動作テスト")
-    intersectAction($object1, function(element, isIntersecting){
+    const $objects = $(`.extend_show_object`);
+    // オブジェクトの取得に成功していることを確認するために一時的にピンクにしている、このスクリプトの作成が終わったら削除する
+    $objects.css("background-color" , "pink")
+    intersectAction($objects, function(element, isIntersecting){
       if(isIntersecting){
         console.log("見える")
       }
     })
+
+    // タイマーを設定するためだけの部分、他の機能はつけない
+    setInterval(function(){
+      timer += 0.01;
+    }, 10)
+
+    let actionTimes = 0;
+    function actionSet(interval, times){
+      roopScript = setInterval(() => {
+        if(actionTimes < times){
+          if(actionTimes * interval / 1000 < timer){
+            // タイマーの方がインターバルよりも大きいとき、つまり動作するとき
+            actionTimes += 1;
+            console.log(`${actionTimes}番目のオブジェクトを操作します`)
+            singleAction($objects.eq(actionTimes-1));
+          }
+        }
+        else{
+          console.log("スライド動作が終了しました")
+          clearInterval(roopScript);
+        }
+      }, 10);
+    }
+
+    actionSet(50 , 10);
 
   }
 })
