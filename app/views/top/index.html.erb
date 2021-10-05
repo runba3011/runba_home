@@ -13,13 +13,14 @@
       <% breadcrumb :root %>
       <%= breadcrumbs separator: "&rsaquo; " %>
     </div>
-
-    <%= render partial: "shared/link" , locals:{number: 1, image: "stickman_war.png" , link: stickman_war_index_path , title: "棒バトチャレンジ" , explain: @stickman_war_explain} %>
-    <%= render partial: "shared/link" , locals:{number: 2, image: "top/kiritan_vs_yukarisan.png" , link: movies_path , title: "動画視聴" , explain: @movie_explain} %>
-    <%= render partial: "shared/link" , locals:{number: 3, image: "top/chat.png" , link: groups_path , title: "チャットルーム" , explain: @group_explain} %>
-    <%= render partial: "shared/link" , locals:{number: 4, image: "top/mail.png" , link: new_request_path , title: "リクエスト" , explain: @request_explain } %>
-    <%= render partial: "shared/link" , locals:{number: 5, image: "top/book.png" , link: skill_room_index_path , title: "プログラミング学習記録" , explain: @programing_explain} %>
-    <%# <%= render partial: "shared/link" , locals:{image: nil , link: nil , title: "リクエスト"} %>
+    <div id = "function_title">
+      <%= render partial: "shared/link" , locals:{number: 1, image: "stickman_war.png" , link: stickman_war_index_path , title: "棒バトチャレンジ" , explain: @stickman_war_explain} %>
+      <%= render partial: "shared/link" , locals:{number: 2, image: "top/kiritan_vs_yukarisan.png" , link: movies_path , title: "動画視聴" , explain: @movie_explain} %>
+      <%= render partial: "shared/link" , locals:{number: 3, image: "top/chat.png" , link: groups_path , title: "チャットルーム" , explain: @group_explain} %>
+      <%= render partial: "shared/link" , locals:{number: 4, image: "top/mail.png" , link: new_request_path , title: "リクエスト" , explain: @request_explain } %>
+      <%= render partial: "shared/link" , locals:{number: 5, image: "top/book.png" , link: skill_room_index_path , title: "プログラミング学習記録" , explain: @programing_explain} %>
+      <%# <%= render partial: "shared/link" , locals:{image: nil , link: nil , title: "リクエスト"} %>
+    </div>
 </div>
 </div>
 
