@@ -7,4 +7,8 @@ class TopController < ApplicationController
     @programing_explain = "ルンバ氏がプログラミングを学ぶ中で「こういうミスをしたよ」「こういうところでつまづいたよ」というのをまとめたところになります。普段のテンションでまとめてるのでプログラミングに興味のない人も見ていってください。"
     
   end
+
+  def show
+    
+  end
 end
