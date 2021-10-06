@@ -33,8 +33,7 @@
 }
 
 .individual_explain{
-  width:90%;
-  margin:auto;
+  width:100%;
   line-height:40px;
 }
 
@@ -45,4 +44,12 @@
 
 .yellow_under_line{
   background: linear-gradient(transparent 80%, yellow 30%);
+}
+
+.color_red{
+  color:#780000;
+}
+
+.big_margin_top{
+  margin-top:80px;
 }

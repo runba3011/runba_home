@@ -1,5 +1,21 @@
 <%# このテンプレートはtop > show.scssのスタイルシートを使用している %>
 <%# 説明の高さや河川の部分についてはtop > explain.scssを使用している %>
 <p class = "small_small_section_title">どんなもの？</p>
-長い説明書きを後から加える、画像とかもあるといい（説明書きの都合上部分テンプレートに分割できない）
-<%= image_tag "stickman_war_stage/default.png" , class: "explain_image" %>
+<div class = "individual_explain">
+  　棒バトチャレンジのステージ情報や、キャラクターの詳細な情報を見ることができる。ステージの攻略方法やキャラクターの運用方法、裏話を公開予定！
+  <%= image_tag "top/show/stickman_war_stage_show.png" , class: "explain_image" %>
+  <%= image_tag "top/show/stickman_war_character_show.png" , class: "explain_image" %>
+</div>
+
+<p class = "small_small_section_title">使用方法</p>
+<div class = "individual_explain">
+  　機能一覧から棒バトチャレンジを選択、上の方のリンクから、キャラクターステータス、ベーシックステージ、チャレンジステージ、ボーナスステージの４つの中から見たいものを選択しよう！
+  ちなみに現在作成が進んでいるものは<span class = "yellow_under_line color_red" style = "font-weight:bold;">キャラクターステータス</span>と<span class = "yellow_under_line color_red" style = "font-weight:bold;">ベーシックステージ</span>の部分のみになります。
+  チャレンジステージやボーナスステージについてはまだ棒バトチャレンジの方で作成すらしていない状況なので許してください。
+  <%= image_tag "top/show/stickman_war_links.png" , class: "explain_image" %>
+</div>
+
+<p class = "small_small_section_title">現在の作成状況</p>
+<div class = "individual_explain">
+  ベーシックステージの１−８「コナミ倉庫」の攻略ページと、キャラクタークラス「一般人」のレベル１０の時のステータス、素手の細かい運用方法のみ完成しています。いつかこの攻略情報を作成するためのライブとかやるから許して。その時まで待って。
+</div>
