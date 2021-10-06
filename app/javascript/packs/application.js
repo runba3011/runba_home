@@ -20,6 +20,7 @@ require("../message_confirm_judge")
 require("../authority_scroll")
 require("../messages_scroll_bottom")
 require("../push_and_show")
+require("../open_strategy")
 import '@fortawesome/fontawesome-free/js/all';
 
 require("../jquery_practice/1")
