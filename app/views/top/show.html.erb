@@ -8,8 +8,8 @@
     <div class = "center_box">
       <p class = "section_title">機能紹介</p>
       <%= render partial: "explain_templete" , locals: {title:"棒バトチャレンジ", icon_image:"stickman_war.png" , link:stickman_war_index_path, explain:@stickman_war_explain, templete_name:"explain_stickman_war", title_margin_top:"10px"} %>
-      <%= render partial: "explain_templete" , locals: {title:"動画視聴", icon_image:"top/kiritan_vs_yukarisan.png" , link:movies_path, explain:@movie_explain, templete_name:"explain_stickman_war", title_margin_top:"100px"} %>
-      <%= render partial: "explain_templete" , locals: {title:"プログラミング学習記録", icon_image:"top/book.png" , link:skill_room_index_path, explain:@programing_explain, templete_name:"explain_stickman_war", title_margin_top:"100px"} %>
+      <%= render partial: "explain_templete" , locals: {title:"動画視聴", icon_image:"top/kiritan_vs_yukarisan.png" , link:movies_path, explain:@movie_explain, templete_name:"explain_movie", title_margin_top:"100px"} %>
+      <%= render partial: "explain_templete" , locals: {title:"プログラミング学習記録", icon_image:"top/book.png" , link:skill_room_index_path, explain:@programing_explain, templete_name:"explain_skill_room", title_margin_top:"100px"} %>
       <%= render partial: "explain_templete" , locals: {title:"チャットルーム", icon_image:"top/chat.png" , link:groups_path, explain:@group_explain, templete_name:"explain_stickman_war", title_margin_top:"100px"} %>
       <%= render partial: "explain_templete" , locals: {title:"リクエスト", icon_image:"top/mail.png" , link:new_request_path, explain:@request_explain, templete_name:"explain_stickman_war", title_margin_top:"100px"} %>
     </div>
