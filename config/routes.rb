@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :followers , only: [:create , :destroy]
   end
 
-  resources :top , only: :index
+  resources :top , only: [:index , :show]
   resources :stickman_war , only: [:index , :show] do
     resources :stickman_war_detail , only: [:show]do
       resources :stickman_war_comments , only: [:create , :update , :destroy]
