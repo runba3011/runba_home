@@ -50,7 +50,7 @@ jQuery(function($){
       }, 10);
     }
 
-    actionSet(50 , 10);
+    actionSet(50 , $objects.length);
 
   }
 })
