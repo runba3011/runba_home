@@ -9,6 +9,7 @@ class TopController < ApplicationController
   end
 
   def show
-    
+    # 説明内容を機能紹介ページでも使用するため、indexメソッドを使用する
+    index
   end
 end
