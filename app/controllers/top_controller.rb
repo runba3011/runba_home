@@ -7,4 +7,9 @@ class TopController < ApplicationController
     @programing_explain = "ルンバ氏がプログラミングを学ぶ中で「こういうミスをしたよ」「こういうところでつまづいたよ」というのをまとめたところになります。普段のテンションでまとめてるのでプログラミングに興味のない人も見ていってください。"
     
   end
+
+  def show
+    # 説明内容を機能紹介ページでも使用するため、indexメソッドを使用する
+    index
+  end
 end

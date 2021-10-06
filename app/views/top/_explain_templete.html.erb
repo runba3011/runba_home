@@ -1,0 +1,11 @@
+<%# 変数：title：棒バトチャレンジ、のようなリンクに表示するタイトル, icon_image：リンクとタイトルに表示する画像 , link：最後のリンクから飛ぶやつ, explain：最後のリンクに加える説明, templete_name:詳細な説明を加えるために呼び出すテンプレートの名前 %>
+<%# このテンプレートはtop > show.scssのスタイルシートを使用している %>
+<div class = "explain_single_box">
+  <p class = "small_section_title" style = "margin-top:<%= title_margin_top %>;"><%= image_tag icon_image , class: "title_image" %><%= title %></p>
+  <div class = "explain_text">
+    <%# ここで詳細な説明が加わる %>
+    <%= render partial: templete_name %>
+    最後にそのページへのリンクを作成する
+    <%= render partial: "shared/link" , locals:{image: icon_image , link: link , title: title , explain: explain} %>
+  </div>
+</div>
