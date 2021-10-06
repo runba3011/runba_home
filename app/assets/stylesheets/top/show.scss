@@ -16,6 +16,24 @@
   margin:0 auto;
 }
 
+.information_parent{
+  border:1px solid black;
+  width:500px;
+  margin:20px auto;
+  padding:10px 20px;
+}
+
+.information_link{
+  padding:5px 0px;
+  cursor:pointer;
+  transition:0.5s;
+}
+
+.information_link:hover{
+  transition:0.05s;
+  background-color:#ffffa4;
+}
+
 .title_image{
   height:100%;
   padding-right:10px;

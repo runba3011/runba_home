@@ -7,11 +7,25 @@
   <div class = "main_content">
     <div class = "center_box">
       <p class = "section_title">機能紹介</p>
-      <%= render partial: "explain_templete" , locals: {title:"棒バトチャレンジ", icon_image:"stickman_war.png" , link:stickman_war_index_path, explain:@stickman_war_explain, templete_name:"explain_stickman_war", title_margin_top:"10px"} %>
-      <%= render partial: "explain_templete" , locals: {title:"動画視聴", icon_image:"top/kiritan_vs_yukarisan.png" , link:movies_path, explain:@movie_explain, templete_name:"explain_movie", title_margin_top:"100px"} %>
-      <%= render partial: "explain_templete" , locals: {title:"プログラミング学習記録", icon_image:"top/book.png" , link:skill_room_index_path, explain:@programing_explain, templete_name:"explain_skill_room", title_margin_top:"100px"} %>
-      <%= render partial: "explain_templete" , locals: {title:"チャットルーム", icon_image:"top/chat.png" , link:groups_path, explain:@group_explain, templete_name:"explain_group", title_margin_top:"100px"} %>
-      <%= render partial: "explain_templete" , locals: {title:"リクエスト", icon_image:"top/mail.png" , link:new_request_path, explain:@request_explain, templete_name:"explain_request", title_margin_top:"100px"} %>
+      <p class = "small_section_title">このページの内容</p>
+      選択するとその紹介部分まで移動できます！
+      <div class = "information_parent">
+        <p class = "information_link" id = "stickman_war_position">1.棒バトチャレンジ</p>
+        <p class = "information_link" id = "movie_position">2.動画視聴</p>
+        <p class = "information_link" id = "skill_room_position">3.プログラミング学習記録</p>
+        <p class = "information_link" id = "group_position">4.チャットルーム</p>
+        <p class = "information_link" id = "request_position">5.リクエスト</p>
+      </div>
+      <%= render partial: "explain_templete" , locals: {title:"棒バトチャレンジ", icon_image:"stickman_war.png" , link:stickman_war_index_path, explain:@stickman_war_explain, templete_name:"explain_stickman_war", title_margin_top:"10px" , scroll_name: "stickman_war_position"} %>
+      
+      <%= render partial: "explain_templete" , locals: {title:"動画視聴", icon_image:"top/kiritan_vs_yukarisan.png" , link:movies_path, explain:@movie_explain, templete_name:"explain_movie", title_margin_top:"100px" , scroll_name: "movie_position"} %>
+      
+      <%= render partial: "explain_templete" , locals: {title:"プログラミング学習記録", icon_image:"top/book.png" , link:skill_room_index_path, explain:@programing_explain, templete_name:"explain_skill_room", title_margin_top:"100px" , scroll_name: "skill_room_position"} %>
+      
+      <%= render partial: "explain_templete" , locals: {title:"チャットルーム", icon_image:"top/chat.png" , link:groups_path, explain:@group_explain, templete_name:"explain_group", title_margin_top:"100px" , scroll_name: "group_position"} %>
+      
+      <%= render partial: "explain_templete" , locals: {title:"リクエスト", icon_image:"top/mail.png" , link:new_request_path, explain:@request_explain, templete_name:"explain_request", title_margin_top:"100px" , scroll_name: "request_position"} %>
+      
     </div>
   </div>
 </div>
