@@ -1,5 +1,18 @@
 <%# このテンプレートはtop > show.scssのスタイルシートを使用している %>
 <%# 説明の高さや河川の部分についてはtop > explain.scssを使用している %>
 <p class = "small_small_section_title">どんなもの？</p>
-長い説明書きを後から加える、画像とかもあるといい（説明書きの都合上部分テンプレートに分割できない）
-<%= image_tag "stickman_war_stage/default.png" , class: "explain_image" %>
+<div class = "individual_explain">
+  ルンバ氏に直接リクエストを送ることができるページになります。ここで送信したリクエストは、メールとしてルンバ氏に届きますので悪口と墓は書かないでください。悲しい気持ちになります。
+</div>
+
+<p class = "small_small_section_title">使用方法</p>
+<div class = "individual_explain">
+  　入力欄にリクエストの内容を記入し、送信を押すとルンバ氏にメールが届きます。非常にシンプルな構造。
+  <%= image_tag "top/show/movie_all.png" , class: "explain_image" %>
+  <%= image_tag "top/show/request1.png" , class: "explain_image" %>
+  <%= image_tag "top/show/request2.png" , class: "explain_image" %>
+
+<p class = "small_small_section_title">今後の予定</p>
+<div class = "individual_explain">
+  　こういう感じのリクエストを割と簡単に作ることができるから、お題箱を真似したようなアプリでも作成しようかな。そう言えばなんですけどもお題箱ってどうやって広まったんですかね。Twitterで自動で流れてきた感じがある。最初が不明。
+</div>
