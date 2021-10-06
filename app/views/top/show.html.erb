@@ -7,6 +7,7 @@
     <div class = "center_box">
       <p class = "section_title">機能紹介</p>
 
+      <%= render partial: explain_templete , locals: {title:"棒バトチャレンジ", icon_image:"stickman_war.png" , link:stickman_war_index_path, explain:@stickman_war_explain, templete_name:詳細な説明を加えるために呼び出すテンプレートの名前} %>
       <div class = "explain_single_box">
         <p class = "small_section_title" style = "margin-top:10px;"><%= image_tag "stickman_war.png" , class: "title_image" %>棒バトチャレンジ</p>
         <div class = "explain_text">
