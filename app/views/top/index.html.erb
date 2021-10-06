@@ -15,7 +15,7 @@
     </div>
     <div class = "function_explain">
       <p class = "small_section_title">機能紹介</p>
-      <%= render partial: "shared/link" , locals:{number: 1, image: "runba_icon.png" , link: top_path(0) , title: "Runba’s Home" , explain: "ルンバ氏がテックキャンプを受講した際に作成したもの。みなさんご存知の通りルンバ氏は動画投稿とかゲーム作成とかやってたんで、ファンサイト的なものが作りたかったんですよね。"} %>
+      <%= render partial: "shared/link" , locals:{number: 1, image: "runba_icon.png" , link: top_path("detail") , title: "Runba’s Home" , explain: "ルンバ氏がテックキャンプを受講した際に作成したもの。みなさんご存知の通りルンバ氏は動画投稿とかゲーム作成とかやってたんで、ファンサイト的なものが作りたかったんですよね。"} %>
     <div id = "function_title">
       <p class = "small_section_title">機能一覧</p>
       <%= render partial: "shared/link" , locals:{image: "stickman_war.png" , link: stickman_war_index_path , title: "棒バトチャレンジ" , explain: @stickman_war_explain} %>
