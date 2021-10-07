@@ -1,3 +1,16 @@
+.breadcrumbs {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.308);
+  width: 90%;
+  margin: 0px auto 20px;
+  padding-top:80px;
+  // font-size: 30px;
+}
+
+.current{
+  font-size:30px;
+  display:block;
+}
+
 .characters_box{
   display:flex;
   flex-wrap: wrap;

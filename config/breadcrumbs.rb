@@ -17,6 +17,17 @@ crumb :stickman_war do
   parent :root
 end
 
+crumb :stickman_war_all_character do
+  link "キャラクター一覧", stickman_war_characters_path
+  parent :stickman_war
+end
+
+# キャラクター情報詳細
+crumb :stickman_war_character do |character_name , character_class , character_id|
+  link character_name, stickman_war_characters_path(character_class , character_id)
+  parent :stickman_war_all_character
+end
+
 crumb :stickman_war_stage do |stage|
   link "#{stage}ステージ選択", stickman_war_path(stage)
   parent :stickman_war
