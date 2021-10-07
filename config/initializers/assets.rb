@@ -17,7 +17,6 @@ Rails.application.config.assets.precompile += %w(
   shared/footer
   shared/simple_link
   shared/common_header
-  shared/stage_link
   shared/show_account
   shared/prease_login
 
@@ -34,6 +33,7 @@ Rails.application.config.assets.precompile += %w(
   stickman_war/show
   stickman_war/top_link
   stickman_war/stickman_war_explain
+  stickman_war/stage_link
   
 
   stickman_war_detail/show
