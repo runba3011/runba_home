@@ -40,7 +40,7 @@ password:password
 ## 攻略ページ
 
 ステージの詳細情報を見るとき、過度なネタバレを防ぐ機能  
-![](https://i.gyazo.com/6a0220b038c60be560329b6955991424.p)
+![](https://i.gyazo.com/6a0220b038c60be560329b6955991424.g)
 
 ゲームの概要などを、選択して開くように変更  
 ![](https://i.gyazo.com/d40e747fb875f4ac01256288b9322920.p)
@@ -53,10 +53,6 @@ password:password
 ![](https://i.gyazo.com/4cb46e466cfbfd1a83e53c68e4781b89.p)
 
 ## 動画視聴ページ
-
-動画にコメントを追加する機能（非同期通信）  
-![](https://i.gyazo.com/4bd2a8a5c35e1da3e1aa93295942a94d.p)
-
 動画につけたコメントを削除する機能（非同期通信）  
 ![](https://i.gyazo.com/1c898bea90b5fceb96b15f338777b524.p)
 
@@ -89,9 +85,6 @@ Googleアカウントを使用してログインする機能
 
 変更後  
 ![](https://i.gyazo.com/86261dec871ed2802917205b35323965.p)
-
-ユーザーアイコンなどを変更する際、設定した画像が表示されるようにする機能
-![](https://i.gyazo.com/d263e7e369c77c17ed844a19034f20f6.p)
 
 
 
