@@ -48,12 +48,6 @@ password:password
 ゲームの情報を選択していき、ステージの攻略ページを開く機能  
 ![](https://i.gyazo.com/cdcbada91ff8a46b7905d7b468792f3b.p)
 
-攻略ページにコメントを投稿する機能（ページの遷移は無し）  
-![](https://i.gyazo.com/f775aeab469a2be20d199a2454b8b6c5.p)
-
-攻略ページにつけたコメントを削除する機能（ページの遷移は無し）  
-![](https://i.gyazo.com/2e5487f29f9b955194ddff41aaf23c75.p)
-
 
 開いているページから、前後のキャラクターページへ移動する機能  
 ![](https://i.gyazo.com/4cb46e466cfbfd1a83e53c68e4781b89.p)
@@ -81,9 +75,6 @@ jQuery練習ページ
 ![](https://i.gyazo.com/f95324743556641b5d4cd8f0063ca924.p)
 
 ## リクエストページ
-リクエストの投稿機能  
-![](https://i.gyazo.com/cf3bf742e5f25dbe4f8a968e0abf4cf4.p)
-
 リクエストによって実際に自分に届いたメール  
 ![](https://i.gyazo.com/62fc659fd8401098d9b5f13c95275bd7.p)
 
