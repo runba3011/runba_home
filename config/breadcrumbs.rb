@@ -22,9 +22,10 @@ crumb :stickman_war_stage do |stage|
   parent :stickman_war
 end
 
-crumb :stickman_war_detail do
-  link "ステージ詳細", root_path
-  parent :stickman_war_stage
+# ステージ詳細（攻略情報ページ）
+crumb :stickman_war_detail do |stage_type , stage_name|
+  link stage_name , root_path
+  parent :stickman_war_stage , stage_type
 end
 
 crumb :movies do
