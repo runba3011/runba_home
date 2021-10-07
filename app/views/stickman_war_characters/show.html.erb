@@ -4,6 +4,9 @@
   <div class = "main_content">
     <%= render partial: "shared/header/stickman_war_header" %>
     <p class = "section_title">キャラクター情報</p>
+    
+    <% breadcrumb :stickman_war_character , @character.character_name , params[:class_id] , params[:charcter_id] %>
+    <%= breadcrumbs separator: "&rsaquo; " %>
     <table class = "common_status_table" border="1">
       <tr>
         <td rowspan="2" class = "common_character_image_parent">

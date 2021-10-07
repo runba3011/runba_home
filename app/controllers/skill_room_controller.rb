@@ -17,11 +17,10 @@ class SkillRoomController < ApplicationController
     # jQueryの練習をしていた部分
     elsif params[:type_id] == "jquery_practice"
       @jquery_practice = true
+      @page_information = SkillJquery.find(params[:id])
 
-    # スクリプトを使用して無駄な画面の変化を加えて遊ぶ部分
     elsif params[:type_id] == "skill_play_room"
       @skill_play_room = true
-
     end
   end
 end

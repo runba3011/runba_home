@@ -11,18 +11,27 @@
     
     <div class = "only_border"></div>
     <div class = "links">
-      <%= render partial: "shared/simple_link" , locals: {image: nil , title: "ベーシックステージ" , link: stickman_war_path("basic") , id: nil , individual_class: "body_link"} %>
-      <%= render partial: "shared/simple_link" , locals: {image: nil , title: "チャレンジステージ" , link: nil , id: nil , individual_class: "body_link"} %>
-      <%= render partial: "shared/simple_link" , locals: {image: nil , title: "ボーナスステージ" , link: nil , id: nil , individual_class: "body_link"} %>
-      <%= render partial: "shared/simple_link" , locals: {image: nil , title: "キャラクターステータス" , link: stickman_war_characters_path , id: nil , individual_class: "body_link"} %>
+      <%= render partial: "stickman_war/top_link" , locals: {image: "stickman_war/heisi.png" , title: "ベーシックステージ" , link: stickman_war_path("basic") , individual_class: "body_link" , icon_background_color: "linear-gradient(to right bottom , #66ceff , #6585ff)"} %>
+      <%= render partial: "stickman_war/top_link" , locals: {image: "stickman_war/samurai.png" , title: "チャレンジステージ" , link: nil , individual_class: "body_link" , icon_background_color: "linear-gradient(to right bottom , red , #660000)"} %>
+      <%= render partial: "stickman_war/top_link" , locals: {image: "stickman_war/money.png" , title: "ボーナスステージ" , link: nil , individual_class: "body_link" , icon_background_color: "linear-gradient(to right bottom , #ffe000 , #a58300)"} %>
+      <%= render partial: "stickman_war/top_link" , locals: {image: "stickman_war/characters.png" , title: "キャラクターステータス" , link: stickman_war_characters_path , individual_class: "body_link" , icon_background_color: "linear-gradient(to right bottom , #6eff31 , #41af00)"} %>
+    </div>
+    
+    <div class = "rollover_explain">
+      <div class = "show_buttons">
+        <p class = "show_button">概要</p>
+        <p class = "show_button">きっかけ</p>
+        <p class = "show_button">予定</p>
+      </div>
+      <%= render partial: "stickman_war_explain" , locals: {title: @explain_title1 , explain: @explain_detail1 , image: nil} %>
+      <%= render partial: "stickman_war_explain" , locals: {title: @explain_title2 , explain: @explain_detail2 , image: nil} %>
+      <%= render partial: "stickman_war_explain" , locals: {title: @explain_title3 , explain: @explain_detail3 , image: nil} %>
     </div>
 
-    <div class = "only_border"></div>
-
     <div class = "explain">
-      <%= render partial: "shared/picture_and_explain" , locals: {title: @explain_title1 , explain: @explain_detail1 , length: @explain_length1} %>
-      <%= render partial: "shared/picture_and_explain" , locals: {title: @explain_title2 , explain: @explain_detail2 , length: @explain_length2} %>
-      <%= render partial: "shared/picture_and_explain" , locals: {title: @explain_title3 , explain: @explain_detail3 , length: @explain_length3} %>
+      <%# <%= render partial: "picture_and_explain" , locals: {title: @explain_title1 , explain: @explain_detail1 , length: @explain_length1} %> %>
+      <%# <%= render partial: "picture_and_explain" , locals: {title: @explain_title2 , explain: @explain_detail2 , length: @explain_length2} %> %>
+      <%# <%= render partial: "picture_and_explain" , locals: {title: @explain_title3 , explain: @explain_detail3 , length: @explain_length3} %> %>
       <%# <%= render partial: "shared/picture_and_explain" , locals: {title: @explain_title4 , explain: @explain_detail4} %>
     </div>
 

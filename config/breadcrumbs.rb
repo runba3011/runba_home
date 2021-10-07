@@ -17,14 +17,26 @@ crumb :stickman_war do
   parent :root
 end
 
+crumb :stickman_war_all_character do
+  link "キャラクター一覧", stickman_war_characters_path
+  parent :stickman_war
+end
+
+# キャラクター情報詳細
+crumb :stickman_war_character do |character_name , character_class , character_id|
+  link character_name, stickman_war_characters_path(character_class , character_id)
+  parent :stickman_war_all_character
+end
+
 crumb :stickman_war_stage do |stage|
   link "#{stage}ステージ選択", stickman_war_path(stage)
   parent :stickman_war
 end
 
-crumb :stickman_war_detail do
-  link "ステージ詳細", root_path
-  parent :stickman_war_stage
+# ステージ詳細（攻略情報ページ）
+crumb :stickman_war_detail do |stage_type , stage_name|
+  link stage_name , root_path
+  parent :stickman_war_stage , stage_type
 end
 
 crumb :movies do
@@ -35,6 +47,26 @@ end
 crumb :movie_show do |movie_name , movie_id|
   link "#{movie_name}", movie_path(movie_id)
   parent :movies
+end
+
+crumb :skill_room do
+  link "スキルルーム" , skill_room_index_path
+  parent :root
+end
+
+crumb :jquery_practice do |page_name , page_number|
+  link page_name , "/skill_room/jquery_practice/#{page_number}"
+  parent :skill_room
+end
+
+crumb :skill_waste_top do 
+  link "技術の無駄遣い" , "/skill_room/jquery_practice/0"
+  parent :skill_room
+end
+
+crumb :language_explain do |language_name , type_id|
+  link "#{language_name}とは？" , "/skill_room/#{type_id}/1"
+  parent :skill_room
 end
 
 # crumb :projects do
