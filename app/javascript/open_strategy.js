@@ -8,21 +8,23 @@ jQuery(function($){
     function hideOpenButton($object){
       $object.animate({opacity: 0} , toggleTime / 3);
       $object.wrap($("<div></div>"))
-      $object.parent().animate({height:0} , toggleTime / 3 + 50);
+      $object.parent().animate({height:0} , toggleTime / 3 + 50 , function(){
+        $object.parent().remove();
+      });
     }
 
     if($strategyHideParent != null){
       // ボスの情報の部分
       $bossOpenButton.on("click" , function(){
         const $toggleObject = $("#boss_detail_parent")
-        $toggleObject.slideToggle(toggleTime);
+        $toggleObject.slideDown(toggleTime);
         hideOpenButton($bossOpenButton);
       })
 
       // 攻略情報の部分
       const $openButton = $(".open_strategy_button");
       $openButton.on("click" , function(){
-        $strategyHideParent.slideToggle();
+        $strategyHideParent.slideDown();
         hideOpenButton($openButton);
       })
     }
