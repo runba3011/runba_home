@@ -54,15 +54,11 @@ password:password
 攻略ページにつけたコメントを削除する機能（ページの遷移は無し）  
 ![](https://i.gyazo.com/2e5487f29f9b955194ddff41aaf23c75.p)
 
-キャラクターステータスを確認する機能（素手　のみ現在作成済みです）  
-![](https://i.gyazo.com/2aabd4befec9401d2b216f02c1758fa8.p)
 
 開いているページから、前後のキャラクターページへ移動する機能  
 ![](https://i.gyazo.com/4cb46e466cfbfd1a83e53c68e4781b89.p)
 
 ## 動画視聴ページ
-動画を視聴する機能  
-![](https://i.gyazo.com/deddee54f3c2d33e8ba54c58b24f9258.p)
 
 動画にコメントを追加する機能（非同期通信）  
 ![](https://i.gyazo.com/4bd2a8a5c35e1da3e1aa93295942a94d.p)
@@ -71,28 +67,16 @@ password:password
 ![](https://i.gyazo.com/1c898bea90b5fceb96b15f338777b524.p)
 
 ## チャットルームページ
-チャットルーム作成機能  
-![](https://i.gyazo.com/8030e2a62a48f96a250f7447843a82a9.p)
-
-メッセージを送信する機能  
-![](https://i.gyazo.com/6086f472732958eb771b04a9d8922f0f.p)
-
 チャットルームのメンバーを追放する機能  
 ![](https://i.gyazo.com/a669478aea5ce99637ada63f5fb06b08.p)
 
 チャットルームに新しいメンバーを加える機能  
 ![](https://i.gyazo.com/29ad5b59313a82f6c6d282066d8c9291.p)
 
-送信したメッセージを削除する機能  
-![](https://i.gyazo.com/d3731a43de8109965a7f3d9044acb437.p)
-
 所属しているメンバーの権限を変更する機能  
 ![](https://i.gyazo.com/3e7a62d367df11c99fabb802989667ad.p)
 
 ## スキルルームページ
-言語などの解説ページ（解説内容は未作成です）  
-![](https://i.gyazo.com/9bf47d026adfadd29b2f12e069591304.p)
-
 jQuery練習ページ  
 ![](https://i.gyazo.com/f95324743556641b5d4cd8f0063ca924.p)
 
@@ -104,19 +88,11 @@ jQuery練習ページ
 ![](https://i.gyazo.com/62fc659fd8401098d9b5f13c95275bd7.p)
 
 ## ユーザー機能
-ユーザー登録をする機能  
-![](https://i.gyazo.com/ef512f118a7953ba1b3403ca32f81fb9.p)
-
 ログアウトをする機能  
-![](https://i.gyazo.com/e145385787548dd96df11fd6a841469e.p)
-
-ログインする機能  
-![](https://i.gyazo.com/55063cc3e919fa836b26e469095927e1.p)
-
 Googleアカウントを使用してログインする機能  
 ![](https://i.gyazo.com/ddfb9d6db69d9b924c4afca0fd732b84.p)
 
-ユーザー編集機能
+ユーザー編集機能  
 変更前  
 ![](https://i.gyazo.com/23cd28c4dda65680576ca96153697b6b.p)
 
