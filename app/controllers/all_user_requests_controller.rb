@@ -1,0 +1,2 @@
+class AllUserRequestsController < ApplicationController
+end
