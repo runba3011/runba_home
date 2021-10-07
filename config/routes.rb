@@ -35,5 +35,5 @@ Rails.application.routes.draw do
 
   post '/groups/:group_id/group_user_relations/:user_id/:id' , to: "group_user_relations#update"
   
-  resources :all_user_requests , only: [:index , :show , :new , :create , :destroy]
+  resources :all_user_requests , only: [:index , :show , :create , :destroy , :new]
 end
