@@ -16,13 +16,20 @@
       <%= render partial: "stickman_war/top_link" , locals: {image: "stickman_war/money.png" , title: "ボーナスステージ" , link: nil , individual_class: "body_link" , icon_background_color: "linear-gradient(to right bottom , #ffe000 , #a58300)"} %>
       <%= render partial: "stickman_war/top_link" , locals: {image: "stickman_war/characters.png" , title: "キャラクターステータス" , link: stickman_war_characters_path , individual_class: "body_link" , icon_background_color: "linear-gradient(to right bottom , #6eff31 , #41af00)"} %>
     </div>
-
-    <div class = "only_border"></div>
+    
+    <div class = "rollover_explain">
+      <div class = "show_buttons">
+        <p class = "show_button">棒バトチャレンジとは？</p>
+        <p class = "show_button">きっかけ</p>
+        <p class = "show_button">今後の予定</p>
+      </div>
+      <%= render partial: "stickman_war_explain" , locals: {title: @explain_title1 , explain: @explain_detail1 , length: @explain_length1 , image: nil} %>
+    </div>
 
     <div class = "explain">
-      <%= render partial: "picture_and_explain" , locals: {title: @explain_title1 , explain: @explain_detail1 , length: @explain_length1} %>
-      <%= render partial: "picture_and_explain" , locals: {title: @explain_title2 , explain: @explain_detail2 , length: @explain_length2} %>
-      <%= render partial: "picture_and_explain" , locals: {title: @explain_title3 , explain: @explain_detail3 , length: @explain_length3} %>
+      <%# <%= render partial: "picture_and_explain" , locals: {title: @explain_title1 , explain: @explain_detail1 , length: @explain_length1} %> %>
+      <%# <%= render partial: "picture_and_explain" , locals: {title: @explain_title2 , explain: @explain_detail2 , length: @explain_length2} %> %>
+      <%# <%= render partial: "picture_and_explain" , locals: {title: @explain_title3 , explain: @explain_detail3 , length: @explain_length3} %> %>
       <%# <%= render partial: "shared/picture_and_explain" , locals: {title: @explain_title4 , explain: @explain_detail4} %>
     </div>
 

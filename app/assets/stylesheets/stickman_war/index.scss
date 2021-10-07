@@ -49,6 +49,30 @@
   margin-top: 10px;
 }
 
+.rollover_explain{
+  width:90%;
+  margin:auto;
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px black;
+  margin-top:30px;
+  padding-bottom:30px;
+}
+
+.show_buttons{
+  display:flex;
+  justify-content: center;
+}
+
+.show_button{
+  width:33.33333%;
+  background-color:white;
+  text-align: center;
+  line-height:30px;
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px black;
+  margin-top: -5px;
+}
+
 @media(max-width: 600px){
   .body_link{
     width:100%;

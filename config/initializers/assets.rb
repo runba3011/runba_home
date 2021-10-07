@@ -29,11 +29,12 @@ Rails.application.config.assets.precompile += %w(
 
   stickman_war_common/stickman_war_header
   stickman_war_common/templete
-  
+
   stickman_war/index
   stickman_war/show
   stickman_war/top_link
-  stickman_war/picture_and_explain
+  stickman_war/stickman_war_explain
+  
 
   stickman_war_detail/show
   stickman_war_detail/comment
