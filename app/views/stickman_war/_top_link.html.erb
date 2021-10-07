@@ -1,0 +1,19 @@
+<%# フッターの部分で呼び出したことがある %>
+<%# <%= stylesheet_link_tag "shared/stickman_war_top_link" , :media => "all" %>
+<%# application.html.erb内で↑を呼んでいるので、個別でクラス名などを与えれば上書きをすることができる %>
+<%# 引数 individual_class , image , id , title %>
+<%= stylesheet_link_tag "stickman_war/top_link" , media: "all" %>
+  <div class = "_stickman_war_top_link_links <%= individual_class %>">
+
+    <%= link_to link , class: "_stickman_war_top_link_a" , id: id do %>
+      <% if image != nil %>
+        <%= image_tag image , alter: "#{image}という画像はありません" , class: "_stickman_war_top_link_image" %>
+      <% else %>
+        <%= image_tag "picture_not_find.png" , class: "_stickman_war_top_link_image" %>
+      <% end %>
+
+      <div class = "_stickman_war_top_link_explain">
+        <%= title %>
+      </div>
+    <% end %>
+  </div>
