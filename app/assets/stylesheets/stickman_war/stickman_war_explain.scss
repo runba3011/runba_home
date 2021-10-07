@@ -1,5 +1,5 @@
 ._stickman_war_explain_parent{
-  width: 80%;
+  width: 90%;
   padding: 10px;
   border:1px solid black;
   justify-content: center;
@@ -55,16 +55,19 @@
   padding:0px;
   text-align: center;
   font-size:15px;
+  line-height: 30px;
 }
 
 ._stickman_war_top_link_text{
   margin-top: 10px;
 }
 
+@media (max-width:800px){
+  ._stickman_war_top_title_text{
+    font-size:20px;
+  }
 
-@media(max-width:400px){
   ._stickman_war_top_image{
-    width:60%;
-    height:auto;
+    width: 90%;
   }
 }
