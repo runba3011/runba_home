@@ -11,10 +11,10 @@
     
     <div class = "only_border"></div>
     <div class = "links">
-      <%= render partial: "shared/simple_link" , locals: {image: "stickman_war/heisi.png" , title: "ベーシックステージ" , link: stickman_war_path("basic") , id: nil , individual_class: "body_link"} %>
-      <%= render partial: "shared/simple_link" , locals: {image: "stickman_war/samurai.png" , title: "チャレンジステージ" , link: nil , id: nil , individual_class: "body_link"} %>
-      <%= render partial: "shared/simple_link" , locals: {image: "stickman_war/money.png" , title: "ボーナスステージ" , link: nil , id: nil , individual_class: "body_link"} %>
-      <%= render partial: "shared/simple_link" , locals: {image: "stickman_war/characters.png" , title: "キャラクターステータス" , link: stickman_war_characters_path , id: nil , individual_class: "body_link"} %>
+      <%= render partial: "stickman_war/top_link" , locals: {image: "stickman_war/heisi.png" , title: "ベーシックステージ" , link: stickman_war_path("basic") , individual_class: "body_link" , icon_background_color: "linear-gradient(to right bottom , #66ceff , #6585ff)"} %>
+      <%= render partial: "stickman_war/top_link" , locals: {image: "stickman_war/samurai.png" , title: "チャレンジステージ" , link: nil , individual_class: "body_link" , icon_background_color: "linear-gradient(to right bottom , red , #660000)"} %>
+      <%= render partial: "stickman_war/top_link" , locals: {image: "stickman_war/money.png" , title: "ボーナスステージ" , link: nil , individual_class: "body_link" , icon_background_color: "linear-gradient(to right bottom , #ffe000 , #a58300)"} %>
+      <%= render partial: "stickman_war/top_link" , locals: {image: "stickman_war/characters.png" , title: "キャラクターステータス" , link: stickman_war_characters_path , individual_class: "body_link" , icon_background_color: "linear-gradient(to right bottom , #6eff31 , #41af00)"} %>
     </div>
 
     <div class = "only_border"></div>
