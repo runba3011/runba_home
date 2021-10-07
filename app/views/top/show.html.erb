@@ -24,9 +24,9 @@
         </div>
         <div class = "information_link" id = "skill_room_position">
           <div class = "information_link_image_parent">
-            <%= image_tag "top/book.png" , class: "information_link_image" %>
+            <%= image_tag "top/skill.png" , class: "information_link_image" %>
           </div>
-          プログラミング学習記録
+          スキルルーム
         </div>
         <div class = "information_link" id = "group_position">
           <div class = "information_link_image_parent">
@@ -45,7 +45,7 @@
       
       <%= render partial: "explain_templete" , locals: {title:"動画視聴", icon_image:"top/kiritan_vs_yukarisan.png" , link:movies_path, explain:@movie_explain, templete_name:"explain_movie", title_margin_top:"100px" , scroll_name: "movie_position"} %>
       
-      <%= render partial: "explain_templete" , locals: {title:"プログラミング学習記録", icon_image:"top/book.png" , link:skill_room_index_path, explain:@programing_explain, templete_name:"explain_skill_room", title_margin_top:"100px" , scroll_name: "skill_room_position"} %>
+      <%= render partial: "explain_templete" , locals: {title:"スキルルーム", icon_image:"top/skill.png" , link:skill_room_index_path, explain:@programing_explain, templete_name:"explain_skill_room", title_margin_top:"100px" , scroll_name: "skill_room_position"} %>
       
       <%= render partial: "explain_templete" , locals: {title:"チャットルーム", icon_image:"top/chat.png" , link:groups_path, explain:@group_explain, templete_name:"explain_group", title_margin_top:"100px" , scroll_name: "group_position"} %>
       

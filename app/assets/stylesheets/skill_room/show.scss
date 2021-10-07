@@ -1,3 +1,18 @@
+.breadcrumbs {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.308);
+  /* width: 90%; */
+  margin: 0px auto 20px;
+  padding-top: 10px;
+  padding-left: 20px;
+  margin-left: 20px;
+}
+
+.current{
+  font-size:30px;
+  display:block;
+}
+
+
 .practice_center_object{
   width:90%;
   margin:0 auto;

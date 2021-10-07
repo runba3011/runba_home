@@ -49,6 +49,26 @@ crumb :movie_show do |movie_name , movie_id|
   parent :movies
 end
 
+crumb :skill_room do
+  link "スキルルーム" , skill_room_index_path
+  parent :root
+end
+
+crumb :jquery_practice do |page_name , page_number|
+  link page_name , "/skill_room/jquery_practice/#{page_number}"
+  parent :skill_room
+end
+
+crumb :skill_waste_top do 
+  link "技術の無駄遣い" , "/skill_room/jquery_practice/0"
+  parent :skill_room
+end
+
+crumb :language_explain do |language_name , type_id|
+  link "#{language_name}とは？" , "/skill_room/#{type_id}/1"
+  parent :skill_room
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end

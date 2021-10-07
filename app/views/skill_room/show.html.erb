@@ -16,6 +16,8 @@
     <%# jQueryの練習の部分 %>
     <% elsif @jquery_practice %>
       <p class = "section_title" id="jquery_practice_<%= params[:id] %>">JQuery練習<%= params[:id] %></p>
+      <% breadcrumb :jquery_practice , @page_information.title , @page_information.id %>
+      <%= breadcrumbs separator: "&rsaquo; " %>
       <div class = "practice_center_object">
         <%= render partial: "skill_room/jquery_practice/#{params[:id]}" %>
       </div>
@@ -23,7 +25,9 @@
     <%# スクリプトを使用してページに不要な変化を加えまくる部分 %>
     <% elsif @skill_play_room %>
       <% if params[:id] == "0" %>
-        <p class = "section_title" >技術の無駄遣い</p>
+      <div style = "padding-top:80px;"></div>
+      <% breadcrumb :skill_waste_top %>
+      <%= breadcrumbs separator: "&rsaquo; " %>
       <%= render partial: "skill_play_room_link" , locals: {title:"未開拓" , link: "/skill_room/skill_play_room/0", explain:"作成中です（押してもページ移動はしません）" , image: nil     } %>
       <%= render partial: "skill_play_room_link" , locals: {title:"未開拓" , link: "/skill_room/skill_play_room/0", explain:"作成中です（押してもページ移動はしません）" , image: nil     } %>
       <%= render partial: "skill_play_room_link" , locals: {title:"未開拓" , link: "/skill_room/skill_play_room/0", explain:"作成中です（押してもページ移動はしません）" , image: nil     } %>

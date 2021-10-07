@@ -1,7 +1,22 @@
-a{
-  color:black;
-  text-decoration: none;
+// a{
+//   color:black;
+//   text-decoration: none;
+// }
+
+.breadcrumbs {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.308);
+  width: 90%;
+  margin: 0px auto 20px;
+  padding-top:80px;
+  // font-size: 30px;
 }
+
+.current{
+  font-size:30px;
+  display:block;
+  padding-left:10px;
+}
+
 
 .language_explain_parent{
   display:flex;
@@ -13,6 +28,11 @@ a{
 .jquery_practice_parent{
   width:90%;
   margin:0 auto;
+}
+
+.jquery_link{
+    color:black;
+    text-decoration: none;
 }
 
 .jquery_practice_single{
