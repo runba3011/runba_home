@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="ZYTx2Oc5oKhjh46jqFlx" name="ページ1">
-        <mxGraphModel dx="772" dy="349" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="796" dy="349" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -229,19 +229,19 @@
                 <mxCell id="156" value="AllUserRequests" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
                     <mxGeometry x="330" y="1010" width="310" height="190" as="geometry"/>
                 </mxCell>
-                <mxCell id="157" value="index(ログイン用）" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="156">
-                    <mxGeometry y="26" width="310" height="30" as="geometry"/>
-                </mxCell>
                 <mxCell id="158" value="show（それぞれのユーザーの受け取ったリクエスト&#10;＋別のユーザーはそこから送信）&#10;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="156">
-                    <mxGeometry y="56" width="310" height="44" as="geometry"/>
+                    <mxGeometry y="26" width="310" height="44" as="geometry"/>
                 </mxCell>
                 <mxCell id="160" value="new" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="156">
-                    <mxGeometry y="100" width="310" height="30" as="geometry"/>
+                    <mxGeometry y="70" width="310" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="161" value="create" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="156">
-                    <mxGeometry y="130" width="310" height="30" as="geometry"/>
+                    <mxGeometry y="100" width="310" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="162" value="destroy" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="156">
+                    <mxGeometry y="130" width="310" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="164" value="destroy" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="156">
                     <mxGeometry y="160" width="310" height="30" as="geometry"/>
                 </mxCell>
             </root>

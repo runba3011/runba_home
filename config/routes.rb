@@ -34,4 +34,6 @@ Rails.application.routes.draw do
   get "/skill_room/:type_id/:id" , to: "skill_room#show"
 
   post '/groups/:group_id/group_user_relations/:user_id/:id' , to: "group_user_relations#update"
+  
+  resources :all_user_requests , only: [:index , :show , :new , :create , :destroy]
 end
