@@ -1,36 +1,19 @@
 <%# 引数 link: リンク先 , title: 表示するタイトル , image: 表示する画像の名前、画像はapp > assets > images に入れておく %>
 <%= stylesheet_link_tag "stickman_war/stickman_war_explain" , :media => "all" %>
 
-  <div class = "_stickman_war_top_links _stickman_war_top_more_than_800px extend_show_object" style = "opacity:0;">
-    <div class= "_stickman_war_explain">
-      <% if image != nil %>
-        <%= image_tag image , alter: "#{image}という画像はありません" , class: "_stickman_war_top_image" %>
-      <% else %>
-        <%= image_tag "picture_not_find.png" , class: "_stickman_war_top_image" %>
-      <% end %>
-
-      <div class = "_stickman_war_top_explain">
-        <p class = "_stickman_war_top_title_text"><%= title %></p>
-        <p class = "_stickman_war_top_explain_text"><%= explain %></p>
-        <p class = "_stickman_war_top_link_text common_simple_button"> >>ページへ移動する</p>
-      </div>
-    </div>
-  </div>
-
-  <div class = "_stickman_war_top_links _stickman_war_top_less_than_800px extend_show_object"  style = "opacity:0;">
+  <div class = "_stickman_war_explain_parent">
     <div class = "_stickman_war_explain">
       <div class = "_stickman_war_top_image_and_title">
         <% if image != nil %>
           <%= image_tag image , alter: "#{image}という画像はありません" , class: "_stickman_war_top_image" %>
         <% else %>
-          <%= image_tag "picture_not_find.png" , class: "_stickman_war_top_image" %>
+          <%= image_tag "stickman_war/default.png" , class: "_stickman_war_top_image" %>
         <% end %>
         <p class = "_stickman_war_top_title_text"><%= title %></p>
       </div>
 
       <div class = "_stickman_war_top_explain">
         <p class = "_stickman_war_top_explain_text"><%= explain %></p>
-        <p class = "_stickman_war_top_link_text common_simple_button"> >>ページへ移動する</p>
       </div>
     </div>
   </div>

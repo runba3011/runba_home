@@ -1,5 +1,5 @@
-._stickman_war_top_links{
-  width: 90%;
+._stickman_war_explain_parent{
+  width: 80%;
   padding: 10px;
   border:1px solid black;
   display:flex;
@@ -17,10 +17,11 @@
   text-decoration:none;
   color:black;
   cursor: default;
+  flex-direction: column;
 }
 
 ._stickman_war_top_image{
-  width:15%;
+  width:60%;
 }
 
 ._stickman_war_top_explain{
@@ -29,79 +30,38 @@
   flex-direction: column;
   align-items: center;
   padding:10px 0;
+  width:90%;
+  padding:5px 0px;
 }
 
 ._stickman_war_top_title_text{
   text-align: center;
   font-size:30px;
   margin-bottom: 3px;
+  margin:auto;
+}
+
+._stickman_war_top_image_and_title {
+  margin: auto;
+  width: 95%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 ._stickman_war_top_explain_text{
   padding:0 10px;
   text-align: center;
   max-width:580px;
+  padding:0px;
+  text-align: center;
+  font-size:15px;
 }
 
 ._stickman_war_top_link_text{
   margin-top: 10px;
 }
 
-
-
-// 800pxより大きい時
-  ._stickman_war_top_more_than_800px{
-    display:inherit;
-  }
-
-  ._stickman_war_top_less_than_800px{
-    display:none;
-  }
-
-
-// 800pxより小さいとき
-@media (max-width:800px){
-  ._stickman_war_top_more_than_800px{
-    display:none;
-  }
-
-  ._stickman_war_top_less_than_800px{
-    display:inherit;
-  }
-
-  ._stickman_war_explain{
-    flex-direction: column;
-  }
-
-  ._stickman_war_top_title_text{
-    margin:auto;
-    font-size:20px;
-  }
-
-  ._stickman_war_top_image{
-    width:auto;
-    height:100px;
-  }
-
-  ._stickman_war_top_image_and_title {
-    margin: auto;
-    width: 95%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  ._stickman_war_top_explain_text{
-    padding:0px;
-    text-align: center;
-    font-size:15px;
-  }
-
-  ._stickman_war_top_explain{
-    width:90%;
-    padding:5px 0px;
-  }
-}
 
 @media(max-width:400px){
   ._stickman_war_top_image{
