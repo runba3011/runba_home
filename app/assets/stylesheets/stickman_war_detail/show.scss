@@ -40,7 +40,7 @@
   line-height: 40px;
 }
 
-.open_strategy_button {
+.open_strategy_button , .open_boss_button {
   width: 280px;
   background-color: #cc0000;
   box-shadow: 0 5px 0 0 #640000;
@@ -53,13 +53,13 @@
   display:flex;
 }
 
-.open_strategy_button:hover{
+.open_strategy_button:hover , .open_boss_button:hover{
   box-shadow: 0 4px 0 0 #640000;
   top:1px;
   transition:0.1s;
 }
 
-.open_strategy_button:active{
+.open_strategy_button:active , .open_boss_button:active{
   box-shadow:none;
   top:5px;
   transition:0.1s;

@@ -4,7 +4,6 @@
 // that code so it'll be compiled.
 
 require("jquery")
-require("../src/imagesloaded.pkgd.min")
 require("@rails/ujs").start()
 // require("turbolinks").start()
 
