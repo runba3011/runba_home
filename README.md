@@ -35,15 +35,15 @@ password:password
 
 ## 機能紹介ページ
 それぞれの機能の紹介部分まで、滑らかに移動するリンクの作成  
-i[](https://i.gyazo.com/9d06f62201ec6151fc22ff7c3555318b.p)
+![](https://i.gyazo.com/9d06f62201ec6151fc22ff7c3555318b.p)
 
 ## 攻略ページ
 
 ステージの詳細情報を見るとき、過度なネタバレを防ぐ機能  
-i[](https://i.gyazo.com/6a0220b038c60be560329b6955991424.p)
+![](https://i.gyazo.com/6a0220b038c60be560329b6955991424.p)
 
 ゲームの概要などを、選択して開くように変更  
-i[](https://i.gyazo.com/d40e747fb875f4ac01256288b9322920.p)
+![](https://i.gyazo.com/d40e747fb875f4ac01256288b9322920.p)
 
 ゲームの情報を選択していき、ステージの攻略ページを開く機能  
 ![](https://i.gyazo.com/cdcbada91ff8a46b7905d7b468792f3b.p)
