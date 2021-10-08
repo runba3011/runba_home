@@ -5,7 +5,7 @@
   <div class = "main_content">
     <p class = "section_title">ユーザー一覧</p>
     <% @users.each do |user| %>
-      <%= link_to new_all_user_request_path do %>
+      <%= link_to all_user_request_path(user) do %>
         <% if user.icon_image.attached? %>
           <%= image_tag user.icon_image , style: "width:300px;"  %>
         <% else %>

@@ -1,0 +1,18 @@
+
+<%= render partial: "shared/header/root_header" , locals: {title: "リクエストボックス"} %>
+
+<div class = "main_content_parent">
+  <div class = "main_content">
+    <p class = "section_title">このユーザーに届いたメッセージ</p>
+    <% @users.each do |user| %>
+      <%= link_to all_user_request_path(user) do %>
+        <% if user.icon_image.attached? %>
+          <%= image_tag user.icon_image , style: "width:300px;"  %>
+        <% else %>
+          <%= image_tag "defaults/user_icon_image.png" , style: "width:300px;" %>
+        <% end %>
+        <p><%= user.nickname %></p>
+      <% end %>
+    <% end %>
+  </div>
+</div>
