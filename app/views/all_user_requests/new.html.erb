@@ -1,8 +1,10 @@
 リクエスト作成ページ
 送信先のユーザー：<%= @user.nickname %>
+<%= render partial: "shared/errors" , locals: {model: @all_user_request} %>
 <%= form_with model: @all_user_request , url: user_all_user_requests_path(@user) , method: :post , local: true do |f| %>
   テキスト  
   <%= f.text_field :text %>
-  <%= f.text_field :is_open_name , value: "true" , disabled: true %>
+  <%# ↓の入力欄は見えないようにしておく、チェックボックスで公開するかしないかを選択できるようにする %>
+  <%= f.text_field :is_open_name , value: "true" %>
   <%= f.submit "送信" %>
 <% end %>
