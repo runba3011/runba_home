@@ -30,7 +30,9 @@ class AllUserRequestsController < ApplicationController
   end
 
   def destroy
-    
+    @all_user_request = AllUserRequest.find_by(id: params[:id] , user_id: params[:user_id])
+    @all_user_request.destroy
+    redirect_to user_all_user_request_path(current_user , "all")
   end
 
   private 

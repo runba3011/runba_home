@@ -5,14 +5,16 @@
   <div class = "main_content">
     <p class = "section_title"><%= @user.nickname %>のマイページ</p>
     <% @user.all_user_requests.each do |request| %>
-      <% creater = User.find(request.request_creater_id) %>
-      投稿者：<%= creater.nickname %>
-      <%= request.text %>
-      <%= request.user.nickname %>
-      <% if request.user == current_user %>
-        <%= link_to "完了" , "/users/#{request.user.id}/all_user_requests/#{request.id}/finished" , method: :put %>
-        <%= link_to "見なかったことにする" , "/users/#{request.user.id}/all_user_requests/#{request.id}/finished" , method: :put %>
-      <% end %>
+      <div>
+        <% creater = User.find(request.request_creater_id) %>
+        投稿者：<%= creater.nickname %>
+        <%= request.text %>
+        <% if request.user == current_user %>
+          <%= link_to "完了" , "/users/#{request.user.id}/all_user_requests/#{request.id}/finished" , method: :put %>
+          <%= link_to "採用する" , "/users/#{request.user.id}/all_user_requests/#{request.id}/receive" , method: :put %>
+          <%= link_to "この世から消し去る" , user_all_user_request_path(request.user , request) , method: :delete %>
+        <% end %>
+      </div>
     <% end %>
   </div>
 </div>
