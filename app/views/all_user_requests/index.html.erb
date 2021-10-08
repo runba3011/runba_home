@@ -13,10 +13,13 @@
     <% else %>
       <p class = "section_title">ユーザー一覧</p>
       <% @users.each do |user| %>
-        <%= link_to new_user_all_user_request_path(user) do %>
-          <p><%= user.nickname %></p>
+        <% if user != current_user %>
+          <%= link_to new_user_all_user_request_path(user) do %>
+            <p><%= user.nickname %></p>
+          <% end %>
         <% end %>
       <% end %>
+      <%= link_to "マイページへ" , user_all_user_request_path(current_user , "all") %>
     <% end %>
   </div>
 </div>
