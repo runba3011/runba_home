@@ -20,7 +20,8 @@ class User < ApplicationRecord
   has_many :messages
   has_one_attached :icon_image
   has_one_attached :background_image
-  
+  has_many :all_user_requests
+
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider , uid: auth.uid).first_or_create
     user = User.where(email: auth.info.email).first_or_initialize(

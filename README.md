@@ -119,10 +119,11 @@ Usersテーブル
 - has_one :sns_credential
 - has_one_attached :icon_image
 - has_one_attached :background_image
+- has_many :all_user_requests
 
 最初登録する時にはaccount_nameは入力させず、編集する時にのみバリデーションをかける
 
-SnsCredentials table
+SnsCredentialsテーブル
 --
 SNSアカウントを利用してログインした時に使用するもの。
 
@@ -234,3 +235,16 @@ MovieCommentsテーブル
 
 - belongs_to :user
 
+AllUserRequestsテーブル
+--
+全てのユーザーへリクエストを送ることができる部分。
+お題箱のような機能。
+|column|type|options|explain|
+|-|-|-|-|
+|user_id|references|null: false|リクエスト先のユーザー|
+|request_creater_id|references|null: false|投稿したユーザー|
+|text|string|null: false|投稿の内容|
+|is_open_name|string|null: false|falseかtrueのみ、リクエスト作成者が自分のアカウントを晒すかを決める|
+|status|string||finished , receive 現在の捜査の状況を決める|
+
+- belongs_to :user

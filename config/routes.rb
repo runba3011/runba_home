@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   root to: "top#index"
   resources :users , only: [:new , :index , :show , :update , :edit] do
     resources :followers , only: [:create , :destroy]
+    resources :all_user_requests , only: [:index , :show , :create , :destroy , :new]
   end
+
+  put '/users/:user_id/all_user_requests/:request_id/:controll_id' , to: "all_user_requests#update"
 
   resources :top , only: [:index , :show]
   resources :stickman_war , only: [:index , :show] do
@@ -34,4 +37,5 @@ Rails.application.routes.draw do
   get "/skill_room/:type_id/:id" , to: "skill_room#show"
 
   post '/groups/:group_id/group_user_relations/:user_id/:id' , to: "group_user_relations#update"
+  
 end

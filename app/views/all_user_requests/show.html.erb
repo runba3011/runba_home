@@ -1,0 +1,31 @@
+
+<%= render partial: "shared/header/root_header" , locals: {title: "リクエストボックス"} %>
+
+<div class = "main_content_parent">
+  <div class = "main_content">
+    <p class = "section_title"><%= @user.nickname %>のマイページ</p>
+    <% @user.all_user_requests.each do |request| %>
+      <div>
+        <% creater = User.find(request.request_creater_id) %>
+        <%  if request.status == nil
+              status = "未処理"
+            elsif request.status == "finished"
+              status = "完了！"
+            elsif request.status == "received"
+              status = "採用！"
+            end
+        %>
+
+
+        投稿者：<%= creater.nickname %>
+        <%= request.text %>
+        <% if request.user == current_user %>
+          <%= link_to "完了" , "/users/#{request.user.id}/all_user_requests/#{request.id}/finished" , method: :put %>
+          <%= link_to "採用する" , "/users/#{request.user.id}/all_user_requests/#{request.id}/received" , method: :put %>
+          <%= link_to "この世から消し去る" , user_all_user_request_path(request.user , request) , method: :delete %>
+          <p>現在の状況：<%= status %></p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
