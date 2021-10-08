@@ -8,8 +8,11 @@
       <% creater = User.find(request.request_creater_id) %>
       投稿者：<%= creater.nickname %>
       <%= request.text %>
-      <%= link_to "完了" , "/users/#{request.user.id}/all_user_requests/#{request.id}/finished" , method: :put %>
-      <%= link_to "見なかったことにする" , "/users/#{request.user.id}/all_user_requests/#{request.id}/finished" , method: :put %>
+      <%= request.user.nickname %>
+      <% if request.user == current_user %>
+        <%= link_to "完了" , "/users/#{request.user.id}/all_user_requests/#{request.id}/finished" , method: :put %>
+        <%= link_to "見なかったことにする" , "/users/#{request.user.id}/all_user_requests/#{request.id}/finished" , method: :put %>
+      <% end %>
     <% end %>
   </div>
 </div>
