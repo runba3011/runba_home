@@ -4,11 +4,13 @@ class AllUserRequestsController < ApplicationController
   end
 
   def new
-    
+    @user = User.find(params[:user_id])
+    @all_user_request = AllUserRequest.new
   end
 
   def create
-    
+    @user = User.new(all_user_request_params)
+    binding.pry
   end
 
   def show
@@ -22,6 +24,6 @@ class AllUserRequestsController < ApplicationController
   private 
 
   def all_user_request_params
-    @all_user_request = AllUserRequsts.find(params[:id])
+    params.require(:all_user_request).permit(:text , :is_open_name).merge(user_id: current_user)
   end
 end

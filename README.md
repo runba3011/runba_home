@@ -241,7 +241,8 @@ AllUserRequestsテーブル
 お題箱のような機能。
 |column|type|options|explain|
 |-|-|-|-|
-|user_id|references|null: false|投稿したユーザー|
+|user_id|references|null: false|リクエスト先のユーザー|
+|request_creater_id|references|null: false|投稿したユーザー|
 |text|string|null: false|投稿の内容|
 |is_open_name|string|null: false|falseかtrueのみ、|
 
