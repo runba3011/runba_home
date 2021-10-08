@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2021_10_07_092645) do
     t.bigint "user_id", null: false
     t.string "text", null: false
     t.string "is_open_name", null: false
+    t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["request_creater_id"], name: "index_all_user_requests_on_request_creater_id"

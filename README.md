@@ -244,6 +244,7 @@ AllUserRequestsテーブル
 |user_id|references|null: false|リクエスト先のユーザー|
 |request_creater_id|references|null: false|投稿したユーザー|
 |text|string|null: false|投稿の内容|
-|is_open_name|string|null: false|falseかtrueのみ、|
+|is_open_name|string|null: false|falseかtrueのみ、リクエスト作成者が自分のアカウントを晒すかを決める|
+|status|string||finished , receive 現在の捜査の状況を決める|
 
 - belongs_to :user
