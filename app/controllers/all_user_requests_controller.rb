@@ -1,6 +1,8 @@
 class AllUserRequestsController < ApplicationController
   def index
-    @users = User.all
+    if params[:user_id] != "index"
+      @user = User.find(params[:user_id])
+    end
   end
 
   def new

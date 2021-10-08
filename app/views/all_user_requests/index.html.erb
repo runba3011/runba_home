@@ -3,16 +3,9 @@
 
 <div class = "main_content_parent">
   <div class = "main_content">
-    <p class = "section_title">ユーザー一覧</p>
-    <% @users.each do |user| %>
-      <%= link_to user_all_user_request_path(user) do %>
-        <% if user.icon_image.attached? %>
-          <%= image_tag user.icon_image , style: "width:300px;"  %>
-        <% else %>
-          <%= image_tag "defaults/user_icon_image.png" , style: "width:300px;" %>
-        <% end %>
-        <p><%= user.nickname %></p>
-      <% end %>
+    <p class = "section_title"><%= @user.nickname %>のリクエストボックス</p>
+    <% @user.all_user_requests.each do |requests| %>
+      <p><%= requests.text %></p>
     <% end %>
   </div>
 </div>
