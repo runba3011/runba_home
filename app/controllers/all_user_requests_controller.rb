@@ -1,4 +1,6 @@
 class AllUserRequestsController < ApplicationController
+  before_action :check_login
+
   def index
     if params[:user_id] != "index"
       @user = User.find(params[:user_id])
@@ -34,5 +36,11 @@ class AllUserRequestsController < ApplicationController
 
   def all_user_request_params
     params.require(:all_user_request).permit(:text , :is_open_name).merge(request_creater_id: current_user.id , user_id: params[:user_id])
+  end
+
+  def check_login
+    if !user_signed_in?
+      redirect_to new_request_path
+    end
   end
 end
