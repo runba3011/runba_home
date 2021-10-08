@@ -34,11 +34,13 @@ ActiveRecord::Schema.define(version: 2021_10_07_092645) do
   end
 
   create_table "all_user_requests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "request_creater_id", null: false
+    t.bigint "user_id", null: false
     t.string "text", null: false
     t.string "is_open_name", null: false
-    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["request_creater_id"], name: "index_all_user_requests_on_request_creater_id"
     t.index ["user_id"], name: "index_all_user_requests_on_user_id"
   end
 
@@ -141,6 +143,7 @@ ActiveRecord::Schema.define(version: 2021_10_07_092645) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "all_user_requests", "users"
+  add_foreign_key "all_user_requests", "users", column: "request_creater_id"
   add_foreign_key "followers", "users"
   add_foreign_key "followers", "users", column: "following_id"
   add_foreign_key "group_user_relations", "groups"
