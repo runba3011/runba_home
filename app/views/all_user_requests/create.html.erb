@@ -1,2 +1,4 @@
-送信が完了しました
+<%= render partial: "shared/header/root_header" , locals: {title: "リクエストボックス"} %>
+<%= stylesheet_link_tag "all_user_requests/common" , media: "all" %>
+<p class = "section_title">送信が完了しました</p>
 <%= link_to "戻る" , user_all_user_requests_path("index") %>

@@ -1,4 +1,7 @@
-リクエスト作成ページ
+
+<%= render partial: "shared/header/root_header" , locals: {title: "リクエストボックス"} %>
+<%= stylesheet_link_tag "all_user_requests/common" , media: "all" %>
+<p class = "section_title">リクエスト作成ページ</p>
 送信先のユーザー：<%= @user.nickname %>
 <%= render partial: "shared/errors" , locals: {model: @all_user_request} %>
 <%= form_with model: @all_user_request , url: user_all_user_requests_path(@user) , method: :post , local: true do |f| %>
