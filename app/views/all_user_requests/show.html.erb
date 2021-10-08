@@ -6,5 +6,7 @@
     <p class = "section_title">リクエスト詳細ページ</p>
     投稿者：<%= @request.user.nickname %>
     <%= @request.text %>
+    <%= link_to "完了" , "/users/#{@request.user.id}/all_user_requests/#{@request.id}/finished" , method: :put %>
+    <%= link_to "見なかったことにする" , "/users/#{@request.user.id}/all_user_requests/#{@request.id}/finished" , method: :put %>
   </div>
 </div>

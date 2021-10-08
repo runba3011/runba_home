@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     resources :all_user_requests , only: [:index , :show , :create , :destroy , :new]
   end
 
+  put '/users/:user_id/all_user_requests/:request_id/:controll_id' , to: "all_user_requests#update"
+
   resources :top , only: [:index , :show]
   resources :stickman_war , only: [:index , :show] do
     resources :stickman_war_detail , only: [:show]do
