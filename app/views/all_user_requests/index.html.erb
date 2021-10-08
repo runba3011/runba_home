@@ -4,8 +4,10 @@
 <div class = "main_content_parent">
   <div class = "main_content">
     <p class = "section_title"><%= @user.nickname %>のリクエストボックス</p>
-    <% @user.all_user_requests.each do |requests| %>
-      <p><%= requests.text %></p>
+    <% @user.all_user_requests.each do |request| %>
+      <%= link_to user_all_user_request_path(@user , request) do %>
+        <p><%= request.text %></p>
+      <% end %>
     <% end %>
   </div>
 </div>
