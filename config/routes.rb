@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root to: "top#index"
   resources :users , only: [:new , :index , :show , :update , :edit] do
     resources :followers , only: [:create , :destroy]
+    resources :all_user_requests , only: [:index , :show , :create , :destroy , :new]
   end
 
   resources :top , only: [:index , :show]
@@ -35,5 +36,4 @@ Rails.application.routes.draw do
 
   post '/groups/:group_id/group_user_relations/:user_id/:id' , to: "group_user_relations#update"
   
-  resources :all_user_requests , only: [:index , :show , :create , :destroy , :new]
 end
