@@ -35,6 +35,17 @@ class AllUserRequestsController < ApplicationController
     redirect_to user_all_user_request_path(current_user , "all")
   end
 
+  def update
+    @all_user_request = AllUserRequest.find_by(id: params[:request_id] , user_id: params[:user_id])
+    if params[:controll_id] == "finished"
+      @all_user_request.status = "finished"
+    elsif params[:controll_id] == "received"
+      @all_user_request.status = "received"
+    end
+    @all_user_request.save
+    redirect_to user_all_user_request_path(current_user , "all")
+  end
+
   private 
 
   def all_user_request_params
