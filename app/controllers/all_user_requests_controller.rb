@@ -1,5 +1,6 @@
 class AllUserRequestsController < ApplicationController
   before_action :check_login
+  before_action :check_same_user , only: [:show , :update , :destroy]
 
   def index
     if params[:user_id] != "index"
@@ -55,6 +56,13 @@ class AllUserRequestsController < ApplicationController
   def check_login
     if !user_signed_in?
       redirect_to new_request_path
+    end
+  end
+
+  def check_same_user
+    if params[:user_id].to_i != current_user.id
+      # binding.pry
+      redirect_to user_all_user_requests_path("index")
     end
   end
 end
