@@ -3,10 +3,19 @@
 
 <div class = "main_content_parent">
   <div class = "main_content">
-    <p class = "section_title"><%= @user.nickname %>のリクエストボックス</p>
-    <% @user.all_user_requests.each do |request| %>
-      <%= link_to user_all_user_request_path(@user , request) do %>
-        <p><%= request.text %></p>
+    <% if params[:user_id] != "index" %>
+      <p class = "section_title"><%= @user.nickname %>のリクエストボックス</p>
+      <% @user.all_user_requests.each do |request| %>
+        <%= link_to user_all_user_request_path(@user , request) do %>
+          <p><%= request.text %></p>
+        <% end %>
+      <% end %>
+    <% else %>
+      <p class = "section_title">ユーザー一覧</p>
+      <% @users.each do |user| %>
+        <%= link_to user_all_user_requests_path(user) do %>
+          <p><%= user.nickname %></p>
+        <% end %>
       <% end %>
     <% end %>
   </div>
