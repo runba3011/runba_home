@@ -9,25 +9,35 @@
     <% @user.all_user_requests.each do |request| %>
       <div class = "single_request">
         <% creater = User.find(request.request_creater_id) %>
-        <%  if request.status == nil
-              status = "未処理"
-            elsif request.status == "finished"
-              status = "完了！"
-            elsif request.status == "received"
-              status = "採用！"
-            end
-        %>
 
 
         投稿者：<%= creater.nickname %>
         <%= request.text %>
         <% if request.user == current_user %>
           <div class = "control_buttons">
-            <%= link_to "完了" , "/users/#{request.user.id}/all_user_requests/#{request.id}/finished" , method: :put %>
-            <%= link_to "採用する" , "/users/#{request.user.id}/all_user_requests/#{request.id}/received" , method: :put %>
-            <%= link_to "この世から消し去る" , user_all_user_request_path(request.user , request) , method: :delete %>
+            <%= link_to "/users/#{request.user.id}/all_user_requests/#{request.id}/finished" , method: :put , class: "control_button_link" do %>
+              <i class="fas fa-award control_button_awesome"></i>完了
+            <% end %>
+
+            <%= link_to "/users/#{request.user.id}/all_user_requests/#{request.id}/received" , method: :put , class: "control_button_link" do %>
+              <i class="fas fa-check control_button_awesome"></i>採用する
+            <% end %>
+
+            <%= link_to user_all_user_request_path(request.user , request) , method: :delete , class: "control_button_link" do %>
+              <i class="fas fa-times control_button_awesome"></i>この世から消し去る
+            <% end %>
           </div>
-          <p class = "now_status">現在の状況：<span class = <%= request.status %>><%= status %></span></p>
+          <p class = "now_status">現在の状況：
+            <span class = <%= request.status %>>
+            <%  if request.status == nil %>
+              未処理
+            <% elsif request.status == "finished" %>
+              <i class="fas fa-award status_awesome"></i></i>完了！
+            <%elsif request.status == "received" %>
+              <i class="fas fa-check status_awesome"></i>採用！
+            <% end %>
+            </span>
+          </p>
         <% end %>
       </div>
     <% end %>
