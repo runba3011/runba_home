@@ -39,12 +39,22 @@
               <% end %>
             </div>
             <p class = "now_status">現在の状況：
+
+              <%  if request.status == 0 
+                    status = nil
+                  elsif request.status == 1
+                    status = "received"
+                  elsif request.status == 2
+                    status = "finished"
+                  end
+              %>
+
               <span class = <%= request.status %>>
-              <%  if request.status == nil %>
+              <%  if status == nil %>
                   未処理
-              <% elsif request.status == "finished" %>
+              <% elsif status == "finished" %>
                 <i class="fas fa-award status_awesome"></i></i>完了！
-              <%elsif request.status == "received" %>
+              <%elsif status == "received" %>
                 <i class="fas fa-check status_awesome"></i>採用！
               <% end %>
               </span>

@@ -17,6 +17,7 @@ class AllUserRequestsController < ApplicationController
     if @all_user_request.valid?
       @user = User.find(params[:user_id])
       if check_no_same_request(@user , @all_user_request)
+        @all_user_request.status = 0
         @all_user_request.save
       end
     else
