@@ -7,66 +7,15 @@
   <div class = "main_content">
     <p class = "section_title"><%= @user.nickname %>のマイページ</p>
     <% if @user.all_user_requests.length != 0 %>
-      <% @user.all_user_requests.each do |request| %>
-        <div class = "single_request">
-          <div class="single_user">
-            <div class = "user_icon_parent">
-              <% if request.request_creater.icon_image.attached? %>
-                <%= image_tag request.request_creater.icon_image , class: "user_icon_image" %>
-              <% else %>
-                <%= image_tag "defaults/user_icon_image.png" , class: "user_icon_image" %>
-              <% end %>
-            </div>
-            <p class="user_nickname"><%= request.request_creater.nickname %></p>
-          </div>
-
-        <p class="request_content"><%= request.text %></p>
-          <% if request.user == current_user %>
-            <div class = "control_buttons">
-              <%= link_to "/users/#{request.user.id}/all_user_requests/#{request.id}/finished" , method: :put , class: "control_button_link" do %>
-                <i class="fas fa-award control_button_awesome"></i>完了
-              <% end %>
-
-              <%= link_to "/users/#{request.user.id}/all_user_requests/#{request.id}/received" , method: :put , class: "control_button_link" do %>
-                <i class="fas fa-check control_button_awesome"></i>採用する
-              <% end %>
-
-              <%= link_to user_all_user_request_path(request.user , request) , method: :delete , class: "control_button_link" do %>
-                <i class="fas fa-times control_button_awesome"></i>この世から消し去る
-              <% end %>
-            </div>
-            <p class = "now_status">現在の状況：
-
-              <%  if request.status == 0 
-                    status = nil
-                  elsif request.status == 1
-                    status = "received"
-                  elsif request.status == 2
-                    status = "finished"
-                  end
-              %>
-
-              <span class = <%= request.status %>>
-              <%  if status == nil %>
-                  未処理
-              <% elsif status == "finished" %>
-                <i class="fas fa-award status_awesome"></i></i>完了！
-              <%elsif status == "received" %>
-                <i class="fas fa-check status_awesome"></i>採用！
-              <% end %>
-              </span>
-            </p>
-        <% end %>
-        </div>
+      <%= form_with url:search_user_all_user_requests_path("search") , local: true , method: :get do |f| %>
+        <%= f.text_field :keyword , placeholder: "リクエストを検索するにはこれを使用してください" %>
+        <%= f.submit "検索" %>
       <% end %>
-    
-    
-    
-    
-    
-    
-    
-    
+      <% if @searched_requests != nil %>
+        <%= render partial: "request" , collection: @seached_requests %>
+      <% end %>
+      ここまで検索結果
+      <%= render partial: "request" , collection: @user.all_user_requests %>
     <% else %>
       <p class = "no_requests">まだリクエストは届いていません！</p>
     <% end %>
