@@ -69,8 +69,13 @@ Rails.application.config.assets.precompile += %w(
   users/show
   users/edit
 
-  devise/common
+  all_user_requests/common
+  all_user_requests/index
+  all_user_requests/new
+  all_user_requests/show
+  all_user_requests/create
 
+  devise/common
   reset_field_with_errors
 )
 # Precompile additional assets.

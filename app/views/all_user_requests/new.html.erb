@@ -1,10 +1,37 @@
-リクエスト作成ページ
-送信先のユーザー：<%= @user.nickname %>
-<%= render partial: "shared/errors" , locals: {model: @all_user_request} %>
-<%= form_with model: @all_user_request , url: user_all_user_requests_path(@user) , method: :post , local: true do |f| %>
-  テキスト  
-  <%= f.text_field :text %>
-  <%# ↓の入力欄は見えないようにしておく、チェックボックスで公開するかしないかを選択できるようにする %>
-  <%= f.text_field :is_open_name , value: "true" %>
-  <%= f.submit "送信" %>
-<% end %>
+
+<%= render partial: "shared/header/root_header" , locals: {title: "リクエストボックス"} %>
+<%= stylesheet_link_tag "all_user_requests/common" , media: "all" %>
+<%= stylesheet_link_tag "all_user_requests/new" , media: "all" %>
+<div class = "main_content_parent">
+  <div class = "main_content">
+    <p class = "section_title">リクエスト作成ページ</p>
+
+    <div class = "user_parent">
+      <div class= "single_user_parent">
+        <div class = "single_user">
+          <div class = "user_icon_image_parent">
+            <% if @user.icon_image.attached? %>
+              <%= image_tag @user.icon_image , class: "user_icon_image" %>
+            <% else %>
+              <%= image_tag "defaults/user_icon_image.png" , class: "user_icon_image" %>
+            <% end %>
+          </div>
+          <p><%= @user.nickname %></p>
+        </div>
+      </div>
+    </div>
+
+    <%= form_with  class: "all_user_requests_objects" , model: @all_user_request ,  url: user_all_user_requests_path(@user), local: true  do |f| %>
+      <p class = "request_explain">リクエストの内容を入力しよう！</p>
+      <%= f.text_area :text , id: "use_adjust" , value: @textarea_inside , class: "all_user_requests_text_area" %>
+      <div style = "width:100%;display:flex;justify-content:center;">
+        <label class = "request_checkbox_parent">
+          <input type="checkbox" value="<%= @user.nickname %>から名前が見えるようにする" class="request_checkbox"><%= @user.nickname %>から名前が見えるようにする
+        </label>
+      </div>
+      <%= f.text_field :is_open_name , value: "true" , style: "display:none;" %>
+      <%= f.submit "送信" , class: "all_user_requests_submit_btn common_simple_button" , id: "submit_button" %>
+    <% end %>
+  </div>
+</div>
+

@@ -5,7 +5,7 @@ class CreateAllUserRequests < ActiveRecord::Migration[6.0]
       t.references :user , null: false , foreign_key: true
       t.string :text , null: false
       t.string :is_open_name , null: false
-      t.string :status
+      t.integer :status
       t.timestamps
     end
   end

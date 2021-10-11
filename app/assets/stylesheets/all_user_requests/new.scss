@@ -1,0 +1,67 @@
+.user_parent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.user_parent::before{
+  content: "送信先";
+  display:block;
+  margin:auto;
+}
+
+.single_user_parent{
+  margin:auto;
+  width:60%;
+}
+
+.single_user{
+  height:100px;
+}
+
+
+.all_user_requests_text_area{
+  width: 80%;
+  margin: auto;
+  display: block;
+  min-height: 100px;
+}
+
+.all_user_requests_submit_btn{
+  margin: auto;
+  display: block;
+  margin-top: 5px;
+  border:none;
+  width: 80px;
+  background-color: #2a2ac3;
+  box-shadow: 0 3px 0 0 #000052;
+  position: relative;
+  top: 0px;
+  transition:0.3s;
+}
+
+.all_user_requests_submit_btn:active{
+  box-shadow: none;
+  top:3px;
+  transition:0.2s;
+}
+
+.request_checkbox_parent{
+  margin:30px auto;
+  text-align: center;
+  display:inline-block;
+  background-color:rgba(199, 255, 199, 0.288);
+  // width:80%;
+  // height:50px;
+  padding:10px 30px;
+}
+
+.request_explain{
+  text-align: center;
+  padding:30px 0px 5px;
+}
+
+.request_checkbox{
+}
+

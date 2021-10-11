@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   root to: "top#index"
   resources :users , only: [:new , :index , :show , :update , :edit] do
     resources :followers , only: [:create , :destroy]
-    resources :all_user_requests , only: [:index , :show , :create , :destroy , :new]
+    resources :all_user_requests , only: [:index , :show , :create , :destroy , :new] do
+      collection do
+        get 'search'
+      end
+    end
   end
 
   put '/users/:user_id/all_user_requests/:request_id/:controll_id' , to: "all_user_requests#update"
