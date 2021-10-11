@@ -47,6 +47,15 @@ class AllUserRequestsController < ApplicationController
     redirect_to user_all_user_request_path(current_user , "all")
   end
 
+  def search
+    if params[:keyword] != ""
+      @searched_requests = return_request = AllUserRequest.where("text LIKE?" , "%#{params[:keyword]}%").where(user_id: params[:user_id])
+      # binding.pry
+    end
+    show
+    render :show
+  end
+
   private 
 
   def all_user_request_params
