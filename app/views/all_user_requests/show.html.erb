@@ -11,8 +11,18 @@
         <% creater = User.find(request.request_creater_id) %>
 
 
-        投稿者：<%= creater.nickname %>
-        <%= request.text %>
+        <div class="single_user">
+          <div class = "user_icon_parent">
+            <% if @user.icon_image.attached? %>
+              <%= image_tag @user.icon_image , class: "user_icon_image" %>
+            <% else %>
+              <%= image_tag "defaults/user_icon_image.png" , class: "user_icon_image" %>
+            <% end %>
+          </div>
+          <p class="user_nickname"><%= creater.nickname %></p>
+        </div>
+
+        <p class="request_content"><%= request.text %></p>
         <% if request.user == current_user %>
           <div class = "control_buttons">
             <%= link_to "/users/#{request.user.id}/all_user_requests/#{request.id}/finished" , method: :put , class: "control_button_link" do %>

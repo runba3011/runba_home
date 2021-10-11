@@ -2,6 +2,24 @@
   min-height:calc(100vh - 300px);
 }
 
+.single_user{
+  border:none;
+  background-color: transparent;
+}
+
+.user_icon_parent{
+  display:flex;
+}
+
+.user_icon_image{
+  height:30px;
+  border-radius: 5px;
+}
+
+.user_nickname{
+  margin:auto 5px;
+}
+
 .section_title{
   font-size:30px;
   text-align: center;
@@ -30,6 +48,10 @@
   border: 1px solid black;
   border-radius:  10px;
   padding:10px;;
+}
+
+.request_content{
+  padding-left:10px;
 }
 
 .control_buttons{
