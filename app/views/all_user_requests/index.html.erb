@@ -4,35 +4,26 @@
 
 <div class = "main_content_parent">
   <div class = "main_content">
-    <% if params[:user_id] != "index" %>
-      <p class = "section_title"><%= @user.nickname %>のリクエストボックス</p>
-      <% @user.all_user_requests.each do |request| %>
-        <%= link_to user_all_user_request_path(@user , request) do %>
-          <p><%= request.text %></p>
-        <% end %>
-      <% end %>
-    <% else %>
-      <p class = "section_title">ユーザー一覧</p>
-      <%= link_to "マイページへ" , user_all_user_request_path(current_user , "all") , class: "my_page_link" %>
-      <div class = "user_parent">
-        <% @users.each do |user| %>
-          <% if user != current_user %>
-            <%= link_to new_user_all_user_request_path(user) , class: "single_user_parent" do %>
-              <div class = "single_user">
-                <div class = "user_icon_image_parent">
-                  <% if user.icon_image.attached? %>
-                    <%= image_tag user.icon_image , class: "user_icon_image" %>
-                  <% else %>
-                    <%= image_tag "defaults/user_icon_image.png" , class: "user_icon_image" %>
-                  <% end %>
-                </div>
-                <p><%= user.nickname %></p>
+    <p class = "section_title">ユーザー一覧</p>
+    <%= link_to "マイページへ" , user_all_user_request_path(current_user , "all") , class: "my_page_link" %>
+    <div class = "user_parent">
+      <% @users.each do |user| %>
+        <% if user != current_user %>
+          <%= link_to new_user_all_user_request_path(user) , class: "single_user_parent" do %>
+            <div class = "single_user">
+              <div class = "user_icon_image_parent">
+                <% if user.icon_image.attached? %>
+                  <%= image_tag user.icon_image , class: "user_icon_image" %>
+                <% else %>
+                  <%= image_tag "defaults/user_icon_image.png" , class: "user_icon_image" %>
+                <% end %>
               </div>
-            <% end %>
+              <p><%= user.nickname %></p>
+            </div>
           <% end %>
         <% end %>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
 

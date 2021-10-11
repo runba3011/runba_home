@@ -3,11 +3,7 @@ class AllUserRequestsController < ApplicationController
   before_action :check_same_user , only: [:show , :update , :destroy]
 
   def index
-    if params[:user_id] != "index"
-      @user = User.find(params[:user_id])
-    else
-      @users = User.all
-    end
+    @users = User.all
   end
 
   def new
