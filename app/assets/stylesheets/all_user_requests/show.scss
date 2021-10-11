@@ -59,7 +59,6 @@
 .control_buttons{
   display:flex;
   justify-content: space-between;
-  padding-top:15px;
   width:380px;
 }
 
@@ -75,9 +74,22 @@
 }
 
 
-.control_button_link{
+.control_button_link {
   text-decoration: none;
-  color:black;
+  color: black;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.control_button_link:hover{
+  background-color:rgb(255, 255, 204);
+  transition:0.1s;
+}
+
+.control_button_link:active{
+  background-color:rgb(255, 255, 0);
+  transition:0.1s;
 }
 
 .fa-award{
