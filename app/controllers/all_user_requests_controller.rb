@@ -13,11 +13,10 @@ class AllUserRequestsController < ApplicationController
 
   def create
     @all_user_request = AllUserRequest.new(all_user_request_params)
-    binding.pry
+    @all_user_request.status = 0
     if @all_user_request.valid?
       @user = User.find(params[:user_id])
       if check_no_same_request(@user , @all_user_request)
-        @all_user_request.status = 0
         @all_user_request.save
       end
     else
@@ -62,7 +61,6 @@ class AllUserRequestsController < ApplicationController
 
   def check_same_user
     if params[:user_id].to_i != current_user.id
-      # binding.pry
       redirect_to user_all_user_requests_path("index")
     end
   end
