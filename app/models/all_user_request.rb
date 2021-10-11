@@ -1,4 +1,5 @@
 class AllUserRequest < ApplicationRecord
+  attr_accessor :time_difference
   with_options presence: true do 
     validates :text
     validates :is_open_name

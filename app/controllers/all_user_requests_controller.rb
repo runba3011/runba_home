@@ -1,3 +1,4 @@
+require "date"
 class AllUserRequestsController < ApplicationController
   before_action :check_login
   before_action :check_same_user , only: [:show , :update , :destroy]
@@ -39,6 +40,34 @@ class AllUserRequestsController < ApplicationController
       @requests = @user.all_user_requests.order("created_at ASC")
     else
       @requests = @user.all_user_requests
+    end
+
+    @requests.each do |request|
+      # time_difference
+      difference = Time.zone.now - request.created_at #この値が「秒」となる
+      minutes = difference / 60 
+      hours = minutes / 60
+      days = hours / 24  #これで何日前に投稿されたものかがわかった
+      weeks = days / 7
+      months = days / 30
+      years = days / 365
+      if minutes < 1
+        request.time_difference = difference.floor.to_s+"秒前"
+      elsif hours < 1
+        request.time_difference = minutes.floor.to_s+"分前"
+      elsif days < 1
+        request.time_difference = hours.floor.to_s+"時間前"
+      elsif weeks < 1
+        request.time_difference = days.floor.to_s+"日前"
+      elsif months < 1
+        request.time_difference = weeks.floor.to_s+"週間前"
+      elsif years < 1 && months <= 2
+        request.time_difference = months.floor.to_s+"ヶ月前"
+      else
+        request.time_difference = nil
+      end
+
+
     end
   end
 
