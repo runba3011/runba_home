@@ -6,50 +6,62 @@
 <div class = "main_content_parent">
   <div class = "main_content">
     <p class = "section_title"><%= @user.nickname %>のマイページ</p>
-    <% @user.all_user_requests.each do |request| %>
-      <div class = "single_request">
-        <% creater = User.find(request.request_creater_id) %>
+    <% if @user.all_user_requests.length != 0 %>
+      <% @user.all_user_requests.each do |request| %>
+        <div class = "single_request">
+          <% creater = User.find(request.request_creater_id) %>
 
 
-        <div class="single_user">
-          <div class = "user_icon_parent">
-            <% if @user.icon_image.attached? %>
-              <%= image_tag @user.icon_image , class: "user_icon_image" %>
-            <% else %>
-              <%= image_tag "defaults/user_icon_image.png" , class: "user_icon_image" %>
-            <% end %>
+          <div class="single_user">
+            <div class = "user_icon_parent">
+              <% if @user.icon_image.attached? %>
+                <%= image_tag @user.icon_image , class: "user_icon_image" %>
+              <% else %>
+                <%= image_tag "defaults/user_icon_image.png" , class: "user_icon_image" %>
+              <% end %>
+            </div>
+            <p class="user_nickname"><%= creater.nickname %></p>
           </div>
-          <p class="user_nickname"><%= creater.nickname %></p>
-        </div>
 
         <p class="request_content"><%= request.text %></p>
-        <% if request.user == current_user %>
-          <div class = "control_buttons">
-            <%= link_to "/users/#{request.user.id}/all_user_requests/#{request.id}/finished" , method: :put , class: "control_button_link" do %>
-              <i class="fas fa-award control_button_awesome"></i>完了
-            <% end %>
+          <% if request.user == current_user %>
+            <div class = "control_buttons">
+              <%= link_to "/users/#{request.user.id}/all_user_requests/#{request.id}/finished" , method: :put , class: "control_button_link" do %>
+                <i class="fas fa-award control_button_awesome"></i>完了
+              <% end %>
 
-            <%= link_to "/users/#{request.user.id}/all_user_requests/#{request.id}/received" , method: :put , class: "control_button_link" do %>
-              <i class="fas fa-check control_button_awesome"></i>採用する
-            <% end %>
+              <%= link_to "/users/#{request.user.id}/all_user_requests/#{request.id}/received" , method: :put , class: "control_button_link" do %>
+                <i class="fas fa-check control_button_awesome"></i>採用する
+              <% end %>
 
-            <%= link_to user_all_user_request_path(request.user , request) , method: :delete , class: "control_button_link" do %>
-              <i class="fas fa-times control_button_awesome"></i>この世から消し去る
-            <% end %>
-          </div>
-          <p class = "now_status">現在の状況：
-            <span class = <%= request.status %>>
-            <%  if request.status == nil %>
-              未処理
-            <% elsif request.status == "finished" %>
-              <i class="fas fa-award status_awesome"></i></i>完了！
-            <%elsif request.status == "received" %>
-              <i class="fas fa-check status_awesome"></i>採用！
-            <% end %>
-            </span>
-          </p>
+              <%= link_to user_all_user_request_path(request.user , request) , method: :delete , class: "control_button_link" do %>
+                <i class="fas fa-times control_button_awesome"></i>この世から消し去る
+              <% end %>
+            </div>
+            <p class = "now_status">現在の状況：
+              <span class = <%= request.status %>>
+              <%  if request.status == nil %>
+                  未処理
+              <% elsif request.status == "finished" %>
+                <i class="fas fa-award status_awesome"></i></i>完了！
+              <%elsif request.status == "received" %>
+                <i class="fas fa-check status_awesome"></i>採用！
+              <% end %>
+              </span>
+            </p>
         <% end %>
-      </div>
+        </div>
+      <% end %>
+    
+    
+    
+    
+    
+    
+    
+    
+    <% else %>
+      <p class = "no_requests">まだリクエストは届いていません！</p>
     <% end %>
   </div>
 </div>

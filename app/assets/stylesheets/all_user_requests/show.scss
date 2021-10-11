@@ -25,6 +25,8 @@
   text-align: center;
   padding-bottom:8px;
   margin:0 auto;
+  padding-right:0px;
+  padding-left:0px;
 }
 
 .section_title::before {
@@ -34,12 +36,12 @@
 }
 
 .section_title::after{
-  width:80%;
-  left:20px;
+  width:85%;
   position: relative;
   display: block;
   text-align: center;
   margin: auto;
+  left:0px;
 }
 
 .single_request{
@@ -106,4 +108,31 @@
 
 .control_button_awesome{
   margin-right:5px;
+}
+
+:root{
+  --right_color:green;
+  --left_color:skyblue;
+  --line_width: 6px;
+}
+
+.no_requests{
+  font-size:22px;
+  margin-top:50px;
+  min-width:380px;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  width:80%;
+  background-color: red;
+  border-right: var(--line_width) solid var(--right_color);
+  border-left:var(--line_width) solid var(--left_color);
+  text-align: center;
+  line-height: 50px;
+  background: linear-gradient(to right bottom, #ffffff30, #d3d3d3d4);
+}
+
+.no_requests::before , .no_requests::after{
+  display:block;
+  content: "";
+  height:var(--line_width);
+  background: linear-gradient(to right , var(--left_color) , var(--right_color)) ;
 }
