@@ -1,5 +1,16 @@
 <%# ここの内容はshow.scssから調整されている %>
-        <div class = "single_request">
+        <%  if request.status == 0 
+              status = nil
+              color_class = "white"
+            elsif request.status == 1
+              status = "received"
+              color_class = "green"
+            elsif request.status == 2
+              status = "finished"
+              color_class = "orange"
+            end
+        %>
+        <div class = "single_request <%= color_class %>">
           <div class="single_user">
             <div class = "user_icon_parent">
               <% if request.request_creater.icon_image.attached? %>
@@ -29,16 +40,6 @@
           <% end %>
 
           <p class = "now_status">現在の状況：
-
-            <%  if request.status == 0 
-                  status = nil
-                elsif request.status == 1
-                  status = "received"
-              elsif request.status == 2
-                  status = "finished"
-                end
-            %>
-
             <span class = <%= request.status %>>
             <%  if status == nil %>
                 未処理
@@ -49,7 +50,7 @@
             <% end %>
             </span>
             <% if request.time_difference != nil %>
-              <p style = "display:inline-block;padding-right:10px;">作成：<%= request.time_difference %></p>
+              <p style = "display:inline-block;padding-right:10px;min-width:150px;">作成：<%= request.time_difference %></p>
             <% else %>
               <p style = "display:inline-block;padding-right:10px;">作成日時：<%= l request.created_at %></p>
             <% end %>

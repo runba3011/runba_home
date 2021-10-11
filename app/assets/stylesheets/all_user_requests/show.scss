@@ -110,6 +110,21 @@
   color:white;
 }
 
+.white{
+  background-color: white;
+  transition:0.1s;
+}
+
+.green{
+  background-color:rgb(187, 255, 187);
+  transition:0.1s;
+}
+
+.orange{
+  background-color:rgb(255, 239, 210);
+  transition:0.1s;
+}
+
 .single_request{
   width:80%;
   margin: 10px auto 30px;
