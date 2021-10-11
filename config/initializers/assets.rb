@@ -73,6 +73,7 @@ Rails.application.config.assets.precompile += %w(
   all_user_requests/index
   all_user_requests/new
   all_user_requests/show
+  all_user_requests/create
 
   devise/common
   reset_field_with_errors

@@ -1,4 +1,11 @@
 <%= render partial: "shared/header/root_header" , locals: {title: "リクエストボックス"} %>
 <%= stylesheet_link_tag "all_user_requests/common" , media: "all" %>
-<p class = "section_title">送信が完了しました</p>
-<%= link_to "戻る" , user_all_user_requests_path("index") %>
+<%= stylesheet_link_tag "all_user_requests/create" , media: "all" %>
+
+<div class = "main_content_parent">
+  <div class = "main_content">
+    <p class = "section_title">送信が完了しました</p>
+    <%= link_to "まだまだ送る" , new_user_all_user_request_path(params[:user_id]) , class:"resend_link link" %>
+    <%= link_to "ユーザー一覧に戻る" , user_all_user_requests_path("index") , class: "back_link link" %>
+  </div>
+</div>
