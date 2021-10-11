@@ -1,5 +1,25 @@
-.main_content{
-  min-height:calc(100vh - 300px);
+.search_form {
+  margin: auto;
+  display: flex;
+  padding: 5px;
+  width: 80%;
+}
+
+.search_input{
+  width:100%;
+}
+
+.small_section_title{
+  text-align: center;
+}
+
+.search_submit{
+  padding:5px 20px;
+  margin-left:5px;
+  background-color:blue;
+  border:none;
+  color:white;
+  border-radius: 5px;
 }
 
 .single_user{
@@ -46,7 +66,7 @@
 
 .single_request{
   width:80%;
-  margin: 5px auto;
+  margin: 10px auto 30px;
   border: 1px solid black;
   border-radius:  10px;
   padding:10px;;

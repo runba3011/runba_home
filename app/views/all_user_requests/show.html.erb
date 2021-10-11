@@ -7,14 +7,15 @@
   <div class = "main_content">
     <p class = "section_title"><%= @user.nickname %>のマイページ</p>
     <% if @user.all_user_requests.length != 0 %>
-      <%= form_with url:search_user_all_user_requests_path(params[:user_id]) , local: true , method: :get do |f| %>
-        <%= f.text_field :keyword , placeholder: "リクエストを検索するにはこれを使用してください" %>
-        <%= f.submit "検索" %>
+      <%= form_with url:search_user_all_user_requests_path(params[:user_id]) , local: true , method: :get , class: "search_form" do |f| %>
+        <%= f.text_field :keyword , placeholder: "リクエストを検索するにはこれを使用してください" , class: "search_input" %>
+        <%= f.submit "検索" , class: "search_submit" %>
       <% end %>
       <% if @searched_requests != nil %>
+        <p class = "small_section_title">検索結果</p>
         <%= render partial: "request" , collection: @searched_requests %>
+        <p class = "small_section_title">全てのリクエスト</p>
       <% end %>
-      ここまで検索結果
       <%= render partial: "request" , collection: @user.all_user_requests %>
     <% else %>
       <p class = "no_requests">まだリクエストは届いていません！</p>
