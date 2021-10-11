@@ -9,18 +9,15 @@
     <% if @user.all_user_requests.length != 0 %>
       <% @user.all_user_requests.each do |request| %>
         <div class = "single_request">
-          <% creater = User.find(request.request_creater_id) %>
-
-
           <div class="single_user">
             <div class = "user_icon_parent">
-              <% if @user.icon_image.attached? %>
-                <%= image_tag @user.icon_image , class: "user_icon_image" %>
+              <% if request.request_creater.icon_image.attached? %>
+                <%= image_tag request.request_creater.icon_image , class: "user_icon_image" %>
               <% else %>
                 <%= image_tag "defaults/user_icon_image.png" , class: "user_icon_image" %>
               <% end %>
             </div>
-            <p class="user_nickname"><%= creater.nickname %></p>
+            <p class="user_nickname"><%= request.request_creater.nickname %></p>
           </div>
 
         <p class="request_content"><%= request.text %></p>

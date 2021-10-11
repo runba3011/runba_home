@@ -8,4 +8,5 @@ class AllUserRequest < ApplicationRecord
   end
 
   belongs_to :user
+  belongs_to :request_creater , class_name: "User"
 end
