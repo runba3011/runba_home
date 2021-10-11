@@ -28,6 +28,18 @@ class AllUserRequestsController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     # @request = AllUserRequest.find_by(id: params[:id] , user_id: params[:user_id])
+    # binding.pry
+    if params[:id] == "status_up"
+      @requests = @user.all_user_requests.order("status DESC")
+    elsif params[:id] == "status_down"
+      @requests = @user.all_user_requests.order("status ASC")
+    elsif params[:id] == "created_at_up"
+      @requests = @user.all_user_requests.order("created_at DESC")
+    elsif params[:id] == "created_at_down"
+      @requests = @user.all_user_requests.order("created_at ASC")
+    else
+      @requests = @user.all_user_requests
+    end
   end
 
   def destroy
