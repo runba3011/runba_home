@@ -11,6 +11,24 @@
         <%= f.text_field :keyword , placeholder: "リクエストを検索するにはこれを使用してください" , class: "search_input" %>
         <%= f.submit "検索" , class: "search_submit" %>
       <% end %>
+
+      <div class = "sort_buttons">
+        <p class = "sort_title">並び替え</p>
+        <div>
+          <div class = "status_sort_buttons">
+            <p class = "sort_small_title">進行状況別</p>
+            <%= link_to "進んでいるものを上に" , user_all_user_request_path(params[:user_id] , "status_up") , class: "common_simple_button status_up_to_down" %><br>
+            <%= link_to "未対応のものを上に" , user_all_user_request_path(params[:user_id] , "status_down") , class: "common_simple_button status_down_to_up" %>
+          </div>
+          
+          <div class = "created_at_sort_buttons">
+            <p class = "sort_small_title">作成日時順</p>
+            <%= link_to "新しい順" , user_all_user_request_path(params[:user_id] , "created_at_up") , class: "common_simple_button created_at_up_to_down" %><br>
+            <%= link_to "古い順" , user_all_user_request_path(params[:user_id] , "created_at_down") , class: "common_simple_button created_at_down_to_up" %>
+          </div>
+        </div>
+      </div>
+
       <% if @searched_requests != nil %>
         <p class = "small_section_title">検索結果</p>
         <%= render partial: "request" , collection: @searched_requests %>

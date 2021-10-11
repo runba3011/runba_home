@@ -64,6 +64,52 @@
   left:0px;
 }
 
+.sort_buttons{
+  text-align: center;
+  margin-top:30px;
+}
+
+.sort_title{
+  font-size:30px;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.common_simple_button{
+  margin-bottom:10px;
+  width:300px;
+  line-height: 40px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.created_at_sort_buttons{
+  margin-top:10px;
+}
+
+.sort_small_title{
+  font-size:20px;
+}
+
+.status_up_to_down{
+  background-color:rgb(228, 83, 0);
+  color:white;
+}
+
+.status_down_to_up{
+  background-color: rgb(167, 0, 0);
+  color:white;
+}
+
+.created_at_up_to_down{
+  background-color: rgb(0, 102, 219);
+  color:white;
+}
+
+.created_at_down_to_up{
+  background-color: rgb(3, 3, 97);
+  color:white;
+}
+
 .single_request{
   width:80%;
   margin: 10px auto 30px;
