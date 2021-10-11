@@ -48,11 +48,11 @@
               <i class="fas fa-check status_awesome"></i>採用！
             <% end %>
             </span>
-            <p>リクエストID：<%= request.id %></p>
             <% if request.time_difference != nil %>
-              <p>作成：<%= request.time_difference %></p>
+              <p style = "display:inline-block;padding-right:10px;">作成：<%= request.time_difference %></p>
             <% else %>
-              <p>作成日時：<%= l request.created_at %></p>
+              <p style = "display:inline-block;padding-right:10px;">作成日時：<%= l request.created_at %></p>
             <% end %>
+            <p style = "display:inline-block;">リクエストID：<%= request.id %></p>
           </p>
       </div>
