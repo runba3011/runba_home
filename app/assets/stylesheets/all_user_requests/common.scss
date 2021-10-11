@@ -1,3 +1,25 @@
 header{
   background:linear-gradient(to right bottom, #00830a, #004804);
 }
+
+.section_title{
+  position:relative;
+  margin-bottom:30px;
+}
+
+.section_title::before {
+  content: "";
+  /* border-bottom: 3px solid red; */
+  width: 90%;
+  height: 0px;
+  display: inline-block;
+  position: absolute;
+  bottom: 0px;
+  border-radius: 3px;
+  height: 5px;
+  --color1 : red;
+  --color2: #3a0000;
+  --color3: blue ;
+  --color4: rgb(255, 136, 0);
+  background: linear-gradient(to right , var(--color1) 10% , var(--color2) 20% , var(--color2) 45%, var(--color3) 60% , var(--color3) 80% , var(--color4) 90%);
+}

@@ -1,5 +1,6 @@
 <%= render partial: "shared/header/root_header" , locals: {title: "リクエストボックス"} %>
 <%= stylesheet_link_tag "all_user_requests/common" , media: "all" %>
+<%= stylesheet_link_tag "all_user_requests/index" , media: "all" %>
 
 <div class = "main_content_parent">
   <div class = "main_content">
@@ -12,14 +13,25 @@
       <% end %>
     <% else %>
       <p class = "section_title">ユーザー一覧</p>
-      <% @users.each do |user| %>
-        <% if user != current_user %>
-          <%= link_to new_user_all_user_request_path(user) do %>
-            <p><%= user.nickname %></p>
+      <%= link_to "マイページへ" , user_all_user_request_path(current_user , "all") , class: "my_page_link" %>
+      <div class = "user_parent">
+        <% @users.each do |user| %>
+          <% if user != current_user %>
+            <%= link_to new_user_all_user_request_path(user) , class: "single_user_parent" do %>
+              <div class = "single_user">
+                <div class = "user_icon_image_parent">
+                  <% if user.icon_image.attached? %>
+                    <%= image_tag user.icon_image , class: "user_icon_image" %>
+                  <% else %>
+                    <%= image_tag "defaults/user_icon_image.png" , class: "user_icon_image" %>
+                  <% end %>
+                </div>
+                <p><%= user.nickname %></p>
+              </div>
+            <% end %>
           <% end %>
         <% end %>
-      <% end %>
-      <%= link_to "マイページへ" , user_all_user_request_path(current_user , "all") %>
+      </div>
     <% end %>
   </div>
 </div>

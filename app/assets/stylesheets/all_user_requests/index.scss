@@ -1,2 +1,66 @@
 
 
+.user_parent{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.single_user_parent{
+  width:45%;
+  color:black;
+  text-decoration: none;
+  font-size:20px;
+}
+
+.single_user{
+  width:100%;
+  background-color:red;
+  padding:10px;
+  border:1px solid black;
+  background-color:rgba(255, 187, 0, 0.384);
+  display:flex;
+  align-items: center;
+  margin:3px auto;
+  border-radius: 5px;;
+}
+
+.user_icon_image_parent{
+  width:30%;
+  height:60px;
+  display:flex;
+}
+
+.user_icon_image{
+  height:100%;
+  max-width:120px;
+  margin:auto;
+  border-radius: 10px;
+}
+
+:root{
+  --right_color: #4dff4d;
+  --left_color: skyblue;
+}
+
+.my_page_link{
+  margin:0 auto;
+  line-height:50px;
+  width:300px;
+  font-size:25px;
+  text-align: center;
+  display:block;
+  text-decoration: none;
+  color:black;
+  border-left:3px solid var(--right_color);
+  border-right:3px solid var(--left_color);
+  margin-bottom:30px;
+}
+
+.my_page_link::before , .my_page_link::after{
+  content: "";
+  display: block;
+  width:100%;
+  height:3px;
+  background:linear-gradient(to right , var(--right_color) , var(--left_color));
+}
