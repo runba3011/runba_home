@@ -32,12 +32,20 @@ class AllUserRequestsController < ApplicationController
     # binding.pry
     if params[:id] == "status_up"
       @requests = @user.all_user_requests.order("status DESC")
+      @sort_type = "進んでいる順"
+
     elsif params[:id] == "status_down"
       @requests = @user.all_user_requests.order("status ASC")
+      @sort_type = "進んでいない順"
+
     elsif params[:id] == "created_at_up"
       @requests = @user.all_user_requests.order("created_at DESC")
+      @sort_type = "新しい順"
+
     elsif params[:id] == "created_at_down"
       @requests = @user.all_user_requests.order("created_at ASC")
+      @sort_type = "古い順"
+      
     else
       @requests = @user.all_user_requests
     end
