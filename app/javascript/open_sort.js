@@ -19,9 +19,9 @@ jQuery(function($){
         }
       })
 
-      // 同じページで使用するスクリプトなので、
-      // あまりの長文を入力された時にスクロールバーや全文表示ボタンを
-      // そのオブジェクトにのみ表示するスクリプトをここに作成しておく
+      /* 同じページで使用するスクリプトなので、
+        あまりの長文を入力された時にスクロールバーや全文表示ボタンを
+        そのオブジェクトにのみ表示するスクリプトをここに作成しておく */
 
       const $text = $(".request_content");
       $text.each(function(index , element){
@@ -30,14 +30,12 @@ jQuery(function($){
         if($element.height() >= maxHeight){
           console.log($element.height());
           $element.css({
-            "overflow-y": "scroll" , 
             "max-height": `${maxHeight}px`
           });
           $element.next().css("display" , "block");
         }
         else{
           $element.css({
-            "overflow-y": "inherit" , 
             "max-height": "inherit"
           });
         }
