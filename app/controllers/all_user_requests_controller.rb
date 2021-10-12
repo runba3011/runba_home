@@ -45,7 +45,7 @@ class AllUserRequestsController < ApplicationController
     elsif params[:id] == "created_at_down"
       @requests = @user.all_user_requests.order("created_at ASC")
       @sort_type = "古い順"
-      
+
     else
       @requests = @user.all_user_requests
     end
@@ -82,7 +82,8 @@ class AllUserRequestsController < ApplicationController
   def destroy
     @all_user_request = AllUserRequest.find_by(id: params[:id] , user_id: params[:user_id])
     @all_user_request.destroy
-    redirect_to user_all_user_request_path(current_user , "all")
+    # render :show
+    ActionCable.server.broadcast 'all_user_request_channel' , request: @all_user_request , control_type: "destroy"
   end
 
   def update
@@ -93,7 +94,7 @@ class AllUserRequestsController < ApplicationController
       @all_user_request.status = 1
     end
     @all_user_request.save
-    ActionCable.server.broadcast 'all_user_request_channel' , request: @all_user_request
+    ActionCable.server.broadcast 'all_user_request_channel' , request: @all_user_request , control_type: "update"
   end
 
   def search
