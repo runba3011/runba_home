@@ -39,8 +39,8 @@
             </div>
           <% end %>
 
-          <p class = "now_status">現在の状況：
-            <span class = <%= request.status %>>
+          <p class = "now_status now_status_<%= request.id %>">現在の状況：
+          
             <%  if status == nil %>
                 未処理
             <% elsif status == "finished" %>
@@ -48,7 +48,7 @@
             <%elsif status == "received" %>
               <i class="fas fa-check status_awesome"></i>採用！
             <% end %>
-            </span>
+            
             <% if request.time_difference != nil %>
               <p style = "display:inline-block;padding-right:10px;min-width:150px;">作成：<%= request.time_difference %></p>
             <% else %>
