@@ -42,6 +42,11 @@ consumer.subscriptions.create("AllUserRequestChannel", {
         $request_object.animate({opacity: 0} , 500 , function(){
           $request_object.remove();
         })
+
+        // 消すオブジェクトの一番上までスクロールする
+        const scrollHeight = $request_object.offset().top  - 150;
+        console.log(scrollHeight)
+        $('body , html').animate({scrollTop:scrollHeight} , 300)
       }
     })
   }
