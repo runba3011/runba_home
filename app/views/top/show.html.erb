@@ -25,7 +25,7 @@
       <%= render partial: "explain_templete" , locals: {title:"スキルルーム", icon_image:"top/skill.png" , link:skill_room_index_path, explain:@programing_explain, templete_name:"explain_skill_room", title_margin_top:"100px" , scroll_name: "skill_room_position"} %>
       <%= render partial: "explain_templete" , locals: {title:"チャットルーム", icon_image:"top/chat.png" , link:groups_path, explain:@group_explain, templete_name:"explain_group", title_margin_top:"100px" , scroll_name: "group_position"} %>
       <%= render partial: "explain_templete" , locals: {title:"ルンバ氏直通意見箱", icon_image:"top/mail.png" , link:new_request_path, explain:@request_explain, templete_name:"explain_request", title_margin_top:"100px" , scroll_name: "request_position"} %>
-      <%= render partial: "explain_templete" , locals: {title:"リクエストボックス", icon_image:"top/post.png" , link:user_all_user_requests_path("index"), explain:@request_explain, templete_name:"explain_request", title_margin_top:"100px" , scroll_name: "all_user_request_position"} %>
+      <%= render partial: "explain_templete" , locals: {title:"リクエストボックス", icon_image:"top/post.png" , link:user_all_user_requests_path("index"), explain:@request_explain, templete_name:"explain_all_user_request", title_margin_top:"100px" , scroll_name: "all_user_request_position"} %>
     </div>
   </div>
 </div>
