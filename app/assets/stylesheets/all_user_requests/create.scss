@@ -12,7 +12,6 @@
   font-size:22px;
   margin:auto;
   margin-top:50px;
-  min-width:380px;
   font-family: 'M PLUS Rounded 1c', sans-serif;
   display: block;
   width:80%;
@@ -23,6 +22,7 @@
   line-height: 50px;
   background: linear-gradient(to right bottom, #ffffff30, #d3d3d3d4);
   transition:0.2s;
+
 }
 
 .link::before , .link::after{
@@ -44,4 +44,10 @@
 .link:hover{
   background:rgb(216, 216, 216);
   transition:0.1s;
+}
+
+@media(max-width:400px){
+  .link{
+    width:90%;
+  }
 }
