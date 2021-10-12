@@ -69,3 +69,22 @@ header{
   margin:auto;
   border-radius: 10px;
 }
+
+
+@media(max-width:1000px){
+  .single_user_parent{
+    width:80%;
+  }
+}
+
+@media(max-width:500px){
+  .single_user_parent{
+    width:100%;
+  }
+}
+
+@media(max-width:400px){
+  .single_user{
+    flex-direction: column;
+  }
+}
