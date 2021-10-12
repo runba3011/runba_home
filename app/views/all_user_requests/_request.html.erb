@@ -38,6 +38,10 @@
                 <i class="fas fa-check control_button_awesome"></i>採用する
               <% end %>
 
+              <%= link_to "/users/#{request.user.id}/all_user_requests/#{request.id}/untreated" , method: :put , class: "control_button_link" do %>
+                <i class="fas fa-arrow-alt-circle-left control_button_awesome"></i>元に戻す
+              <% end %>
+
               <%= link_to user_all_user_request_path(request.user , request) , method: :delete , class: "control_button_link" do %>
                 <i class="fas fa-times control_button_awesome"></i>この世から消し去る
               <% end %>

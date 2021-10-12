@@ -21,17 +21,17 @@ consumer.subscriptions.create("AllUserRequestChannel", {
         if(data.request.status == 2){
           $request_object.addClass("finished_color");
           $status_text.text("");
-          $status_text.prepend('現在の状況：<i class="fas fa-award status_awesome"></i></i>完了！');
+          $status_text.prepend('現在の状況<span class = "now_status_detail"><i class="fas fa-award status_awesome"></i></i>完了！</span>');
         }
         else if(data.request.status == 1){
           $request_object.addClass("received_color");
           $status_text.text('');
-          $status_text.prepend('現在の状況：<i class="fas fa-check status_awesome"></i>採用！');
+          $status_text.prepend('現在の状況<span class = "now_status_detail"><i class="fas fa-check status_awesome"></i>採用！</span>');
         }
         else if(data.request.status == 0){
           $request_object.addClass("untreated_color");
           $status_text.text("");
-          $status_text.prepend('現在の状況：<i class="fas fa-check status_awesome"></i>採用！');
+          $status_text.prepend('現在の状況<span class = "now_status_detail"><i class="fas fa-check status_awesome"></i>採用！</span>');
         }
       }
       else if (data.control_type == "destroy"){
