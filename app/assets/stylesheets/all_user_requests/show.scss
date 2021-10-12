@@ -284,3 +284,28 @@
   box-shadow: none;
   transition:0.1s;
 }
+
+.br_less_than_400px{
+  display:none;
+}
+
+@media(max-width:400px){
+  .no_requests{
+    width:95%;
+    min-width:inherit;
+    font-size:18px;
+    line-height: inherit;
+  }
+
+  .br_less_than_400px{
+    display:inherit;
+  }
+
+  .common_simple_button{
+    width:90%;
+  }
+
+  .section_title{
+    font-size:20px;
+  }
+}
