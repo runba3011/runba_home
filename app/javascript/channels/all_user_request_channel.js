@@ -31,7 +31,7 @@ consumer.subscriptions.create("AllUserRequestChannel", {
         else if(data.request.status == 0){
           $request_object.addClass("untreated_color");
           $status_text.text("");
-          $status_text.prepend('現在の状況<span class = "now_status_detail"><i class="fas fa-check status_awesome"></i>採用！</span>');
+          $status_text.prepend('現在の状況<span class = "now_status_detail">未処理</span>');
         }
       }
       else if (data.control_type == "destroy"){
