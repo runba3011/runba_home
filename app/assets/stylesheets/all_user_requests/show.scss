@@ -295,6 +295,10 @@
 }
 
 @media(max-width:800px){
+  .section_title{
+    font-size:25px;
+  }
+
   .single_request , .single_user{
     text-align: center;
   }
@@ -316,6 +320,10 @@
 }
 
 @media(max-width:500px){
+  .section_title{
+    font-size:20px;
+  }
+
   .control_button_link{
     width: 100%;
   }
