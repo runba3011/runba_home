@@ -266,3 +266,21 @@
   height:var(--line_width);
   background: linear-gradient(to right , var(--left_color) , var(--right_color)) ;
 }
+
+.reload_button {
+  margin: auto;
+  display: block;
+  text-align: center;
+  margin: 30px auto;
+  background: linear-gradient(to right bottom , #0909df , #00009d);
+  box-shadow: 0 5px 0 0 black;
+  position:relative;
+  top:0px;
+  transition:0.1s;
+}
+
+.reload_button:active{
+  top:5px;
+  box-shadow: none;
+  transition:0.1s;
+}

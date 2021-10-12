@@ -33,15 +33,18 @@
       <p class = "common_simple_button open_sort_button">並び替えを使用する</p>
 
       <% if @searched_requests != nil %>
-        <p class = "small_section_title">検索結果</p>
-        <%= render partial: "request" , collection: @searched_requests %>
-        <p class = "small_section_title second_small_section_title">全てのリクエスト</p>
+        <% if @searched_requests.length >= 1 %>
+          <p class = "small_section_title">検索結果</p>
+          <%= render partial: "request" , collection: @searched_requests %>
+          <p class = "small_section_title second_small_section_title">全てのリクエスト</p>
+        <% end %>
       <% elsif @sort_type != nil %>
         <p class = "small_section_title"><%= @sort_type %></p>
       <% end %>
       <%= render partial: "request" , collection: @requests %>
     <% else %>
       <p class = "no_requests">まだリクエストは届いていません！</p>
+      <%= link_to "更新する" , user_all_user_request_path(params[:user_id] , "all") , class: "reload_button common_simple_button" %>
     <% end %>
   </div>
 </div>
