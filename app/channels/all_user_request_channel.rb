@@ -1,6 +1,6 @@
 class AllUserRequestChannel < ApplicationCable::Channel
   def subscribed
-    # stream_from "some_channel"
+    stream_from "all_user_request_channel"
   end
 
   def unsubscribed

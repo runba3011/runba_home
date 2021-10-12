@@ -114,19 +114,19 @@
   color:white;
 }
 
-.white{
+.untreated_color{
   background-color: white;
-  transition:0.1s;
+  transition:0.5s;
 }
 
-.green{
+.received_color{
   background-color:rgb(187, 255, 187);
-  transition:0.1s;
+  transition:0.5s;
 }
 
-.orange{
+.finished_color{
   background-color:rgb(255, 239, 210);
-  transition:0.1s;
+  transition:0.5s;
 }
 
 .single_request{

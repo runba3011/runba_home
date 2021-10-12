@@ -1,16 +1,16 @@
 <%# ここの内容はshow.scssから調整されている %>
         <%  if request.status == 0 
               status = nil
-              color_class = "white"
+              color_class = "untreated_color"
             elsif request.status == 1
               status = "received"
-              color_class = "green"
+              color_class = "received_color"
             elsif request.status == 2
               status = "finished"
-              color_class = "orange"
+              color_class = "finished_color"
             end
         %>
-        <div class = "single_request <%= color_class %>">
+        <div class = "single_request <%= color_class %> request_class_<%= request.id %>">
           <div class="single_user">
             <div class = "user_icon_parent">
               <% if request.request_creater.icon_image.attached? %>

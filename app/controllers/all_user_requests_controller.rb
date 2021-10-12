@@ -66,9 +66,9 @@ class AllUserRequestsController < ApplicationController
       else
         request.time_difference = nil
       end
-
-
     end
+
+    @request
   end
 
   def destroy
@@ -85,7 +85,7 @@ class AllUserRequestsController < ApplicationController
       @all_user_request.status = 1
     end
     @all_user_request.save
-    redirect_to user_all_user_request_path(current_user , "all")
+    ActionCable.server.broadcast 'all_user_request_channel' , request: @all_user_request
   end
 
   def search

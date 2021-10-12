@@ -10,6 +10,22 @@ consumer.subscriptions.create("AllUserRequestChannel", {
   },
 
   received(data) {
-    // Called when there's incoming data on the websocket for this channel
+    console.log("データを受け取った");
+    jQuery(function($){
+
+      const $request_object = $(`.request_class_${data.request.id}`);
+      console.log($request_object.length)
+      
+      $request_object.removeClass("finished_color received_color untreated_color");
+      if(data.request.status == 2){
+        $request_object.addClass("finished_color");
+      }
+      else if(data.request.status == 1){
+        $request_object.addClass("received_color");
+      }
+      else if(data.request.status == 0){
+        $request_object.addClass("untreated_color");
+      }
+    })
   }
 });
