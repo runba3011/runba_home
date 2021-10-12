@@ -162,8 +162,16 @@
 
 .request_content {
   padding-left: 10px;
-  max-height: 500px;
-  overflow: scroll;
+  overflow-y: scroll;
+  max-height:500px;
+  overflow-wrap: anywhere;
+}
+
+.open_all_text_button {
+  margin: 10px auto;
+  display: none;
+  text-align: center;
+  background: linear-gradient(to right bottom, #1111c9 , #00006a);
 }
 
 .control_buttons{
