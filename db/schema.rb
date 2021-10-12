@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2021_10_07_092645) do
   create_table "all_user_requests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "request_creater_id", null: false
     t.bigint "user_id", null: false
-    t.string "text", null: false
+    t.text "text", size: :medium, null: false
     t.string "is_open_name", null: false
     t.integer "status"
     t.datetime "created_at", precision: 6, null: false

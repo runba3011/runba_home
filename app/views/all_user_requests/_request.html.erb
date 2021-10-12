@@ -1,16 +1,18 @@
 <%# ここの内容はshow.scssから調整されている %>
         <%  if request.status == 0 
               status = nil
-              color_class = "white"
+              color_class = "untreated_color"
             elsif request.status == 1
               status = "received"
-              color_class = "green"
+              color_class = "received_color"
             elsif request.status == 2
               status = "finished"
-              color_class = "orange"
+              color_class = "finished_color"
             end
         %>
-        <div class = "single_request <%= color_class %>">
+        <div class = "single_request_parent">
+
+        <div class = "single_request <%= color_class %> request_class_<%= request.id %>">
           <div class="single_user">
             <div class = "user_icon_parent">
               <% if request.request_creater.icon_image.attached? %>
@@ -22,7 +24,10 @@
             <p class="user_nickname"><%= request.request_creater.nickname %></p>
           </div>
 
+        <%# request_contentとopen_all_text_buttonの順番を変えるとopen_sort内の処理に影響が出る、順番は極力変えない %>
         <p class="request_content"><%= request.text %></p>
+        <p class = "common_simple_button open_all_text_button">全文を見る</p>
+
           <% if request.user == current_user %>
             <div class = "control_buttons">
               <%= link_to "/users/#{request.user.id}/all_user_requests/#{request.id}/finished" , method: :put , class: "control_button_link" do %>
@@ -39,8 +44,8 @@
             </div>
           <% end %>
 
-          <p class = "now_status">現在の状況：
-            <span class = <%= request.status %>>
+          <p class = "now_status now_status_<%= request.id %>">現在の状況：
+          
             <%  if status == nil %>
                 未処理
             <% elsif status == "finished" %>
@@ -48,7 +53,7 @@
             <%elsif status == "received" %>
               <i class="fas fa-check status_awesome"></i>採用！
             <% end %>
-            </span>
+            
             <% if request.time_difference != nil %>
               <p style = "display:inline-block;padding-right:10px;min-width:150px;">作成：<%= request.time_difference %></p>
             <% else %>
@@ -57,3 +62,4 @@
             <p style = "display:inline-block;">リクエストID：<%= request.id %></p>
           </p>
       </div>
+        </div>
