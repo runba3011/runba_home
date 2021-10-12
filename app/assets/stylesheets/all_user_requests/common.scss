@@ -61,6 +61,7 @@ header{
   width:30%;
   height:60px;
   display:flex;
+  justify-content: center;
 }
 
 .user_icon_image{
@@ -68,4 +69,23 @@ header{
   max-width:120px;
   margin:auto;
   border-radius: 10px;
+}
+
+
+@media(max-width:1000px){
+  .single_user_parent{
+    width:80%;
+  }
+}
+
+@media(max-width:500px){
+  .single_user_parent{
+    width:100%;
+  }
+}
+
+@media(max-width:400px){
+  .single_user{
+    flex-direction: column;
+  }
 }

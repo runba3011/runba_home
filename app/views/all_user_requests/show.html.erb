@@ -43,7 +43,7 @@
       <% end %>
       <%= render partial: "request" , collection: @requests %>
     <% else %>
-      <p class = "no_requests">まだリクエストは届いていません！</p>
+      <p class = "no_requests">まだリクエストは<br class = "br_less_than_400px">届いていません！</p>
       <%= link_to "更新する" , user_all_user_request_path(params[:user_id] , "all") , class: "reload_button common_simple_button" %>
     <% end %>
   </div>

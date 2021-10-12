@@ -38,22 +38,26 @@
                 <i class="fas fa-check control_button_awesome"></i>採用する
               <% end %>
 
+              <%= link_to "/users/#{request.user.id}/all_user_requests/#{request.id}/untreated" , method: :put , class: "control_button_link" do %>
+                <i class="fas fa-arrow-alt-circle-left control_button_awesome"></i>元に戻す
+              <% end %>
+
               <%= link_to user_all_user_request_path(request.user , request) , method: :delete , class: "control_button_link" do %>
                 <i class="fas fa-times control_button_awesome"></i>この世から消し去る
               <% end %>
             </div>
           <% end %>
 
-          <p class = "now_status now_status_<%= request.id %>">現在の状況：
-          
+          <p class = "now_status now_status_<%= request.id %>">現在の状況
+          <span class = "now_status_detail">
             <%  if status == nil %>
-                未処理
+              未処理
             <% elsif status == "finished" %>
               <i class="fas fa-award status_awesome"></i></i>完了！
             <%elsif status == "received" %>
               <i class="fas fa-check status_awesome"></i>採用！
             <% end %>
-            
+          </span>
             <% if request.time_difference != nil %>
               <p style = "display:inline-block;padding-right:10px;min-width:150px;">作成：<%= request.time_difference %></p>
             <% else %>

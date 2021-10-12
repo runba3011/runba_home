@@ -92,6 +92,8 @@ class AllUserRequestsController < ApplicationController
       @all_user_request.status = 2
     elsif params[:controll_id] == "received"
       @all_user_request.status = 1
+    elsif params[:controll_id] == "untreated"
+      @all_user_request.status = 0
     end
     @all_user_request.save
     ActionCable.server.broadcast 'all_user_request_channel' , request: @all_user_request , control_type: "update"

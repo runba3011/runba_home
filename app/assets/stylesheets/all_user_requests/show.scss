@@ -104,6 +104,10 @@
   color:white;
 }
 
+.now_status_detail{
+  padding-left:10px;
+}
+
 .created_at_up_to_down{
   background-color: rgb(0, 102, 219);
   color:white;
@@ -162,7 +166,7 @@
 
 .request_content {
   padding-left: 10px;
-  overflow-y: scroll;
+  overflow-y: hidden;
   max-height:500px;
   overflow-wrap: anywhere;
 }
@@ -177,7 +181,8 @@
 .control_buttons{
   display:flex;
   justify-content: space-between;
-  width:380px;
+  padding-top:15px;
+  
 }
 
 .finished {
@@ -283,4 +288,69 @@
   top:5px;
   box-shadow: none;
   transition:0.1s;
+}
+
+.br_less_than_400px{
+  display:none;
+}
+
+@media(max-width:800px){
+  .section_title{
+    font-size:25px;
+  }
+
+  .single_request , .single_user{
+    text-align: center;
+  }
+
+  .single_user{
+    justify-content: center;
+  }
+
+  .control_buttons{
+    flex-wrap: wrap;
+    min-width:inherit;
+    width:100%;
+  }
+
+  .control_button_link{
+    width:50%;
+    padding:5px 0px;
+  }
+}
+
+@media(max-width:500px){
+  .section_title{
+    font-size:20px;
+  }
+
+  .control_button_link{
+    width: 100%;
+  }
+}
+
+@media(max-width:400px){
+  .no_requests{
+    width:95%;
+    min-width:inherit;
+    font-size:18px;
+    line-height: inherit;
+  }
+
+  .br_less_than_400px{
+    display:inherit;
+  }
+
+  .common_simple_button{
+    width:90%;
+  }
+
+  .section_title{
+    font-size:20px;
+  }
+
+  .now_status_detail{
+    display:block;
+    padding:0px;
+  }
 }
