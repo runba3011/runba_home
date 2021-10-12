@@ -65,3 +65,14 @@
 .request_checkbox{
 }
 
+@media(max-width:600px){
+  .single_user_parent{
+    width: 95%;
+  }
+}
+
+@media(max-width:400px){
+  .section_title{
+    font-size:20px;
+  }
+} 
