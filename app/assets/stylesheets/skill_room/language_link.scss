@@ -1,4 +1,4 @@
-.language_links{
+._language_links{
   margin:auto;
   width:50%;
   padding:20px;
@@ -6,7 +6,7 @@
   transition:1s;
 }
 
-.language_links:hover{
+._language_links:hover{
   transition:0.1s;
   background-color: rgb(255, 255, 212);
 }
@@ -80,5 +80,19 @@
     max-height:100px;
     overflow: scroll;
     padding:10px;
+  }
+}
+
+@media(max-width:650px){
+  ._language_links{
+    width:100%;
+  }
+
+  ._language_image{
+    width:30%;
+  }
+
+  ._language_a{
+    flex-direction: inherit;
   }
 }

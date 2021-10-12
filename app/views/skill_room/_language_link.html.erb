@@ -3,7 +3,7 @@
 <%= stylesheet_link_tag "skill_room/language_link" , :media => "all" %>
 
 <% languages.each do |language| %>
-  <div class = "language_links">
+  <div class = "_language_links">
     <%= link_to language.link , class: "_language_a" do %>
       <% if language.image != nil %>
         <%= image_tag language.image , class: "_language_image" %>
