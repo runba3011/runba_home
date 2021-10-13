@@ -9,15 +9,44 @@
   
 </div>
 
-<p class = "small_small_section_title">使用方法</p>
+<p class = "small_small_section_title">リクエスト作成方法</p>
 <div class = "individual_explain">
-  <span class = "strong yellow_under_line" style = "display:inline-block;">リクエストを作成しよう</span><br>
+  <span class = "strong yellow_under_line" style = "display:inline-block;">送信先のユーザーを選択しよう</span><br>
   　このページから、リクエストを送信したいユーザーを選択しよう。棒バトチャレンジや動画視聴ページについているコメントからユーザーのページに飛び、その中にあるリンクからリクエストページへ移動することもできる。
   <%= image_tag "top/show/all_user_request_explain_1.png" , class: "explain_image" %>
+  <%= image_tag "top/show/all_user_request_user_page_button.png" , class: "explain_image" %>
 
-  <span class = "strong yellow_under_line" style = "display:inline-block;">届いたリクエストを確認しよう</span><br>
-  　下の方にある「ルームを作成する」を押して、グループ名と説明書きを記入し、招待するユーザーを選択して「作成する」を選択すると、招待したユーザーと自分のグループを作成することができます。
-  <%= image_tag "top/show/group_explain1.png" , class: "explain_image" %>
+  <span class = "strong yellow_under_line" style = "display:inline-block;margin-top:50px;">リクエストを入力しよう</span><br>
+  　このページに移動したら、リクエストの内容を入力し、送信ボタンを押そう。このとき、「〇〇から名前が見えるようにする」のチェックを外したりつけたりすると、リクエストを受け取った人から自分の名前が見える用にするかしないかを決めることができる。
+  <%= image_tag "top/show/all_user_request_request_page.png" , class: "explain_image" %>
+
+  <span class = "strong yellow_under_line" style = "display:inline-block;margin-top:50px;">まだ送るかを選択しよう</span><br>
+  　リクエストの送信が完了した。まだまだ送るを選択するとまたリクエスト送信ページに移動し、ユーザー一覧に戻るを選択するとリクエストボックスのトップページに戻ることができる。
+  <%= image_tag "top/show/all_user_request_created.png" , class: "explain_image" %>
+</div>
+
+<p class = "small_small_section_title">届いたリクエスト確認方法</p>
+<div class = "individual_explain">
+  <span class = "strong yellow_under_line" style = "display:inline-block;">マイページを開こう</span><br>
+  　リクエストボックストップページの、「マイページへ」を押そう。ちなみにこのボタンのグラデーションはちょっと頑張って作った。褒めて。
+  <%= image_tag "top/show/all_user_request_explain_1.png" , class: "explain_image" %>
+
+  <span class = "strong yellow_under_line" style = "display:inline-block;margin-top:50px;">届いたリクエストを管理しよう</span><br>
+  　それぞれのリクエストの状況を管理できるボタンを用意した。「完了」「採用する」「元に戻す」「この世から消し去る」の４つ。三種の神器と呼ぶが良い。<br>
+  <ul class = "explain_list_parent">
+    <li class="explain_list"><p class = "common_simple_button request_finished_button">完了ボタン</p>を押すと「現在の状況」が　完了　になり、背景色がオレンジに変わる。</li>
+    <li class="explain_list"><span class = "common_simple_button request_received_button">採用するボタン</span>を押すと、「現在の状況」が　採用　になり、背景色が緑に変わる。</li>
+    <li class="explain_list"><span class = "common_simple_button request_untreated_button">元に戻すボタン</span>を押すと初めはなにも起きないが、完了するボタンや採用するボタンを押した後に押すと現在の状況を　未処理　に戻し、背景色を白に戻す。</li>
+    <li class="explain_list"><span class = "common_simple_button request_delete_button">この世から消し去るボタン</span>を押すと、そのリクエストを削除することができる。復活させることはできないため、間違って押さないように注意。</li>
+  </ul>
+  <br>
+  
+  <%= image_tag "top/show/all_user_request_request_page.png" , class: "explain_image" %>
+
+  <span class = "strong yellow_under_line" style = "display:inline-block;margin-top:50px;">まだ送るかを選択しよう</span><br>
+    <%= image_tag "top/show/all_user_request_request_page.png" , class: "explain_image" %>
+  　リクエストの送信が完了した。まだまだ送るを選択するとまたリクエスト送信ページに移動し、ユーザー一覧に戻るを選択するとリクエストボックスのトップページに戻ることができる。
+  <%= image_tag "top/show/all_user_request_created.png" , class: "explain_image" %>
 </div>
 
 <p class = "small_small_section_title">今後の開発予定</p>
