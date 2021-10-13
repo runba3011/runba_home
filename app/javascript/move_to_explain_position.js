@@ -7,7 +7,7 @@ jQuery(function($){
 
       const scrollHeight = $scrollPointObject.offset().top - 100;
       console.log(scrollHeight);
-      speed = scrollHeight / 5 * (6000 / scrollHeight) ;
+      speed = scrollHeight / 8 ;
       $('body,html').animate({scrollTop:scrollHeight}, speed, "swing");
     })
   }

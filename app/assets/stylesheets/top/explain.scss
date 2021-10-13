@@ -53,3 +53,56 @@
 .big_margin_top{
   margin-top:80px;
 }
+
+.explain_list_parent{
+  list-style: auto;
+  padding-left: 30px;
+}
+
+.explain_list{
+  margin: 30px 10px 10px;
+}
+
+.request_delete_button , .request_finished_button , .request_untreated_button , .request_received_button , 
+.sort_by_status_up , .sort_by_status_down , .sort_by_created_at_up , .sort_by_created_at_down , .sort_by_open{
+  line-height: 35px;
+  padding:3px 15px;
+  background:linear-gradient(to right bottom ,blue , blue);
+  border-radius: 8px;
+}
+
+.request_delete_button{
+  background: linear-gradient(to right bottom, #ff8d00, #cd5e05);
+}
+
+.request_finished_button{
+  background: linear-gradient(to right bottom, #00ad05, #287c01);
+}
+
+.request_untreated_button{
+  background: linear-gradient(to right bottom, #303030, #000000);
+}
+
+.request_received_button{
+  background: linear-gradient(to right bottom, #ab0000, #6e0000);
+}
+
+.sort_by_open{
+  background: linear-gradient(to right bottom, #1919ff, #000089);
+}
+
+.sort_by_status_up{
+  background:#e45300;
+}
+
+.sort_by_status_down{
+  background:#a70000;
+}
+
+.sort_by_created_at_up{
+  background:#0066db
+}
+
+.sort_by_created_at_down{
+  background:#030361
+}
