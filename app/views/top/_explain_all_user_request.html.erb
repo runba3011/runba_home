@@ -25,7 +25,7 @@
   <%= image_tag "top/show/all_user_request_created.png" , class: "explain_image" %>
 </div>
 
-<p class = "small_small_section_title">届いたリクエスト確認方法</p>
+<p class = "small_small_section_title">届いたリクエスト確認・管理</p>
 <div class = "individual_explain">
   <span class = "strong yellow_under_line" style = "display:inline-block;">マイページを開こう</span><br>
   　リクエストボックストップページの、「マイページへ」を押そう。ちなみにこのボタンのグラデーションはちょっと頑張って作った。褒めて。
@@ -34,19 +34,26 @@
   <span class = "strong yellow_under_line" style = "display:inline-block;margin-top:50px;">届いたリクエストを管理しよう</span><br>
   　それぞれのリクエストの状況を管理できるボタンを用意した。「完了」「採用する」「元に戻す」「この世から消し去る」の４つ。三種の神器と呼ぶが良い。<br>
   <ul class = "explain_list_parent">
+    <li class="explain_list"><span class = "common_simple_button sort_by_status_up">進んでいる順</span><br>「現在の状況」が　完了　になり、背景色がオレンジに変わる。</li>
+    <li class="explain_list"><span class = "common_simple_button sort_by_status_down">進んでいない順</span><br>「現在の状況」が　採用　になり、背景色が緑に変わる。</li>
+    <li class="explain_list"><span class = "common_simple_button sort_by_created_at_up">新しい順</span><br>初めはなにも起きないが、完了するボタンや採用するボタンを押した後に押すと現在の状況を　未処理　に戻し、背景色を白に戻す。</li>
+    <li class="explain_list"><span class = "common_simple_button sort_by_created_at_down">古い順</span><br>そのリクエストを削除することができる。復活させることはできないため、間違って押さないように注意。</li>
+  </ul>
+  
+  <%= image_tag "top/show/all_user_request_control_finished.png" , class: "explain_image" %>
+  <%= image_tag "top/show/all_user_request_control_received.png" , class: "explain_image" %>
+  <%= image_tag "top/show/all_user_request_control_untreated.png" , class: "explain_image" %>
+
+  <span class = "strong yellow_under_line" style = "display:inline-block;margin-top:50px;">並び替えをしよう</span><br>
+  　<span class = "common_simple_button request_delete_button small_margin_top" style = "margin-top:15px;">並べ替えを使用するボタン</span>を押すと並び替えに使用するボタンを表示することができる。
+  <%= image_tag "top/show/all_user_request_sort_open_button.gif" , class: "explain_image" %>
+
+  <ul class = "explain_list_parent">
     <li class="explain_list"><span class = "common_simple_button request_finished_button">完了ボタン</span><br>「現在の状況」が　完了　になり、背景色がオレンジに変わる。</li>
     <li class="explain_list"><span class = "common_simple_button request_received_button">採用するボタン</span><br>「現在の状況」が　採用　になり、背景色が緑に変わる。</li>
     <li class="explain_list"><span class = "common_simple_button request_untreated_button">元に戻すボタン</span><br>初めはなにも起きないが、完了するボタンや採用するボタンを押した後に押すと現在の状況を　未処理　に戻し、背景色を白に戻す。</li>
     <li class="explain_list"><span class = "common_simple_button request_delete_button">この世から消し去るボタン</span><br>そのリクエストを削除することができる。復活させることはできないため、間違って押さないように注意。</li>
   </ul>
-  <br>
-  
-  <%= image_tag "top/show/all_user_request_request_page.png" , class: "explain_image" %>
-
-  <span class = "strong yellow_under_line" style = "display:inline-block;margin-top:50px;">まだ送るかを選択しよう</span><br>
-    <%= image_tag "top/show/all_user_request_request_page.png" , class: "explain_image" %>
-  　リクエストの送信が完了した。まだまだ送るを選択するとまたリクエスト送信ページに移動し、ユーザー一覧に戻るを選択するとリクエストボックスのトップページに戻ることができる。
-  <%= image_tag "top/show/all_user_request_created.png" , class: "explain_image" %>
 </div>
 
 <p class = "small_small_section_title">今後の開発予定</p>
