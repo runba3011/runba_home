@@ -19,6 +19,10 @@
   margin: auto;
 }
 
+.default_top_image{
+  background-image:image_url("defaults/user_background.png")
+}
+
 .top_image{
   width: 100%;
   height: 300px;

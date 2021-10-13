@@ -13,8 +13,7 @@
       <% if @user.background_image.attached? %>
         <div class = "top_image" style = "background-image:url(<%= rails_blob_url(@user.background_image) %>)"></div>
       <% else %>
-        <div class = "top_image" style = "background-image:url('defaults/user_background.png')"></div>
-        <%= image_tag "defaults/user_background.png" , class: "top_image" %>
+        <div class = "top_image default_top_image"></div>
       <% end %>
 
       <div class = "icon_and_name_parent">
