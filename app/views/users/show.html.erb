@@ -11,8 +11,9 @@
     <div class = "user_information">
       <div class = "only_border"></div>
       <% if @user.background_image.attached? %>
-        <%= image_tag @user.background_image , class: "top_image" %>
+        <div class = "top_image" style = "background-image:url(<%= rails_blob_url(@user.background_image) %>)"></div>
       <% else %>
+        <div class = "top_image" style = "background-image:url('defaults/user_background.png')"></div>
         <%= image_tag "defaults/user_background.png" , class: "top_image" %>
       <% end %>
 
