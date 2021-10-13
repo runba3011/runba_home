@@ -17,6 +17,7 @@
         <%= render partial: "information_link" , locals: {id: "skill_room_position" , title: "スキルルーム" , image: "top/skill.png"} %>
         <%= render partial: "information_link" , locals: {id: "group_position" , title: "チャットルーム" , image: "top/chat.png"} %>
         <%= render partial: "information_link" , locals: {id: "request_position" , title: "ルンバ氏直通意見箱" , image: "top/mail.png"} %>
+        <%= render partial: "information_link" , locals: {id: "all_user_request_position" , title: "リクエストボックス" , image: "top/post.png"} %>
       </div>
 
       <%# 詳しい紹介の部分 %>
@@ -26,6 +27,12 @@
       <%= render partial: "explain_templete" , locals: {title:"チャットルーム", icon_image:"top/chat.png" , link:groups_path, explain:@group_explain, templete_name:"explain_group", title_margin_top:"100px" , scroll_name: "group_position"} %>
       <%= render partial: "explain_templete" , locals: {title:"ルンバ氏直通意見箱", icon_image:"top/mail.png" , link:new_request_path, explain:@request_explain, templete_name:"explain_request", title_margin_top:"100px" , scroll_name: "request_position"} %>
       <%= render partial: "explain_templete" , locals: {title:"リクエストボックス", icon_image:"top/post.png" , link:user_all_user_requests_path("index"), explain:@request_explain, templete_name:"explain_all_user_request", title_margin_top:"100px" , scroll_name: "all_user_request_position"} %>
+    </div>
+    <div class = "move_to_top_button">
+      <div class = "move_to_top_button_text_parent">
+        <i class="fas fa-angle-double-up"></i><br>
+        <p class = "move_to_top_button_text">一覧へ</p>
+      </div>
     </div>
   </div>
 </div>
