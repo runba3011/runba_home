@@ -60,7 +60,28 @@
 }
 
 .explain_list{
-  margin:10px;
+  margin: 30px 10px 10px;
 }
 
+.request_delete_button , .request_finished_button , .request_untreated_button , .request_received_button{
+  line-height: 30px;
+  padding:3px 8px;
+  background:linear-gradient(to right bottom ,blue , blue);
+  border-radius: 8px;
+}
+
+.request_delete_button{
+  background: linear-gradient(to right bottom, #ff8d00, #cd5e05);
+}
+
+.request_finished_button{
+  background: linear-gradient(to right bottom, #00ad05, #287c01);
+}
+
+.request_untreated_button{
+  background: linear-gradient(to right bottom, #303030, #000000);
+}
+
+.request_received_button{
+  background: linear-gradient(to right bottom, #ab0000, #6e0000);
 }
