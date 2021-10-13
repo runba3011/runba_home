@@ -22,6 +22,7 @@ require("../push_and_show")
 require("../open_strategy")
 require("../open_sort")
 require("../stickman_war_explain_rollover")
+require("../move_to_top")
 import '@fortawesome/fontawesome-free/js/all';
 
 require("../jquery_practice/1")
