@@ -81,8 +81,9 @@
   position: fixed;
   bottom: 10px;
   right: 10px;
-  background-color: blue;
-  color: white;
+  background: linear-gradient(white 0%, #a8afff 51% ,#4141ff 100%);
+  background-size: auto 200%;
+  color: black;
   width: 100px;
   height: 100px;
   text-align: center;
@@ -92,6 +93,8 @@
   justify-content: center;
   text-align: center;
   flex-direction: column;
+  border: 3px solid #7c7c7c;
+  transition:0.2s;
 }
 
 .move_to_top_button_text{
@@ -99,5 +102,11 @@
 }
 
 .move_to_top_button_text_parent{
-  
+
+}
+
+.move_to_top_button:hover{
+  background-position: center bottom;
+  color:white;
+  transition:0.2s;
 }
