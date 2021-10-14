@@ -12,6 +12,7 @@
       <%= link_to "グループチャット" , groups_path , class: "_footer_function_detail" %>
       <%= link_to "棒バトチャレンジ攻略ページ" , stickman_war_index_path , class: "_footer_function_detail" %>
       <%= link_to "プログラミング学習記録" , skill_room_index_path , class: "_footer_function_detail" %>
+      <%= link_to "リクエストボックス" , user_all_user_requests_path("index") , class: "_footer_function_detail" %>
     </div>
     <div class = "_footer_support">
       <p class = "_footer_section_title">サポート</p>
@@ -29,7 +30,7 @@
       <% end %>
       <%= link_to new_request_path , class: "_footer_function_detail" do %>
         <i class="fas fa-envelope"></i>
-        リクエスト
+        ルンバ氏直通意見箱
       <% end %>
 
     </div>
