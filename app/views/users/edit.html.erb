@@ -16,9 +16,9 @@
 
           <div class = "_edit_background_image_show_parent" id = "background_image_parent">
             <% if @user.background_image.attached? %>
-              <%= image_tag @user.background_image , class: "top_image" , id: "top_image" %>
+              <div class = "top_image" style = "background-image:url(<%= rails_blob_url(@user.background_image) %>)"></div>
             <% else %>
-              <%= image_tag "defaults/user_background.png" , class: "top_image" , id: "top_image" %>
+              <div class = "top_image default_top_image"></div>
             <% end %>
             <%= f.file_field :background_image , class: "hidden" , id: "background_image_field" %>
             <div class = "_edit_background_image_show_edit" id="background_easy">
