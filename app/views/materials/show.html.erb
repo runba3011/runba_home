@@ -1,0 +1,20 @@
+<%= render partial: "shared/header/root_header" , locals: {title: "素材一覧"} %>
+<%= stylesheet_link_tag "material/common" , media: "all" %>
+<div class = "main_content_parent">
+  <div class = "main_content">
+    <% if params[:id] == "public_domain_q" %>
+      <p class = "section_title">パブリックドメイン</p>
+      <%= render partial: "explain_table" , locals: {image: nil , name: "パブリックドメインQ" , material_type: "画像"} %>
+    <% elsif params[:id] == "mascle_plus" %>
+
+    <% elsif params[:id] == "topeconheroes" %>
+
+    <% elsif params[:id] == "nanasan_yuki" %>
+
+    <% elsif params[:id] == "texture_ninja" %>
+
+    <% elsif params[:id] == "beiz_images" %>
+      
+    <% end %>
+  </div>
+</div>

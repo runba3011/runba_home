@@ -1,0 +1,15 @@
+<%# 引数 image:画像、assets > imagesに入れる  name: サイトの名前  material_type: 使用できる素材のタイプ %>
+
+<table border="1">
+  <tr>
+    <td rowspan="2">
+      <% if image != nil %>
+        <div style = "background-image: <%= URI("/assets/#{image}") %>"></div>
+      <% else %>
+        <div style = "background-image: <%= URI("/assets/youtube/default.jpeg") %>"></div>
+      <% end %>
+    </td>
+    <td><%= name %></td>
+  </tr>
+  <tr><td><%= material_type %></td></tr>
+</table>
