@@ -14,10 +14,19 @@
 
     <div class = "user_parent">
       <% if @searched_users != nil %>
-        <% if @searched_users %>
-          
+        <% if @searched_users.length != 0 %>
+          <p class = "small_section_title">検索結果</p>
+        <% end %>
+        <% @searched_users.each do |user| %>
+          <% if current_user != user %>
+            <%= render partial: "single_user" , locals: {user: user} %>
+          <% end %>
+        <% end %>
+        <% if @searched_users.length != 0 %>
+          <p class = "small_section_title">ユーザー一覧</p>
         <% end %>
       <% end %>
+
       <% @users.each do |user| %>
         <% if user != current_user %>
           <%= render partial: "single_user" , locals: {user: user} %>
