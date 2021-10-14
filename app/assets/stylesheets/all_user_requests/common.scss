@@ -71,6 +71,29 @@ header{
   border-radius: 10px;
 }
 
+.search_form {
+  margin: auto;
+  display: flex;
+  padding: 5px;
+  width: 80%;
+}
+
+.search_input{
+  width:100%;
+  padding:2px;
+}
+
+.search_submit{
+  padding:5px 20px;
+  margin-left:5px;
+  background-color:blue;
+  border:none;
+  color:white;
+  border-radius: 5px;
+}
+
+
+
 
 @media(max-width:1000px){
   .single_user_parent{
