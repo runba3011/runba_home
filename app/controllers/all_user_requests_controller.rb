@@ -101,11 +101,39 @@ class AllUserRequestsController < ApplicationController
 
   def search
     if params[:keyword] != ""
-      @searched_requests = return_request = AllUserRequest.where("text LIKE?" , "%#{params[:keyword]}%").where(user_id: params[:user_id])
+      return_request = AllUserRequest.where("text LIKE?" , "%#{params[:keyword]}%").where(user_id: params[:user_id])
+      @searched_requests = return_request
       # binding.pry
     end
     show
     render :show
+  end
+
+  def user_search
+    if params[:keyword] != ""
+      return_users = User.where("nickname LIKE?", "%#{params[:keyword]}%")
+      return_users_by_account_name = User.where("account_name LIKE?" , "%#{params[:keyword]}%")
+      @searched_users = []
+      return_users.each do |user|
+        @searched_users << user
+      end
+
+      # 統一せ雨を持たせるためにここでも既に追加されていないことを確認する
+      return_users.each do |user|
+        if !check_added_user(user , @searched_users)
+          @searched_users << user
+        end
+      end
+
+      # ユーザー名の部分で既に追加されていないことを確認してから配列に追加する
+      return_users_by_account_name.each do |user|
+        if !check_added_user(user , @searched_users)
+          @searched_users << user
+        end
+      end
+    end
+    index
+    render :index
   end
 
   private 
@@ -124,6 +152,15 @@ class AllUserRequestsController < ApplicationController
     if params[:user_id].to_i != current_user.id
       redirect_to user_all_user_requests_path("index")
     end
+  end
+
+  def check_added_user(add , all)
+    all.each do |added|
+      if added == add
+        return true
+      end
+    end
+    return false
   end
 
   def check_no_same_request(users , create_request)

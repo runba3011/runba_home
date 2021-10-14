@@ -6,21 +6,30 @@
   <div class = "main_content">
     <p class = "section_title">ユーザー一覧</p>
     <%= link_to "マイページへ" , user_all_user_request_path(current_user , "all") , class: "my_page_link" %>
+
+    <%= form_with url: user_search_user_all_user_requests_path("user_search") , local: true , method: :get , class: "search_form" do |f| %>
+      <%= f.text_field :keyword , placeholder: "ユーザーを検索する" , class: "search_input" %>
+      <%= f.submit "検索" , class: "search_submit" %>
+    <% end %>
+
     <div class = "user_parent">
+      <% if @searched_users != nil %>
+        <% if @searched_users.length != 0 %>
+          <p class = "small_section_title">検索結果</p>
+        <% end %>
+        <% @searched_users.each do |user| %>
+          <% if current_user != user %>
+            <%= render partial: "single_user" , locals: {user: user} %>
+          <% end %>
+        <% end %>
+        <% if @searched_users.length != 0 %>
+          <p class = "small_section_title">ユーザー一覧</p>
+        <% end %>
+      <% end %>
+
       <% @users.each do |user| %>
         <% if user != current_user %>
-          <%= link_to new_user_all_user_request_path(user) , class: "single_user_parent" do %>
-            <div class = "single_user">
-              <div class = "user_icon_image_parent">
-                <% if user.icon_image.attached? %>
-                  <%= image_tag user.icon_image , class: "user_icon_image" %>
-                <% else %>
-                  <%= image_tag "defaults/user_icon_image.png" , class: "user_icon_image" %>
-                <% end %>
-              </div>
-              <p><%= user.nickname %></p>
-            </div>
-          <% end %>
+          <%= render partial: "single_user" , locals: {user: user} %>
         <% end %>
       <% end %>
     </div>
