@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :all_user_requests , only: [:index , :show , :create , :destroy , :new] do
       collection do
         get 'search'
+        get 'user_search'
       end
     end
   end
