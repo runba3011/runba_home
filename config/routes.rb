@@ -43,4 +43,8 @@ Rails.application.routes.draw do
   get "/skill_room/:type_id/:id" , to: "skill_room#show"
 
   resources :materials , only: [:create , :index , :new , :show]
+  # それぞれの配布サイトについて詳しい情報を記載するが、
+  # 自分のものについては自分のサイトであるというtype_idと、どの素材を表すかというidを使用する
+  # その場合、resources内のルーティングではなく↓のルーティングが必要になる
+  get "/materials/:type_id/:id" , to: "materials#show"
 end
