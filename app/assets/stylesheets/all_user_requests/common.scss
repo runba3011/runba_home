@@ -101,6 +101,12 @@ header{
   }
 }
 
+@media(max-width:600px){
+    .search_form {
+      width: 100%;
+    }
+  }
+
 @media(max-width:500px){
   .single_user_parent{
     width:100%;
