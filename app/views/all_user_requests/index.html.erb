@@ -8,7 +8,7 @@
     <%= link_to "マイページへ" , user_all_user_request_path(current_user , "all") , class: "my_page_link" %>
 
     <%= form_with url: user_search_user_all_user_requests_path("user_search") , local: true , method: :get , class: "search_form" do |f| %>
-      <%= f.text_field :keyword , placeholder: "ユーザーを検索する" , class: "search_input" %>
+      <%= f.text_field :keyword , placeholder: "アカウント名、ニックネームで検索する" , class: "search_input" %>
       <%= f.submit "検索" , class: "search_submit" %>
     <% end %>
 
