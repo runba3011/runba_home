@@ -19,8 +19,17 @@
   margin: auto;
 }
 
+.default_top_image{
+  background-image:image_url("defaults/user_background.png")
+}
+
 .top_image{
   width: 100%;
+  // 高さの設定はjavascriptから（user_show_edit_adjust_height）から
+  // 行うことにしたので不必要、突然動かなくなった時のために残しておく
+  // height: 300px;
+  background-size: cover;
+  background-position: center;
 }
 
 .icon_and_name_parent{
@@ -126,17 +135,9 @@
   color:rgba(0, 0, 0, 0.411);
 }
 
-@media(max-width:600px){
-  .nickname{
-    font-size:4vw;
-  };
-
-  .account_name{
-    font-size:3.8vw;
-  }
-
-  .information_explain{
-    font-size:3.5vw;
+@media(max-width:800px){
+  .show_user_icon{
+    max-width:60px;
   }
 }
 
@@ -206,5 +207,25 @@
     transition:150ms;
     border-right: none;
     border-left:none;
+  }
+}
+
+@media(max-width:600px){
+  .nickname{
+    font-size:4vw;
+  };
+
+  .account_name{
+    font-size:3.8vw;
+  }
+
+  .information_explain{
+    font-size:3.5vw;
+  }
+}
+
+@media(max-width:450px){
+  .show_user_icon{
+    max-width:45px;
   }
 }

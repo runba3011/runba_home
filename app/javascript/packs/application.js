@@ -23,6 +23,7 @@ require("../open_strategy")
 require("../open_sort")
 require("../stickman_war_explain_rollover")
 require("../move_to_top")
+require("../user_show_edit_adjust_height")
 import '@fortawesome/fontawesome-free/js/all';
 
 require("../jquery_practice/1")

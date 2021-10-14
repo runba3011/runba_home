@@ -11,9 +11,9 @@
     <div class = "user_information">
       <div class = "only_border"></div>
       <% if @user.background_image.attached? %>
-        <%= image_tag @user.background_image , class: "top_image" %>
+        <div class = "top_image" style = "background-image:url(<%= rails_blob_url(@user.background_image) %>)"></div>
       <% else %>
-        <%= image_tag "defaults/user_background.png" , class: "top_image" %>
+        <div class = "top_image default_top_image"></div>
       <% end %>
 
       <div class = "icon_and_name_parent">
@@ -74,7 +74,9 @@
 
 
         </p>
-        <%= link_to "リクエストを送る" , new_user_all_user_request_path(@user.id) , class: "common_simple_button all_user_request_link" %>
+        <% if @user != current_user %>
+          <%= link_to "リクエストを送る" , new_user_all_user_request_path(@user.id) , class: "common_simple_button all_user_request_link" %>
+        <% end %>
       <% end %>
     </div>
   </div>
