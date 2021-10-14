@@ -101,11 +101,23 @@ class AllUserRequestsController < ApplicationController
 
   def search
     if params[:keyword] != ""
-      @searched_requests = return_request = AllUserRequest.where("text LIKE?" , "%#{params[:keyword]}%").where(user_id: params[:user_id])
+      return_request = AllUserRequest.where("text LIKE?" , "%#{params[:keyword]}%").where(user_id: params[:user_id])
+      @searched_requests = return_request
       # binding.pry
     end
     show
     render :show
+  end
+
+  def user_search
+    if params[:keyword] != ""
+      return_users = User.where("nickname LIKE?", "%#{params[:keyword]}%")
+      return_users_by_account_name = User.where("account_name LIKE?" , "%#{params[:keyword]}%")
+      @searched_users << return_users
+      @searched_users << return_users_by_account_name
+    end
+    index
+    render :index
   end
 
   private 
