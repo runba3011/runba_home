@@ -74,7 +74,9 @@
 
 
         </p>
-        <%= link_to "リクエストを送る" , new_user_all_user_request_path(@user.id) , class: "common_simple_button all_user_request_link" %>
+        <% if @user != current_user %>
+          <%= link_to "リクエストを送る" , new_user_all_user_request_path(@user.id) , class: "common_simple_button all_user_request_link" %>
+        <% end %>
       <% end %>
     </div>
   </div>
