@@ -25,7 +25,7 @@
           </div>
 
         <%# request_contentとopen_all_text_buttonの順番を変えるとopen_sort内の処理に影響が出る、順番は極力変えない %>
-        <p class="request_content"><%= request.text %></p>
+        <p class="request_content"><%= h(request.text).gsub(/\r\n|\n|\r/, "<br>").html_safe %></p>
         <p class = "common_simple_button open_all_text_button">全文を見る</p>
 
           <% if request.user == current_user %>
