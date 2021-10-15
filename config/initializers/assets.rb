@@ -80,6 +80,7 @@ Rails.application.config.assets.precompile += %w(
   material/show
   material/create
   material/common
+  material/explain_table
 
   devise/common
   reset_field_with_errors
