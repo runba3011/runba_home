@@ -19,6 +19,7 @@ Rails.application.config.assets.precompile += %w(
   shared/common_header
   shared/show_account
   shared/prease_login
+  shared/explain
 
   skill_room/index
   skill_room/common
