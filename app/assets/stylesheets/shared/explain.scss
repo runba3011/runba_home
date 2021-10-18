@@ -1,0 +1,73 @@
+.small_section_title{
+  font-size:25px;
+  padding-left:15px;
+  margin-bottom:5px;
+  margin-top:50px;
+  position:relative;
+}
+
+.small_small_section_title::before {
+  height: 30px;
+  width: 5px;
+  content: '';
+  display: inline-block;
+  background: linear-gradient(#ffb300 70%, #ff0000 30%);
+  margin:0px 15px 0px 10px;
+}
+
+.small_small_section_title{
+  font-size:20px;
+  border-bottom:1px dotted rgba(189, 189, 189, 0.575);
+  padding-left:5px;
+  margin:30px 0px 10px;
+  display:flex;
+}
+
+.small_margin{
+  margin-top:10px;
+}
+
+.paragraph{
+  display: inline-block;
+  margin-top:20px;
+}
+
+.individual_explain{
+  width:100%;
+  line-height:40px;
+}
+
+.strong {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.yellow_under_line{
+  background: linear-gradient(transparent 80%, yellow 30%);
+}
+
+.color_red{
+  color:#780000;
+}
+
+.big_margin_top{
+  margin-top:80px;
+}
+
+.explain_list_parent{
+  list-style: auto;
+  padding-left: 30px;
+}
+
+.explain_list{
+  margin: 30px 10px 10px;
+}
+
+// 文中でボタンを表示させるときにはこのスタイルを適用させる、要素にクラス名を追加するのではなく
+// この適用範囲にクラスを追加する
+.request_delete_button{
+  line-height: 35px;
+  padding:3px 15px;
+  background:linear-gradient(to right bottom ,blue , blue);
+  border-radius: 8px;
+}
