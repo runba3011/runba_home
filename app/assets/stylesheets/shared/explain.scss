@@ -1,3 +1,8 @@
+.explain_box{
+  width:90%;
+  margin:auto;
+}
+
 .small_section_title{
   font-size:25px;
   padding-left:15px;
@@ -25,6 +30,16 @@
 
 .small_margin{
   margin-top:10px;
+}
+
+.explain_image{
+  width:60%;
+  display:block;
+  background:linear-gradient(to right bottom , rgb(255, 255, 242) , rgb(221, 221, 0));
+  padding:10px;
+  border:1px solid rgba(0, 0, 0, 0.301);
+  border-radius: 10px;
+  margin:10px auto;
 }
 
 .paragraph{
