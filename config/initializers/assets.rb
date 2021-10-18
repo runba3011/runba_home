@@ -75,6 +75,13 @@ Rails.application.config.assets.precompile += %w(
   all_user_requests/show
   all_user_requests/create
 
+  material/index
+  material/top_link
+  material/show
+  material/create
+  material/common
+  material/explain_table
+
   devise/common
   reset_field_with_errors
 )

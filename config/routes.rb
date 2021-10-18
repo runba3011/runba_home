@@ -37,10 +37,14 @@ Rails.application.routes.draw do
     resources :messages , only: [:create , :update , :destroy , :edit]
     resources :group_user_relations , only: [:create , :destroy]
   end
+  post '/groups/:group_id/group_user_relations/:user_id/:id' , to: "group_user_relations#update"
 
   resources :skill_room , only: [:index]
   get "/skill_room/:type_id/:id" , to: "skill_room#show"
 
-  post '/groups/:group_id/group_user_relations/:user_id/:id' , to: "group_user_relations#update"
-  
+  resources :materials , only: [:create , :index , :new , :show]
+  # それぞれの配布サイトについて詳しい情報を記載するが、
+  # 自分のものについては自分のサイトであるというtype_idと、どの素材を表すかというidを使用する
+  # その場合、resources内のルーティングではなく↓のルーティングが必要になる
+  get "/materials/:type_id/:id" , to: "materials#show"
 end

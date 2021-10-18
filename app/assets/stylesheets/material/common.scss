@@ -1,0 +1,13 @@
+header{
+  background:linear-gradient(to right bottom, #00000057, #000000a1), image_url("materials/wood.png");
+  background-size:cover;
+  background-color:inherit;
+  border: 3px solid rgba(0, 0, 0, 0.63);
+  border-right:none;
+  border-left:none;
+  height:56px;
+}
+
+.small_section_title{
+  padding-left:10px;
+}
