@@ -229,7 +229,8 @@ class Movie < ActiveHash::Base
     {id: 226 ,  reccomend: false , title: "読書感想文って何が目的なんですか？【VOICEROID解説】" , link: "jK42_lU4Qa4" , image: nil , explain: "説明を書こう！" , small_explain: nil} ,
     {id: 227 ,  reccomend: false , title: "【社会人必見】パソコンのプロと素人の分かれ目がこちら【Voiceroid解説】" , link: "DAyWyXgFBAA" , image: nil , explain: "説明を書こう！" , small_explain: nil} ,
     {id: 228 ,  reccomend: false , title: "【実体験】自害すると起こること5選【VOICEROID解説】" , link: "nbImueDNGwg" , image: nil , explain: "説明を書こう！" , small_explain: nil} ,
-    {id: 229 ,  reccomend: false , title: "脳死で5000兆円ほしい！といいたくなる心理について【考察】" , link: "e_FIJ218Ofw" , image: nil , explain: "説明を書こう！" , small_explain: nil} 
+    {id: 229 ,  reccomend: false , title: "脳死で5000兆円ほしい！といいたくなる心理について【考察】" , link: "e_FIJ218Ofw" , image: nil , explain: "説明を書こう！" , small_explain: nil} ,
+    {id: 230 ,  reccomend: true , title: "【MMD】大きな声で鳴いちゃうきりたん" , link: "nhoItDYhfiA" , image: "youtube/thigarekkusu_tan.png" , explain: "説明を書こう！" , small_explain: nil} 
 
   ]
 

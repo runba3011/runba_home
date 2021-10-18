@@ -1,16 +1,15 @@
 <%# 引数 image:画像、assets > imagesに入れる  name: サイトの名前  material_type: 使用できる素材のタイプ %>
 <%= stylesheet_link_tag "material/explain_table" , media: "all" %>
-<table border="1">
+<table border="1" class = "_explain_table_single">
   <tr>
-    <td rowspan="2">
+    <td rowspan="2" style = "width:120px;height:120px;">
       <% if image != nil %>
-        <div class = "_class_image" style = 'background-image: url("<%= URI('/assets/#{image}') %>")'></div>
-        <div class = "_top_link_image" style = "background-image: url('<%= URI("/assets/#{image}") %>')"></div>
+        <div class = "_explain_table_image" style = 'background-image: url("<%= URI('/assets/#{image}') %>")'></div>
       <% else %>
-        <div class = "_class_image" style = 'background-image: url("<%= URI("/assets/youtube/default.jpeg") %>")'></div>
+        <div class = "_explain_table_image" style = 'background-image: url("<%= URI("/assets/youtube/default.jpeg") %>")'></div>
       <% end %>
     </td>
-    <td class = "_class_name"><%= name %></td>
+    <td class = "_explain_table_name"><%= name %></td>
   </tr>
-  <tr><td class = "_class_material_type"><%= material_type %></td></tr>
+  <tr><td class = "_explain_table_material_type"><%= material_type %></td></tr>
 </table>

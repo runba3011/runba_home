@@ -1,14 +1,25 @@
-._class_image{
+._explain_table_single{
+  margin:auto;
+  width:80%;
+  max-width:500px;
+}
+
+._explain_table_image{
   width:100px;
   height:100px;
   background-color:yellow;
-  border-radius: 10px;;
+  border-radius: 10px;
+  margin:auto;
 }
 
-._class_name{
+._explain_table_name{
   line-height:50px;
 }
 
-._class_material_type{
+._explain_table_material_type{
   line-height: 50px;
+}
+
+td{
+  text-align: center;
 }
