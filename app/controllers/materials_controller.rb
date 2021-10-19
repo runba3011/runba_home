@@ -6,7 +6,7 @@ class MaterialsController < ApplicationController
   end
 
   def show
-    
+    index
   end
 
   def new
