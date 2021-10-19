@@ -4,20 +4,20 @@
 <div class = "main_content_parent">
   <div class = "main_content">
     <% if params[:id] == "public_domain_q" %>
-      <%= render partial: "explain_table" , locals: {image: nil , name: "パブリックドメインQ" , material_type: "画像"} %>
+      <%= render partial: "explain_table" , locals: {image: @icon_public_domain_q , name: "パブリックドメインQ" , material_type: "画像"} %>
       <%= render partial: "explain_public_domain_q" %>
-      <%= render partial: "shared/link" , locals: {image: nil , title: "パブリックドメインQ" , link: nil , explain: nil} %>
+      <%= render partial: "shared/link" , locals: {image: @icon_public_domain_q , title: "パブリックドメインQ" , link: nil , explain: nil} %>
     <% elsif params[:id] == "mascle_plus" %>
       <p class = "section_title">マッスルプラス</p>
-      <%= render partial: "explain_table" , locals: {image: nil , name: "マッスルプラス" , material_type: "マッチョたちの画像"} %>
+      <%= render partial: "explain_table" , locals: {image: @icon_mascle_plus , name: "マッスルプラス" , material_type: "マッチョたちの画像"} %>
       <%= render partial: "explain_mascle_plus" %>
-      <%= render partial: "shared/link" , locals: {image: nil , title: "マッスルプラス" , link: nil , explain: nil} %>
+      <%= render partial: "shared/link" , locals: {image: @icon_mascle_plus , title: "マッスルプラス" , link: nil , explain: nil} %>
 
     <% elsif params[:id] == "topeconheroes" %>
       <p class = "section_title">TOPECONHEROES</p>
-      <%= render partial: "explain_table" , locals: {image: nil , name: "TOPECONHEROES" , material_type: "様々な種類の画像"} %>
+      <%= render partial: "explain_table" , locals: {image: @icon_topecon_heroes , name: "TOPECONHEROES" , material_type: "様々な種類の画像"} %>
       <%= render partial: "explain_topecon_heroes" %>
-      <%= render partial: "shared/link" , locals: {image: nil , title: "TOPECONHEROES" , link: nil , explain: nil} %>
+      <%= render partial: "shared/link" , locals: {image: @icon_topecon_heroes , title: "TOPECONHEROES" , link: nil , explain: nil} %>
 
     <% elsif params[:id] == "nanasan_yuki" %>
       <p class = "section_title">パブリックドメイン</p>
