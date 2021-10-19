@@ -9,7 +9,9 @@
       <%= render partial: "shared/link" , locals: {image: nil , title: "パブリックドメインQ" , link: nil , explain: nil} %>
     <% elsif params[:id] == "mascle_plus" %>
       <p class = "section_title">マッスルプラス</p>
-      <%= render partial: "explain_table" , locals: {image: nil , name: "マッスルプラス" , material_type: "画像"} %>
+      <%= render partial: "explain_table" , locals: {image: nil , name: "マッスルプラス" , material_type: "マッチョたちの画像"} %>
+      <%= render partial: "explain_mascle_plus" %>
+      <%= render partial: "shared/link" , locals: {image: nil , title: "マッスルプラス" , link: nil , explain: nil} %>
 
     <% elsif params[:id] == "topeconheroes" %>
       <p class = "section_title">TOPECONHEROES</p>
