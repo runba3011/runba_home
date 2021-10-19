@@ -14,6 +14,7 @@
     <% elsif params[:id] == "topeconheroes" %>
       <p class = "section_title">TOPECONHEROES</p>
       <%= render partial: "explain_table" , locals: {image: nil , name: "TOPECONHEROES" , material_type: "様々な種類の画像"} %>
+      <%= render partial: "shared/link" , locals: {image: nil , title: "TOPECONHEROES" , link: nil , explain: nil} %>
 
     <% elsif params[:id] == "nanasan_yuki" %>
       <p class = "section_title">パブリックドメイン</p>
