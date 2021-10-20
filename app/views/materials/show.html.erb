@@ -4,40 +4,46 @@
 <%= stylesheet_link_tag "material/show" , media: "all" %>
 <div class = "main_content_parent">
   <div class = "main_content">
-  
-      <p class = "section_title">パブリックドメインQ</p>
-      <%= render partial: "explain_table" , locals: {image: @icon_public_domain_q , name: "パブリックドメインQ" , material_type: @type_public_domain_q} %>
-      <%= render partial: "explain_public_domain_q" %>
-      <%= render partial: "shared/link" , locals: {image: @icon_public_domain_q , title: "パブリックドメインQ" , link: nil , explain: nil} %>
-      
-      <p class = "section_title">マッスルプラス</p>
-      <%= render partial: "explain_table" , locals: {image: @icon_mascle_plus , name: "マッスルプラス" , material_type: @type_mascle_plus} %>
-      <%= render partial: "explain_mascle_plus" %>
-      <%= render partial: "shared/link" , locals: {image: @icon_mascle_plus , title: "マッスルプラス" , link: nil , explain: nil} %>
+    <div id = "public_domain_q_tag"></div>
+    <p class = "section_title">パブリックドメインQ</p>
+    <%= render partial: "explain_table" , locals: {image: @icon_public_domain_q , name: "パブリックドメインQ" , material_type: @type_public_domain_q} %>
+    <%= render partial: "explain_public_domain_q" %>
+    <%= render partial: "shared/link" , locals: {image: @icon_public_domain_q , title: "パブリックドメインQ" , link: nil , explain: nil} %>
+    
+    <div id = "mascle_plus_tag"></div>
+    <p class = "section_title">マッスルプラス</p>
+    <%= render partial: "explain_table" , locals: {image: @icon_mascle_plus , name: "マッスルプラス" , material_type: @type_mascle_plus} %>
+    <%= render partial: "explain_mascle_plus" %>
+    <%= render partial: "shared/link" , locals: {image: @icon_mascle_plus , title: "マッスルプラス" , link: nil , explain: nil} %>
 
-      <p class = "section_title">TOPECONHEROES</p>
-      <%= render partial: "explain_table" , locals: {image: @icon_topecon_heroes , name: "TOPECONHEROES" , material_type: @type_topecon_heroes} %>
-      <%= render partial: "explain_topecon_heroes" %>
-      <%= render partial: "shared/link" , locals: {image: @icon_topecon_heroes , title: "TOPECONHEROES" , link: nil , explain: nil} %>
+    <div id = "topecon_heroes_tag"></div>
+    <p class = "section_title">TOPECONHEROES</p>
+    <%= render partial: "explain_table" , locals: {image: @icon_topecon_heroes , name: "TOPECONHEROES" , material_type: @type_topecon_heroes} %>
+    <%= render partial: "explain_topecon_heroes" %>
+    <%= render partial: "shared/link" , locals: {image: @icon_topecon_heroes , title: "TOPECONHEROES" , link: nil , explain: nil} %>
 
-      <p class = "section_title">七三ゆきのアトリエ</p>
-      <%= render partial: "explain_table" , locals: {image: @icon_nanasan_yuki , name: "七三ゆきのアトリエ" , material_type: @type_nanasan_yuki} %>
-      <%= render partial: "explain_nanasan_yuki" %>
-      <%= render partial: "shared/link" , locals: {image: @icon_nanasan_yuki , title: "七三ゆきのアトリエ" , link: nil , explain: nil} %>
+    <div id = "nanasan_yuki_tag"></div>
+    <p class = "section_title">七三ゆきのアトリエ</p>
+    <%= render partial: "explain_table" , locals: {image: @icon_nanasan_yuki , name: "七三ゆきのアトリエ" , material_type: @type_nanasan_yuki} %>
+    <%= render partial: "explain_nanasan_yuki" %>
+    <%= render partial: "shared/link" , locals: {image: @icon_nanasan_yuki , title: "七三ゆきのアトリエ" , link: nil , explain: nil} %>
 
-      <p class = "section_title">texture ninja</p>
-      <%= render partial: "explain_table" , locals: {image: @icon_texture_ninja , name: "texture ninja" , material_type: @type_texture_ninja} %>
-      <%= render partial: "explain_texture_ninja" %>
-      <%= render partial: "shared/link" , locals: {image: @icon_texture_ninja , title: "texture ninja" , link: nil , explain: nil} %>
+    <div id = "texture_ninja_tag"></div>
+    <p class = "section_title">texture ninja</p>
+    <%= render partial: "explain_table" , locals: {image: @icon_texture_ninja , name: "texture ninja" , material_type: @type_texture_ninja} %>
+    <%= render partial: "explain_texture_ninja" %>
+    <%= render partial: "shared/link" , locals: {image: @icon_texture_ninja , title: "texture ninja" , link: nil , explain: nil} %>
 
-      <p class = "section_title">BEIZ images</p>
-      <%= render partial: "explain_table" , locals: {image: @icon_beiz_images , name: "BEIZ images" , material_type: @type_beiz_images} %>
-      <%= render partial: "explain_beiz_images" %>
-      <%= render partial: "shared/link" , locals: {image: @icon_beiz_images , title: "BEIZ images" , link: nil , explain: nil} %>
+    <div id = "beiz_image_tag"></div>
+    <p class = "section_title">BEIZ images</p>
+    <%= render partial: "explain_table" , locals: {image: @icon_beiz_images , name: "BEIZ images" , material_type: @type_beiz_images} %>
+    <%= render partial: "explain_beiz_images" %>
+    <%= render partial: "shared/link" , locals: {image: @icon_beiz_images , title: "BEIZ images" , link: nil , explain: nil} %>
 
-      <p class = "section_title">いらすとや</p>
-      <%= render partial: "explain_table" , locals: {image: @icon_irasutoya , name: "いらすとや" , material_type: @type_irasutoya} %>
-      <%= render partial: "explain_irasutoya" %>
-      <%= render partial: "shared/link" , locals: {image: @icon_irasutoya , title: "BEIZ images" , link: nil , explain: nil} %>
+    <div id = "irasutoya_tag"></div>
+    <p class = "section_title">いらすとや</p>
+    <%= render partial: "explain_table" , locals: {image: @icon_irasutoya , name: "いらすとや" , material_type: @type_irasutoya} %>
+    <%= render partial: "explain_irasutoya" %>
+    <%= render partial: "shared/link" , locals: {image: @icon_irasutoya , title: "BEIZ images" , link: nil , explain: nil} %>
   </div>
 </div>
