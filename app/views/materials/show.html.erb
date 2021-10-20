@@ -2,7 +2,9 @@
 <%= stylesheet_link_tag "material/common" , media: "all" %>
 <%= stylesheet_link_tag "shared/explain" , media: "all" %>
 <%= stylesheet_link_tag "material/show" , media: "all" %>
-<div class = "main_content_parent">
+<%= stylesheet_link_tag "side_bar_page" , media:"all" %>
+<div class = "main_content_parent" style = "display:flex;">
+
   <div class = "main_content">
     <div id = "public_domain_q_tag"></div>
     <p class = "section_title">パブリックドメインQ</p>
@@ -45,5 +47,9 @@
     <%= render partial: "explain_table" , locals: {image: @icon_irasutoya , name: "いらすとや" , material_type: @type_irasutoya} %>
     <%= render partial: "explain_irasutoya" %>
     <%= render partial: "shared/link" , locals: {image: @icon_irasutoya , title: "BEIZ images" , link: nil , explain: nil} %>
+  </div>
+
+  <div class = "right_bar">
+  
   </div>
 </div>
