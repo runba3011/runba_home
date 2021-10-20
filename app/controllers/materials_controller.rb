@@ -6,6 +6,7 @@ class MaterialsController < ApplicationController
     @icon_nanasan_yuki = "materials/icon/nanasan_yuki.png"
     @icon_texture_ninja = "materials/icon/texture_ninja.png"
     @icon_beiz_images = "materials/icon/beiz_images.png"
+    @icon_irasutoya = "materials/icon/irasutoya.png"
   end
 
   def show
