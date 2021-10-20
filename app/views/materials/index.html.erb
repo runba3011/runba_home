@@ -9,13 +9,13 @@
     <p class = "small_section_title">外部サイトの優秀奴</p>
 
     <div class = "links_parent">
-      <%= render partial: "top_link" , locals:{image: @icon_public_domain_q , link: material_path("public_domain_q") , title: "パブリックドメインQ" , explain: @type_public_domain_q } %>
-      <%= render partial: "top_link" , locals:{image: @icon_mascle_plus , link: material_path("mascle_plus") , title: "マッスルプラス" , explain: @type_mascle_plus } %>
-      <%= render partial: "top_link" , locals:{image: @icon_nanasan_yuki , link: material_path("nanasan_yuki") , title: "七三ゆきのアトリエ" , explain: @type_nanasan_yuki } %>
-      <%= render partial: "top_link" , locals:{image: @icon_topecon_heroes , link: material_path("topeconheroes") , title: "TOPECONHEROES" , explain: @type_topecon_heroes } %>
-      <%= render partial: "top_link" , locals:{image: @icon_texture_ninja , link: material_path("texture_ninja") , title: "texture ninja" , explain: @type_texture_ninja } %>
-      <%= render partial: "top_link" , locals:{image: @icon_beiz_images , link: material_path("beiz_images") , title: "BEIZ images" , explain: @type_beiz_images } %>
-      <%= render partial: "top_link" , locals:{image: @icon_irasutoya , link: material_path("irasutoya") , title: "いらすとや" , explain: @type_irasutoya } %>
+      <%= render partial: "top_link" , locals:{image: @icon_public_domain_q , link: "/materials/public_domain_q/#public_domain_q_tag" , title: "パブリックドメインQ" , explain: @type_public_domain_q } %>
+      <%= render partial: "top_link" , locals:{image: @icon_mascle_plus , link: "/materials/:mascle_plus/#mascle_plus_tag" , title: "マッスルプラス" , explain: @type_mascle_plus } %>
+      <%= render partial: "top_link" , locals:{image: @icon_nanasan_yuki , link: "/materials/nanasan_yuki/#nanasan_yuki_tag" , title: "七三ゆきのアトリエ" , explain: @type_nanasan_yuki } %>
+      <%= render partial: "top_link" , locals:{image: @icon_topecon_heroes , link: "/materials/topecon_heroes/#topecon_heroes_tag" , title: "TOPECONHEROES" , explain: @type_topecon_heroes } %>
+      <%= render partial: "top_link" , locals:{image: @icon_texture_ninja , link: "/materials/texture_ninja/#texture_ninja_tag" , title: "texture ninja" , explain: @type_texture_ninja } %>
+      <%= render partial: "top_link" , locals:{image: @icon_beiz_images , link: "/materials/beiz_image/#beiz_image_tag" , title: "BEIZ images" , explain: @type_beiz_images } %>
+      <%= render partial: "top_link" , locals:{image: @icon_irasutoya , link: "/materials/irasutoya/#irasutoya_tag" , title: "いらすとや" , explain: @type_irasutoya } %>
     </div>
   </div>
 </div>
