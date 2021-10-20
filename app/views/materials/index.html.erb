@@ -5,17 +5,17 @@
   <div class = "main_content">
     <p class = "section_title">素材一覧</p>
     <p class = "small_section_title">自作素材</p>
-      <%= render partial: "top_link" , locals:{image: "stickman_war.png" , link: nil , title: "作成中！" , explain: @all_user_request_explain } %>
+      <%= render partial: "top_link" , locals:{image: "stickman_war.png" , link: nil , title: "作成中！" } %>
     <p class = "small_section_title">外部サイトの優秀奴</p>
 
     <div class = "links_parent">
-      <%= render partial: "top_link" , locals:{image: @icon_public_domain_q , link: material_path("public_domain_q") , title: "パブリックドメインQ" , explain: @all_user_request_explain } %>
-      <%= render partial: "top_link" , locals:{image: @icon_mascle_plus , link: material_path("mascle_plus") , title: "マッスルプラス" , explain: @all_user_request_explain } %>
-      <%= render partial: "top_link" , locals:{image: @icon_nanasan_yuki , link: material_path("nanasan_yuki") , title: "七三ゆきのアトリエ" , explain: @all_user_request_explain } %>
-      <%= render partial: "top_link" , locals:{image: @icon_topecon_heroes , link: material_path("topeconheroes") , title: "TOPECONHEROES" , explain: @all_user_request_explain } %>
-      <%= render partial: "top_link" , locals:{image: @icon_texture_ninja , link: material_path("texture_ninja") , title: "texture ninja" , explain: @all_user_request_explain } %>
-      <%= render partial: "top_link" , locals:{image: @icon_beiz_images , link: material_path("beiz_images") , title: "BEIZ images" , explain: @all_user_request_explain } %>
-      <%= render partial: "top_link" , locals:{image: @icon_irasutoya , link: "https://www.irasutoya.com/" , title: "いらすとや" , explain: @all_user_request_explain } %>
+      <%= render partial: "top_link" , locals:{image: @icon_public_domain_q , link: material_path("public_domain_q") , title: "パブリックドメインQ" } %>
+      <%= render partial: "top_link" , locals:{image: @icon_mascle_plus , link: material_path("mascle_plus") , title: "マッスルプラス" } %>
+      <%= render partial: "top_link" , locals:{image: @icon_nanasan_yuki , link: material_path("nanasan_yuki") , title: "七三ゆきのアトリエ" } %>
+      <%= render partial: "top_link" , locals:{image: @icon_topecon_heroes , link: material_path("topeconheroes") , title: "TOPECONHEROES" } %>
+      <%= render partial: "top_link" , locals:{image: @icon_texture_ninja , link: material_path("texture_ninja") , title: "texture ninja" } %>
+      <%= render partial: "top_link" , locals:{image: @icon_beiz_images , link: material_path("beiz_images") , title: "BEIZ images" } %>
+      <%= render partial: "top_link" , locals:{image: @icon_irasutoya , link: "https://www.irasutoya.com/" , title: "いらすとや" } %>
     </div>
   </div>
 </div>
