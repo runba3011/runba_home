@@ -23,21 +23,21 @@
 
     <% elsif params[:id] == "nanasan_yuki" %>
       <p class = "section_title">七三ゆきのアトリエ</p>
-      <%= render partial: "explain_table" , locals: {image: nil , name: "七三ゆきのアトリエ" , material_type: "画像"} %>
+      <%= render partial: "explain_table" , locals: {image: @icon_nanasan_yuki , name: "七三ゆきのアトリエ" , material_type: "画像"} %>
       <%= render partial: "explain_nanasan_yuki" %>
-      <%= render partial: "shared/link" , locals: {image: nil , title: "TOPECONHEROES" , link: nil , explain: nil} %>
+      <%= render partial: "shared/link" , locals: {image: @icon_nanasan_yuki , title: "TOPECONHEROES" , link: nil , explain: nil} %>
 
     <% elsif params[:id] == "texture_ninja" %>
       <p class = "section_title">texture ninja</p>
-      <%= render partial: "explain_table" , locals: {image: nil , name: "texture ninja" , material_type: "画像"} %>
+      <%= render partial: "explain_table" , locals: {image: @icon_texture_ninja , name: "texture ninja" , material_type: "画像"} %>
       <%= render partial: "explain_texture_ninja" %>
-      <%= render partial: "shared/link" , locals: {image: nil , title: "TOPECONHEROES" , link: nil , explain: nil} %>
+      <%= render partial: "shared/link" , locals: {image: @icon_texture_ninja , title: "TOPECONHEROES" , link: nil , explain: nil} %>
 
     <% elsif params[:id] == "beiz_images" %>
       <p class = "section_title">BEIZ images</p>
-      <%= render partial: "explain_table" , locals: {image: nil , name: "BEIZ images" , material_type: "画像"} %>
+      <%= render partial: "explain_table" , locals: {image: @icon_beiz_images , name: "BEIZ images" , material_type: "画像"} %>
       <%= render partial: "explain_beiz_images" %>
-      <%= render partial: "shared/link" , locals: {image: nil , title: "TOPECONHEROES" , link: nil , explain: nil} %>
+      <%= render partial: "shared/link" , locals: {image: @icon_beiz_images , title: "TOPECONHEROES" , link: nil , explain: nil} %>
     <% end %>
   </div>
 </div>
