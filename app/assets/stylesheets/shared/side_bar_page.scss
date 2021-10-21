@@ -1,16 +1,14 @@
-.main_content , .right_bar{
-  margin:0px;
-}
 
 .main_content{
   width:80%;
 }
 
 .right_bar{
-  width:20%;
+  width:15%;
   background-color:yellow;
 }
 
-.bars_parent{
+.main_content_parent{
   display:flex;
+  width:calc(100vw - calc(100vw - 100%));
 }
