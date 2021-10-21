@@ -3,6 +3,46 @@
 <%= stylesheet_link_tag "shared/explain" , media: "all" %>
 <%= stylesheet_link_tag "material/show" , media: "all" %>
 <%= stylesheet_link_tag "shared/side_bar_page" , media:"all" %>
+
+
+  <script>
+    jQuery(function($){
+      $(".right_bar_content").on("click" , function(){
+        const thisText = $(this).text();
+        if(thisText == "パブリックドメインQ" ){
+          const $scrollObject = $("#public_domain_q_tag");
+          const scrollHeight = $scrollObject.offset().top;
+          $('body , html').animate({scrollTop: scrollHeight} , "swing")
+        }
+        else if(thisText == "マッスルプラス"){
+          const $scrollObject = $("#mascle_plus_tag");
+          const scrollHeight = $scrollObject.offset().top;
+          $('body , html').animate({scrollTop: scrollHeight} , "swing")
+        }
+        else if(thisText == "TOPECONHEROES"){
+          const $scrollObject = $("#topecon_heroes_tag");
+          const scrollHeight = $scrollObject.offset().top;
+          $('body , html').animate({scrollTop: scrollHeight} , "swing")
+        }
+        else if(thisText == "七三ゆきのアトリエ"){
+          const $scrollObject = $("#nanasan_yuki_tag");
+          const scrollHeight = $scrollObject.offset().top;
+          $('body , html').animate({scrollTop: scrollHeight} , "swing")
+        }
+        else if(thisText == "texture ninja"){
+          const $scrollObject = $("#texture_ninja_tag");
+          const scrollHeight = $scrollObject.offset().top;
+          $('body , html').animate({scrollTop: scrollHeight} , "swing")
+        }
+        else if(thisText == "いらすとや"){
+          const $scrollObject = $("#irasutoya_tag");
+          const scrollHeight = $scrollObject.offset().top;
+          $('body , html').animate({scrollTop: scrollHeight} , "swing")
+        }
+      })
+    })
+  </script>
+
 <div class = "main_content_parent" style = "display:flex;">
 
   <div class = "main_content">
@@ -48,12 +88,6 @@
     <%= render partial: "explain_irasutoya" %>
     <%= render partial: "shared/link" , locals: {image: @icon_irasutoya , title: "BEIZ images" , link: nil , explain: nil} %>
   </div>
-
-  <script>
-    jQuery(function($){
-      console.log("スクリプト")
-    })
-  </script>
   <div class = "right_bar_parent">
     <div class = "right_bar">
       <p class = "right_bar_top_title">目次</p>
