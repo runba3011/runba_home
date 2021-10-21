@@ -2,7 +2,49 @@
 <%= stylesheet_link_tag "material/common" , media: "all" %>
 <%= stylesheet_link_tag "shared/explain" , media: "all" %>
 <%= stylesheet_link_tag "material/show" , media: "all" %>
-<div class = "main_content_parent">
+<%= stylesheet_link_tag "shared/side_bar_page" , media:"all" %>
+
+
+  <script>
+    jQuery(function($){
+      $(".right_bar_content").on("click" , function(){
+        const thisText = $(this).text();
+        if(thisText == "パブリックドメインQ" ){
+          const $scrollObject = $("#public_domain_q_tag");
+          const scrollHeight = $scrollObject.offset().top;
+          $('body , html').animate({scrollTop: scrollHeight} , "swing")
+        }
+        else if(thisText == "マッスルプラス"){
+          const $scrollObject = $("#mascle_plus_tag");
+          const scrollHeight = $scrollObject.offset().top;
+          $('body , html').animate({scrollTop: scrollHeight} , "swing")
+        }
+        else if(thisText == "TOPECONHEROES"){
+          const $scrollObject = $("#topecon_heroes_tag");
+          const scrollHeight = $scrollObject.offset().top;
+          $('body , html').animate({scrollTop: scrollHeight} , "swing")
+        }
+        else if(thisText == "七三ゆきのアトリエ"){
+          const $scrollObject = $("#nanasan_yuki_tag");
+          const scrollHeight = $scrollObject.offset().top;
+          $('body , html').animate({scrollTop: scrollHeight} , "swing")
+        }
+        else if(thisText == "texture ninja"){
+          const $scrollObject = $("#texture_ninja_tag");
+          const scrollHeight = $scrollObject.offset().top;
+          $('body , html').animate({scrollTop: scrollHeight} , "swing")
+        }
+        else if(thisText == "いらすとや"){
+          const $scrollObject = $("#irasutoya_tag");
+          const scrollHeight = $scrollObject.offset().top;
+          $('body , html').animate({scrollTop: scrollHeight} , "swing")
+        }
+      })
+    })
+  </script>
+
+<div class = "main_content_parent" style = "display:flex;">
+
   <div class = "main_content">
     <div id = "public_domain_q_tag"></div>
     <p class = "section_title">パブリックドメインQ</p>
@@ -45,5 +87,17 @@
     <%= render partial: "explain_table" , locals: {image: @icon_irasutoya , name: "いらすとや" , material_type: @type_irasutoya} %>
     <%= render partial: "explain_irasutoya" %>
     <%= render partial: "shared/link" , locals: {image: @icon_irasutoya , title: "BEIZ images" , link: nil , explain: nil} %>
+  </div>
+  <div class = "right_bar_parent">
+    <div class = "right_bar">
+      <p class = "right_bar_top_title">目次</p>
+      <p class = "right_bar_section_title">画像</p>
+      <p class = "right_bar_content">パブリックドメインQ</p>
+      <p class = "right_bar_content">マッスルプラス</p>
+      <p class = "right_bar_content">TOPECONHEROES</p>
+      <p class = "right_bar_content">七三ゆきのアトリエ</p>
+      <p class = "right_bar_content">texture ninja</p>
+      <p class = "right_bar_content">いらすとや</p>
+    </div>
   </div>
 </div>

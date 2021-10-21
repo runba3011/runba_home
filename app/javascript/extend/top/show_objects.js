@@ -4,12 +4,10 @@ jQuery(function($){
   if($(`#_link_5`) != null){
     let count = 0;
     let timer = 0;
-    console.log("トップページ用スクリプトを使用します")
     function singleAction(object){
       const $object = object
       count += 1;
       // レスポンシブデザインの都合上、一つの機能へのリンクが二つあるため2で予め割っておく
-      console.log(count);
       if(Math.floor(count / 2) % 2 == 0){
         $object.addClass("magictime spaceInRight");
       }
@@ -22,7 +20,8 @@ jQuery(function($){
     // 余裕がある時に、下にスクロールしたら下の方のオブジェクトが見えるように変更する
     intersectAction($objects, function(element, isIntersecting){
       if(isIntersecting){
-        console.log("見える")
+        // 現時点では不要、スクロールしたら見えるようにする処理を作成するときに使用する
+        // console.log("見える")
       }
     })
 
@@ -38,13 +37,11 @@ jQuery(function($){
           if(actionTimes * interval / 1000 < timer){
             // タイマーの方がインターバルよりも大きいとき、つまり動作するとき
             actionTimes += 1;
-            console.log(`${actionTimes}番目のオブジェクトを操作します`)
             singleAction($objects.eq(actionTimes-1));
             $objects.eq(actionTimes - 1).css("opacity" , "1");
           }
         }
         else{
-          console.log("スライド動作が終了しました")
           clearInterval(roopScript);
         }
       }, 10);
