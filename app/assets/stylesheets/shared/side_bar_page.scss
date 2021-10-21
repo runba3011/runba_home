@@ -4,10 +4,15 @@
   margin:0px;
 }
 
-.right_bar{
+.right_bar_parent{
   width:18%;
-  height:100vh;
   background-color:yellow;
+}
+
+.right_bar{
+  --right_bar_height:50vh;
+  height:var(--right_bar_height);
+  background-color:blue;
 }
 
 .main_content_parent{
