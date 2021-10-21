@@ -13,6 +13,8 @@
   --right_bar_height:50vh;
   height:var(--right_bar_height);
   background-color:blue;
+  position:sticky;
+  top:calc(50vh - calc(var(--right_bar_height) / 2));
 }
 
 .main_content_parent{
