@@ -19,10 +19,18 @@
   background:linear-gradient(to right bottom , white , #f3f3f3);
   border:5px double rgb(199, 199, 199);
   border-radius: 10px;
-  padding:5px;
 
   overflow: scroll;
 }
+
+
+.right_bar_top_title{
+  line-height: 35px;
+  background-color: #d7d7d7;
+  color: #033aff;
+  text-align: center;
+}
+
 
 .main_content_parent{
   display:flex;
