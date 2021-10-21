@@ -15,6 +15,13 @@
   background-color:blue;
   position:sticky;
   top:calc(50vh - calc(var(--right_bar_height) / 2));
+
+  background:linear-gradient(to right bottom , white , #f3f3f3);
+  border:5px double rgb(199, 199, 199);
+  border-radius: 10px;
+  padding:5px;
+
+  overflow: scroll;
 }
 
 .main_content_parent{
