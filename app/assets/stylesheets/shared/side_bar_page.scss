@@ -1,14 +1,17 @@
 
 .main_content{
   width:80%;
+  margin:0px;
 }
 
 .right_bar{
   width:15%;
+  height:100vh;
   background-color:yellow;
 }
 
 .main_content_parent{
   display:flex;
-  width:calc(100vw - calc(100vw - 100%));
+  width:100%;
+  justify-content: space-around;
 }
