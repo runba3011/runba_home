@@ -38,6 +38,16 @@
   margin:5px 10px;
 }
 
+.right_bar_content{
+  padding:5px 20px;
+  transition: 0.2s;
+}
+
+.right_bar_content:hover{
+  background-color:#c3d0ff;
+  transition: 0.2s;
+}
+
 .main_content_parent{
   display:flex;
   width:100%;
