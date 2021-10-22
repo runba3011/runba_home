@@ -14,35 +14,52 @@
     })
 
     // エンターキー他入力された時の処理
+
+    let object_1_operate_count = 0
     $("html").keypress(function(e){
       if(e.keyCode  == 13){
         console.log("エンター");
+        const $selectingObject = $("#selected");
+        console.log($selectingObject.find(".operate_object").attr("id"));
+        if($selectingObject.find(".operate_object").attr("id") == "play1_object_1"){
+          console.log("一つ目のオブジェクト")
+          object_1_operate_count ++;
+          if(object_1_operate_count == 1){
+            
+          }
+        }
+        else if($selectingObject.find(".operate_object").attr("id") == "play1_object_2"){
+          console.log("二つ目のオブジェクト")
+        }
       }
     })
   })
 </script>
 
 <div class = "play1_objects_parent">
+  <%# 選択されている時、single_parentにselectedがつく %>
   <div class = "play1_single_parent">
     <p class = "play1_titles">たいとる</p>
     <div class = "play1_single justify_content">
       <%# コピーして使用する場合、↓の番号を変更する %>
-      <div id = "play1_object_1" class = "picture_example">
+      <div id = "play1_object_1" class = "picture_example operate_object">
 
       </div>
     </div>
     <p class = "play1_select_buttons">選択する</p>
   </div>
 
+  <%# 選択されている時、single_parentにselectedがつく %>
   <div class = "play1_single_parent">
     <p class = "play1_titles">たいとる</p>
-    <div class = "play1_single">
+    <div class = "play1_single justify_content">
       <%# コピーして使用する場合、↓の番号を変更する %>
-      <div id = "play1_object_2">
-      
+      <div id = "play1_object_2" class = "picture_example operate_object">
+
       </div>
     </div>
     <p class = "play1_select_buttons">選択する</p>
+  </div>
   </div>
 
 </div>
