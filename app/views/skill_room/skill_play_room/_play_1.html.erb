@@ -4,8 +4,12 @@
   jQuery(function($){
     $selectButton = $(".play1_select_buttons");
     $selectButton.on("click" , function(){
+      $("#selected p:last").removeAttr("style").text("選択する");
       $("#selected").removeAttr("id");
+
+      // selectedのidはplay1_single_parentに掛けている
       $(this).parent().attr("id" , "selected");
+      $(this).text("enterを押そう！").css("width" , "200px");
     })
   })
 </script>
