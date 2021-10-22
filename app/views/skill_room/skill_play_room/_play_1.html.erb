@@ -8,11 +8,19 @@
     $selectButton.on("click" , function(){
       // 元々選択されていたもののタイトルをリセットする処理
       let isSameButton = true;
-      if(beforeTitle != null){
-        if($("#selected").find(".play1_select_buttons").text() != $(this).text()){
+
+      // 同じボタンが押されていたらtrueを返す
+      function checkSameButton(){
+        if(beforeTitle != null){
+          if($("#selected").find(".play1_select_buttons").text() == $(this).text()){
+            return true;
+          }
+        }
+        return false;
+      }
+      if(!checkSameButton()){
           $("#selected").find(".play1_titles").text(`${beforeTitle}`)
           isSameButton = false;
-        }
       }
 
       // 元々選択されていたものをリセットする処理
@@ -33,17 +41,18 @@
       // 新しく選択したもののタイトルを、enterを押したらどんな動きになるか説明するものに変更する処理
       // 変更する前のタイトルを登録しておく処理
       if(beforeTitle != $(this).prevAll(".play1_titles").text()){
-        beforeTitle = $(this).prevAll(".play1_titles").text();
-        console.log(beforeTitle);
-        if(!isSameButton){
-          if(getSelectingNumber() == "play1_object_1"){
-            $(this).prevAll(".play1_titles").text("enterを押すと消えます");
-          }
-          else if(getSelectingNumber() == "play1_object_2"){
-            // 2番目以降の分岐を記載する
+        if(!checkSameButton()){
+          beforeTitle = $(this).prevAll(".play1_titles").text();
+          console.log(beforeTitle);
+          if(!isSameButton){
+            if(getSelectingNumber() == "play1_object_1"){
+              $(this).prevAll(".play1_titles").text("enterを押すと消えます");
+            }
+            else if(getSelectingNumber() == "play1_object_2"){
+              // 2番目以降の分岐を記載する
+            }
           }
         }
-
       }
 
 
@@ -92,7 +101,7 @@
 <div class = "play1_objects_parent">
   <%# 選択されている時、single_parentにselectedがつく %>
   <div class = "play1_single_parent">
-    <p class = "play1_titles">ひとつめ</p>
+    <p class = "play1_titles">Animationの起動タイミング</p>
     <div class = "play1_single justify_content">
       <%# コピーして使用する場合、↓の番号を変更する %>
       <div id = "play1_object_1" class = "picture_example operate_object">
