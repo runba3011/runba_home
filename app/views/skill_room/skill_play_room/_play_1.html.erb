@@ -22,10 +22,24 @@
         const $selectingObject = $("#selected");
         console.log($selectingObject.find(".operate_object").attr("id"));
         if($selectingObject.find(".operate_object").attr("id") == "play1_object_1"){
-          console.log("一つ目のオブジェクト")
+          if(object_1_operate_count == 0){
+            console.log("一つ目のオブジェクト")
+          }
+          console.log(`${object_1_operate_count + 1}回目の処理`)
+          
           object_1_operate_count ++;
+          const operateObject = $selectingObject.find(".operate_object");
           if(object_1_operate_count == 1){
-            
+            operateObject.addClass("animate__animated animate__zoomOut");
+          }
+          else if(object_1_operate_count == 2){
+            operateObject.removeClass("animate__zoomOut");
+            operateObject.addClass("animate__zoomIn");
+          }
+          else if(object_1_operate_count == 3){
+            operateObject.removeClass("animate__zoomIn")
+            operateObject.addClass("animate__rubberBand");
+            object_1_operate_count = 0;
           }
         }
         else if($selectingObject.find(".operate_object").attr("id") == "play1_object_2"){
