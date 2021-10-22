@@ -7,11 +7,11 @@
     // ボタンを押し、オブジェクトを選択する処理
     $selectButton.on("click" , function(){
       // 元々選択されていたもののタイトルをリセットする処理
-      let isSameButton = false;
+      let isSameButton = true;
       if(beforeTitle != null){
         if($("#selected").find(".play1_select_buttons").text() != $(this).text()){
           $("#selected").find(".play1_titles").text(`${beforeTitle}`)
-          isSameButton = true;
+          isSameButton = false;
         }
       }
 
