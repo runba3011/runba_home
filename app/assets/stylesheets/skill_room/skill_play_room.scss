@@ -61,3 +61,20 @@
   background-color: rgb(0, 0, 110);
   transition:0.2s;
 }
+
+// 中央揃えする親に掛ける
+.justify_content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:auto;
+}
+
+.picture_example{
+  background-image: image_url("skill_room/skill_play_room/1.png");
+  width:95%;
+  height:95%;
+  background-size:cover;
+  margin:auto;
+  border-radius: 10px;;
+}

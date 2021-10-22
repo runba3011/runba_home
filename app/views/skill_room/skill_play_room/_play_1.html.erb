@@ -3,6 +3,7 @@
 <script>
   jQuery(function($){
     $selectButton = $(".play1_select_buttons");
+    // ボタンを押し、オブジェクトを選択する処理
     $selectButton.on("click" , function(){
       $("#selected p:last").removeAttr("style").text("選択する");
       $("#selected").removeAttr("id");
@@ -11,14 +12,24 @@
       $(this).parent().attr("id" , "selected");
       $(this).text("enterを押そう！").css("width" , "200px");
     })
+
+    // エンターキー他入力された時の処理
+    $("html").keypress(function(e){
+      if(e.keyCode  == 13){
+        console.log("エンター");
+      }
+    })
   })
 </script>
 
 <div class = "play1_objects_parent">
   <div class = "play1_single_parent">
     <p class = "play1_titles">たいとる</p>
-    <div class = "play1_single">
+    <div class = "play1_single justify_content">
+      <%# コピーして使用する場合、↓の番号を変更する %>
+      <div id = "play1_object_1" class = "picture_example">
 
+      </div>
     </div>
     <p class = "play1_select_buttons">選択する</p>
   </div>
@@ -26,8 +37,12 @@
   <div class = "play1_single_parent">
     <p class = "play1_titles">たいとる</p>
     <div class = "play1_single">
-
+      <%# コピーして使用する場合、↓の番号を変更する %>
+      <div id = "play1_object_2">
+      
+      </div>
     </div>
     <p class = "play1_select_buttons">選択する</p>
   </div>
+
 </div>
