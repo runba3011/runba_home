@@ -21,7 +21,10 @@
         console.log("違うボタンが押された")
         return false;
       }
-      if(!checkSameButton()){
+
+      let isSameButton = checkSameButton($(this));
+
+      if(!isSameButton){
           $("#selected").find(".play1_titles").text(`${beforeTitle}`)
           isSameButton = false;
       }
