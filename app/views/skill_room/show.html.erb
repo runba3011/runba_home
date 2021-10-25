@@ -25,12 +25,15 @@
     <%# スクリプトを使用してページに不要な変化を加えまくる部分 %>
     <% elsif @skill_play_room %>
       <% if params[:id] == "0" %>
-      <div style = "padding-top:80px;"></div>
-      <% breadcrumb :skill_waste_top %>
-      <%= breadcrumbs separator: "&rsaquo; " %>
-      <%= render partial: "skill_play_room_link" , locals: {title:"未開拓" , link: "/skill_room/skill_play_room/0", explain:"作成中です（押してもページ移動はしません）" , image: nil     } %>
-      <%= render partial: "skill_play_room_link" , locals: {title:"未開拓" , link: "/skill_room/skill_play_room/0", explain:"作成中です（押してもページ移動はしません）" , image: nil     } %>
-      <%= render partial: "skill_play_room_link" , locals: {title:"未開拓" , link: "/skill_room/skill_play_room/0", explain:"作成中です（押してもページ移動はしません）" , image: nil     } %>
+        <div style = "padding-top:80px;"></div>
+        <% breadcrumb :skill_waste_top %>
+        <%= breadcrumbs separator: "&rsaquo; " %>
+        <%= render partial: "skill_play_room_link" , locals: {title:"スライドみたいなアニメーションのテスト" , link: "/skill_room/skill_play_room/1", explain:"「スライドを作成できるwebアプリの作成」というのを見かけたので、試しに作ってみました！" , image: nil     } %>
+        <%= render partial: "skill_play_room_link" , locals: {title:"未開拓" , link: "/skill_room/skill_play_room/0", explain:"作成中です（押してもページ移動はしません）" , image: nil     } %>
+        <%= render partial: "skill_play_room_link" , locals: {title:"未開拓" , link: "/skill_room/skill_play_room/0", explain:"作成中です（押してもページ移動はしません）" , image: nil     } %>
+      <% else %>
+        <%= stylesheet_link_tag "skill_room/skill_play_room" , media: "all" %>
+        <%= render partial: "skill_room/skill_play_room/play_#{params[:id]}" %>
       <% end %>
 
     <% end %>

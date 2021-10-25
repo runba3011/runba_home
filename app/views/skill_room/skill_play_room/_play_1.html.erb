@@ -1,0 +1,134 @@
+<p class = "section_title">アニメーションのテスト</p>
+
+<script>
+  jQuery(function($){
+    const $selectButton = $(".play1_select_buttons");
+    let beforeTitle = null;
+    // ボタンを押し、オブジェクトを選択する処理
+    $selectButton.on("click" , function(){
+
+      // 同じボタンが押されていたらtrueを返す
+      function checkSameButton($pushedButton){
+        // console.log($("#selected").find(".play1_select_buttons").text())
+        // console.log($pushedButton.text())
+        if(beforeTitle != null){
+          console.log()
+          if($("#selected").find(".play1_select_buttons").text() == $pushedButton.text()){
+            console.log("同じボタンが押された");
+            return true;
+          }
+        }
+        console.log("違うボタンが押された")
+        return false;
+      }
+
+      let isSameButton = checkSameButton($(this));
+
+      if(!isSameButton){
+          $("#selected").find(".play1_titles").text(`${beforeTitle}`)
+          isSameButton = false;
+      }
+
+      // 元々選択されていたものをリセットする処理
+      $("#selected p:last").removeAttr("style").text("選択する");
+      $("#selected").removeAttr("id");
+
+      // 新しく選択する処理
+      // selectedのidはplay1_single_parentに掛けている
+      $(this).parent().attr("id" , "selected");
+      $(this).text("enterを押そう！").css("width" , "200px");
+
+      function getSelectingNumber(){
+        const $selectingObject = $("#selected");
+        return $selectingObject.find(".operate_object").attr("id");
+        // ここで返されるidは、play1_object_1というかたちで最後の一文字が何番目のオブジェクトかを表している
+      }
+
+      // 新しく選択したもののタイトルを、enterを押したらどんな動きになるか説明するものに変更する処理
+      // 変更する前のタイトルを登録しておく処理
+      if(beforeTitle != $(this).prevAll(".play1_titles").text()){
+        if(!isSameButton){
+          beforeTitle = $(this).prevAll(".play1_titles").text();
+          console.log(beforeTitle);
+          if(!isSameButton){
+            if(getSelectingNumber() == "play1_object_1"){
+              $(this).prevAll(".play1_titles").text("enterを押すと消えます");
+            }
+            else if(getSelectingNumber() == "play1_object_2"){
+              // 2番目以降の分岐を記載する
+            }
+          }
+        }
+      }
+
+
+    })
+
+    // エンターキー他入力された時の処理
+
+    let object_1_operate_count = 0
+    $("html").keypress(function(e){
+      if(e.keyCode  == 13){
+        console.log("エンター");
+        const $selectingObject = $("#selected");
+        console.log($selectingObject.find(".operate_object").attr("id"));
+        if($selectingObject.find(".operate_object").attr("id") == "play1_object_1"){
+          if(object_1_operate_count == 0){
+            console.log("一つ目のオブジェクト")
+          }
+          console.log(`${object_1_operate_count + 1}回目の処理`)
+          
+          object_1_operate_count ++;
+          const operateObject = $selectingObject.find(".operate_object");
+          if(object_1_operate_count == 1){
+            operateObject.addClass("animate__animated animate__zoomOut");
+            operateObject.parent().prev().text("enterを押すと出現します")
+          }
+          else if(object_1_operate_count == 2){
+            operateObject.removeClass("animate__zoomOut");
+            operateObject.addClass("animate__zoomIn");
+            operateObject.parent().prev().text("enterを押すとビヨーンとなります")
+          }
+          else if(object_1_operate_count == 3){
+            operateObject.removeClass("animate__zoomIn")
+            operateObject.addClass("animate__rubberBand");
+            operateObject.parent().prev().text("enterを押すと消えます")
+            object_1_operate_count = 0;
+          }
+        }
+        else if($selectingObject.find(".operate_object").attr("id") == "play1_object_2"){
+          console.log("二つ目のオブジェクト")
+        }
+      }
+    })
+  })
+</script>
+
+<div class = "play1_objects_parent">
+  <%# 選択されている時、single_parentにselectedがつく %>
+  <%# この欄での確認は、enterを押したら特定の処理がなされるかどうかということ %>
+  <div class = "play1_single_parent">
+    <p class = "play1_titles">Animationの起動タイミング</p>
+    <div class = "play1_single justify_content">
+      <%# コピーして使用する場合、↓の番号を変更する %>
+      <div id = "play1_object_1" class = "picture_example operate_object">
+
+      </div>
+    </div>
+    <p class = "play1_select_buttons">選択する</p>
+  </div>
+
+  <%# 選択されている時、single_parentにselectedがつく %>
+  <div class = "play1_single_parent">
+    <p class = "play1_titles">ふたつめ</p>
+    <div class = "play1_single justify_content">
+      <%# コピーして使用する場合、↓の番号を変更する %>
+      <div id = "play1_object_2" class = "picture_example operate_object">
+
+      </div>
+    </div>
+    <p class = "play1_select_buttons">選択する</p>
+  </div>
+  </div>
+
+</div>
