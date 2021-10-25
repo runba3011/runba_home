@@ -47,7 +47,7 @@
       // 新しく選択したもののタイトルを、enterを押したらどんな動きになるか説明するものに変更する処理
       // 変更する前のタイトルを登録しておく処理
       if(beforeTitle != $(this).prevAll(".play1_titles").text()){
-        if(!checkSameButton()){
+        if(!isSameButton){
           beforeTitle = $(this).prevAll(".play1_titles").text();
           console.log(beforeTitle);
           if(!isSameButton){
