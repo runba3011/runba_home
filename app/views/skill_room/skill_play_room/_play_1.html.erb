@@ -11,11 +11,15 @@
 
       // 同じボタンが押されていたらtrueを返す
       function checkSameButton(){
+        console.log("同じボタンならtrueが返る")
         if(beforeTitle != null){
+          console.log()
           if($("#selected").find(".play1_select_buttons").text() == $(this).text()){
+            console.log("true");
             return true;
           }
         }
+        console.log("false")
         return false;
       }
       if(!checkSameButton()){
